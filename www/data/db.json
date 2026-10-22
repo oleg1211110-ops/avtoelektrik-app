@@ -1,0 +1,286 @@
+{
+ "catalog_brands": [
+  {
+   "aliases": [
+    "дипал"
+   ],
+   "group": "cn",
+   "kind": "car",
+   "name": "Deepal",
+   "source": "lada.kz",
+   "_id": "deepal"
+  },
+  {
+   "added": "2026-03-03",
+   "aliases": [
+    "мг",
+    "эмджи",
+    "morris"
+   ],
+   "group": "cn",
+   "kind": "car",
+   "name": "MG",
+   "source": "forbes.kz",
+   "_id": "mg"
+  },
+  {
+   "added": "2026-04-05",
+   "aliases": [
+    "соуист",
+    "суист"
+   ],
+   "group": "cn",
+   "kind": "car",
+   "name": "Soueast",
+   "source": "wedbush.com",
+   "_id": "soueast"
+  }
+ ],
+ "catalog_models": [
+  {
+   "brand": "BYD",
+   "fuel": "hybrid",
+   "group": "cn",
+   "model": "Destroyer 05",
+   "_id": "byd-destroyer-05"
+  },
+  {
+   "brand": "BYD",
+   "fuel": "hybrid",
+   "group": "cn",
+   "model": "Qin L DM-i",
+   "_id": "byd-qin-l-dm-i"
+  },
+  {
+   "brand": "Changan",
+   "group": "cn",
+   "model": "X5 Plus",
+   "_id": "changan-x5-plus"
+  },
+  {
+   "brand": "Deepal",
+   "group": "cn",
+   "model": "S07",
+   "_id": "deepal-s07"
+  },
+  {
+   "added": "2026-03-03",
+   "brand": "MG",
+   "group": "cn",
+   "model": "5",
+   "_id": "mg-5"
+  },
+  {
+   "added": "2026-03-03",
+   "brand": "MG",
+   "group": "cn",
+   "model": "HS",
+   "_id": "mg-hs"
+  },
+  {
+   "added": "2026-03-03",
+   "brand": "MG",
+   "group": "cn",
+   "model": "RX9",
+   "_id": "mg-rx9"
+  },
+  {
+   "added": "2026-03-03",
+   "brand": "MG",
+   "group": "cn",
+   "model": "ZS",
+   "_id": "mg-zs"
+  },
+  {
+   "added": "2026-04-05",
+   "brand": "Soueast",
+   "group": "cn",
+   "model": "S06",
+   "_id": "soueast-s06"
+  },
+  {
+   "added": "2026-04-05",
+   "brand": "Soueast",
+   "group": "cn",
+   "model": "S07",
+   "_id": "soueast-s07"
+  },
+  {
+   "added": "2026-04-05",
+   "brand": "Soueast",
+   "group": "cn",
+   "model": "S09",
+   "_id": "soueast-s09"
+  }
+ ],
+ "codes_obd": [
+  {
+   "brands": [
+    "Hyundai",
+    "Kia"
+   ],
+   "by": "auto",
+   "causes": [
+    "Датчик детонации или его проводка — самая частая причина",
+    "Устаревшая прошивка блока управления двигателем",
+    "Износ шатунных вкладышей, стук двигателя"
+   ],
+   "code": "P1326",
+   "seeded": "2026-10-21",
+   "sev": "care",
+   "source": "mechanicbase.com",
+   "title": "Система KSDS заметила вибрацию двигателя — возможен износ шатунных вкладышей",
+   "todo": [
+    "Не стирайте ошибку, не разобравшись: она защищает мотор от серьёзной поломки.",
+    "Check Engine мигает или мотор стучит — заглушите двигатель и вызовите эвакуатор.",
+    "Горит ровно — можно аккуратно доехать до сервиса без нагрузки и высоких оборотов.",
+    "Узнайте у дилера Hyundai или Kia, нет ли для вашей машины обновления прошивки или сервисной кампании."
+   ],
+   "tr": {
+    "en": {
+     "causes": [
+      "Knock sensor or its wiring — the most common cause",
+      "Outdated engine control unit firmware",
+      "Worn connecting rod bearings, engine knock"
+     ],
+     "title": "The KSDS system detected engine vibration — the connecting rod bearings may be worn",
+     "todo": [
+      "Don’t clear the code without finding the cause: it protects the engine from serious damage.",
+      "If Check Engine is flashing or the engine knocks — stop the engine and call a tow truck.",
+      "If it’s on steadily — you can carefully drive to a workshop without load or high RPM.",
+      "Ask a Hyundai or Kia dealer whether there is a firmware update or service campaign for your car."
+     ]
+    },
+    "kk": {
+     "causes": [
+      "Детонация датчигі немесе оның сымдары — ең жиі себеп",
+      "Қозғалтқышты басқару блогының ескі бағдарламасы",
+      "Шатун вкладыштарының тозуы, қозғалтқыштың тықылдауы"
+     ],
+     "title": "KSDS жүйесі қозғалтқыш дірілін байқады — шатун вкладыштары тозған болуы мүмкін",
+     "todo": [
+      "Себебін анықтамай қатені өшірмеңіз: ол моторды үлкен бұзылудан қорғайды.",
+      "Check Engine жыпылықтаса немесе мотор тықылдаса — қозғалтқышты сөндіріп, эвакуатор шақырыңыз.",
+      "Тұрақты жанып тұрса — жүктемесіз және жоғары айналымсыз сервиске абайлап жетуге болады.",
+      "Hyundai немесе Kia дилерінен көлігіңізге бағдарлама жаңартуы немесе сервистік науқан бар-жоғын біліңіз."
+     ]
+    }
+   },
+   "_id": "P1326__hyundai-kia"
+  },
+  {
+   "brands": [
+    "Toyota",
+    "Lexus"
+   ],
+   "by": "auto",
+   "causes": [
+    "Слабый аккумулятор или плохой контакт клемм",
+    "Подача топлива: насос, фильтр, давление",
+    "Грязный дроссель или подсос воздуха",
+    "Свечи и катушки зажигания"
+   ],
+   "code": "P1604",
+   "seeded": "2026-10-21",
+   "sev": "care",
+   "source": "toyotaownersclub.com",
+   "title": "Плохой пуск двигателя (Startability malfunction)",
+   "todo": [
+    "Блок записывает эту ошибку, когда мотор долго заводится, не схватывает или глохнет сразу после пуска.",
+    "Проверьте аккумулятор и напряжение при прокрутке: вкладка «Датчики», режим «Пуск».",
+    "Пройдите в «Помощнике» ветку «Не заводится»."
+   ],
+   "tr": {
+    "en": {
+     "causes": [
+      "Weak battery or poor terminal contact",
+      "Fuel supply: pump, filter, pressure",
+      "Dirty throttle body or an air leak",
+      "Spark plugs and ignition coils"
+     ],
+     "title": "Engine startability malfunction",
+     "todo": [
+      "The ECU stores this code when the engine takes long to start, doesn’t catch or dies right after starting.",
+      "Check the battery and the cranking voltage: “Sensors” tab, “Start” mode.",
+      "Go through the “Won’t start” branch in the “Assistant”."
+     ]
+    },
+    "kk": {
+     "causes": [
+      "Аккумулятор әлсіз немесе клеммалардың түйіспесі нашар",
+      "Отын беру: сорғы, сүзгі, қысым",
+      "Дроссель лас немесе ауа сорылуы",
+      "От алдыру шамдары мен катушкалары"
+     ],
+     "title": "Қозғалтқыштың нашар оталуы (Startability malfunction)",
+     "todo": [
+      "Мотор ұзақ оталса, от алмаса немесе оталғаннан кейін бірден сөніп қалса, блок осы қатені жазады.",
+      "Аккумуляторды және айналдыру кезіндегі кернеуді тексеріңіз: «Датчиктер» қойындысы, «Оталдыру» режимі.",
+      "«Көмекші» бөлімінде «Оталмайды» тармағынан өтіңіз."
+     ]
+    }
+   },
+   "_id": "P1604__toyota-lexus"
+  },
+  {
+   "brands": [
+    "Toyota",
+    "Lexus"
+   ],
+   "by": "auto",
+   "causes": [
+    "Закончилось топливо — блок записывает ошибку и в этом случае",
+    "Пропуски зажигания в одном из цилиндров",
+    "Подсос воздуха или грязный дроссель"
+   ],
+   "code": "P1605",
+   "seeded": "2026-10-21",
+   "sev": "care",
+   "source": "toyotaownersclub.com",
+   "title": "Неровный холостой ход (Rough idling)",
+   "todo": [
+    "Сначала проверьте уровень топлива.",
+    "Посмотрите, нет ли кодов пропусков P0301–P0308, и сравните коррекции топлива во вкладке «Датчики»."
+   ],
+   "tr": {
+    "en": {
+     "causes": [
+      "Ran out of fuel — the ECU stores this code in that case too",
+      "Misfire in one of the cylinders",
+      "An air leak or a dirty throttle body"
+     ],
+     "title": "Rough idling",
+     "todo": [
+      "Check the fuel level first.",
+      "See if there are misfire codes P0301–P0308 and compare the fuel trims on the “Sensors” tab."
+     ]
+    },
+    "kk": {
+     "causes": [
+      "Отын таусылған — блок бұл жағдайда да қатені жазады",
+      "Цилиндрлердің бірінде тұтану іркілісі",
+      "Ауа сорылуы немесе дроссель лас"
+     ],
+     "title": "Бос жүрістің тұрақсыздығы (Rough idling)",
+     "todo": [
+      "Алдымен отын деңгейін тексеріңіз.",
+      "P0301–P0308 іркіліс кодтары бар-жоғын қарап, отын түзетулерін «Датчиктер» қойындысында салыстырыңыз."
+     ]
+    }
+   },
+   "_id": "P1605__toyota-lexus"
+  }
+ ],
+ "codes_spn": [],
+ "codes_maker": [],
+ "site_tips": [],
+ "catalog_meta": {
+  "summary": "Добавлены марки MG и Soueast (вышли на рынок Казахстана в 2026 году) и Deepal; модели Changan X5 Plus, BYD Destroyer 05 и Qin L DM-i.",
+  "updatedAt": "2026-10-21"
+ },
+ "codes_meta": {
+  "summary": "Добавлены коды производителей: Hyundai/Kia P1326, Toyota/Lexus P1604 и P1605. В приложение встроены коды гибридов, электромобилей и блоков новых машин (P0Axx, U01xx–U04xx).",
+  "updatedAt": "2026-10-21"
+ },
+ "exportedAt": "2026-10-23"
+}
