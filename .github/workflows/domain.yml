@@ -21,11 +21,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          set -x
           if [ "${{ inputs.https }}" = "true" ]; then
-            gh api -X PUT "repos/${{ github.repository }}/pages" -F https_enforced=true
+            out=$(gh api -X PUT "repos/${{ github.repository }}/pages" -F https_enforced=true 2>&1) || { echo "::error::$(echo "$out" | tr '\n' ' ')"; exit 1; }
           else
-            gh api -X PUT "repos/${{ github.repository }}/pages" -f cname=help.avtoelektrik-pro.kz
+            out=$(gh api -X PUT "repos/${{ github.repository }}/pages" -f cname=help.avtoelektrik-pro.kz 2>&1) || { echo "::error::$(echo "$out" | tr '\n' ' ')"; exit 1; }
           fi
-          gh api "repos/${{ github.repository }}/pages"
-          gh api "repos/${{ github.repository }}/pages/health" || true
+          info=$(gh api "repos/${{ github.repository }}/pages" -q '"cname=" + (.cname // "") + " https=" + (.https_enforced|tostring) + " status=" + (.status // "")' 2>&1)
+          echo "::notice::$info"
