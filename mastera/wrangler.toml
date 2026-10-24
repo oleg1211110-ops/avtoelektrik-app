@@ -1,0 +1,15 @@
+# «Мастера рядом» — сервер карточек мастеров приложения «АвтоЭлектрик PRO».
+# Cloudflare Workers + база D1. Таблицы создаются сами при первом запросе,
+# пароль модерации задаётся при первом входе на страницу /admin.
+name = "mastera"
+main = "worker.js"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+[vars]
+ORIGINS = "https://help.avtoelektrik-pro.kz,https://app.avtoelektrik-pro.kz,https://avtoelektrik-pro.kz,https://oleg1211110-ops.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "avtoelektrik-masters"
+database_id = "00000000-0000-0000-0000-000000000000"
