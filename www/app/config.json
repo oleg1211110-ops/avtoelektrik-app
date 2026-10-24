@@ -1,0 +1,16 @@
+{
+  "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
+  "latest": {
+    "version": "1.0.23",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
+    "size": "4,4 МБ",
+    "date": "2026-10-24",
+    "notes": {
+      "ru": "Звук и вибрация при открытии, курсы автоэлектрика.",
+      "kk": "Ашқанда дыбыс пен діріл, автоэлектрик курстары.",
+      "en": "Sound and vibration on open, auto electrician courses."
+    }
+  },
+  "play": "",
+  "masters": {"api": ""}
+}
