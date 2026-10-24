@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.25",
+    "version": "1.0.26",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": "4,4 МБ",
+    "size": "4,2 МБ",
     "date": "2026-10-24",
     "notes": {
-      "ru": "Звук и вибрация при открытии работают надёжнее; мастера рядом, скачивание и обновление приложения.",
-      "kk": "Ашқанда дыбыс пен діріл сенімдірек жұмыс істейді; жақын шеберлер, қосымшаны жүктеп алу және жаңарту.",
-      "en": "More reliable sound and vibration on open; mechanics nearby, app download and updates."
+      "ru": "Новый звук при открытии, вибрация при нажатии и прокрутке, жест «Назад» возвращает на прошлый экран, компактное меню, жалобы и скрытие в «Мастерах рядом».",
+      "kk": "Ашқанда жаңа дыбыс, басқанда және айналдырғанда діріл, «Артқа» қимылы алдыңғы экранға қайтарады, ықшам мәзір, «Жақын шеберлерде» шағым және жасыру.",
+      "en": "New sound on open, vibration on tap and scroll, the Back gesture returns to the previous screen, a compact menu, reporting and hiding in Mechanics nearby."
     }
   },
   "play": "",
