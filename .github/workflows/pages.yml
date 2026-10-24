@@ -1,4 +1,4 @@
-# Публикует папку www/ на https://oleg1211110-ops.github.io/avtoelektrik-app/
+# Публикует папку www/ на https://help.avtoelektrik-pro.kz/ (свой адрес; oleg1211110-ops.github.io/avtoelektrik-app/ переадресует сюда)
 # (страница приложения, окно-консультант widget.js, данные data/db.json)
 name: Сайт
 
