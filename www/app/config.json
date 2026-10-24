@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.29",
+    "version": "1.0.30",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
     "size": "4,6 МБ",
     "date": "2026-10-25",
     "notes": {
-      "ru": "Мягче вибрация при прокрутке; в помощнике — бесплатный урок по вашей неисправности; тренажёр «Читаем схему»; в разделе ЭБУ — схема подключения блока на столе.",
-      "kk": "Айналдырғанда діріл жұмсағырақ; көмекшіде — ақауыңыз бойынша тегін сабақ; «Схеманы оқимыз» жаттықтырғышы; ЭБУ бөлімінде — блокты үстелде қосу схемасы.",
-      "en": "Softer vibration on scroll; the assistant now suggests a free lesson for your fault; a “Reading a diagram” trainer; a bench connection diagram in the ECU section."
+      "ru": "Вибрация мягче; в помощнике — бесплатный урок по вашей неисправности; тренажёр «Читаем схему»; в разделе ЭБУ — схема подключения блока на столе.",
+      "kk": "Діріл жұмсағырақ; көмекшіде — ақауыңыз бойынша тегін сабақ; «Схеманы оқимыз» жаттықтырғышы; ЭБУ бөлімінде — блокты үстелде қосу схемасы.",
+      "en": "Softer vibration; the assistant now suggests a free lesson for your fault; a “Reading a diagram” trainer; a bench connection diagram in the ECU section."
     }
   },
   "play": "",
