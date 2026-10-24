@@ -1,5 +1,5 @@
 /* Офлайн-кэш приложения. Версия подставляется при сборке (tools/build.py). */
-const VERSION = 'ao-71c15be056';
+const VERSION = 'ao-0f2b9a38be';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
   'i18n/ru.json', 'i18n/en.json', 'i18n/kk.json',
