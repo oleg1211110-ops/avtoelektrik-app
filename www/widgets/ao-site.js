@@ -1,40 +1,47 @@
 /* Интерактивные анимации для сайта avtoelektrik-pro.kz (Тильда, блок T123).
-   Вставка: <div class="ao-w" data-ao="car"></div><script src="https://help.avtoelektrik-pro.kz/widgets/ao-site.js" defer></script>
-   © АвтоЭлектрик Олег · AVTOELEKTRIK-PRO.KZ */
+   Вставка на страницу:  <div class="ao-w" data-ao="car"></div><script src="https://help.avtoelektrik-pro.kz/widgets/ao-site.js" defer></script>
+   Каждая анимация — свой файл w-<имя>.js, подгружается сам. © АвтоЭлектрик Олег · AVTOELEKTRIK-PRO.KZ */
 (function(){
 if (window.AO_SITE) { window.AO_SITE.mount(); return; }
-var CSS = ".ao-w{display:block}.ao-pad{padding:28px 16px}\n.aoh{--o:#FFA500;--k:#111;--w:#fff;--g:#9AA3AD;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:var(--w);background:var(--k);border-radius:24px;max-width:1160px;margin:0 auto;padding:clamp(18px,3vw,36px);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center}\n.aoh *{box-sizing:border-box}\n.aoh h2{margin:0 0 8px;font-size:clamp(24px,3.4vw,40px);line-height:1.15;font-weight:600;color:var(--w)}\n.aoh .sub{margin:0 0 16px;color:#C9CED4;font-size:16px;line-height:1.45}\n.aoh svg{display:block;width:100%;height:auto;-webkit-tap-highlight-color:transparent;user-select:none}\n.aoh .hs{cursor:pointer;outline:none}\n.aoh .hs circle.c{fill:var(--o);stroke:#fff;stroke-width:3;transition:r .2s}\n.aoh .hs circle.p{fill:none;stroke:var(--o);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:aohp 2.2s ease-out infinite}\n.aoh .hs text{fill:#111;font-size:15px;font-weight:700;pointer-events:none}\n.aoh .hs.on circle.c{fill:#fff;stroke:var(--o);stroke-width:4}\n.aoh .hs:focus-visible circle.c{stroke:#4FC3F7;stroke-width:4}\n@keyframes aohp{0%{opacity:.9;transform:scale(.8)}80%,100%{opacity:0;transform:scale(2.2)}}\n.aoh .lcd{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#B9CBA0;color:#1B2414;border-radius:10px;padding:8px 12px;font-family:Menlo,Consolas,'Courier New',monospace;font-weight:700;font-size:14px;margin-top:10px;overflow:hidden;white-space:nowrap}\n.aoh .lcd .codes{overflow:hidden;flex:1;min-width:0}\n.aoh .lcd .codes span{display:inline-block;padding-left:100%;animation:aohm 14s linear infinite}\n@keyframes aohm{to{transform:translateX(-100%)}}\n.aoh .card{background:#1D1D1D;border:1px solid #2E2E2E;border-radius:18px;padding:18px;min-height:250px;display:flex;flex-direction:column;gap:10px}\n.aoh .card .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--o);font-weight:700}\n.aoh .card h3{margin:0;font-size:22px;line-height:1.2;color:#fff;font-weight:600}\n.aoh .card p{margin:0;color:#D9DDE1;font-size:15.5px;line-height:1.5}\n.aoh .card .chk{margin:0;padding-left:20px;color:#D9DDE1;font-size:15px;line-height:1.45}\n.aoh .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}\n.aoh .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid transparent;font-family:inherit}\n.aoh .btn.o{background:var(--o);color:#111}\n.aoh .btn.w{border-color:#fff;color:#fff}\n.aoh .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}\n.aoh .tabs button{font:inherit;font-size:13px;font-weight:600;color:#fff;background:#222;border:1px solid #3A3A3A;border-radius:8px;padding:7px 10px;cursor:pointer}\n.aoh .tabs button[aria-pressed=\"true\"]{background:var(--o);border-color:var(--o);color:#111}\n@media (max-width:820px){.aoh{grid-template-columns:minmax(0,1fr)}}\n@media (prefers-reduced-motion:reduce){.aoh .hs circle.p,.aoh .lcd .codes span{animation:none}}";
-var W = {};
-W.car = {html: "<div class=\"aoh\"><div>\n  <h2>Что случилось с машиной?</h2>\n  <p class=\"sub\">Нажмите на узел — покажу, что обычно ломается и что проверит мастер.</p>\n  <svg viewBox=\"0 0 640 300\" role=\"img\" aria-label=\"Машина с отмеченными узлами: аккумулятор, стартер, генератор, двигатель, фары, блок управления\">\n    <path d=\"M40 210 C40 182 58 170 92 164 L168 152 C196 118 232 94 300 90 L410 90 C452 90 486 112 516 150 L572 160 C600 166 612 184 612 210 L612 222 L40 222 Z\" fill=\"#2B2B2B\" stroke=\"#4A4A4A\" stroke-width=\"3\"/>\n    <path d=\"M206 150 C228 120 256 104 300 102 L352 102 L352 150 Z\" fill=\"#3B4A57\"/><path d=\"M366 102 L408 102 C440 102 466 120 488 150 L366 150 Z\" fill=\"#3B4A57\"/>\n    <path d=\"M44 206 h22\" stroke=\"#FFD54F\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M596 196 h16\" stroke=\"#E53935\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n    <g><circle cx=\"150\" cy=\"222\" r=\"40\" fill=\"#151515\" stroke=\"#555\" stroke-width=\"5\"/><circle cx=\"150\" cy=\"222\" r=\"16\" fill=\"#777\"/></g>\n    <g><circle cx=\"500\" cy=\"222\" r=\"40\" fill=\"#151515\" stroke=\"#555\" stroke-width=\"5\"/><circle cx=\"500\" cy=\"222\" r=\"16\" fill=\"#777\"/></g>\n    <path d=\"M60 262 H600\" stroke=\"#2E2E2E\" stroke-width=\"3\"/>\n    <g class=\"hs\" data-k=\"bat\" tabindex=\"0\" role=\"button\" aria-label=\"Аккумулятор\"><circle class=\"p\" cx=\"118\" cy=\"150\" r=\"14\"/><circle class=\"c\" cx=\"118\" cy=\"150\" r=\"14\"/><text x=\"118\" y=\"155\" text-anchor=\"middle\">1</text></g>\n    <g class=\"hs\" data-k=\"st\" tabindex=\"0\" role=\"button\" aria-label=\"Стартер\"><circle class=\"p\" cx=\"228\" cy=\"204\" r=\"14\"/><circle class=\"c\" cx=\"228\" cy=\"204\" r=\"14\"/><text x=\"228\" y=\"209\" text-anchor=\"middle\">2</text></g>\n    <g class=\"hs\" data-k=\"gen\" tabindex=\"0\" role=\"button\" aria-label=\"Генератор\"><circle class=\"p\" cx=\"80\" cy=\"176\" r=\"14\"/><circle class=\"c\" cx=\"80\" cy=\"176\" r=\"14\"/><text x=\"80\" y=\"181\" text-anchor=\"middle\">3</text></g>\n    <g class=\"hs\" data-k=\"eng\" tabindex=\"0\" role=\"button\" aria-label=\"Двигатель и датчики\"><circle class=\"p\" cx=\"174\" cy=\"166\" r=\"14\"/><circle class=\"c\" cx=\"174\" cy=\"166\" r=\"14\"/><text x=\"174\" y=\"171\" text-anchor=\"middle\">4</text></g>\n    <g class=\"hs\" data-k=\"light\" tabindex=\"0\" role=\"button\" aria-label=\"Свет\"><circle class=\"p\" cx=\"40\" cy=\"194\" r=\"14\"/><circle class=\"c\" cx=\"40\" cy=\"194\" r=\"14\"/><text x=\"40\" y=\"199\" text-anchor=\"middle\">5</text></g>\n    <g class=\"hs\" data-k=\"ecu\" tabindex=\"0\" role=\"button\" aria-label=\"Блоки управления и проводка\"><circle class=\"p\" cx=\"330\" cy=\"170\" r=\"14\"/><circle class=\"c\" cx=\"330\" cy=\"170\" r=\"14\"/><text x=\"330\" y=\"175\" text-anchor=\"middle\">6</text></g>\n  </svg>\n  <div class=\"lcd\" aria-hidden=\"true\"><span>SCAN</span><div class=\"codes\"><span>P0301 · P0562 · U0100 · P0171 · B1318 · P0335 · U0121 · P0700 · C1201</span></div><span class=\"v\">14.2 V</span></div>\n  <div class=\"tabs\" role=\"group\" aria-label=\"Узлы\"></div>\n</div>\n<div class=\"card\" aria-live=\"polite\">\n  <span class=\"k\"></span><h3></h3><p class=\"t\"></p><ul class=\"chk\"></ul>\n  <div class=\"btns\"><a class=\"btn o\" href=\"tel:+77011211110\">Позвонить мастеру</a><a class=\"btn w wa\" href=\"https://wa.me/77011211110\" target=\"_blank\" rel=\"noopener\">Написать в WhatsApp</a></div>\n</div></div>", init: function(R){
-var D={
- bat:{n:'Аккумулятор',h:'Утром не заводится, стартер еле крутит',t:'Чаще всего разряжен или изношен аккумулятор, окислены клеммы, или его ночью сажает утечка тока.',c:['Проверка АКБ под нагрузкой','Замер зарядки генератора','Поиск утечки тока']},
- st:{n:'Стартер',h:'Щелчок — и тишина',t:'Слабый контакт на клеммах, реле или втягивающее реле стартера, износ щёток, плохая масса.',c:['Замер напряжения при прокрутке','Проверка цепи управления стартером','Ремонт или замена стартера']},
- gen:{n:'Генератор',h:'Горит значок аккумулятора, тускнеют фары',t:'Генератор не заряжает: ремень, регулятор напряжения, диодный мост, проводка.',c:['Замер напряжения на холостых и под нагрузкой','Проверка регулятора и диодов','Ремонт генератора']},
- eng:{n:'Двигатель и датчики',h:'Горит Check Engine, троит, глохнет',t:'Нужна компьютерная диагностика: коды ошибок, живые данные датчиков, проверка проводки и разъёмов.',c:['Компьютерная диагностика сканером','Проверка датчиков и форсунок','Поиск обрыва и окисла в проводке']},
- light:{n:'Свет',h:'Не горят фары, поворотники или стоп-сигналы',t:'Предохранители, реле, лампы, разъёмы, проводка или блок кузова.',c:['Проверка предохранителей и реле','Поиск обрыва в цепи','Подключение доп. света правильно']},
- ecu:{n:'Блоки управления',h:'Блок не выходит на связь, сгорел после воды или прикуривания',t:'Ремонт ЭБУ на столе, восстановление питания и масс, проводки и разъёмов.',c:['Проверка питания и масс блока','Ремонт ЭБУ','Восстановление проводки']}};
-var keys=Object.keys(D),cur=null,used=false,tabs=R.querySelector('.tabs');
-tabs.innerHTML=keys.map(function(k,i){return '<button type="button" data-k="'+k+'" aria-pressed="false">'+(i+1)+'. '+D[k].n+'</button>'}).join('');
-function show(k){cur=k;var d=D[k];R.querySelector('.card .k').textContent=d.n;R.querySelector('.card h3').textContent=d.h;R.querySelector('.card .t').textContent=d.t;
- R.querySelector('.card .chk').innerHTML=d.c.map(function(x){return '<li>'+x+'</li>'}).join('');
- R.querySelector('.card .wa').href='https://wa.me/77011211110?text='+encodeURIComponent('Здравствуйте, Олег! Вопрос по машине: '+d.n.toLowerCase()+' — '+d.h.toLowerCase()+'.');
- R.querySelectorAll('[data-k]').forEach(function(e){var on=e.getAttribute('data-k')===k;e.classList.toggle('on',on);if(e.tagName==='BUTTON')e.setAttribute('aria-pressed',on?'true':'false')});}
-function pick(e){var t=e.target.closest('[data-k]');if(!t)return;used=true;show(t.getAttribute('data-k'));try{if(navigator.vibrate)navigator.vibrate(15)}catch(x){}}
-R.addEventListener('click',pick);R.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.closest('.hs')){e.preventDefault();pick(e)}});
-show('bat');
-var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,vis=false;
-if('IntersectionObserver'in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(R);
-if(!reduce)setInterval(function(){if(used||!vis||document.hidden)return;var i=(keys.indexOf(cur)+1)%keys.length;show(keys[i])},3500);
-var v=R.querySelector('.lcd .v'),vv=[14.2,14.1,13.9,14.3,12.4,14.2];var j=0;if(!reduce)setInterval(function(){if(!vis)return;j=(j+1)%vv.length;v.textContent=vv[j].toFixed(1)+' V'},1600);
-}};
+var VER = '1';
+var cur = document.currentScript && document.currentScript.src || 'https://help.avtoelektrik-pro.kz/widgets/ao-site.js';
+var BASE = cur.replace(/[^\/]*$/, '');
+var W = {}, loading = {};
+/* общий стиль: чёрная карточка, оранжевый акцент, шрифт Arial — как на avtoelektrik-pro.kz */
+var CSS = '.ao-w{display:block}.ao-pad{padding:28px 16px}' +
+'.aox{--o:#FFA500;--k:#111;--w:#fff;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;color:#fff;background:#111;border-radius:24px;max-width:1160px;margin:0 auto;padding:clamp(18px,3vw,36px);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center}' +
+'.aox *{box-sizing:border-box}.aox h2{margin:0 0 8px;font-size:clamp(24px,3.4vw,40px);line-height:1.15;font-weight:600;color:#fff}' +
+'.aox .sub{margin:0 0 16px;color:#C9CED4;font-size:16px;line-height:1.45}.aox svg{display:block;width:100%;height:auto;-webkit-tap-highlight-color:transparent;user-select:none}' +
+'.aox .card{background:#1D1D1D;border:1px solid #2E2E2E;border-radius:18px;padding:18px;min-height:230px;display:flex;flex-direction:column;gap:10px}' +
+'.aox .card .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#FFA500;font-weight:700}.aox .card h3{margin:0;font-size:22px;line-height:1.2;color:#fff;font-weight:600}' +
+'.aox .card p{margin:0;color:#D9DDE1;font-size:15.5px;line-height:1.5}.aox .card ul{margin:0;padding-left:20px;color:#D9DDE1;font-size:15px;line-height:1.45}' +
+'.aox .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}.aox .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer}' +
+'.aox .btn.o{background:#FFA500;color:#111}.aox .btn.w{border-color:#fff;color:#fff;background:transparent}' +
+'.aox .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.aox .tabs button,.aox .chip{font:inherit;font-size:13px;font-weight:600;color:#fff;background:#222;border:1px solid #3A3A3A;border-radius:8px;padding:7px 10px;cursor:pointer}' +
+'.aox .tabs button[aria-pressed="true"],.aox .chip[aria-pressed="true"]{background:#FFA500;border-color:#FFA500;color:#111}' +
+'.aox .lcd{background:#B9CBA0;color:#1B2414;border-radius:10px;padding:8px 12px;font-family:Menlo,Consolas,"Courier New",monospace;font-weight:700;font-size:14px}' +
+'.aox button:focus-visible,.aox a:focus-visible,.aox [tabindex]:focus-visible{outline:3px solid #4FC3F7;outline-offset:2px}' +
+'@media (max-width:820px){.aox{grid-template-columns:minmax(0,1fr)}}';
+function css(id, text){ if (!text || document.getElementById(id)) return; var st = document.createElement('style'); st.id = id; st.textContent = text; document.head.appendChild(st); }
+/* общие помощники для анимаций */
+var U = {
+  reduce: !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches),
+  /* следит, виден ли блок: анимации и автопоказ работают только на экране */
+  seen: function(el, cb){ if (!('IntersectionObserver' in window)) { cb(true); return; } new IntersectionObserver(function(es){ cb(es[0].isIntersecting); }, {threshold: 0.2}).observe(el); },
+  wa: function(text){ return 'https://wa.me/77011211110?text=' + encodeURIComponent(text); },
+  tel: 'tel:+77011211110',
+  buzz: function(ms){ try { if (navigator.vibrate) navigator.vibrate(ms || 12); } catch (e) {} },
+  ctas: function(waText){ return '<div class="btns"><a class="btn o" href="tel:+77011211110">Позвонить мастеру</a><a class="btn w" href="' + 'https://wa.me/77011211110?text=' + encodeURIComponent(waText || 'Здравствуйте, Олег!') + '" target="_blank" rel="noopener">Написать в WhatsApp</a></div>'; }
+};
 function mount(){
-  if (!document.getElementById('ao-site-css')){ var st = document.createElement('style'); st.id = 'ao-site-css'; st.textContent = CSS; document.head.appendChild(st); }
+  css('ao-site-css', CSS);
   document.querySelectorAll('.ao-w[data-ao]').forEach(function(el){
-    if (el.dataset.aoOn) return; var w = W[el.dataset.ao]; if (!w) return; el.dataset.aoOn = '1';
-    el.innerHTML = '<div class="ao-pad">' + w.html + '</div>';
-    try { w.init(el.querySelector('.ao-pad > *')); } catch (e) {}
+    if (el.dataset.aoOn) return;
+    var n = el.dataset.ao, w = W[n];
+    if (w){ el.dataset.aoOn = '1'; css('ao-css-' + n, w.css); el.innerHTML = '<div class="ao-pad">' + w.html + '</div>'; try { w.init(el.querySelector('.ao-pad > *'), U, el.dataset); } catch (e) { if (window.console) console.warn('ao-site', n, e); } }
+    else if (!loading[n] && /^[a-z0-9-]+$/.test(n)){ loading[n] = 1; var s = document.createElement('script'); s.src = BASE + 'w-' + n + '.js?v=' + VER; s.defer = true; document.head.appendChild(s); }
   });
 }
-window.AO_SITE = {mount: mount, W: W};
+window.AO_SITE = {mount: mount, W: W, U: U, reg: function(name, def){ W[name] = def; mount(); }};
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
 })();
