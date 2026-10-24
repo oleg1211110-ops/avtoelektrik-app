@@ -123,7 +123,8 @@ const SCHEMA = [
   'CREATE TABLE IF NOT EXISTS settings (k TEXT PRIMARY KEY, v TEXT NOT NULL)',
   'CREATE TABLE IF NOT EXISTS reports (id INTEGER PRIMARY KEY AUTOINCREMENT, master TEXT NOT NULL, review INTEGER, reason TEXT NOT NULL, text TEXT NOT NULL DEFAULT \'\', device TEXT NOT NULL DEFAULT \'\', created INTEGER NOT NULL, done INTEGER NOT NULL DEFAULT 0)',
   'CREATE INDEX IF NOT EXISTS reports_open ON reports(done, created)',
-  'CREATE TABLE IF NOT EXISTS codes (code TEXT PRIMARY KEY, product TEXT NOT NULL, note TEXT NOT NULL DEFAULT \'\', devices TEXT NOT NULL DEFAULT \'[]\', max_devices INTEGER NOT NULL DEFAULT 3, revoked INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL, used INTEGER)'
+  'CREATE TABLE IF NOT EXISTS codes (code TEXT PRIMARY KEY, product TEXT NOT NULL, note TEXT NOT NULL DEFAULT \'\', devices TEXT NOT NULL DEFAULT \'[]\', max_devices INTEGER NOT NULL DEFAULT 3, revoked INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL, used INTEGER)',
+  'CREATE TABLE IF NOT EXISTS certs (id TEXT PRIMARY KEY, code TEXT NOT NULL, name TEXT NOT NULL, score INTEGER NOT NULL, total INTEGER NOT NULL, lessons INTEGER NOT NULL, lang TEXT NOT NULL DEFAULT \'ru\', created INTEGER NOT NULL)'
 ];
 let ready = null;
 function ensureDb(env){
@@ -197,6 +198,11 @@ const CODE_ABC = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const normCode = c => String(c || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 function newCode(){ const r = rnd(10); return Array.from(r, x => CODE_ABC[x % CODE_ABC.length]).join(''); }
 const fmtCode = c => c.slice(0, 5) + '-' + c.slice(5);
+/* сколько кодов курса выдано (не отозванных) — для стартовой цены «первым 20 покупателям» */
+async function apiCourseInfo(req, env){
+  const r = await env.DB.prepare("SELECT COUNT(*) AS n FROM codes WHERE product = 'course-pro' AND revoked = 0").first();
+  return json(req, env, {ok: true, sold: r ? r.n : 0});
+}
 async function apiUnlock(req, env){
   const b = await req.json().catch(() => null);
   if (!b) return fail(req, env, 'bad_request');
@@ -212,6 +218,95 @@ async function apiUnlock(req, env){
     await env.DB.prepare('UPDATE codes SET devices = ?, used = COALESCE(used, ?) WHERE code = ?').bind(JSON.stringify(devs), now(), c.code).run();
   }
   return json(req, env, {ok: true, product: c.product});
+}
+/* ---------- сертификат о прохождении курса (после итогового теста) ---------- */
+const CERT_ABC = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+function certId(){ const r = crypto.getRandomValues(new Uint8Array(6)); return 'AE' + String(new Date().getUTCFullYear()).slice(2) + '-' + Array.from(r, x => CERT_ABC[x % CERT_ABC.length]).join(''); }
+async function apiCert(req, env, base){
+  const b = await req.json().catch(() => null);
+  if (!b) return fail(req, env, 'bad_request');
+  const dev = String(b.device || '');
+  if (!/^w?[0-9a-f]{32}$/.test(dev)) return fail(req, env, 'device');
+  if (await limited(req, env, 'cert', 10)) return fail(req, env, 'limit', 429);
+  const c = await env.DB.prepare('SELECT * FROM codes WHERE code = ?').bind(normCode(b.code)).first();
+  if (!c || c.revoked || c.product !== 'course-pro') return fail(req, env, 'bad_code');
+  let devs = []; try { devs = JSON.parse(c.devices || '[]'); } catch (e) {}
+  if (!devs.includes(dev)) return fail(req, env, 'bad_code');
+  const name = oneLine(b.name, 60);
+  if (name.length < 3 || !/\p{L}/u.test(name)) return fail(req, env, 'name');
+  const total = Math.round(Number(b.total)), score = Math.round(Number(b.score)), lessons = Math.round(Number(b.lessons));
+  if (!(total >= 10 && total <= 40 && score >= Math.ceil(total * 0.8) && score <= total && lessons >= 1 && lessons <= 100)) return fail(req, env, 'score');
+  const lang = ['ru', 'kk', 'en'].includes(b.lang) ? b.lang : 'ru';
+  const old = await env.DB.prepare('SELECT id FROM certs WHERE code = ? AND name = ?').bind(c.code, name).first();
+  if (old) return json(req, env, {ok: true, id: old.id, url: base + '/cert/' + old.id});
+  let id = certId();
+  for (let i = 0; i < 5 && await env.DB.prepare('SELECT 1 FROM certs WHERE id = ?').bind(id).first(); i++) id = certId();
+  await env.DB.prepare('INSERT INTO certs (id, code, name, score, total, lessons, lang, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)').bind(id, c.code, name, score, total, lessons, lang, now()).run();
+  return json(req, env, {ok: true, id, url: base + '/cert/' + id});
+}
+const CERT_T = {
+  ru: {doc: 'Сертификат', sub: 'о прохождении курса', course: '«Курсы автоэлектрика» — уровень «Для будущих автоэлектриков»',
+       body: (n, l, s, t) => 'Настоящий сертификат подтверждает, что ' + n + ' завершил(а) курс из ' + l + ' уроков и сдал(а) итоговый тест: ' + s + ' из ' + t + ' правильных ответов.',
+       date: 'Дата выдачи', num: 'Номер', who: 'Олег Дмитриев — автоэлектрик, стаж 26 лет', ok: 'Сертификат действителен: проверено по номеру в базе АвтоЭлектрик PRO.',
+       note: 'Сертификат подтверждает прохождение курса и не является документом об образовании государственного образца.', print: 'Сохранить PDF / печать', share: 'Отправить в WhatsApp', none: 'Сертификат с таким номером не найден.'},
+  kk: {doc: 'Сертификат', sub: 'курсты өткені туралы', course: '«Автоэлектрик курстары» — «Болашақ автоэлектриктерге арналған» деңгейі',
+       body: (n, l, s, t) => 'Осы сертификат ' + n + ' ' + l + ' сабақтан тұратын курсты аяқтап, қорытынды тестті тапсырғанын растайды: ' + t + ' сұрақтың ' + s + '-іне дұрыс жауап берді.',
+       date: 'Берілген күні', num: 'Нөмірі', who: 'Олег Дмитриев — автоэлектрик, 26 жылдық тәжірибе', ok: 'Сертификат жарамды: АвтоЭлектрик PRO базасында нөмірі бойынша тексерілді.',
+       note: 'Сертификат курстың өтілгенін растайды және мемлекеттік үлгідегі білім туралы құжат болып табылмайды.', print: 'PDF сақтау / басып шығару', share: 'WhatsApp-қа жіберу', none: 'Мұндай нөмірлі сертификат табылмады.'},
+  en: {doc: 'Certificate', sub: 'of course completion', course: '“Auto electrician courses” — level “For future auto electricians”',
+       body: (n, l, s, t) => 'This certifies that ' + n + ' has completed the course of ' + l + ' lessons and passed the final test with ' + s + ' of ' + t + ' correct answers.',
+       date: 'Date of issue', num: 'Number', who: 'Oleg Dmitriev — auto electrician, 26 years of experience', ok: 'This certificate is valid: checked by its number in the AvtoElektrik PRO database.',
+       note: 'This certificate confirms completion of the course and is not a state-recognised educational document.', print: 'Save as PDF / print', share: 'Send via WhatsApp', none: 'No certificate with this number was found.'}
+};
+async function certPage(req, env, url, base, id){
+  const c = await env.DB.prepare('SELECT * FROM certs WHERE id = ?').bind(id).first();
+  const qlang = url.searchParams.get('lang');
+  const L = ['ru', 'kk', 'en'].includes(qlang) ? qlang : (c ? c.lang : pickLang(req, url));
+  const T = CERT_T[L] || CERT_T.ru;
+  if (!c) return html('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(T.doc) + '</title><body style="font-family:system-ui;padding:40px;text-align:center"><h1>' + esc(T.none) + '</h1></body>', 404);
+  const d = new Date(c.created + 5 * 3600e3), date = String(d.getUTCDate()).padStart(2, '0') + '.' + String(d.getUTCMonth() + 1).padStart(2, '0') + '.' + d.getUTCFullYear();
+  const link = base + '/cert/' + c.id, nameB = '<b class="n">' + esc(c.name) + '</b>';
+  const wa = 'https://wa.me/?text=' + encodeURIComponent(T.doc + ' ' + T.sub + ' — ' + c.name + '\n' + link);
+  return html(`<!doctype html><html lang="${L}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(T.doc)} ${esc(c.id)} — ${esc(c.name)}</title>
+<meta property="og:title" content="${esc(T.doc + ' ' + T.sub + ' — ' + c.name)}"><meta property="og:description" content="${esc(T.course)}"><meta property="og:url" content="${esc(link)}">
+<style>
+@page{size:A4 landscape;margin:0}
+*{box-sizing:border-box}body{margin:0;background:#E7EBEF;font:16px/1.5 'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#14202B}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 40px}
+.cert{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -25px rgba(20,32,43,.5);aspect-ratio:297/210;display:flex;flex-direction:column}
+.st{display:flex;height:10px}.st i{flex:1}
+.in{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4% 7%;border:3px solid #F2A900;margin:3%;border-radius:12px;gap:1.2vmin}
+.logo{width:64px;height:64px;border-radius:50%;background:#F2A900;display:grid;place-items:center}
+h1{margin:0;font-size:clamp(28px,5vw,52px);letter-spacing:.06em;text-transform:uppercase}
+.sub{margin:0;color:#55636F;font-size:clamp(14px,2vw,20px)}
+.course{margin:0;font-weight:700;font-size:clamp(14px,2.2vw,22px)}
+.body{margin:0;max-width:720px;font-size:clamp(13px,1.9vw,19px)}
+.n{display:block;font-size:clamp(22px,4vw,40px);margin:.3em 0;color:#14202B}
+.meta{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;color:#55636F;font-size:clamp(12px,1.6vw,15px)}
+.meta b{color:#14202B}
+.who{margin:0;font-weight:600}
+.note{margin:0;color:#7A8792;font-size:clamp(10px,1.3vw,12px)}
+.ok{display:flex;gap:10px;align-items:center;background:#DDF0DE;color:#1F5E23;border-radius:12px;padding:10px 14px;margin:16px 0 0;font-weight:600}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btns a,.btns button{display:inline-flex;align-items:center;min-height:46px;padding:10px 18px;border-radius:12px;border:0;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.p{background:#F2A900;color:#1C1400}.w{background:#1FA855;color:#fff}
+@media (max-width:700px){.cert{aspect-ratio:auto}.in{margin:12px;padding:22px 14px;gap:10px}}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}.cert{box-shadow:none;border-radius:0;width:297mm;height:210mm;aspect-ratio:auto}.ok,.btns{display:none}}
+</style></head><body><div class="wrap">
+<div class="cert"><div class="st"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<div class="in">
+<div class="logo"><svg width="38" height="38" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2" stroke="#1C1400" stroke-width="2.6"/><path d="M13.2 5.6 8.6 13h3.1l-1 5.4 4.7-7.6h-3.1z" fill="#1C1400"/></svg></div>
+<h1>${esc(T.doc)}</h1><p class="sub">${esc(T.sub)}</p>
+<p class="course">${esc(T.course)}</p>
+<p class="body">${T.body(nameB, c.lessons, c.score, c.total)}</p>
+<div class="meta"><span>${esc(T.date)}: <b>${date}</b></span><span>${esc(T.num)}: <b>${esc(c.id)}</b></span></div>
+<p class="who">${esc(T.who)} · AVTOELEKTRIK-PRO.KZ</p>
+<p class="note">${esc(T.note)}</p>
+</div></div>
+<p class="ok">✓ ${esc(T.ok)}</p>
+<div class="btns"><button class="p" onclick="window.print()">${esc(T.print)}</button><a class="w" href="${esc(wa)}" target="_blank" rel="noopener">${esc(T.share)}</a></div>
+</div></body></html>`, 200, {'cache-control': 'public, max-age=300'});
 }
 const REASONS = ['spam', 'offensive', 'fake', 'wrong', 'illegal', 'other'];
 async function apiReport(req, env){
@@ -564,7 +659,7 @@ function enter(){api("/api/admin/list?status=pending").then(function(j){if(j.ok)
 document.getElementById("go").onclick=function(){K=document.getElementById("key").value.trim();enter()};
 document.getElementById("tabs").onclick=function(ev){var b=ev.target.closest("button");if(!b)return;tab=b.dataset.t;document.querySelectorAll("#tabs button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});load()};
 document.getElementById("list").onclick=function(ev){var b=ev.target.closest("button");if(!b)return;if(b.dataset.s){var note="";if(b.dataset.s==="rejected"){note=prompt("Причина отказа (увидит мастер):","")||""}api("/api/admin/set",{id:b.dataset.id,status:b.dataset.s,note:note}).then(load)}
-else if(b.dataset.del){if(confirm("Удалить карточку и все её отзывы?"))api("/api/admin/delete",{id:b.dataset.del}).then(load)}else if(b.dataset.rv){api("/api/admin/review",{id:+b.dataset.rv,hidden:+b.dataset.h}).then(load)}else if(b.dataset.done){api("/api/admin/report-done",{id:+b.dataset.done}).then(load)}else if(b.id==="cnew"){api("/api/admin/code-new",{product:"course-pro",note:document.getElementById("cnote").value}).then(function(j){if(j.ok){var t="Код доступа к курсу для будущих автоэлектриков: "+j.code+"\\nОткройте приложение АвтоЭлектрик PRO → меню → Курсы автоэлектрика → «Для будущих автоэлектриков» → урок 7 и введите код в поле «Код доступа».";var r=document.getElementById("cres");r.innerHTML="<b style=\\"font-size:20px;letter-spacing:.06em\\">"+e(j.code)+"</b><br><a class=\\"btn\\" target=\\"_blank\\" href=\\"https://wa.me/?text="+encodeURIComponent(t)+"\\">Отправить клиенту в WhatsApp</a>";setTimeout(load,60000)}})}else if(b.dataset.rev){if(confirm("Отозвать код? Уроки закроются на новых телефонах."))api("/api/admin/code-revoke",{code:b.dataset.rev}).then(load)}else if(b.dataset.unrev){api("/api/admin/code-revoke",{code:b.dataset.unrev,revoked:false}).then(load)}};
+else if(b.dataset.del){if(confirm("Удалить карточку и все её отзывы?"))api("/api/admin/delete",{id:b.dataset.del}).then(load)}else if(b.dataset.rv){api("/api/admin/review",{id:+b.dataset.rv,hidden:+b.dataset.h}).then(load)}else if(b.dataset.done){api("/api/admin/report-done",{id:+b.dataset.done}).then(load)}else if(b.id==="cnew"){api("/api/admin/code-new",{product:"course-pro",note:document.getElementById("cnote").value}).then(function(j){if(j.ok){var t="Код доступа к курсу для будущих автоэлектриков: "+j.code+"\\nОткройте приложение АвтоЭлектрик PRO → меню → Курсы автоэлектрика → «Для будущих автоэлектриков» → урок 9 и введите код в поле «Код доступа».";var r=document.getElementById("cres");r.innerHTML="<b style=\\"font-size:20px;letter-spacing:.06em\\">"+e(j.code)+"</b><br><a class=\\"btn\\" target=\\"_blank\\" href=\\"https://wa.me/?text="+encodeURIComponent(t)+"\\">Отправить клиенту в WhatsApp</a>";setTimeout(load,60000)}})}else if(b.dataset.rev){if(confirm("Отозвать код? Уроки закроются на новых телефонах."))api("/api/admin/code-revoke",{code:b.dataset.rev}).then(load)}else if(b.dataset.unrev){api("/api/admin/code-revoke",{code:b.dataset.unrev,revoked:false}).then(load)}};
 document.getElementById("sv").onclick=function(){var a=document.getElementById("nk1").value,b=document.getElementById("nk2").value,m=document.getElementById("sm");if(a.length<10){m.textContent="Нужно не меньше 10 символов";return}if(a!==b){m.textContent="Пароли не совпадают";return}fetch("/api/admin/setup",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({key:a})}).then(function(r){return r.json()}).then(function(j){if(j.ok){K=a;document.getElementById("setup").hidden=true;enter()}else m.textContent=j.error==="configured"?"Пароль уже задан — войдите":"Не получилось, попробуйте ещё раз"})};fetch("/api/admin/state").then(function(r){return r.json()}).then(function(j){if(!j.configured){document.getElementById("setup").hidden=false;return}document.getElementById("login").hidden=false;try{K=localStorage.getItem("ae.admin")||""}catch(e){}if(K)enter()})})();</script></body></html>`;
 
 /* ---------- маршруты ---------- */
@@ -580,6 +675,7 @@ export default {
       if (path === '/api/master') return await apiMaster(req, env, url, base);
       if (path === '/api/mine') return await apiMine(req, env, url, base);
       if (path === '/api/pending-count') return await apiPendingCount(req, env);
+      if (path === '/api/course-info') return await apiCourseInfo(req, env);
       if (path === '/api/admin/state') return await apiAdminState(req, env);
       if (path === '/api/admin/setup' && req.method === 'POST') return await apiAdminSetup(req, env);
       if (path.startsWith('/api/admin/')) return await apiAdmin(req, env, url, base, path);
@@ -590,11 +686,13 @@ export default {
         if (path === '/api/review') return await apiReview(req, env);
         if (path === '/api/report') return await apiReport(req, env);
         if (path === '/api/unlock') return await apiUnlock(req, env);
+        if (path === '/api/cert') return await apiCert(req, env, base);
       }
       if (path.startsWith('/api/')) return fail(req, env, 'not_found', 404);
       if (path === '/admin') return html(ADMIN_HTML, 200, {'cache-control': 'no-store'});
       let m;
       if ((m = /^\/photo\/([a-z0-9]{8})$/.exec(path))) return await photo(req, env, m[1]);
+      if ((m = /^\/cert\/(AE\d{2}-[A-Z0-9]{6})$/.exec(path))) return await certPage(req, env, url, base, m[1]);
       if ((m = /^\/qr\/([a-z0-9]{8})\.svg$/.exec(path))) return await qr(req, env, url, base, m[1]);
       if ((m = /^\/(?:m\/)?([a-z0-9]{8})$/.exec(path))) return await cardPage(req, env, url, base, m[1]);
       if (path === '/') return Response.redirect(APP_URL + '#mastera', 302);

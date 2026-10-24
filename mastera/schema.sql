@@ -75,3 +75,15 @@ CREATE TABLE IF NOT EXISTS codes (
   created INTEGER NOT NULL,
   used INTEGER
 );
+
+-- сертификаты о прохождении курса (после итогового теста; проверка по номеру на странице /cert/<номер>)
+CREATE TABLE IF NOT EXISTS certs (
+  id TEXT PRIMARY KEY,
+  code TEXT NOT NULL,
+  name TEXT NOT NULL,
+  score INTEGER NOT NULL,
+  total INTEGER NOT NULL,
+  lessons INTEGER NOT NULL,
+  lang TEXT NOT NULL DEFAULT 'ru',
+  created INTEGER NOT NULL
+);
