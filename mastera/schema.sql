@@ -50,3 +50,28 @@ CREATE TABLE IF NOT EXISTS settings (
   k TEXT PRIMARY KEY,
   v TEXT NOT NULL
 );
+
+-- жалобы на карточки и отзывы
+CREATE TABLE IF NOT EXISTS reports (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  master TEXT NOT NULL,
+  review INTEGER,
+  reason TEXT NOT NULL,
+  text TEXT NOT NULL DEFAULT '',
+  device TEXT NOT NULL DEFAULT '',
+  created INTEGER NOT NULL,
+  done INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS reports_open ON reports(done, created);
+
+-- коды доступа к платным урокам: выдаёт Олег после перевода на Kaspi; работает на max_devices телефонах
+CREATE TABLE IF NOT EXISTS codes (
+  code TEXT PRIMARY KEY,
+  product TEXT NOT NULL,
+  note TEXT NOT NULL DEFAULT '',
+  devices TEXT NOT NULL DEFAULT '[]',
+  max_devices INTEGER NOT NULL DEFAULT 3,
+  revoked INTEGER NOT NULL DEFAULT 0,
+  created INTEGER NOT NULL,
+  used INTEGER
+);

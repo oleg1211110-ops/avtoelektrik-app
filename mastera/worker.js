@@ -120,7 +120,10 @@ const SCHEMA = [
   "CREATE TABLE IF NOT EXISTS reviews ( id INTEGER PRIMARY KEY AUTOINCREMENT, master TEXT NOT NULL, device TEXT NOT NULL, name TEXT NOT NULL DEFAULT '', stars INTEGER NOT NULL, text TEXT NOT NULL DEFAULT '', hidden INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL, updated INTEGER NOT NULL, UNIQUE(master, device) )",
   'CREATE INDEX IF NOT EXISTS reviews_master ON reviews(master, hidden, created)',
   'CREATE TABLE IF NOT EXISTS hits ( k TEXT PRIMARY KEY, n INTEGER NOT NULL, exp INTEGER NOT NULL )',
-  'CREATE TABLE IF NOT EXISTS settings (k TEXT PRIMARY KEY, v TEXT NOT NULL)'
+  'CREATE TABLE IF NOT EXISTS settings (k TEXT PRIMARY KEY, v TEXT NOT NULL)',
+  'CREATE TABLE IF NOT EXISTS reports (id INTEGER PRIMARY KEY AUTOINCREMENT, master TEXT NOT NULL, review INTEGER, reason TEXT NOT NULL, text TEXT NOT NULL DEFAULT \'\', device TEXT NOT NULL DEFAULT \'\', created INTEGER NOT NULL, done INTEGER NOT NULL DEFAULT 0)',
+  'CREATE INDEX IF NOT EXISTS reports_open ON reports(done, created)',
+  'CREATE TABLE IF NOT EXISTS codes (code TEXT PRIMARY KEY, product TEXT NOT NULL, note TEXT NOT NULL DEFAULT \'\', devices TEXT NOT NULL DEFAULT \'[]\', max_devices INTEGER NOT NULL DEFAULT 3, revoked INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL, used INTEGER)'
 ];
 let ready = null;
 function ensureDb(env){
@@ -184,8 +187,45 @@ async function apiMasters(req, env, url, base){
   return json(req, env, {ok: true, masters: out}, 200, {'cache-control': 'public, max-age=30'});
 }
 async function loadReviews(env, id, all){
-  const r = await env.DB.prepare('SELECT id, name, stars, text, created, updated, hidden FROM reviews WHERE master = ?' + (all ? '' : ' AND hidden = 0') + ' ORDER BY updated DESC LIMIT 200').bind(id).all();
-  return (r.results || []).map(x => ({id: x.id, name: x.name, stars: x.stars, text: x.text, date: x.updated, hidden: !!x.hidden}));
+  const r = await env.DB.prepare('SELECT id, device, name, stars, text, created, updated, hidden FROM reviews WHERE master = ?' + (all ? '' : ' AND hidden = 0') + ' ORDER BY updated DESC LIMIT 200').bind(id).all();
+  const sl = await salt(env);
+  return Promise.all((r.results || []).map(async x => ({id: x.id, a: (await sha256hex(x.device + '|' + sl)).slice(0, 12), name: x.name, stars: x.stars, text: x.text, date: x.updated, hidden: !!x.hidden})));
+}
+/* ---------- коды доступа к платным урокам (оплата Kaspi напрямую Олегу, код выдаёт Олег на странице модерации) ---------- */
+const PRODUCTS = ['course-pro'];
+const CODE_ABC = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const normCode = c => String(c || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+function newCode(){ const r = rnd(10); return Array.from(r, x => CODE_ABC[x % CODE_ABC.length]).join(''); }
+const fmtCode = c => c.slice(0, 5) + '-' + c.slice(5);
+async function apiUnlock(req, env){
+  const b = await req.json().catch(() => null);
+  if (!b) return fail(req, env, 'bad_request');
+  const dev = String(b.device || '');
+  if (!/^w?[0-9a-f]{32}$/.test(dev)) return fail(req, env, 'device');
+  if (await limited(req, env, 'unlock', 15)) return fail(req, env, 'limit', 429);
+  const c = await env.DB.prepare('SELECT * FROM codes WHERE code = ?').bind(normCode(b.code)).first();
+  if (!c || c.revoked) return fail(req, env, 'bad_code');
+  let devs = []; try { devs = JSON.parse(c.devices || '[]'); } catch (e) {}
+  if (!devs.includes(dev)){
+    if (devs.length >= c.max_devices) return fail(req, env, 'code_devices');
+    devs.push(dev);
+    await env.DB.prepare('UPDATE codes SET devices = ?, used = COALESCE(used, ?) WHERE code = ?').bind(JSON.stringify(devs), now(), c.code).run();
+  }
+  return json(req, env, {ok: true, product: c.product});
+}
+const REASONS = ['spam', 'offensive', 'fake', 'wrong', 'illegal', 'other'];
+async function apiReport(req, env){
+  const b = await req.json().catch(() => null);
+  if (!b) return fail(req, env, 'bad_request');
+  if (b.website) return json(req, env, {ok: true});
+  const id = String(b.id || ''), reason = REASONS.includes(b.reason) ? b.reason : 'other', rv = b.review ? Number(b.review) || null : null;
+  const m = await env.DB.prepare('SELECT id FROM masters WHERE id = ?').bind(id).first();
+  if (!m) return fail(req, env, 'not_found', 404);
+  if (rv && !(await env.DB.prepare('SELECT id FROM reviews WHERE id = ? AND master = ?').bind(rv, id).first())) return fail(req, env, 'not_found', 404);
+  if (await limited(req, env, 'report', 20)) return fail(req, env, 'limit', 429);
+  const dev = /^w?[0-9a-f]{32}$/.test(String(b.device || '')) ? String(b.device) : '';
+  await env.DB.prepare('INSERT INTO reports (master, review, reason, text, device, created) VALUES (?, ?, ?, ?, ?, ?)').bind(id, rv, reason, clean(b.text, 300), dev, now()).run();
+  return json(req, env, {ok: true});
 }
 async function apiMaster(req, env, url, base){
   const id = String(url.searchParams.get('id') || '');
@@ -288,7 +328,8 @@ async function apiReview(req, env){
 }
 async function apiPendingCount(req, env){
   const r = await env.DB.prepare("SELECT COUNT(*) AS n FROM masters WHERE status = 'pending'").first();
-  return json(req, env, {ok: true, pending: r ? r.n : 0});
+  const q = await env.DB.prepare('SELECT COUNT(*) AS n FROM reports WHERE done = 0').first();
+  return json(req, env, {ok: true, pending: r ? r.n : 0, reports: q ? q.n : 0});
 }
 
 /* ---------- модерация ---------- */
@@ -321,6 +362,14 @@ async function apiAdmin(req, env, url, base, path){
     return json(req, env, {ok: true, masters: list.map(m => ({...pub(m, rt[m.id], base), status: m.status, note: m.note, updated: m.updated})),
       counts: Object.fromEntries((counts.results || []).map(x => [x.status, x.n]))});
   }
+  if (path === '/api/admin/codes'){
+    const r = await env.DB.prepare('SELECT code, product, note, devices, max_devices, revoked, created, used FROM codes ORDER BY created DESC LIMIT 500').all();
+    return json(req, env, {ok: true, codes: (r.results || []).map(x => ({...x, code: fmtCode(x.code), devices: JSON.parse(x.devices || '[]').length}))});
+  }
+  if (path === '/api/admin/reports'){
+    const r = await env.DB.prepare('SELECT p.id, p.master, p.review, p.reason, p.text, p.created, p.done, m.name AS mname, m.city AS mcity, m.status AS mstatus, v.name AS rname, v.stars AS rstars, v.text AS rtext, v.hidden AS rhidden FROM reports p LEFT JOIN masters m ON m.id = p.master LEFT JOIN reviews v ON v.id = p.review ORDER BY p.done ASC, p.created DESC LIMIT 300').all();
+    return json(req, env, {ok: true, reports: r.results || []});
+  }
   if (path === '/api/admin/reviews'){
     const r = await env.DB.prepare('SELECT r.id, r.master, r.name, r.stars, r.text, r.hidden, r.updated, m.name AS mname, m.city AS mcity FROM reviews r LEFT JOIN masters m ON m.id = r.master ORDER BY r.updated DESC LIMIT 300').all();
     return json(req, env, {ok: true, reviews: r.results || []});
@@ -331,6 +380,21 @@ async function apiAdmin(req, env, url, base, path){
     if (!['approved', 'rejected', 'pending'].includes(b.status)) return fail(req, env, 'status');
     await env.DB.prepare('UPDATE masters SET status = ?, note = ?, approved = CASE WHEN ? = \'approved\' THEN COALESCE(approved, ?) ELSE approved END WHERE id = ?')
       .bind(b.status, oneLine(b.note, 300), b.status, now(), String(b.id || '')).run();
+    return json(req, env, {ok: true});
+  }
+  if (path === '/api/admin/code-new'){
+    const product = PRODUCTS.includes(b.product) ? b.product : 'course-pro';
+    let code = newCode();
+    for (let i = 0; i < 5 && await env.DB.prepare('SELECT 1 FROM codes WHERE code = ?').bind(code).first(); i++) code = newCode();
+    await env.DB.prepare('INSERT INTO codes (code, product, note, created) VALUES (?, ?, ?, ?)').bind(code, product, oneLine(b.note, 120), now()).run();
+    return json(req, env, {ok: true, code: fmtCode(code)});
+  }
+  if (path === '/api/admin/code-revoke'){
+    await env.DB.prepare('UPDATE codes SET revoked = ? WHERE code = ?').bind(b.revoked === false ? 0 : 1, normCode(b.code)).run();
+    return json(req, env, {ok: true});
+  }
+  if (path === '/api/admin/report-done'){
+    await env.DB.prepare('UPDATE reports SET done = 1 WHERE id = ?').bind(Number(b.id) || 0).run();
     return json(req, env, {ok: true});
   }
   if (path === '/api/admin/review'){
@@ -347,21 +411,21 @@ async function apiAdmin(req, env, url, base, path){
 
 /* ---------- страницы ---------- */
 const T = {
-  ru: {brand: 'Мастера рядом', call: 'Позвонить', wa: 'WhatsApp', site: 'Сайт', map: 'На карте', reviews: 'Отзывы', none: 'Отзывов пока нет — будьте первым.',
+  ru: {brand: 'Мастера рядом', report: 'Пожаловаться', reportCard: 'Пожаловаться на карточку', rpTitle: 'Жалоба', rpReason: 'Причина', rpText: 'Подробнее (необязательно)', rpSend: 'Отправить жалобу', rpSent: 'Жалоба отправлена — Олег проверит.', rpCancel: 'Отмена', reasons: {spam: 'Спам или реклама', offensive: 'Оскорбления или угрозы', fake: 'Фальшивый отзыв', wrong: 'Неверные данные мастера', illegal: 'Незаконные услуги', other: 'Другое'}, agree: 'Я согласен с ', agreeLink: 'правилами раздела', needAgree: 'Отметьте согласие с правилами раздела.', call: 'Позвонить', wa: 'WhatsApp', site: 'Сайт', map: 'На карте', reviews: 'Отзывы', none: 'Отзывов пока нет — будьте первым.',
     leave: 'Оставить отзыв', yourName: 'Ваше имя (необязательно)', yourText: 'Ваш отзыв: что делали, как результат', send: 'Отправить', change: 'Изменить отзыв',
     thanks: 'Спасибо! Отзыв опубликован.', needStars: 'Поставьте оценку звёздами.', own: 'Нельзя оценить свою карточку.', limit: 'Слишком много отзывов сегодня. Попробуйте завтра.',
     err: 'Не получилось отправить. Проверьте интернет и попробуйте ещё раз.', qrTitle: 'QR-код карточки', qrNote: 'Покажите клиенту или распечатайте: по коду откроется эта карточка, здесь можно позвонить и оставить отзыв.',
     dl: 'Скачать QR', copy: 'Скопировать ссылку', copied: 'Ссылка скопирована', notFound: 'Карточка не найдена или ещё на проверке.',
     more: 'Мастера в других городах и помощь при поломке — в приложении «АвтоЭлектрик PRO».', open: 'Открыть приложение', place: 'Разместить свою карточку бесплатно',
     rv: ['отзыв', 'отзыва', 'отзывов'], noRating: 'пока без оценок', stars: ['Ужасно', 'Плохо', 'Нормально', 'Хорошо', 'Отлично']},
-  kk: {brand: 'Жақын шеберлер', call: 'Қоңырау шалу', wa: 'WhatsApp', site: 'Сайт', map: 'Картада', reviews: 'Пікірлер', none: 'Әзірге пікір жоқ — бірінші болыңыз.',
+  kk: {brand: 'Жақын шеберлер', report: 'Шағымдану', reportCard: 'Карточкаға шағымдану', rpTitle: 'Шағым', rpReason: 'Себебі', rpText: 'Толығырақ (міндетті емес)', rpSend: 'Шағым жіберу', rpSent: 'Шағым жіберілді — Олег тексереді.', rpCancel: 'Болдырмау', reasons: {spam: 'Спам немесе жарнама', offensive: 'Қорлау немесе қорқыту', fake: 'Жалған пікір', wrong: 'Шебер туралы қате деректер', illegal: 'Заңсыз қызметтер', other: 'Басқа'}, agree: 'Мен келісемін: ', agreeLink: 'бөлім ережелері', needAgree: 'Бөлім ережелерімен келісетініңізді белгілеңіз.', call: 'Қоңырау шалу', wa: 'WhatsApp', site: 'Сайт', map: 'Картада', reviews: 'Пікірлер', none: 'Әзірге пікір жоқ — бірінші болыңыз.',
     leave: 'Пікір қалдыру', yourName: 'Атыңыз (міндетті емес)', yourText: 'Пікіріңіз: не істелді, нәтижесі қандай', send: 'Жіберу', change: 'Пікірді өзгерту',
     thanks: 'Рақмет! Пікір жарияланды.', needStars: 'Жұлдызшамен баға қойыңыз.', own: 'Өз карточкаңызды бағалауға болмайды.', limit: 'Бүгін пікір тым көп. Ертең қайталаңыз.',
     err: 'Жіберу мүмкін болмады. Интернетті тексеріп, қайталап көріңіз.', qrTitle: 'Карточканың QR-коды', qrNote: 'Клиентке көрсетіңіз немесе басып шығарыңыз: код арқылы осы карточка ашылады, мұнда қоңырау шалып, пікір қалдыруға болады.',
     dl: 'QR жүктеу', copy: 'Сілтемені көшіру', copied: 'Сілтеме көшірілді', notFound: 'Карточка табылмады немесе әлі тексерілуде.',
     more: 'Басқа қалалардағы шеберлер және бұзылғанда көмек — «АвтоЭлектрик PRO» қосымшасында.', open: 'Қосымшаны ашу', place: 'Өз карточкаңызды тегін орналастыру',
     rv: ['пікір', 'пікір', 'пікір'], noRating: 'әзірге баға жоқ', stars: ['Өте нашар', 'Нашар', 'Орташа', 'Жақсы', 'Тамаша']},
-  en: {brand: 'Mechanics nearby', call: 'Call', wa: 'WhatsApp', site: 'Website', map: 'Map', reviews: 'Reviews', none: 'No reviews yet — be the first.',
+  en: {brand: 'Mechanics nearby', report: 'Report', reportCard: 'Report this listing', rpTitle: 'Report', rpReason: 'Reason', rpText: 'Details (optional)', rpSend: 'Send report', rpSent: 'Report sent — Oleg will review it.', rpCancel: 'Cancel', reasons: {spam: 'Spam or advertising', offensive: 'Insults or threats', fake: 'Fake review', wrong: 'Wrong listing details', illegal: 'Illegal services', other: 'Other'}, agree: 'I agree to the ', agreeLink: 'section rules', needAgree: 'Please agree to the section rules.', call: 'Call', wa: 'WhatsApp', site: 'Website', map: 'Map', reviews: 'Reviews', none: 'No reviews yet — be the first.',
     leave: 'Leave a review', yourName: 'Your name (optional)', yourText: 'Your review: what was done and how it went', send: 'Send', change: 'Edit your review',
     thanks: 'Thank you! Your review is published.', needStars: 'Please choose a star rating.', own: 'You can’t rate your own listing.', limit: 'Too many reviews today. Please try tomorrow.',
     err: 'Couldn’t send. Check your connection and try again.', qrTitle: 'Listing QR code', qrNote: 'Show it to a customer or print it: the code opens this listing, where they can call and leave a review.',
@@ -404,7 +468,10 @@ h2{font-size:18px;margin:0}.rv{border-top:1px solid var(--line);padding-top:10px
 textarea{min-height:96px;resize:vertical}.msg{font-size:15px;font-weight:600}.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
 .qr{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.qr svg{width:150px;height:150px;flex:none;border-radius:10px;border:1px solid var(--line)}.qr-t{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:8px}
 .qr-t p{margin:0;font-size:14px;color:var(--muted)}.link{font-size:14px;word-break:break-all;color:var(--muted)}.foot{text-align:center;color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:10px;align-items:center}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}`;
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lnk{align-self:flex-start;background:none;border:0;padding:4px 0;font:inherit;font-size:13px;color:var(--muted);text-decoration:underline;cursor:pointer}
+.agree{display:flex;gap:8px;align-items:flex-start;font-size:14px}.agree input{width:18px;height:18px;margin-top:2px;flex:none}.agree a{color:var(--accent-ink);font-weight:600}
+select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px}.lbl{font-size:13px;font-weight:600;color:var(--muted)}.rp-q{margin:0;color:var(--muted);font-size:14px;font-style:italic}`;
 
 function topBar(L){ return '<header class="top"><span class="logo" aria-hidden="true">⚡</span><b>АвтоЭлектрик PRO</b><span>· ' + esc(T[L].brand) + '</span></header>'; }
 function notFoundPage(L){
@@ -433,21 +500,26 @@ async function cardPage(req, env, url, base, id){
     (x.address ? '<div class="addr">' + esc(x.address) + ' · <a href="https://2gis.kz/search/' + q + '" target="_blank" rel="noopener">2ГИС</a> · <a href="https://www.google.com/maps/search/?api=1&query=' + q + '" target="_blank" rel="noopener">Google</a></div>' : '') +
     '<div class="btns"><a class="btn pri grow" href="tel:' + esc(x.phone) + '">' + esc(t.call) + ' ' + esc(x.phone) + '</a><a class="btn wa grow" href="https://wa.me/' + digits + '" target="_blank" rel="noopener">' + esc(t.wa) + '</a>' +
     (x.site ? '<a class="btn grow" href="' + esc(x.site) + '" target="_blank" rel="noopener nofollow ugc">' + esc(t.site) + '</a>' : '') + '</div></section>' +
-    '<section class="card" id="reviews"><h2>' + esc(t.reviews) + '</h2>' + (reviews.length ? reviews.map(r => '<div class="rv"><div class="rv-h"><b>' + esc(r.name || '—') + '</b><span>' + fmtDate(r.date, L) + '</span></div><span aria-label="' + r.stars + '/5">' + starStr(r.stars) + '</span>' + (r.text ? '<p>' + esc(r.text) + '</p>' : '') + '</div>').join('') : '<p>' + esc(t.none) + '</p>') + '</section>' +
+    '<section class="card" id="reviews"><h2>' + esc(t.reviews) + '</h2>' + (reviews.length ? reviews.map(r => '<div class="rv"><div class="rv-h"><b>' + esc(r.name || '—') + '</b><span>' + fmtDate(r.date, L) + '</span></div><span aria-label="' + r.stars + '/5">' + starStr(r.stars) + '</span>' + (r.text ? '<p>' + esc(r.text) + '</p>' : '') + '<button type="button" class="lnk" data-rp="' + r.id + '">' + esc(t.report) + '</button></div>').join('') : '<p>' + esc(t.none) + '</p>') + '</section>' +
     '<section class="card"><h2 id="lv">' + esc(t.leave) + '</h2><form id="f" novalidate><div class="pick" role="radiogroup" aria-labelledby="lv">' +
     [1, 2, 3, 4, 5].map(i => '<button type="button" role="radio" aria-checked="false" aria-label="' + i + ' — ' + esc(t.stars[i - 1]) + '" data-v="' + i + '">★</button>').join('') + '</div><div class="pick-l" id="pl"></div>' +
     '<input id="nm" maxlength="40" autocomplete="name" placeholder="' + esc(t.yourName) + '"><textarea id="tx" maxlength="800" placeholder="' + esc(t.yourText) + '"></textarea><input class="hp" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+    '<label class="agree"><input type="checkbox" id="ag"> <span>' + esc(t.agree) + '<a href="https://help.avtoelektrik-pro.kz/pravila.html" target="_blank" rel="noopener">' + esc(t.agreeLink) + '</a></span></label>' +
     '<button class="btn pri" type="submit" id="sb">' + esc(t.send) + '</button><div class="msg" id="mg" role="status"></div></form></section>' +
+    '<section class="card" id="rps" hidden><h2>' + esc(t.rpTitle) + '</h2><p class="rp-q" id="rpq"></p><label class="lbl" for="rpr">' + esc(t.rpReason) + '</label><select id="rpr">' + REASONS.map(k => '<option value="' + k + '">' + esc(t.reasons[k]) + '</option>').join('') + '</select><textarea id="rpt" maxlength="300" placeholder="' + esc(t.rpText) + '"></textarea><div class="btns"><button class="btn pri" type="button" id="rpgo">' + esc(t.rpSend) + '</button><button class="btn" type="button" id="rpx">' + esc(t.rpCancel) + '</button></div><div class="msg" id="rpm" role="status"></div></section>' +
     '<section class="card"><h2>' + esc(t.qrTitle) + '</h2><div class="qr">' + qrSvg(share) + '<div class="qr-t"><p>' + esc(t.qrNote) + '</p><div class="link">' + esc(share) + '</div><div class="btns"><a class="btn" href="/qr/' + id + '.svg?download=1">' + esc(t.dl) + '</a><button class="btn" type="button" id="cp">' + esc(t.copy) + '</button></div></div></div></section>' +
-    '<div class="foot"><span>' + esc(t.more) + '</span><a class="btn pri" href="' + APP_URL + '#mastera">' + esc(t.open) + '</a><a href="' + APP_URL + '#mastera-add">' + esc(t.place) + '</a></div></main>' +
-    '<script>(function(){var T=' + JSON.stringify({needStars: t.needStars, thanks: t.thanks, own: t.own, limit: t.limit, err: t.err, copied: t.copied, change: t.change, stars: t.stars}).replace(/</g, '\\u003c') + ',ID=' + JSON.stringify(id) + ',v=0;' +
+    '<div class="foot"><button type="button" class="lnk" data-rp="card">' + esc(t.reportCard) + '</button><span>' + esc(t.more) + '</span><a class="btn pri" href="' + APP_URL + '#mastera">' + esc(t.open) + '</a><a href="' + APP_URL + '#mastera-add">' + esc(t.place) + '</a></div></main>' +
+    '<script>(function(){var T=' + JSON.stringify({needStars: t.needStars, thanks: t.thanks, own: t.own, limit: t.limit, err: t.err, copied: t.copied, change: t.change, stars: t.stars, needAgree: t.needAgree, rpSent: t.rpSent, report: t.report, reportCard: t.reportCard}).replace(/</g, '\\u003c') + ',ID=' + JSON.stringify(id) + ',v=0;' +
     'function dev(){var d;try{d=localStorage.getItem("ae.dev")}catch(e){}if(!d){var a=new Uint8Array(16);crypto.getRandomValues(a);d="w"+Array.prototype.map.call(a,function(x){return("0"+x.toString(16)).slice(-2)}).join("");try{localStorage.setItem("ae.dev",d)}catch(e){}}return d}' +
     'var bs=document.querySelectorAll(".pick button"),pl=document.getElementById("pl"),mg=document.getElementById("mg");function set(n){v=n;bs.forEach(function(b){var on=+b.dataset.v<=n;b.classList.toggle("on",on);b.setAttribute("aria-checked",String(+b.dataset.v===n))});pl.textContent=n?T.stars[n-1]:""}' +
     'bs.forEach(function(b){b.addEventListener("click",function(){set(+b.dataset.v)})});' +
     'fetch("/api/master?id="+ID+"&device="+dev()).then(function(r){return r.json()}).then(function(j){if(j.mine){set(j.mine.stars);document.getElementById("nm").value=j.mine.name||"";document.getElementById("tx").value=j.mine.text||"";document.getElementById("sb").textContent=T.change}}).catch(function(){});' +
-    'document.getElementById("f").addEventListener("submit",function(e){e.preventDefault();if(!v){mg.className="msg bad";mg.textContent=T.needStars;return}mg.className="msg";mg.textContent="…";' +
+    'var ag=document.getElementById("ag");try{if(localStorage.getItem("ae.rules")==="1")ag.checked=true}catch(e){}' +
+    'document.getElementById("f").addEventListener("submit",function(e){e.preventDefault();if(!v){mg.className="msg bad";mg.textContent=T.needStars;return}if(!ag.checked){mg.className="msg bad";mg.textContent=T.needAgree;return}try{localStorage.setItem("ae.rules","1")}catch(e){}mg.className="msg";mg.textContent="…";' +
     'fetch("/api/review",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id:ID,device:dev(),stars:v,name:document.getElementById("nm").value,text:document.getElementById("tx").value,website:document.getElementById("hp").value})})' +
     '.then(function(r){return r.json()}).then(function(j){if(j.ok){mg.className="msg ok";mg.textContent=T.thanks;setTimeout(function(){location.reload()},1200)}else{mg.className="msg bad";mg.textContent=j.error==="own"?T.own:j.error==="limit"?T.limit:T.err}}).catch(function(){mg.className="msg bad";mg.textContent=T.err})});' +
+    'var rps=document.getElementById("rps"),rpm=document.getElementById("rpm"),RV=null;document.addEventListener("click",function(e){var b=e.target.closest("[data-rp]");if(!b)return;RV=b.dataset.rp==="card"?null:+b.dataset.rp;document.getElementById("rpq").textContent=RV?b.parentNode.querySelector("p")?b.parentNode.querySelector("p").textContent.slice(0,120):"":"";rpm.textContent="";rps.hidden=false;rps.scrollIntoView({behavior:"smooth",block:"center"})});' +
+    'document.getElementById("rpx").onclick=function(){rps.hidden=true};document.getElementById("rpgo").onclick=function(){rpm.className="msg";rpm.textContent="…";fetch("/api/report",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id:ID,review:RV,reason:document.getElementById("rpr").value,text:document.getElementById("rpt").value,device:dev()})}).then(function(r){return r.json()}).then(function(j){if(j.ok){rpm.className="msg ok";rpm.textContent=T.rpSent;setTimeout(function(){rps.hidden=true},1600)}else{rpm.className="msg bad";rpm.textContent=j.error==="limit"?T.limit:T.err}}).catch(function(){rpm.className="msg bad";rpm.textContent=T.err})};' +
     'document.getElementById("cp").addEventListener("click",function(){var u=' + JSON.stringify(share) + ',b=this;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){b.textContent=T.copied}).catch(function(){prompt("",u)})})})();</script>';
   const head = '<!doctype html><html lang="' + L + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">' +
     '<title>' + esc(title) + '</title><meta name="description" content="' + esc(desc) + '">' +
@@ -477,11 +549,11 @@ const ADMIN_HTML = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><
 .m{display:flex;flex-direction:column;gap:8px}.kv{font-size:14px;color:var(--muted)}.kv b{color:var(--ink);font-weight:600}.warn{background:#fbebeb;color:#7a1d16;border-radius:10px;padding:8px 10px;font-size:14px;font-weight:600}
 .rvx{border-top:1px solid var(--line);padding-top:8px}.hid{opacity:.5}</style></head><body><header class="top"><span class="logo">⚡</span><b>Мастера рядом</b><span>· модерация</span></header><main>
 <div class="card" id="setup" hidden><h2>Придумайте пароль модерации</h2><p>Первый вход: задайте пароль от 10 символов и запишите его. Дальше страница будет открываться только с ним.</p><input id="nk1" type="password" autocomplete="new-password" placeholder="Пароль"><input id="nk2" type="password" autocomplete="new-password" placeholder="Повторите пароль"><button class="btn pri" id="sv">Сохранить пароль</button><div class="msg bad" id="sm"></div></div><div class="card" id="login" hidden><h2>Пароль модерации</h2><input id="key" type="password" autocomplete="current-password"><button class="btn pri" id="go">Войти</button><div class="msg bad" id="lm"></div></div>
-<div id="app" hidden><div class="tabs" id="tabs"><button data-t="pending" aria-pressed="true">На проверке</button><button data-t="approved" aria-pressed="false">Опубликованы</button><button data-t="rejected" aria-pressed="false">Отклонены</button><button data-t="reviews" aria-pressed="false">Отзывы</button></div><div id="list" class="m"></div></div></main>
+<div id="app" hidden><div class="tabs" id="tabs"><button data-t="pending" aria-pressed="true">На проверке</button><button data-t="approved" aria-pressed="false">Опубликованы</button><button data-t="rejected" aria-pressed="false">Отклонены</button><button data-t="reviews" aria-pressed="false">Отзывы</button><button data-t="reports" aria-pressed="false">Жалобы</button><button data-t="codes" aria-pressed="false">Коды курса</button></div><div id="list" class="m"></div></div></main>
 <script>(function(){var K="",tab="pending",RES=${JSON.stringify(RESERVED)},CAT=${JSON.stringify(Object.fromEntries(Object.entries(CATS).map(([k, v]) => [k, v[0]])))};
 function e(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function api(p,b){return fetch(p,{method:b?"POST":"GET",headers:{"content-type":"application/json","x-admin-key":K},body:b?JSON.stringify(b):undefined}).then(function(r){return r.json()})}
-function load(){var L=document.getElementById("list");L.innerHTML="Загрузка…";if(tab==="reviews"){api("/api/admin/reviews").then(function(j){if(!j.ok)return out();L.innerHTML=j.reviews.length?j.reviews.map(function(r){return'<div class="card rvx'+(r.hidden?' hid':'')+'"><div class="kv"><b>'+"★".repeat(r.stars)+'</b> · '+e(r.name||"—")+' · мастер: <a href="/'+e(r.master)+'" target="_blank">'+e(r.mname||r.master)+'</a>, '+e(r.mcity||"")+' · '+new Date(r.updated).toLocaleString("ru-RU")+'</div><p>'+e(r.text)+'</p><button class="btn" data-rv="'+r.id+'" data-h="'+(r.hidden?0:1)+'">'+(r.hidden?"Показать":"Скрыть")+'</button></div>'}).join(""):"Отзывов пока нет."})}
+var RSN={spam:"Спам или реклама",offensive:"Оскорбления или угрозы",fake:"Фальшивый отзыв",wrong:"Неверные данные мастера",illegal:"Незаконные услуги",other:"Другое"};function load(){var L=document.getElementById("list");L.innerHTML="Загрузка…";if(tab==="codes"){api("/api/admin/codes").then(function(j){if(!j.ok)return out();L.innerHTML='<div class="card"><h2>Новый код доступа</h2><p class="kv">Курс для будущих автоэлектриков, уроки 7–12. Создайте код после того, как деньги пришли на Kaspi, и отправьте его клиенту в WhatsApp. Один код работает на 3 телефонах.</p><input id="cnote" placeholder="Кому: имя или телефон клиента, сумма"><button class="btn pri" id="cnew">Создать код</button><div class="msg ok" id="cres"></div></div>'+(j.codes.length?j.codes.map(function(c){return'<div class="card'+(c.revoked?' hid':'')+'"><div class="kv"><b style="font-size:18px;letter-spacing:.06em">'+e(c.code)+'</b> · '+new Date(c.created).toLocaleString("ru-RU")+'</div><div class="kv">'+e(c.note||"—")+' · телефонов: '+c.devices+' из '+c.max_devices+(c.revoked?" · отозван":"")+'</div><div class="btns">'+(c.revoked?'<button class="btn" data-unrev="'+e(c.code)+'">Вернуть</button>':'<button class="btn" data-rev="'+e(c.code)+'">Отозвать</button>')+'</div></div>'}).join(""):"<p>Кодов пока нет.</p>")});return}if(tab==="reports"){api("/api/admin/reports").then(function(j){if(!j.ok)return out();var open=j.reports.filter(function(r){return!r.done}).length;document.querySelector("[data-t=reports]").textContent="Жалобы ("+open+")";L.innerHTML=j.reports.length?j.reports.map(function(r){return'<div class="card'+(r.done?' hid':'')+'"><div class="kv"><b>'+e(RSN[r.reason]||r.reason)+'</b> · '+new Date(r.created).toLocaleString("ru-RU")+(r.done?" · закрыта":"")+'</div><div class="kv">Мастер: <a href="/'+e(r.master)+'" target="_blank">'+e(r.mname||r.master)+'</a>, '+e(r.mcity||"")+(r.mstatus&&r.mstatus!=="approved"?" ("+e(r.mstatus)+")":"")+'</div>'+(r.review?'<div class="kv">Отзыв '+"★".repeat(r.rstars||0)+" от "+e(r.rname||"—")+(r.rhidden?" · скрыт":"")+':</div><p>'+e(r.rtext||"")+'</p>':'<div class="kv">Жалоба на карточку</div>')+(r.text?'<p><i>'+e(r.text)+'</i></p>':"")+'<div class="btns">'+(r.review?'<button class="btn" data-rv="'+r.review+'" data-h="'+(r.rhidden?0:1)+'">'+(r.rhidden?"Показать отзыв":"Скрыть отзыв")+'</button>':"")+(r.done?"":'<button class="btn pri" data-done="'+r.id+'">Закрыть жалобу</button>')+'</div></div>'}).join(""):"Жалоб нет."});return}if(tab==="reviews"){api("/api/admin/reviews").then(function(j){if(!j.ok)return out();L.innerHTML=j.reviews.length?j.reviews.map(function(r){return'<div class="card rvx'+(r.hidden?' hid':'')+'"><div class="kv"><b>'+"★".repeat(r.stars)+'</b> · '+e(r.name||"—")+' · мастер: <a href="/'+e(r.master)+'" target="_blank">'+e(r.mname||r.master)+'</a>, '+e(r.mcity||"")+' · '+new Date(r.updated).toLocaleString("ru-RU")+'</div><p>'+e(r.text)+'</p><button class="btn" data-rv="'+r.id+'" data-h="'+(r.hidden?0:1)+'">'+(r.hidden?"Показать":"Скрыть")+'</button></div>'}).join(""):"Отзывов пока нет."})}
 else api("/api/admin/list?status="+tab).then(function(j){if(!j.ok)return out();var c=j.counts||{};document.querySelector('[data-t=pending]').textContent="На проверке ("+(c.pending||0)+")";
 L.innerHTML=j.masters.length?j.masters.map(function(m){var res=m.cats.filter(function(x){return RES.indexOf(x)>-1});return'<div class="card"><div class="hero">'+(m.photo?'<img class="ph" src="'+e(m.photo)+'">':'')+'<div><h2>'+e(m.name)+'</h2><div class="kv">'+e(m.city)+' · '+new Date(m.updated).toLocaleString("ru-RU")+'</div></div></div>'+
 (res.length?'<div class="warn">Направления Олега: '+res.map(function(x){return e(CAT[x])}).join(", ")+' — проверьте город: в Алматы и пригороде такие карточки не размещаем.</div>':'')+
@@ -492,7 +564,7 @@ function enter(){api("/api/admin/list?status=pending").then(function(j){if(j.ok)
 document.getElementById("go").onclick=function(){K=document.getElementById("key").value.trim();enter()};
 document.getElementById("tabs").onclick=function(ev){var b=ev.target.closest("button");if(!b)return;tab=b.dataset.t;document.querySelectorAll("#tabs button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});load()};
 document.getElementById("list").onclick=function(ev){var b=ev.target.closest("button");if(!b)return;if(b.dataset.s){var note="";if(b.dataset.s==="rejected"){note=prompt("Причина отказа (увидит мастер):","")||""}api("/api/admin/set",{id:b.dataset.id,status:b.dataset.s,note:note}).then(load)}
-else if(b.dataset.del){if(confirm("Удалить карточку и все её отзывы?"))api("/api/admin/delete",{id:b.dataset.del}).then(load)}else if(b.dataset.rv){api("/api/admin/review",{id:+b.dataset.rv,hidden:+b.dataset.h}).then(load)}};
+else if(b.dataset.del){if(confirm("Удалить карточку и все её отзывы?"))api("/api/admin/delete",{id:b.dataset.del}).then(load)}else if(b.dataset.rv){api("/api/admin/review",{id:+b.dataset.rv,hidden:+b.dataset.h}).then(load)}else if(b.dataset.done){api("/api/admin/report-done",{id:+b.dataset.done}).then(load)}else if(b.id==="cnew"){api("/api/admin/code-new",{product:"course-pro",note:document.getElementById("cnote").value}).then(function(j){if(j.ok){var t="Код доступа к курсу для будущих автоэлектриков: "+j.code+"\\nОткройте приложение АвтоЭлектрик PRO → меню → Курсы автоэлектрика → «Для будущих автоэлектриков» → урок 7 и введите код в поле «Код доступа».";var r=document.getElementById("cres");r.innerHTML="<b style=\\"font-size:20px;letter-spacing:.06em\\">"+e(j.code)+"</b><br><a class=\\"btn\\" target=\\"_blank\\" href=\\"https://wa.me/?text="+encodeURIComponent(t)+"\\">Отправить клиенту в WhatsApp</a>";setTimeout(load,60000)}})}else if(b.dataset.rev){if(confirm("Отозвать код? Уроки закроются на новых телефонах."))api("/api/admin/code-revoke",{code:b.dataset.rev}).then(load)}else if(b.dataset.unrev){api("/api/admin/code-revoke",{code:b.dataset.unrev,revoked:false}).then(load)}};
 document.getElementById("sv").onclick=function(){var a=document.getElementById("nk1").value,b=document.getElementById("nk2").value,m=document.getElementById("sm");if(a.length<10){m.textContent="Нужно не меньше 10 символов";return}if(a!==b){m.textContent="Пароли не совпадают";return}fetch("/api/admin/setup",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({key:a})}).then(function(r){return r.json()}).then(function(j){if(j.ok){K=a;document.getElementById("setup").hidden=true;enter()}else m.textContent=j.error==="configured"?"Пароль уже задан — войдите":"Не получилось, попробуйте ещё раз"})};fetch("/api/admin/state").then(function(r){return r.json()}).then(function(j){if(!j.configured){document.getElementById("setup").hidden=false;return}document.getElementById("login").hidden=false;try{K=localStorage.getItem("ae.admin")||""}catch(e){}if(K)enter()})})();</script></body></html>`;
 
 /* ---------- маршруты ---------- */
@@ -516,6 +588,8 @@ export default {
         if (path === '/api/update') return await apiUpdate(req, env, base);
         if (path === '/api/remove') return await apiRemove(req, env);
         if (path === '/api/review') return await apiReview(req, env);
+        if (path === '/api/report') return await apiReport(req, env);
+        if (path === '/api/unlock') return await apiUnlock(req, env);
       }
       if (path.startsWith('/api/')) return fail(req, env, 'not_found', 404);
       if (path === '/admin') return html(ADMIN_HTML, 200, {'cache-control': 'no-store'});
