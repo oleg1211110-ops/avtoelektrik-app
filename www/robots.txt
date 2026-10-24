@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://help.avtoelektrik-pro.kz/sitemap.xml
