@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.24",
+    "version": "1.0.25",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
     "size": "4,4 МБ",
     "date": "2026-10-24",
     "notes": {
-      "ru": "Мастера рядом, скачивание приложения, пункт «Обновление»; звук и вибрация при открытии; курсы автоэлектрика.",
-      "kk": "Жақын шеберлер, қосымшаны жүктеп алу, «Жаңарту» тармағы; ашқанда дыбыс пен діріл; автоэлектрик курстары.",
-      "en": "Mechanics nearby, app download, “App update” item; sound and vibration on open; auto electrician courses."
+      "ru": "Звук и вибрация при открытии работают надёжнее; мастера рядом, скачивание и обновление приложения.",
+      "kk": "Ашқанда дыбыс пен діріл сенімдірек жұмыс істейді; жақын шеберлер, қосымшаны жүктеп алу және жаңарту.",
+      "en": "More reliable sound and vibration on open; mechanics nearby, app download and updates."
     }
   },
   "play": "",
