@@ -38,7 +38,10 @@ function mount(){
   document.querySelectorAll('.ao-w[data-ao]').forEach(function(el){
     if (el.dataset.aoOn) return;
     var n = el.dataset.ao, w = W[n];
-    if (w){ el.dataset.aoOn = '1'; css('ao-css-' + n, w.css); el.innerHTML = '<div class="ao-pad">' + w.html + '</div>'; try { w.init(el.querySelector('.ao-pad > *'), U, el.dataset); } catch (e) { if (window.console) console.warn('ao-site', n, e); } }
+    if (w){ el.dataset.aoOn = '1'; css('ao-css-' + n, w.css); el.innerHTML = '<div class="ao-pad">' + w.html + '</div>'; try { w.init(el.querySelector('.ao-pad > *'), U, el.dataset); } catch (e) { if (window.console) console.warn('ao-site', n, e); }
+      /* data-phone="7707…" — свой номер мастера на странице: звонок и WhatsApp из блока идут на него */
+      var ph = (el.dataset.phone || '').replace(/\D/g, '');
+      if (ph.length >= 10 && ph !== '77011211110') el.addEventListener('click', function(e){ var a = e.target && e.target.closest ? e.target.closest('a[href]') : null; if (a) a.setAttribute('href', a.getAttribute('href').replace('wa.me/77011211110', 'wa.me/' + ph).replace('tel:+77011211110', 'tel:+' + ph)); }, true); }
     else if (!loading[n] && /^[a-z0-9-]+$/.test(n)){ loading[n] = 1; var s = document.createElement('script'); s.src = BASE + 'w-' + n + '.js?v=' + VER; s.defer = true; document.head.appendChild(s); }
   });
 }
