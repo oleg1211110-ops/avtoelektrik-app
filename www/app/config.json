@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.35",
+    "version": "1.0.37",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": 5259736,
+    "size": 5550552,
     "date": "2026-10-25",
     "notes": {
-      "ru": "Новый раздел «Что за лампа горит?» — 24 значка приборной панели. Распиновка OBD и что проверить, если сканер не видит машину. Презентация возможностей приложения. Проверка VIN перед покупкой: табличка, штамповка, сканер. Звук при запуске ещё тише.",
-      "kk": "Жаңа бөлім «Қандай шам жанып тұр?» — приборлар панелінің 24 белгісі. OBD түйреуіштері және сканер көлікті көрмесе не тексеру керек. Қосымша мүмкіндіктерінің таныстырылымы. Сатып алар алдында VIN тексеру: тақтайша, соғылған нөмір, сканер. Іске қосу дыбысы одан да ақырын.",
-      "en": "New “What’s that warning light?” section — 24 dashboard lights. OBD pinout and what to check when the scanner can’t see the car. A presentation of what the app can do. VIN checks before buying: plate, body stamping, scanner. Even quieter start-up sound."
+      "ru": "Новый курс «Диагностика сканером»: 15 уроков, анимированные схемы, 3 тренажёра. Анимация на каждом уроке всех курсов. Случаи из практики Олега в ответах помощника. Поворотники и подсветка приборов. Проверка перед покупкой: прямолинейность на ходу и пробег по моточасам. Звук при запуске ещё тише.",
+      "kk": "Жаңа «Сканермен диагностика» курсы: 15 сабақ, анимациялы схемалар, 3 жаттықтырғыш. Барлық курстардың әр сабағында анимация. Көмекші жауаптарында Олегтің тәжірибесінен жағдайлар. Бұрылыс шамдары және аспаптар жарығы. Сатып алар алдында тексеру: жүрістегі түзулік және мотосағат бойынша жүріс. Іске қосу дыбысы одан да ақырын.",
+      "en": "New “Scan tool diagnostics” course: 15 lessons, animated diagrams, 3 trainers. Animation in every lesson of every course. Cases from Oleg’s practice in the assistant’s answers. Turn signals and instrument lights. Pre-purchase check: tracking straight and mileage by engine hours. Even quieter start-up sound."
     }
   },
   "play": "",
