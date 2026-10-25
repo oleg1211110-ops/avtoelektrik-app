@@ -116,7 +116,7 @@ function svg(){
     '<text x="186" y="203" fill="#E0E6EA" font-size="14">Всё подключено</text><text x="414" y="206" text-anchor="end" fill="#EF5350" font-size="26" font-weight="700">180 мА</text>' +
     '<path d="M186 220H414" stroke="#2E2E2E" stroke-width="1.5"/>' +
     '<g class="fuse"><rect x="186" y="234" width="20" height="12" rx="2" fill="#FFA500"/><path d="M190 234v-4M202 234v-4" stroke="#9AA3AD" stroke-width="2"/></g>' +
-    '<text x="214" y="245" fill="#C9CED4" font-size="12">сняли предохранитель сигнализации</text>' +
+    '<text x="214" y="245" fill="#C9CED4" font-size="12">сняли её предохранитель</text>' +
     '<g class="after"><text x="186" y="277" fill="#E0E6EA" font-size="14">Ток упал</text><text x="414" y="280" text-anchor="end" fill="#5CC86C" font-size="26" font-weight="700">25 мА</text></g></g>');
   s.push('</svg>');
   return s.join('');
