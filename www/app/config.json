@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.30",
+    "version": "1.0.31",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": "4,6 МБ",
+    "size": "4,8 МБ",
     "date": "2026-10-25",
     "notes": {
-      "ru": "Вибрация мягче; в помощнике — бесплатный урок по вашей неисправности; тренажёр «Читаем схему»; в разделе ЭБУ — схема подключения блока на столе.",
-      "kk": "Діріл жұмсағырақ; көмекшіде — ақауыңыз бойынша тегін сабақ; «Схеманы оқимыз» жаттықтырғышы; ЭБУ бөлімінде — блокты үстелде қосу схемасы.",
-      "en": "Softer vibration; the assistant now suggests a free lesson for your fault; a “Reading a diagram” trainer; a bench connection diagram in the ECU section."
+      "ru": "Новый курс «Ремонт ЭБУ» (уроки 1–3 бесплатно); ещё 328 кодов неисправностей автоматической коробки; исправлен английский перевод; прощание при выходе.",
+      "kk": "Жаңа «ЭБУ жөндеу» курсы (1–3 сабақ тегін); автоматты беріліс қорабының тағы 328 ақаулық коды; ағылшын аудармасы түзетілді; шыққанда қоштасу.",
+      "en": "New “ECU repair” course (lessons 1–3 free); 328 more automatic transmission fault codes; English translation fixes; a farewell message on exit."
     }
   },
   "play": "",
