@@ -75,7 +75,7 @@ P+' .stp text.n{fill:#C9CED4;font-size:15px;font-weight:700}'+P+' .stp text.l{fi
 P+' .stp.cur .stc{fill:#FFA500;stroke:#FFA500}'+P+' .stp.cur text.n{fill:#111}'+P+' .stp.cur text.l{fill:#fff}',
 P+' .stp.done .stc{fill:#5CC86C;stroke:#5CC86C}'+P+' .stp.done text.n{fill:#111}',
 P+' .stp.no .stc{fill:#EF5350;stroke:#EF5350}'+P+' .stp.no text.n{fill:#111}'+P+' .stp.no text.l{fill:#EF5350}',
-P+' .stp.off{opacity:.4}',
+P+' .stp.off{opacity:.4}'+P+' .stp{cursor:pointer;outline:none}'+P+' .stp:focus-visible .stc{stroke:#4FC3F7;stroke-width:3.5}',
 /* пауза и «меньше движения» */
 P+'.is-off *{animation-play-state:paused!important}',
 P+'.rm *{animation:none!important;transition:none!important}',
@@ -129,7 +129,7 @@ function immoSvg(){
 var ANG = [-40, 0, 40, 80], PN = ['LOCK', 'ACC', 'ON', 'START'];
 function lockSvg(){
   var s = [], i, a, x, y, cx = 104, cy = 140;
-  s.push('<svg viewBox="0 0 440 300" role="group" aria-label="Замок зажигания и его контакты: ACC, ON, START">');
+  s.push('<svg viewBox="0 0 440 266" role="group" aria-label="Замок зажигания и его контакты: ACC, ON, START">');
   s.push('<circle cx="104" cy="140" r="80" fill="#262626" stroke="#4A4A4A" stroke-width="3"/><circle cx="104" cy="140" r="62" fill="#1E1E1E" stroke="#3A3A3A" stroke-width="2"/>');
   for (i = 0; i < 4; i++){ a = ANG[i] * Math.PI / 180;
     s.push('<path d="M' + (cx + 66 * Math.sin(a)).toFixed(1) + ' ' + (cy - 66 * Math.cos(a)).toFixed(1) + 'L' + (cx + 76 * Math.sin(a)).toFixed(1) + ' ' + (cy - 76 * Math.cos(a)).toFixed(1) + '" stroke="#9AA3AD" stroke-width="3" stroke-linecap="round"/>');
@@ -160,7 +160,7 @@ function lockSvg(){
 /* ---------- аварийное вскрытие ---------- */
 function openSvg(){
   var s = [];
-  s.push('<svg viewBox="0 0 440 300" role="img" aria-label="Машина с ключами внутри: проверка документов, аккуратное вскрытие, открыто">');
+  s.push('<svg viewBox="0 0 440 284" role="group" aria-label="Машина с ключами внутри: проверка документов, аккуратное вскрытие, открыто">');
   s.push('<g transform="translate(-8 -8) scale(.7)">' +
     '<path d="M40 210 C40 182 58 170 92 164 L168 152 C196 118 232 94 300 90 L410 90 C452 90 486 112 516 150 L572 160 C600 166 612 184 612 210 L612 222 L40 222 Z" fill="#2B2B2B" stroke="#4A4A4A" stroke-width="4"/>' +
     '<path d="M206 150 C228 120 256 104 300 102 L352 102 L352 150 Z" fill="#3B4A57"/><path d="M366 102 L408 102 C440 102 466 120 488 150 L366 150 Z" fill="#3B4A57"/>' +
@@ -183,8 +183,9 @@ function openSvg(){
     '<g class="dno"><circle cx="104" cy="36" r="11" fill="#EF5350" stroke="#111" stroke-width="2"/><path d="M99 31l10 10m0-10l-10 10" stroke="#111" stroke-width="2.5" stroke-linecap="round"/></g></g>');
   /* шаги */
   s.push('<path d="M60 228H360" stroke="#3A3A3A" stroke-width="3"/><path class="pl" d="M60 228H60" stroke="#5CC86C" stroke-width="3"/>');
+  var SM = ['locked','docs','work','done'];
   ['ключи внутри','документы','вскрытие','открыто'].forEach(function(l, i){ var x = 60 + 100 * i;
-    s.push('<g class="stp"><circle class="stc" cx="' + x + '" cy="228" r="18"/><text class="n" x="' + x + '" y="233" text-anchor="middle">' + (i + 1) + '</text><text class="l" x="' + x + '" y="266" text-anchor="middle">' + l + '</text></g>'); });
+    s.push('<g class="stp" data-s="' + SM[i] + '" tabindex="0" role="button" aria-label="Шаг ' + (i + 1) + ': ' + l + '"><rect x="' + (x - 46) + '" y="206" width="92" height="68" fill="#fff" fill-opacity="0"/><circle class="stc" cx="' + x + '" cy="228" r="18"/><text class="n" x="' + x + '" y="233" text-anchor="middle">' + (i + 1) + '</text><text class="l" x="' + x + '" y="266" text-anchor="middle">' + l + '</text></g>'); });
   s.push('</svg>');
   return s.join('');
 }
@@ -317,6 +318,7 @@ AO_SITE.reg('key', {css: CSS, html: '<div class="aox w-key"><div class="L"></div
       if (m.step < 0) cls = i === 0 ? 'done' : i === 1 ? 'no' : 'off';
       else cls = i < m.step ? 'done' : i === m.step ? (m.step === 3 ? 'done' : 'cur') : '';
       stp[i].setAttribute('class', 'stp ' + cls);
+      stp[i].setAttribute('aria-pressed', i === m.step ? 'true' : 'false');
     }
     var x = m.step < 0 ? 160 : 60 + 100 * m.step;
     L.querySelector('.pl').setAttribute('d', 'M60 228H' + x);
@@ -332,13 +334,15 @@ AO_SITE.reg('key', {css: CSS, html: '<div class="aox w-key"><div class="L"></div
   }
   function touch(){ used = true; }
   L.addEventListener('click', function(e){
-    var c = e.target.closest('.chip'), ps = e.target.closest('.pos');
+    var c = e.target.closest('.chip'), ps = e.target.closest('.pos'), sp = e.target.closest('.stp');
     if (c){ touch(); setMode(c.getAttribute('data-m')); U.buzz(); }
+    else if (sp){ touch(); setMode(sp.getAttribute('data-s')); U.buzz(); }
     else if (ps){ touch(); setPos(+ps.getAttribute('data-p')); U.buzz(); }
   });
   L.addEventListener('keydown', function(e){
-    var ps = e.target.closest && e.target.closest('.pos');
+    var ps = e.target.closest && e.target.closest('.pos'), sp = e.target.closest && e.target.closest('.stp');
     if (ps && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); touch(); setPos(+ps.getAttribute('data-p')); }
+    if (sp && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); touch(); setMode(sp.getAttribute('data-s')); }
   });
   if (RNG) RNG.addEventListener('input', function(){ touch(); setPos(+RNG.value); });
   R.addEventListener('click', touch); R.addEventListener('keydown', touch);
