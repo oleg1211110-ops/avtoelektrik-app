@@ -36,7 +36,7 @@
   "courseScan": {
     "_": "Курс «Диагностика сканером», платные уроки с 4-го (всего 15), свой код (product course-scan): on, price, promo — как у course. Цена — черновик, подтвердить у Олега",
     "on": true,
-    "price": 14990,
+    "price": 19990,
     "promo": {
       "price": 9990,
       "limit": 20
