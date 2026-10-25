@@ -124,7 +124,7 @@ const SCHEMA = [
   'CREATE TABLE IF NOT EXISTS reports (id INTEGER PRIMARY KEY AUTOINCREMENT, master TEXT NOT NULL, review INTEGER, reason TEXT NOT NULL, text TEXT NOT NULL DEFAULT \'\', device TEXT NOT NULL DEFAULT \'\', created INTEGER NOT NULL, done INTEGER NOT NULL DEFAULT 0)',
   'CREATE INDEX IF NOT EXISTS reports_open ON reports(done, created)',
   'CREATE TABLE IF NOT EXISTS codes (code TEXT PRIMARY KEY, product TEXT NOT NULL, note TEXT NOT NULL DEFAULT \'\', devices TEXT NOT NULL DEFAULT \'[]\', max_devices INTEGER NOT NULL DEFAULT 3, revoked INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL, used INTEGER)',
-  'CREATE TABLE IF NOT EXISTS certs (id TEXT PRIMARY KEY, code TEXT NOT NULL, name TEXT NOT NULL, score INTEGER NOT NULL, total INTEGER NOT NULL, lessons INTEGER NOT NULL, lang TEXT NOT NULL DEFAULT \'ru\', created INTEGER NOT NULL)'
+  'CREATE TABLE IF NOT EXISTS certs (id TEXT PRIMARY KEY, code TEXT NOT NULL, name TEXT NOT NULL, score INTEGER NOT NULL, total INTEGER NOT NULL, lessons INTEGER NOT NULL, lang TEXT NOT NULL DEFAULT \'ru\', created INTEGER NOT NULL, course TEXT NOT NULL DEFAULT \'pro\')'
 ];
 let ready = null;
 function ensureDb(env){
@@ -230,7 +230,8 @@ async function apiCert(req, env, base){
   if (!/^w?[0-9a-f]{32}$/.test(dev)) return fail(req, env, 'device');
   if (await limited(req, env, 'cert', 10)) return fail(req, env, 'limit', 429);
   const c = await env.DB.prepare('SELECT * FROM codes WHERE code = ?').bind(normCode(b.code)).first();
-  if (!c || c.revoked || c.product !== 'course-pro') return fail(req, env, 'bad_code');
+  if (!c || c.revoked || (c.product !== 'course-pro' && c.product !== 'course-ecu')) return fail(req, env, 'bad_code');
+  const course = c.product === 'course-ecu' ? 'ecu' : 'pro';
   let devs = []; try { devs = JSON.parse(c.devices || '[]'); } catch (e) {}
   if (!devs.includes(dev)) return fail(req, env, 'bad_code');
   const name = oneLine(b.name, 60);
@@ -242,19 +243,19 @@ async function apiCert(req, env, base){
   if (old) return json(req, env, {ok: true, id: old.id, url: base + '/cert/' + old.id});
   let id = certId();
   for (let i = 0; i < 5 && await env.DB.prepare('SELECT 1 FROM certs WHERE id = ?').bind(id).first(); i++) id = certId();
-  await env.DB.prepare('INSERT INTO certs (id, code, name, score, total, lessons, lang, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)').bind(id, c.code, name, score, total, lessons, lang, now()).run();
+  await env.DB.prepare('INSERT INTO certs (id, code, name, score, total, lessons, lang, created, course) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)').bind(id, c.code, name, score, total, lessons, lang, now(), course).run();
   return json(req, env, {ok: true, id, url: base + '/cert/' + id});
 }
 const CERT_T = {
-  ru: {doc: 'Сертификат', sub: 'о прохождении курса', course: '«Курсы автоэлектрика» — уровень «Для будущих автоэлектриков»',
+  ru: {doc: 'Сертификат', sub: 'о прохождении курса', course: '«Курсы автоэлектрика» — уровень «Для будущих автоэлектриков»', courseEcu: 'Курс «Ремонт ЭБУ» — ремонт электронных блоков управления',
        body: (n, l, s, t) => 'Настоящий сертификат подтверждает, что ' + n + ' завершил(а) курс из ' + l + ' уроков и сдал(а) итоговый тест: ' + s + ' из ' + t + ' правильных ответов.',
        date: 'Дата выдачи', num: 'Номер', who: 'Олег Дмитриев — автоэлектрик, стаж 26 лет', ok: 'Сертификат действителен: проверено по номеру в базе АвтоЭлектрик PRO.',
        note: 'Сертификат подтверждает прохождение курса и не является документом об образовании государственного образца.', print: 'Сохранить PDF / печать', share: 'Отправить в WhatsApp', none: 'Сертификат с таким номером не найден.'},
-  kk: {doc: 'Сертификат', sub: 'курсты өткені туралы', course: '«Автоэлектрик курстары» — «Болашақ автоэлектриктерге арналған» деңгейі',
+  kk: {doc: 'Сертификат', sub: 'курсты өткені туралы', course: '«Автоэлектрик курстары» — «Болашақ автоэлектриктерге арналған» деңгейі', courseEcu: '«ЭБУ жөндеу» курсы — электрондық басқару блоктарын жөндеу',
        body: (n, l, s, t) => 'Осы сертификат ' + n + ' ' + l + ' сабақтан тұратын курсты аяқтап, қорытынды тестті тапсырғанын растайды: ' + t + ' сұрақтың ' + s + '-іне дұрыс жауап берді.',
        date: 'Берілген күні', num: 'Нөмірі', who: 'Олег Дмитриев — автоэлектрик, 26 жылдық тәжірибе', ok: 'Сертификат жарамды: АвтоЭлектрик PRO базасында нөмірі бойынша тексерілді.',
        note: 'Сертификат курстың өтілгенін растайды және мемлекеттік үлгідегі білім туралы құжат болып табылмайды.', print: 'PDF сақтау / басып шығару', share: 'WhatsApp-қа жіберу', none: 'Мұндай нөмірлі сертификат табылмады.'},
-  en: {doc: 'Certificate', sub: 'of course completion', course: '“Auto electrician courses” — level “For future auto electricians”',
+  en: {doc: 'Certificate', sub: 'of course completion', course: '“Auto electrician courses” — level “For future auto electricians”', courseEcu: '“ECU repair” course — repairing electronic control units',
        body: (n, l, s, t) => 'This certifies that ' + n + ' has completed the course of ' + l + ' lessons and passed the final test with ' + s + ' of ' + t + ' correct answers.',
        date: 'Date of issue', num: 'Number', who: 'Oleg Dmitriev — auto electrician, 26 years of experience', ok: 'This certificate is valid: checked by its number in the AvtoElektrik PRO database.',
        note: 'This certificate confirms completion of the course and is not a state-recognised educational document.', print: 'Save as PDF / print', share: 'Send via WhatsApp', none: 'No certificate with this number was found.'}
@@ -270,7 +271,7 @@ async function certPage(req, env, url, base, id){
   const wa = 'https://wa.me/?text=' + encodeURIComponent(T.doc + ' ' + T.sub + ' — ' + c.name + '\n' + link);
   return html(`<!doctype html><html lang="${L}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(T.doc)} ${esc(c.id)} — ${esc(c.name)}</title>
-<meta property="og:title" content="${esc(T.doc + ' ' + T.sub + ' — ' + c.name)}"><meta property="og:description" content="${esc(T.course)}"><meta property="og:url" content="${esc(link)}">
+<meta property="og:title" content="${esc(T.doc + ' ' + T.sub + ' — ' + c.name)}"><meta property="og:description" content="${esc(c.course === 'ecu' ? T.courseEcu : T.course)}"><meta property="og:url" content="${esc(link)}">
 <style>
 @page{size:A4 landscape;margin:0}
 *{box-sizing:border-box}body{margin:0;background:#E7EBEF;font:16px/1.5 'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#14202B}
@@ -299,7 +300,7 @@ h1{margin:0;font-size:clamp(28px,5vw,52px);letter-spacing:.06em;text-transform:u
 <div class="in">
 <div class="logo"><svg width="38" height="38" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2" stroke="#1C1400" stroke-width="2.6"/><path d="M13.2 5.6 8.6 13h3.1l-1 5.4 4.7-7.6h-3.1z" fill="#1C1400"/></svg></div>
 <h1>${esc(T.doc)}</h1><p class="sub">${esc(T.sub)}</p>
-<p class="course">${esc(T.course)}</p>
+<p class="course">${esc(c.course === 'ecu' ? T.courseEcu : T.course)}</p>
 <p class="body">${T.body(nameB, c.lessons, c.score, c.total)}</p>
 <div class="meta"><span>${esc(T.date)}: <b>${date}</b></span><span>${esc(T.num)}: <b>${esc(c.id)}</b></span></div>
 <p class="who">${esc(T.who)} · AVTOELEKTRIK-PRO.KZ</p>

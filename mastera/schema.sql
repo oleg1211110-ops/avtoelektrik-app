@@ -85,5 +85,6 @@ CREATE TABLE IF NOT EXISTS certs (
   total INTEGER NOT NULL,
   lessons INTEGER NOT NULL,
   lang TEXT NOT NULL DEFAULT 'ru',
-  created INTEGER NOT NULL
+  created INTEGER NOT NULL,
+  course TEXT NOT NULL DEFAULT 'pro'     -- pro (курс автоэлектрика) или ecu (курс «Ремонт ЭБУ»)
 );
