@@ -4,7 +4,7 @@
 var P = '.w-heater';
 var css = [
 P+' [hidden]{display:none!important}',
-P+' .chip{min-height:38px}',
+P+' .chip{min-height:38px}'+P+' .spd .chip{min-width:44px}',
 P+' .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}',
 P+' .row .btn{min-height:44px;padding:10px 18px}',
 P+' .top{margin:0 0 12px}',
@@ -21,7 +21,7 @@ P+' .stg li.bad{color:#fff;background:#EF5350;border-color:#EF5350}',
 /* автономка */
 P+' .cas{fill:#2B2B2B;stroke:#5B6A77;stroke-width:2;transition:stroke .3s}',
 P+'.hot .cas{stroke:#EF5350}',
-P+' .chm{fill:#161616;stroke:#4A4A4A;stroke-width:2}',
+P+' .chm{fill:#161616;stroke:#4A4A4A;stroke-width:2;transition:stroke .3s}'+P+'.err .chm{stroke:#EF5350}',
 P+' .flm{opacity:0;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .3s}',
 P+'.flame .flm{opacity:1;animation:whF .35s ease-in-out infinite alternate}',
 P+'.try .flm{opacity:.35;animation:whK .5s steps(2) infinite}',

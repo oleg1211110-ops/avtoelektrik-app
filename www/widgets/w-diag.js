@@ -131,7 +131,7 @@ cardEl.querySelector('.k').textContent = C.k;
 cardEl.insertAdjacentHTML('beforeend', U.ctas(C.wa));
 tabs.innerHTML = C.views.map(function(v){ return '<button type="button" data-v="' + v[0] + '" aria-pressed="false">' + v[1] + '</button>'; }).join('');
 
-var view = 'blocks', scanned = false, busy = false;
+var view = 'blocks', scanned = false, busy = false, lastChange = 0;
 var prog = [0, 0, 0, 0, 0], stat = ['', '', '', '', ''];
 var COL = {ok: '#5CC86C', bad: '#EF5350', warn: '#FFA500'};
 
@@ -247,7 +247,7 @@ function card(){
   ul.innerHTML = c[2].map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('');
 }
 function setView(v){
-  view = v;
+  view = v; lastChange = Date.now();
   hv.textContent = v === 'live' ? C.vOn : C.vOff;
   R.classList.toggle('run', v === 'live');
   tabs.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-v') === v ? 'true' : 'false'); });
@@ -298,7 +298,7 @@ function stopAuto(){ used = true; }
 R.addEventListener('pointerdown', stopAuto);
 R.addEventListener('keydown', stopAuto);
 function auto(){
-  if (used || !vis || document.hidden || busy) return;
+  if (used || !vis || document.hidden || busy || Date.now() - lastChange < 2500) return;
   if (!scanned) { scan(); return; }
   var i = VIEWS.indexOf(view);
   if (i >= VIEWS.length - 1) scan(); else setView(VIEWS[i + 1]);
@@ -312,4 +312,5 @@ if (!U.reduce) {
   if (C.live) setInterval(function(){ if (view === 'live' && vis && !document.hidden) tickLive(); }, 150);
 }
 setView('blocks');
+lastChange = 0;
 }});
