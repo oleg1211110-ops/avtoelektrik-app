@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.37",
+    "version": "1.0.38",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": 5550552,
-    "date": "2026-10-25",
+    "size": 5698008,
+    "date": "2026-10-26",
     "notes": {
-      "ru": "Новый курс «Диагностика сканером»: 15 уроков, анимированные схемы, 3 тренажёра. Анимация на каждом уроке всех курсов. Случаи из практики Олега в ответах помощника. Поворотники и подсветка приборов. Проверка перед покупкой: прямолинейность на ходу и пробег по моточасам. Звук при запуске ещё тише.",
-      "kk": "Жаңа «Сканермен диагностика» курсы: 15 сабақ, анимациялы схемалар, 3 жаттықтырғыш. Барлық курстардың әр сабағында анимация. Көмекші жауаптарында Олегтің тәжірибесінен жағдайлар. Бұрылыс шамдары және аспаптар жарығы. Сатып алар алдында тексеру: жүрістегі түзулік және мотосағат бойынша жүріс. Іске қосу дыбысы одан да ақырын.",
-      "en": "New “Scan tool diagnostics” course: 15 lessons, animated diagrams, 3 trainers. Animation in every lesson of every course. Cases from Oleg’s practice in the assistant’s answers. Turn signals and instrument lights. Pre-purchase check: tracking straight and mileage by engine hours. Even quieter start-up sound."
+      "ru": "Помощник знает 34 новые темы из статей Олега: противотуманки с подключением, ходовые огни, дальний свет, камера, дворники, щиток, датчики коленвала, распредвала, ДМРВ и детонации, дроссель, педаль газа, вентилятор, «мотор не глохнет», адаптация АКПП, ключи, реальный пробег, предохранители, масса, утечка тока. Из презентации можно открыть раздел и вернуться назад.",
+      "kk": "Көмекші Олегтің мақалаларынан 34 жаңа тақырыпты біледі: тұманға қарсы шамдар және оларды қосу, күндізгі жарық, алыс жарық, камера, тазалағыштар, приборлар тақтасы, бөлікті білік, тарату білігі, ДМРВ және детонация датчиктері, дроссель, газ педалі, желдеткіш, «мотор сөнбейді», АКПП бейімдеу, кілттер, нақты жүріс, сақтандырғыштар, масса, ток ағуы. Таныстырылымнан бөлімді ашып, қайта оралуға болады.",
+      "en": "The assistant now knows 34 new topics from Oleg’s articles: fog lights and how to wire them, daytime running lights, high beams, backup camera, wipers, instrument cluster, crank, cam, MAF and knock sensors, throttle body, accelerator pedal, cooling fan, engine won’t shut off, transmission adaptation, keys, real mileage, fuses, grounds, parasitic draw. You can open a section from the presentation and come back."
     }
   },
   "play": "",
