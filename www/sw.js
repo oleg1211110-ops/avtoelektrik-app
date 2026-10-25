@@ -1,6 +1,6 @@
 /*! © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da */
 /* Офлайн-кэш приложения. Версия подставляется при сборке (tools/build.py). */
-const VERSION = 'ao-b65ca94bfc';
+const VERSION = 'ao-84be84b8f5';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
   'i18n/ru.json', 'i18n/en.json', 'i18n/kk.json',
