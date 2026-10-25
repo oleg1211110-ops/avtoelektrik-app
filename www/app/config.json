@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.34",
+    "version": "1.0.35",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": 5231064,
+    "size": 5259736,
     "date": "2026-10-25",
     "notes": {
-      "ru": "Новый раздел «Проверка перед покупкой»: вопросы «Да/Нет», итог в процентах и чек-лист, который можно скачать и отправить. Помощник: коробка-автомат (буксует, пинки, едет в одну сторону), стартер не отключается, мигает Check Engine. Ссылки на страницы сайта Олега по теме.",
-      "kk": "Жаңа бөлім «Сатып алар алдында тексеру»: «Иә/Жоқ» сұрақтары, пайыздық қорытынды және жүктеп, жіберуге болатын чек-лист. Көмекші: автомат қорап (тайғанайды, серпеді, бір жаққа жүреді), стартер өшпейді, Check Engine жыпылықтайды. Тақырып бойынша Олег сайтының беттеріне сілтемелер.",
-      "en": "New “Pre-purchase check” section: Yes/No questions, a percentage result and a checklist you can download and send. Assistant: automatic gearbox (slipping, kicks, one direction only), starter won’t disengage, flashing Check Engine. Links to Oleg’s website pages by topic."
+      "ru": "Новый раздел «Что за лампа горит?» — 24 значка приборной панели. Распиновка OBD и что проверить, если сканер не видит машину. Презентация возможностей приложения. Проверка VIN перед покупкой: табличка, штамповка, сканер. Звук при запуске ещё тише.",
+      "kk": "Жаңа бөлім «Қандай шам жанып тұр?» — приборлар панелінің 24 белгісі. OBD түйреуіштері және сканер көлікті көрмесе не тексеру керек. Қосымша мүмкіндіктерінің таныстырылымы. Сатып алар алдында VIN тексеру: тақтайша, соғылған нөмір, сканер. Іске қосу дыбысы одан да ақырын.",
+      "en": "New “What’s that warning light?” section — 24 dashboard lights. OBD pinout and what to check when the scanner can’t see the car. A presentation of what the app can do. VIN checks before buying: plate, body stamping, scanner. Even quieter start-up sound."
     }
   },
   "play": "",
