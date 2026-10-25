@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.33",
+    "version": "1.0.34",
     "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": 5103595,
+    "size": 5231064,
     "date": "2026-10-25",
     "notes": {
-      "ru": "«Назад» свайпом всегда возвращает туда, где вы были. Приветствие по времени суток и «Что нового». Помощник: «Плавают обороты — подсос воздуха». Мастера могут отправить заявку через форму. Звук при запуске тише.",
-      "kk": "Свайппен «Артқа» әрқашан болған жеріңізге қайтарады. Тәулік уақытына қарай сәлемдесу және «Не жаңалық». Көмекші: «Айналым қалқиды — ауаның сорылуы». Шеберлер форма арқылы өтініш жібере алады. Іске қосу дыбысы ақырынырақ.",
-      "en": "Swipe “Back” always returns you to where you were. Time-of-day greeting and “What’s new”. Assistant: “Idle hunting — vacuum leak”. Mechanics can apply via a form. Quieter start-up sound."
+      "ru": "Новый раздел «Проверка перед покупкой»: вопросы «Да/Нет», итог в процентах и чек-лист, который можно скачать и отправить. Помощник: коробка-автомат (буксует, пинки, едет в одну сторону), стартер не отключается, мигает Check Engine. Ссылки на страницы сайта Олега по теме.",
+      "kk": "Жаңа бөлім «Сатып алар алдында тексеру»: «Иә/Жоқ» сұрақтары, пайыздық қорытынды және жүктеп, жіберуге болатын чек-лист. Көмекші: автомат қорап (тайғанайды, серпеді, бір жаққа жүреді), стартер өшпейді, Check Engine жыпылықтайды. Тақырып бойынша Олег сайтының беттеріне сілтемелер.",
+      "en": "New “Pre-purchase check” section: Yes/No questions, a percentage result and a checklist you can download and send. Assistant: automatic gearbox (slipping, kicks, one direction only), starter won’t disengage, flashing Check Engine. Links to Oleg’s website pages by topic."
     }
   },
   "play": "",
