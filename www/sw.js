@@ -1,9 +1,8 @@
 /*! © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da */
 /* Офлайн-кэш приложения. Версия подставляется при сборке (tools/build.py). */
-const VERSION = 'ao-5eb252dfa5';
+const VERSION = 'ao-6a40921c85';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
-  'i18n/ru.json', 'i18n/en.json', 'i18n/kk.json',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon-64.png'
 ];
 
@@ -19,7 +18,8 @@ self.addEventListener('activate', e => {
   );
 });
 
-/* страница и данные — сначала из сети (свежие коды и каталог), без сети — из кэша;
+/* словари не кэшируются заранее: каждый берёт только свой язык, когда его включат (Олег, 26.10.2026: скорость)
+   страница и данные — сначала из сети (свежие коды и каталог), без сети — из кэша;
    остальное (переводы, значки) — из кэша */
 self.addEventListener('fetch', e => {
   const req = e.request;
