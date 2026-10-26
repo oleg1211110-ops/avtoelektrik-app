@@ -8,6 +8,9 @@ var cur = document.currentScript && document.currentScript.src || 'https://help.
 var BASE = cur.replace(/[^\/]*$/, '');
 var W = {}, loading = {};
 var LAZY = {engine: [1900, 1330]};   /* примерная высота блока: телефон, компьютер */
+/* главная avtoelektrik-pro.kz: вместо «Что случилось с машиной?» (car) показываем тренажёр «Мотор и ЭБУ» (engine).
+   Олег, 26.10.2026: «старый оставь, установи новый, только скрой его». Блок в Тильде не меняется; вернуть старый — убрать эту строку. */
+var SWAP = (/^(www\.)?avtoelektrik-pro\.kz$/.test(location.hostname) && /^\/?$/.test(location.pathname)) ? {car: 'engine'} : {};
 /* общий стиль: чёрная карточка, оранжевый акцент, шрифт Arial — как на avtoelektrik-pro.kz */
 var CSS = '.ao-w{display:block}.ao-pad{padding:28px 16px}' +
 '.aox{--o:#FFA500;--k:#111;--w:#fff;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;color:#fff;background:#111;border-radius:24px;max-width:1160px;margin:0 auto;padding:clamp(18px,3vw,36px);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center}' +
@@ -38,7 +41,7 @@ function mount(){
   css('ao-site-css', CSS);
   document.querySelectorAll('.ao-w[data-ao]').forEach(function(el){
     if (el.dataset.aoOn) return;
-    var n = el.dataset.ao, w = W[n];
+    var n = SWAP[el.dataset.ao] || el.dataset.ao, w = W[n];
     if (w){ el.dataset.aoOn = '1'; css('ao-css-' + n, w.css); el.innerHTML = '<div class="ao-pad">' + w.html + '</div>'; try { w.init(el.querySelector('.ao-pad > *'), U, el.dataset); } catch (e) { if (window.console) console.warn('ao-site', n, e); }
       /* data-phone="7707…" — свой номер мастера на странице: звонок и WhatsApp из блока идут на него */
       var ph = (el.dataset.phone || '').replace(/\D/g, '');
