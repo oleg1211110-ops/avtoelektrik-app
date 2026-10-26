@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.41",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.41.apk",
-    "size": 6239072,
+    "version": "1.0.44",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.44.apk",
+    "size": 6961625,
     "date": "2026-10-26",
     "notes": {
-      "ru": "Лаборатория с двумя примерами в каждом уроке и в каждом пункте проверки перед покупкой. «Прочитать вслух»: ответы помощника, уроки и весь экран. Тренажёр мотора в «Блоках ЭБУ»: все основные датчики и неисправность, которую надо найти. Помощник: не заводится после ДТП или удара о яму; на автомате в P не крутит — заводите в N. Значки ближе к настоящим. Ссылки на запчасти в Kaspi Магазине. Правило: без нецензурных слов. Звук громче.",
-      "kk": "Әр сабақта және сатып алар алдындағы тексерудің әр тармағында екі мысалы бар зертхана. «Дауыстап оқу»: көмекшінің жауаптары, сабақтар және бүкіл экран. «ЭБУ блоктарындағы» мотор жаттықтырғышы: барлық негізгі датчиктер және табу керек ақау. Көмекші: ЖКО-дан немесе шұңқырға соғылғаннан кейін оталмайды; автоматта P-де айналмайды — N-де оталдырыңыз. Белгілер шынайыларына жақынырақ. Kaspi Дүкеніндегі бөлшектерге сілтемелер. Ереже: балағат сөздерсіз. Дыбыс қаттырақ.",
-      "en": "A lab with two examples in every lesson and in every pre-purchase check item. “Read aloud”: assistant answers, lessons and the whole screen. Engine trainer in “ECU units”: all the main sensors and a fault to find. Assistant: won’t start after a crash or hitting a pothole; automatic won’t crank in P — start it in N. Warning lights closer to the real ones. Links to parts on Kaspi Shop. Rule: no profanity. Louder sound."
+      "ru": "Новый курс «Установка автосигнализации»: 15 уроков со схемами, тренажёрами и лабораториями. Презентация и «Что я умею» — с живыми примерами. Компактное меню. Шрифты внутри приложения — без интернета выглядит так же. На казахском заголовки теперь со всеми казахскими буквами.",
+      "kk": "Жаңа курс «Автосигнализация орнату»: схемалар, жаттықтырғыштар және зертханалар бар 15 сабақ. Таныстырылым және «Мен не істей аламын» — тірі мысалдармен. Ықшам мәзір. Қаріптер қосымшаның ішінде — интернетсіз де солай көрінеді. Қазақша тақырыптарда енді барлық қазақ әріптері бар.",
+      "en": "New course “Car alarm installation”: 15 lessons with diagrams, practice drills, and labs. The tour and “What I can do” now have live examples. Compact menu. Fonts are built into the app, so it looks the same offline. Kazakh headings now show every Kazakh letter."
     }
   },
   "play": "",
