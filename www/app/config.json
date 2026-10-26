@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.44",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.44.apk",
-    "size": 6961625,
+    "version": "1.0.45",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.45.apk",
+    "size": 7432665,
     "date": "2026-10-26",
     "notes": {
-      "ru": "Новый курс «Установка автосигнализации»: 15 уроков со схемами, тренажёрами и лабораториями. Презентация и «Что я умею» — с живыми примерами. Компактное меню. Шрифты внутри приложения — без интернета выглядит так же. На казахском заголовки теперь со всеми казахскими буквами.",
-      "kk": "Жаңа курс «Автосигнализация орнату»: схемалар, жаттықтырғыштар және зертханалар бар 15 сабақ. Таныстырылым және «Мен не істей аламын» — тірі мысалдармен. Ықшам мәзір. Қаріптер қосымшаның ішінде — интернетсіз де солай көрінеді. Қазақша тақырыптарда енді барлық қазақ әріптері бар.",
-      "en": "New course “Car alarm installation”: 15 lessons with diagrams, practice drills, and labs. The tour and “What I can do” now have live examples. Compact menu. Fonts are built into the app, so it looks the same offline. Kazakh headings now show every Kazakh letter."
+      "ru": "Новые курсы: «ИП для СТО» — бесплатно, 15 уроков: открыть ИП, налоги 2026 года (упрощёнка 3 % и ОУР 10 %), касса и Kaspi, работники, проверки, закрытие. «Бухгалтер ИП» — 14 уроков: 910, ЭСФ, зарплата и форма 200; первые 5 уроков открыты, продолжение — по бесплатному промокоду от Олега. Картинки уроков видны полностью и в режиме «уменьшить движение».",
+      "kk": "Жаңа курстар: «СТО-ға арналған ЖК» — тегін, 15 сабақ: ЖК ашу, 2026 жылғы салықтар (оңайлатылған 3 % және ЖБТ 10 %), касса және Kaspi, қызметкерлер, тексерулер, жабу. «ЖК бухгалтері» — 14 сабақ: 910, ЭШФ, жалақы және 200 нысаны; алғашқы 5 сабақ ашық, жалғасы — Олегтің тегін промокоды бойынша. Сабақтағы суреттер «қозғалысты азайту» режимінде де толық көрінеді.",
+      "en": "New courses: “IP for a repair shop” — free, 15 lessons: opening an IP, 2026 taxes (simplified 3% and general regime 10%), the cash register and Kaspi, employees, audits, closing down. “IP bookkeeping” — 14 lessons: Form 910, e-invoices, payroll and Form 200; the first 5 lessons are open, the rest with a free promo code from Oleg. Lesson pictures now show in full with “reduce motion” turned on."
     }
   },
   "play": "",
