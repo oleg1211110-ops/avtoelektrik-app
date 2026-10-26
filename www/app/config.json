@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.39",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.39.apk",
-    "size": 5833176,
+    "version": "1.0.41",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.41.apk",
+    "size": 6239072,
     "date": "2026-10-26",
     "notes": {
-      "ru": "35 новых значков приборной панели, в том числе грузовые: давление воздуха, кабина, КОМ, ретардер. Тренажёр в каждом уроке. Курс ЭБУ: «Блок на столе без схемы» и «Сгорел драйвер — замена транзисторами». Английские названия кодов ошибок по стандарту SAE. Приветствие чуть громче. Файл приложения теперь с номером версии.",
-      "kk": "Приборлар панелінің 35 жаңа белгісі, оның ішінде жүк көліктерінікі: ауа қысымы, кабина, КОМ, ретардер. Әр сабақта жаттықтырғыш. ЭБУ курсы: «Блокты үстелде схемасыз жалғау» және «Драйвер күйді — транзисторлармен алмастыру». Қате кодтарының SAE стандарты бойынша ағылшынша атаулары. Сәлемдесу сәл қаттырақ. Қосымша файлы енді нұсқа нөмірімен.",
-      "en": "35 new dashboard warning lights, including truck ones: air pressure, cab lock, PTO, retarder. A hands-on trainer in every lesson. ECU course: “Connecting a unit on the bench without a diagram” and “Burnt driver IC — replacing it with transistors”. English trouble code titles per the SAE standard. Slightly louder startup sound. The app file name now includes the version number."
+      "ru": "Лаборатория с двумя примерами в каждом уроке и в каждом пункте проверки перед покупкой. «Прочитать вслух»: ответы помощника, уроки и весь экран. Тренажёр мотора в «Блоках ЭБУ»: все основные датчики и неисправность, которую надо найти. Помощник: не заводится после ДТП или удара о яму; на автомате в P не крутит — заводите в N. Значки ближе к настоящим. Ссылки на запчасти в Kaspi Магазине. Правило: без нецензурных слов. Звук громче.",
+      "kk": "Әр сабақта және сатып алар алдындағы тексерудің әр тармағында екі мысалы бар зертхана. «Дауыстап оқу»: көмекшінің жауаптары, сабақтар және бүкіл экран. «ЭБУ блоктарындағы» мотор жаттықтырғышы: барлық негізгі датчиктер және табу керек ақау. Көмекші: ЖКО-дан немесе шұңқырға соғылғаннан кейін оталмайды; автоматта P-де айналмайды — N-де оталдырыңыз. Белгілер шынайыларына жақынырақ. Kaspi Дүкеніндегі бөлшектерге сілтемелер. Ереже: балағат сөздерсіз. Дыбыс қаттырақ.",
+      "en": "A lab with two examples in every lesson and in every pre-purchase check item. “Read aloud”: assistant answers, lessons and the whole screen. Engine trainer in “ECU units”: all the main sensors and a fault to find. Assistant: won’t start after a crash or hitting a pothole; automatic won’t crank in P — start it in N. Warning lights closer to the real ones. Links to parts on Kaspi Shop. Rule: no profanity. Louder sound."
     }
   },
   "play": "",
@@ -50,5 +50,13 @@
       "price": 9990,
       "limit": 20
     }
+  },
+  "courseAcc": {
+    "on": true,
+    "_comment": "«Бухгалтер ИП»: уроки 1–5 открыты, дальше — бесплатный промокод от Олега (админка → код «Бухгалтер ИП»)"
+  },
+  "refer": {
+    "on": true,
+    "_comment": "«Пригласи друга»: другу −20 % по коду, пригласившему −20 % на следующий курс; false — выключить"
   }
 }
