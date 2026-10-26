@@ -41,5 +41,14 @@
       "price": 9990,
       "limit": 20
     }
+  },
+  "courseAlarm": {
+    "_": "Курс «Установка автосигнализации», платные уроки с 4-го (всего 15), свой код (product course-alarm): on, price, promo — как у course. Цена утверждена Олегом 26.10.2026",
+    "on": true,
+    "price": 19990,
+    "promo": {
+      "price": 9990,
+      "limit": 20
+    }
   }
 }
