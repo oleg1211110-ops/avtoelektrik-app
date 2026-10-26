@@ -6,4 +6,27 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kursy/kk.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kursy/en.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://help.avtoelektrik-pro.kz/pravila.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kk.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/en.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/dlya-voditeley/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/dlya-voditeley/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/dlya-voditeley/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/avtoelektrik/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/avtoelektrik/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/avtoelektrik/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/remont-ebu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/remont-ebu/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/remont-ebu/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/diagnostika-skanerom/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/diagnostika-skanerom/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/diagnostika-skanerom/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/avtosignalizaciya/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/avtosignalizaciya/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/avtosignalizaciya/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/ip-dlya-sto/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/ip-dlya-sto/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/ip-dlya-sto/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/buhgalter-ip/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/buhgalter-ip/kk.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kursy/buhgalter-ip/en.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

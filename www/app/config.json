@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.45",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.45.apk",
-    "size": 7432665,
-    "date": "2026-10-26",
+    "version": "1.0.46",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.46.apk",
+    "size": 7846361,
+    "date": "2026-10-27",
     "notes": {
-      "ru": "Новые курсы: «ИП для СТО» — бесплатно, 15 уроков: открыть ИП, налоги 2026 года (упрощёнка 3 % и ОУР 10 %), касса и Kaspi, работники, проверки, закрытие. «Бухгалтер ИП» — 14 уроков: 910, ЭСФ, зарплата и форма 200; первые 5 уроков открыты, продолжение — по бесплатному промокоду от Олега. Картинки уроков видны полностью и в режиме «уменьшить движение».",
-      "kk": "Жаңа курстар: «СТО-ға арналған ЖК» — тегін, 15 сабақ: ЖК ашу, 2026 жылғы салықтар (оңайлатылған 3 % және ЖБТ 10 %), касса және Kaspi, қызметкерлер, тексерулер, жабу. «ЖК бухгалтері» — 14 сабақ: 910, ЭШФ, жалақы және 200 нысаны; алғашқы 5 сабақ ашық, жалғасы — Олегтің тегін промокоды бойынша. Сабақтағы суреттер «қозғалысты азайту» режимінде де толық көрінеді.",
-      "en": "New courses: “IP for a repair shop” — free, 15 lessons: opening an IP, 2026 taxes (simplified 3% and general regime 10%), the cash register and Kaspi, employees, audits, closing down. “IP bookkeeping” — 14 lessons: Form 910, e-invoices, payroll and Form 200; the first 5 lessons are open, the rest with a free promo code from Oleg. Lesson pictures now show in full with “reduce motion” turned on."
+      "ru": "17 новых уроков в курсах: как описать поломку мастеру, гибрид и электромобиль, не заводится — пошаговая проверка, подключение дополнительного света, поиск утечки тока, подушки безопасности, ADAS и другие — с тренажёрами и лабораториями. Помощник: аккумулятор садится за ночь — сначала проверяем навесное оборудование, норма тока покоя 0,06 А. Перенос пройденных уроков с сайта или с другого телефона по коду. Пункт «Поддержать проект».",
+      "kk": "Курстарда 17 жаңа сабақ: ақауды шеберге қалай сипаттау, гибрид пен электромобиль, оталмайды — қадамдық тексеру, қосымша жарықты қосу, ток ағуын іздеу, қауіпсіздік жастықтары, ADAS және басқалар — тренажёрлар мен зертханалармен. Көмекші: аккумулятордың заряды бір түнде таусылады — алдымен қосымша орнатылған жабдықты тексереміз, тыныштық тогының нормасы 0,06 А. Өтілген сабақтарды сайттан немесе басқа телефоннан кодпен көшіру. «Жобаны қолдау» бөлімі.",
+      "en": "17 new lessons across the courses: describing a fault to a mechanic, hybrids and EVs, a step-by-step no-start check, wiring extra lights, finding a parasitic draw, airbags, ADAS and more — with trainers and labs. Assistant: battery dead overnight — check the aftermarket equipment first; key-off draw 0.06 A or less. Move completed lessons from the website or another phone with a code. New “Support the project” item."
     }
   },
   "play": "",
@@ -58,5 +58,23 @@
   "refer": {
     "on": true,
     "_comment": "«Пригласи друга»: другу −20 % по коду, пригласившему −20 % на следующий курс; false — выключить"
+  },
+  "support": {
+    "_": "«Поддержать проект» в меню «О приложении»: kaspi — ссылка Kaspi для поддержки (только https://kaspi.kz/… или https://pay.kaspi.kz/…); пусто — кнопка ведёт в WhatsApp Олегу. on: false — скрыть пункт. В сборке для Google Play пункт скрыт всегда.",
+    "on": true,
+    "kaspi": ""
+  },
+  "appGate": {
+    "_": "Бесплатные курсы на сайте в браузере: открыты первые share (0.8 = 80 %) уроков, дальше — в приложении; прогресс переносится кодом. levels — какие курсы; on: false — выключить.",
+    "on": true,
+    "levels": [
+      "driver",
+      "ip"
+    ],
+    "share": 0.8
+  },
+  "kaspiPay": {
+    "_": "Оплата курса счётом в Kaspi (ApiPay.kz): работает, когда на сервере есть ключ APIPAY_KEY. on: false — не показывать в приложении.",
+    "on": true
   }
 }
