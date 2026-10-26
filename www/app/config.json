@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.38",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro.apk",
-    "size": 5698008,
+    "version": "1.0.39",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.39.apk",
+    "size": 5833176,
     "date": "2026-10-26",
     "notes": {
-      "ru": "Помощник знает 34 новые темы из статей Олега: противотуманки с подключением, ходовые огни, дальний свет, камера, дворники, щиток, датчики коленвала, распредвала, ДМРВ и детонации, дроссель, педаль газа, вентилятор, «мотор не глохнет», адаптация АКПП, ключи, реальный пробег, предохранители, масса, утечка тока. Из презентации можно открыть раздел и вернуться назад.",
-      "kk": "Көмекші Олегтің мақалаларынан 34 жаңа тақырыпты біледі: тұманға қарсы шамдар және оларды қосу, күндізгі жарық, алыс жарық, камера, тазалағыштар, приборлар тақтасы, бөлікті білік, тарату білігі, ДМРВ және детонация датчиктері, дроссель, газ педалі, желдеткіш, «мотор сөнбейді», АКПП бейімдеу, кілттер, нақты жүріс, сақтандырғыштар, масса, ток ағуы. Таныстырылымнан бөлімді ашып, қайта оралуға болады.",
-      "en": "The assistant now knows 34 new topics from Oleg’s articles: fog lights and how to wire them, daytime running lights, high beams, backup camera, wipers, instrument cluster, crank, cam, MAF and knock sensors, throttle body, accelerator pedal, cooling fan, engine won’t shut off, transmission adaptation, keys, real mileage, fuses, grounds, parasitic draw. You can open a section from the presentation and come back."
+      "ru": "35 новых значков приборной панели, в том числе грузовые: давление воздуха, кабина, КОМ, ретардер. Тренажёр в каждом уроке. Курс ЭБУ: «Блок на столе без схемы» и «Сгорел драйвер — замена транзисторами». Английские названия кодов ошибок по стандарту SAE. Приветствие чуть громче. Файл приложения теперь с номером версии.",
+      "kk": "Приборлар панелінің 35 жаңа белгісі, оның ішінде жүк көліктерінікі: ауа қысымы, кабина, КОМ, ретардер. Әр сабақта жаттықтырғыш. ЭБУ курсы: «Блокты үстелде схемасыз жалғау» және «Драйвер күйді — транзисторлармен алмастыру». Қате кодтарының SAE стандарты бойынша ағылшынша атаулары. Сәлемдесу сәл қаттырақ. Қосымша файлы енді нұсқа нөмірімен.",
+      "en": "35 new dashboard warning lights, including truck ones: air pressure, cab lock, PTO, retarder. A hands-on trainer in every lesson. ECU course: “Connecting a unit on the bench without a diagram” and “Burnt driver IC — replacing it with transistors”. English trouble code titles per the SAE standard. Slightly louder startup sound. The app file name now includes the version number."
     }
   },
   "play": "",
