@@ -25,7 +25,7 @@
     }
   },
   "courseEcu": {
-    "_": "Курс «Ремонт ЭБУ», платные уроки с 4-го (всего 13), свой код (product course-ecu): on, price, promo — как у course",
+    "_": "Курс «Ремонт ЭБУ», платные уроки с 4-го (всего 15), свой код (product course-ecu): on, price, promo — как у course",
     "on": true,
     "price": 29990,
     "promo": {
