@@ -8,9 +8,6 @@ var cur = document.currentScript && document.currentScript.src || 'https://help.
 var BASE = cur.replace(/[^\/]*$/, '');
 var W = {}, loading = {};
 var LAZY = {engine: [1900, 1330]};   /* примерная высота блока: телефон, компьютер */
-/* главная avtoelektrik-pro.kz: вместо «Что случилось с машиной?» (car) показываем тренажёр «Мотор и ЭБУ» (engine).
-   Олег, 26.10.2026: «старый оставь, установи новый, только скрой его». Блок в Тильде не меняется; вернуть старый — убрать эту строку. */
-var SWAP = (/^(www\.)?avtoelektrik-pro\.kz$/.test(location.hostname) && /^\/?$/.test(location.pathname)) ? {car: 'engine'} : {};
 /* общий стиль: чёрная карточка, оранжевый акцент, шрифт Arial — как на avtoelektrik-pro.kz */
 var CSS = '.ao-w{display:block}.ao-pad{padding:28px 16px}' +
 '.aox{--o:#FFA500;--k:#111;--w:#fff;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;color:#fff;background:#111;border-radius:24px;max-width:1160px;margin:0 auto;padding:clamp(18px,3vw,36px);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center}' +
@@ -26,6 +23,32 @@ var CSS = '.ao-w{display:block}.ao-pad{padding:28px 16px}' +
 '.aox .lcd{background:#B9CBA0;color:#1B2414;border-radius:10px;padding:8px 12px;font-family:Menlo,Consolas,"Courier New",monospace;font-weight:700;font-size:14px}' +
 '.aox button:focus-visible,.aox a:focus-visible,.aox [tabindex]:focus-visible{outline:3px solid #4FC3F7;outline-offset:2px}' +
 '@media (max-width:820px){.aox{grid-template-columns:minmax(0,1fr)}}';
+/* свёрнутая карточка тренажёра «Мотор и ЭБУ» (data-mode="compact"): лёгкая, файл тренажёра грузится только по нажатию */
+var EN = /^en/i.test(document.documentElement.lang || '');
+var MINI = EN ? {k: 'Trainer · free', h: 'Engine and ECU: try it yourself', t: 'Start the engine and unplug sensors, injectors and coils — you will see RPM, live data and trouble codes, just like on a scan tool.', b: 'Start the trainer', l: 'Loading…', alt: 'Trainer diagram: ECU, injectors, coils, sensors'}
+  : {k: 'Тренажёр · бесплатно', h: 'Мотор и блок управления: попробуйте сами', t: 'Заведите мотор и отключайте датчики, форсунки и катушки — увидите обороты, живые данные и коды ошибок, как на сканере.', b: 'Запустить тренажёр', l: 'Загружаю…', alt: 'Схема тренажёра: ЭБУ, форсунки, катушки, датчики'};
+CSS += '.aoe-mini .aoe-k{display:inline-block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#FFA500;font-weight:700;margin-bottom:10px}' +
+'.aoe-mini .aoe-pic{display:block;width:100%;padding:0;border:1px solid #2E2E2E;border-radius:18px;background:#1D1D1D;overflow:hidden;cursor:pointer}' +
+'.aoe-mini .aoe-pic img{display:block;width:100%;height:auto;aspect-ratio:900/719}.aoe-mini .aoe-pic:hover{border-color:#FFA500}';
+function miniCard(el, go){
+  el.innerHTML = '<div class="ao-pad"><div class="aox aoe-mini"><div><span class="aoe-k"></span><h2></h2><p class="sub"></p><div class="btns"><button type="button" class="btn o aoe-go"></button></div></div>' +
+    '<button type="button" class="aoe-pic aoe-go"><img loading="lazy" width="900" height="719" src="' + BASE + 'engine-preview.webp" alt=""></button></div></div>';
+  el.querySelector('.aoe-k').textContent = MINI.k; el.querySelector('h2').textContent = MINI.h; el.querySelector('.sub').textContent = MINI.t;
+  var btn = el.querySelector('.btn.aoe-go'); btn.textContent = MINI.b; el.querySelector('.aoe-pic').setAttribute('aria-label', MINI.b); el.querySelector('img').alt = MINI.alt;
+  el.addEventListener('click', function(e){ if (!e.target.closest || !e.target.closest('.aoe-go')) return; btn.textContent = MINI.l; btn.disabled = true; el.dataset.aoOpen = '1'; go(); });
+}
+/* главная avtoelektrik-pro.kz: тренажёр — свёрнутой карточкой сразу после блока «Новое · Курсы автоэлектрика»
+   (Олег, 26.10.2026: вторым блоком остаётся «Что случилось с машиной?» — рабочая информация, тренажёр ниже и места почти не занимает).
+   Блоки в Тильде не меняются; убрать — удалить вызов addEngine(). */
+function addEngine(){
+  if (!/^(www\.)?avtoelektrik-pro\.kz$/.test(location.hostname) || !/^\/?$/.test(location.pathname)) return;
+  if (document.querySelector('.ao-w[data-ao="engine"]')) return;
+  var at = document.getElementById('rec5128233203');
+  if (!at){ var recs = document.querySelectorAll('.t-rec'); for (var i = 0; i < recs.length; i++) if (/^\s*НОВОЕ\s*·\s*КУРСЫ/i.test(recs[i].innerText || '')){ at = recs[i]; break; } }
+  if (!at || !at.parentNode) return;
+  var d = document.createElement('div'); d.className = 'ao-w'; d.setAttribute('data-ao', 'engine'); d.setAttribute('data-mode', 'compact');
+  at.parentNode.insertBefore(d, at.nextSibling);
+}
 function css(id, text){ if (!text || document.getElementById(id)) return; var st = document.createElement('style'); st.id = id; st.textContent = text; document.head.appendChild(st); }
 /* общие помощники для анимаций */
 var U = {
@@ -39,9 +62,10 @@ var U = {
 };
 function mount(){
   css('ao-site-css', CSS);
+  try { addEngine(); } catch (e) {}
   document.querySelectorAll('.ao-w[data-ao]').forEach(function(el){
     if (el.dataset.aoOn) return;
-    var n = SWAP[el.dataset.ao] || el.dataset.ao, w = W[n];
+    var n = el.dataset.ao, w = W[n];
     if (w){ el.dataset.aoOn = '1'; css('ao-css-' + n, w.css); el.innerHTML = '<div class="ao-pad">' + w.html + '</div>'; try { w.init(el.querySelector('.ao-pad > *'), U, el.dataset); } catch (e) { if (window.console) console.warn('ao-site', n, e); }
       /* data-phone="7707…" — свой номер мастера на странице: звонок и WhatsApp из блока идут на него */
       var ph = (el.dataset.phone || '').replace(/\D/g, '');
@@ -51,7 +75,8 @@ function mount(){
       /* крупные блоки (тренажёр мотора) — файл грузится, только когда до блока осталось ~1 экран; место под блок держим заранее,
          чтобы страница не прыгала (Олег, 26.10.2026: без просадки загрузки главной) */
       var lz = LAZY[n];
-      if (lz && 'IntersectionObserver' in window){
+      if (lz && el.dataset.mode === 'compact'){ if (!el.dataset.aoWait){ el.dataset.aoWait = '1'; miniCard(el, go); } }
+      else if (lz && 'IntersectionObserver' in window){
         if (!el.dataset.aoWait){ el.dataset.aoWait = '1';
           /* пока файл не загружен — тёмная карточка нужной высоты */
           el.innerHTML = '<div class="ao-pad"><div style="max-width:1160px;margin:0 auto;border-radius:24px;background:#111;height:' + (window.innerWidth < 860 ? lz[0] : lz[1]) + 'px"></div></div>';
