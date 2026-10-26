@@ -1,5 +1,5 @@
 /* Интерактивные анимации для сайта avtoelektrik-pro.kz (Тильда, блок T123).
-   Вставка на страницу:  <div class="ao-w" data-ao="car"></div><script src="https://help.avtoelektrik-pro.kz/widgets/ao-site.js" defer></script>
+   Вставка на страницу:  <div class="ao-w" data-ao="car"></div>   (главная: data-ao="engine" — тренажёр «Мотор и ЭБУ», tools/site_engine.py)<script src="https://help.avtoelektrik-pro.kz/widgets/ao-site.js" defer></script>
    Каждая анимация — свой файл w-<имя>.js, подгружается сам. © АвтоЭлектрик Олег · AVTOELEKTRIK-PRO.KZ */
 (function(){
 if (window.AO_SITE) { window.AO_SITE.mount(); return; }
@@ -7,6 +7,7 @@ var VER = '1';
 var cur = document.currentScript && document.currentScript.src || 'https://help.avtoelektrik-pro.kz/widgets/ao-site.js';
 var BASE = cur.replace(/[^\/]*$/, '');
 var W = {}, loading = {};
+var LAZY = {engine: [1900, 1330]};   /* примерная высота блока: телефон, компьютер */
 /* общий стиль: чёрная карточка, оранжевый акцент, шрифт Arial — как на avtoelektrik-pro.kz */
 var CSS = '.ao-w{display:block}.ao-pad{padding:28px 16px}' +
 '.aox{--o:#FFA500;--k:#111;--w:#fff;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;color:#fff;background:#111;border-radius:24px;max-width:1160px;margin:0 auto;padding:clamp(18px,3vw,36px);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center}' +
@@ -42,7 +43,18 @@ function mount(){
       /* data-phone="7707…" — свой номер мастера на странице: звонок и WhatsApp из блока идут на него */
       var ph = (el.dataset.phone || '').replace(/\D/g, '');
       if (ph.length >= 10 && ph !== '77011211110') el.addEventListener('click', function(e){ var a = e.target && e.target.closest ? e.target.closest('a[href]') : null; if (a) a.setAttribute('href', a.getAttribute('href').replace('wa.me/77011211110', 'wa.me/' + ph).replace('tel:+77011211110', 'tel:+' + ph)); }, true); }
-    else if (!loading[n] && /^[a-z0-9-]+$/.test(n)){ loading[n] = 1; var s = document.createElement('script'); s.src = BASE + 'w-' + n + '.js?v=' + VER; s.defer = true; document.head.appendChild(s); }
+    else if (!loading[n] && /^[a-z0-9-]+$/.test(n)){
+      var go = function(){ if (loading[n]) return; loading[n] = 1; var s = document.createElement('script'); s.src = BASE + 'w-' + n + '.js?v=' + VER; s.defer = true; document.head.appendChild(s); };
+      /* крупные блоки (тренажёр мотора) — файл грузится, только когда до блока осталось ~1 экран; место под блок держим заранее,
+         чтобы страница не прыгала (Олег, 26.10.2026: без просадки загрузки главной) */
+      var lz = LAZY[n];
+      if (lz && 'IntersectionObserver' in window){
+        if (!el.dataset.aoWait){ el.dataset.aoWait = '1';
+          /* пока файл не загружен — тёмная карточка нужной высоты */
+          el.innerHTML = '<div class="ao-pad"><div style="max-width:1160px;margin:0 auto;border-radius:24px;background:#111;height:' + (window.innerWidth < 860 ? lz[0] : lz[1]) + 'px"></div></div>';
+          var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ io.disconnect(); go(); } }, {rootMargin: '400px 0px'}); io.observe(el); }
+      } else go();
+    }
   });
 }
 window.AO_SITE = {mount: mount, W: W, U: U, reg: function(name, def){ W[name] = def; mount(); }};
