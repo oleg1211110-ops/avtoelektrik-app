@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.46",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.46.apk",
-    "size": 7846361,
+    "version": "1.0.48",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.48.apk",
+    "size": 7883225,
     "date": "2026-10-27",
     "notes": {
-      "ru": "17 новых уроков в курсах: как описать поломку мастеру, гибрид и электромобиль, не заводится — пошаговая проверка, подключение дополнительного света, поиск утечки тока, подушки безопасности, ADAS и другие — с тренажёрами и лабораториями. Помощник: аккумулятор садится за ночь — сначала проверяем навесное оборудование, норма тока покоя 0,06 А. Перенос пройденных уроков с сайта или с другого телефона по коду. Пункт «Поддержать проект».",
-      "kk": "Курстарда 17 жаңа сабақ: ақауды шеберге қалай сипаттау, гибрид пен электромобиль, оталмайды — қадамдық тексеру, қосымша жарықты қосу, ток ағуын іздеу, қауіпсіздік жастықтары, ADAS және басқалар — тренажёрлар мен зертханалармен. Көмекші: аккумулятордың заряды бір түнде таусылады — алдымен қосымша орнатылған жабдықты тексереміз, тыныштық тогының нормасы 0,06 А. Өтілген сабақтарды сайттан немесе басқа телефоннан кодпен көшіру. «Жобаны қолдау» бөлімі.",
-      "en": "17 new lessons across the courses: describing a fault to a mechanic, hybrids and EVs, a step-by-step no-start check, wiring extra lights, finding a parasitic draw, airbags, ADAS and more — with trainers and labs. Assistant: battery dead overnight — check the aftermarket equipment first; key-off draw 0.06 A or less. Move completed lessons from the website or another phone with a code. New “Support the project” item."
+      "ru": "Сканер OBD-II: подключите адаптер ELM327 по Bluetooth, Bluetooth LE или Wi-Fi — ошибки с расшифровкой, живые данные с нормами, готовность систем, стоп-кадр и отчёт Олегу. Нет адаптера — попробуйте на виртуальной машине. Калькулятор налогового режима 2026 в курсе «ИП для СТО». Новый пункт «Приложение для вашего бизнеса».",
+      "kk": "OBD-II сканері: ELM327 адаптерін Bluetooth, Bluetooth LE немесе Wi-Fi арқылы қосыңыз — түсіндірмесімен қателер, нормалары бар ағымдағы деректер, жүйелердің дайындығы, стоп-кадр және Олегке есеп. Адаптер жоқ болса — виртуалды көлікте байқап көріңіз. «СТО-ға арналған ЖК» курсында 2026 салық режимінің калькуляторы. Жаңа «Бизнесіңізге арналған қосымша» бөлімі.",
+      "en": "OBD-II scanner: connect an ELM327 adapter over Bluetooth, Bluetooth LE or Wi-Fi — codes with explanations, live data with normal ranges, readiness monitors, freeze frame and a report for Oleg. No adapter? Try it on a virtual car. 2026 tax regime calculator in the “Sole proprietor for a garage” course. New “An app for your business” item."
     }
   },
   "play": "",

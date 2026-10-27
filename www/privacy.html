@@ -47,7 +47,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <h2>Коротко</h2>
 <ul>
 <li>Регистрация не нужна. Мы не спрашиваем имя, телефон, email и не собираем их — кроме данных, которые мастер сам публикует в карточке, и отзывов, которые вы сами оставляете в разделе «Мастера рядом».</li>
-<li>Ваши вопросы, коды ошибок и параметры датчиков обрабатываются прямо на телефоне и никуда не отправляются.</li>
+<li>Ваши вопросы, коды ошибок и параметры датчиков обрабатываются прямо на телефоне. На сервер уходит только то, что помощник не понял или не знает, — без имени и номеров телефонов, чтобы научить помощника (подробнее — «Обращения»).</li>
 <li>Для статистики используется Google Analytics: обезличенно, без текста вопросов и личных данных.</li>
 </ul>
 
@@ -58,11 +58,19 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <p>Голосовой ввод в помощнике включается только по нажатию на кнопку с микрофоном. В приложении для Android речь распознаёт системная служба Google на телефоне (приложение Google), а приложению «АвтоЭлектрик PRO» приходит только готовый текст: доступа к микрофону у нашего приложения нет, запись не сохраняется и нам не отправляется. На сайте речь распознаёт браузер (например, Chrome) по его правилам. Распознанный текст обрабатывается так же, как напечатанный вопрос.</p>
 <p>«Прочитать вслух» читает текст синтезом речи вашего телефона (в приложении для Android — системная служба, обычно Google) или браузера на сайте. Приложение не сохраняет и не отправляет нам этот текст.</p>
 <p>Напоминания о ТО — это уведомления, которые приложение ставит на самом телефоне по вашему пробегу и датам замен. Никакие данные для них не отправляются. Напоминания выключаются переключателем в разделе «ТО» или в настройках телефона.</p>
+<h2>Сканер OBD-II</h2>
+<p>Чтобы подключиться к адаптеру ELM327, приложение для Android просит разрешение «Устройства поблизости» (Bluetooth). На Android 11 и более ранних версиях система для поиска адаптеров Bluetooth LE требует ещё доступ к местоположению — приложение не определяет и не сохраняет, где вы находитесь. Разрешения спрашиваются, только когда вы сами нажимаете «Выбрать адаптер» или «Найти адаптеры»; для адаптера Wi-Fi они не нужны.</p>
+<p>Данные с машины — VIN, коды ошибок, параметры двигателя — читаются и показываются на телефоне и никуда не отправляются. Отчёт уходит мастеру, только если вы сами нажмёте «Отправить Олегу в WhatsApp». В статистику попадают только вид подключения, протокол и число ошибок — без кодов и VIN.</p>
 <h2>Статистика использования</h2>
 <p>Приложение использует Google Analytics 4 (Google LLC), чтобы понимать, какими разделами пользуются: открытие приложения и вкладок, выбор языка, типа и марки машины и вида неисправности в помощнике, какой совет показан, расшифровка кода, переход на сайт, нажатие кнопок связи, пройденные уроки курсов, включение и выключение вибрации и звука. Передаются обезличенные данные: идентификатор установки, модель и система устройства, примерный регион. Текст вопросов, коды, номера телефонов и другие личные данные не передаются, IP-адрес обезличивается. Подробнее — в <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">политике конфиденциальности Google</a>.</p>
 
 <h2>Обновления справочника</h2>
 <p>Приложение загружает с сайта приложения обновления каталога техники, кодов ошибок и советов, а также настройки: номер последней версии и адрес сервера раздела «Мастера рядом». При этом никакие ваши данные не отправляются.</p>
+
+<h2>Обращения</h2>
+<p>Если помощник не понял ваш вопрос или не знает кода ошибки, текст вопроса или код уходит на сервер приложения (Cloudflare) вместе с шагом разговора, маркой машины и языком — без имени и идентификатора телефона; номера телефонов и адреса почты в тексте заменяются. Так Олег и Claude (ИИ Anthropic, который помогает делать приложение) видят, чему научить помощника.</p>
+<p>Сообщение с темой «Ошибка в ответе» уходит на разбор вместе с вашим последним вопросом, ответом помощника, оценкой и маркой машины, а также случайным номером установки приложения — чтобы ответ пришёл именно вам. Ответ готовит Claude по базе приложения, он приходит сообщением в помощник. Остальные сообщения из «Отзыва и предложений» уходят Олегу в WhatsApp, как раньше.</p>
+<p>Обращения хранятся не дольше года и не передаются третьим лицам, кроме сервисов, на которых работает приложение (Cloudflare, GitHub, Anthropic).</p>
 
 <h2>Связь с мастером</h2>
 <p>Кнопки «Написать в WhatsApp» и «Позвонить» открывают WhatsApp или звонилку на вашем телефоне. Что отправить, решаете вы; эти сообщения обрабатывает WhatsApp по своим правилам.</p>
@@ -99,7 +107,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <h2>Қысқаша</h2>
 <ul>
 <li>Тіркелу қажет емес. Біз атыңызды, телефоныңызды, email-ді сұрамаймыз және жинамаймыз — шебер карточкада өзі жариялайтын деректер мен «Жақын шеберлер» бөлімінде өзіңіз қалдыратын пікірлерді қоспағанда.</li>
-<li>Сұрақтарыңыз, қате кодтары мен датчик параметрлері телефонның өзінде өңделеді және ешқайда жіберілмейді.</li>
+<li>Сұрақтарыңыз, қате кодтары мен датчик параметрлері телефонның өзінде өңделеді. Серверге көмекші түсінбеген немесе білмейтін нәрсе ғана жіберіледі — атыңызсыз және телефон нөмірлерінсіз, көмекшіні үйрету үшін (толығырақ — «Өтініштер»).</li>
 <li>Статистика үшін Google Analytics қолданылады: жеке тұлғаны анықтамайтын түрде, сұрақ мәтінінсіз және жеке деректерсіз.</li>
 </ul>
 <h2>Құрылғыңызда не сақталады</h2>
@@ -108,10 +116,18 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <p>Көмекшідегі дауыспен енгізу тек микрофон батырмасын басқанда қосылады. Android қосымшасында сөзді телефондағы Google жүйелік қызметі (Google қосымшасы) таниды, ал «АвтоЭлектрик PRO» қосымшасына тек дайын мәтін келеді: біздің қосымшаның микрофонға рұқсаты жоқ, жазба сақталмайды және бізге жіберілмейді. Сайтта сөзді браузер (мысалы, Chrome) өз ережелері бойынша таниды. Танылған мәтін терілген сұрақ сияқты өңделеді.</p>
 <p>«Дауыстап оқу» мәтінді телефоныңыздың сөйлеу синтезімен (Android қосымшасында — жүйелік қызмет, әдетте Google) немесе сайтта браузермен оқиды. Қосымша бұл мәтінді сақтамайды және бізге жібермейді.</p>
 <p>ТҚ туралы еске салғыштар — қосымша жүрісіңіз бен ауыстыру күндері бойынша телефонның өзінде қоятын хабарландырулар. Олар үшін ешқандай деректер жіберілмейді. Еске салғыштар «ТҚ» бөліміндегі ауыстырғышпен немесе телефон баптауларында өшіріледі.</p>
+<h2>OBD-II сканері</h2>
+<p>ELM327 адаптеріне қосылу үшін Android қосымшасы «Жақын маңдағы құрылғылар» (Bluetooth) рұқсатын сұрайды. Android 11 және одан ертерек нұсқаларда Bluetooth LE адаптерлерін іздеу үшін жүйе орналасқан жерге рұқсатты да талап етеді — қосымша сіздің қайда екеніңізді анықтамайды және сақтамайды. Рұқсаттар тек «Адаптерді таңдау» немесе «Адаптерлерді табу» батырмасын өзіңіз басқанда сұралады; Wi-Fi адаптеріне олар керек емес.</p>
+<p>Көліктен алынған деректер — VIN, қате кодтары, қозғалтқыш параметрлері — телефонда оқылып, көрсетіледі және ешқайда жіберілмейді. Есеп шеберге «Олегке WhatsApp-қа жіберу» батырмасын өзіңіз басқанда ғана жіберіледі. Статистикаға тек қосылу түрі, хаттама және қателер саны түседі — кодтарсыз және VIN-сіз.</p>
 <h2>Пайдалану статистикасы</h2>
 <p>Қосымша қай бөлімдер қолданылатынын түсіну үшін Google Analytics 4 (Google LLC) пайдаланады: қосымша мен қойындыларды ашу, көмекшіде тілді, көлік түрі мен маркасын және ақаулық түрін таңдау, қай кеңес көрсетілгені, кодты ашу, сайтқа өту, байланыс батырмаларын басу, курс сабақтарын өту, діріл мен дыбысты қосу және өшіру. Жеке тұлғаны анықтамайтын деректер беріледі: орнату идентификаторы, құрылғы моделі мен жүйесі, шамамен аймақ. Сұрақ мәтіні, кодтар, телефон нөмірлері және басқа жеке деректер берілмейді, IP-мекенжай жасырылады. Толығырақ — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google құпиялылық саясатында</a>.</p>
 <h2>Анықтамалықты жаңарту</h2>
 <p>Қосымша сайттан техника каталогының, қате кодтарының және кеңестердің жаңартуларын, сондай-ақ баптауларды жүктейді: соңғы нұсқаның нөмірі және «Жақын шеберлер» бөлімі серверінің мекенжайы. Бұл кезде сіздің деректеріңіз жіберілмейді.</p>
+<h2>Өтініштер</h2>
+<p>Көмекші сұрағыңызды түсінбесе немесе қате кодын білмесе, сұрақ мәтіні немесе код қосымшаның серверіне (Cloudflare) әңгіме қадамымен, көлік маркасымен және тілмен бірге жіберіледі — атыңызсыз және телефон идентификаторынсыз; мәтіндегі телефон нөмірлері мен пошта мекенжайлары ауыстырылады. Осылайша Олег пен Claude (қосымшаны жасауға көмектесетін Anthropic ЖИ-і) көмекшіні неге үйрету керегін көреді.</p>
+<p>«Қате жауап» тақырыбындағы хабарлама соңғы сұрағыңызбен, көмекшінің жауабымен, бағаңызбен және көлік маркасымен, сондай-ақ қосымша орнатылымының кездейсоқ нөмірімен бірге талдауға жіберіледі — жауап дәл сізге келуі үшін. Жауапты Claude қосымша базасы бойынша дайындайды, ол көмекшіге хабарлама болып келеді. «Пікір және ұсыныстар» бөліміндегі басқа хабарламалар бұрынғыдай Олегке WhatsApp-қа жіберіледі.</p>
+<p>Өтініштер бір жылдан аспай сақталады және қосымша жұмыс істейтін қызметтерден (Cloudflare, GitHub, Anthropic) басқа үшінші тұлғаларға берілмейді.</p>
+
 <h2>Шебермен байланыс</h2>
 <p>«WhatsApp-қа жазу» және «Қоңырау шалу» батырмалары телефоныңыздағы WhatsApp-ты немесе қоңырау шалуды ашады. Не жіберетініңізді өзіңіз шешесіз; бұл хабарламаларды WhatsApp өз ережелері бойынша өңдейді.</p>
 <h2>Жақын шеберлер</h2>
@@ -144,7 +160,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <h2>In short</h2>
 <ul>
 <li>No registration. We don’t ask for or collect your name, phone number or email — except the details a mechanic chooses to publish in a listing and the reviews you choose to leave in “Mechanics nearby”.</li>
-<li>Your questions, error codes and sensor readings are processed on your phone and are not sent anywhere.</li>
+<li>Your questions, error codes and sensor readings are processed on your phone. Only what the assistant didn’t understand or doesn’t know is sent to our server — without your name or phone numbers — so we can teach the assistant (see “Requests”).</li>
 <li>We use Google Analytics for usage statistics — anonymously, without the text of your questions or personal data.</li>
 </ul>
 <h2>What is stored on your device</h2>
@@ -153,10 +169,18 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <p>Voice input in the assistant turns on only when you tap the microphone button. In the Android app, speech is recognized by Google’s system service on your phone (the Google app), and AvtoElektrik PRO receives only the resulting text: our app has no microphone access, and no recording is stored or sent to us. On the website, speech is recognized by your browser (for example, Chrome) under its own rules. The recognized text is handled like a typed question.</p>
 <p>“Read aloud” reads text with your phone’s text-to-speech (in the Android app, the system service, usually Google) or with your browser on the website. The app doesn’t store this text or send it to us.</p>
 <p>Service reminders are notifications the app schedules on the phone itself from your mileage and replacement dates. No data is sent for them. You can turn reminders off with the switch in “Service” or in your phone settings.</p>
+<h2>OBD-II scanner</h2>
+<p>To connect to an ELM327 adapter, the Android app asks for the “Nearby devices” (Bluetooth) permission. On Android 11 and earlier, the system also requires location access to search for Bluetooth LE adapters — the app doesn’t determine or store where you are. These permissions are requested only when you tap “Choose adapter” or “Find adapters” yourself; a Wi-Fi adapter doesn’t need them.</p>
+<p>Data from the car — VIN, error codes, engine parameters — is read and shown on your phone and is not sent anywhere. A report goes to the mechanic only if you tap “Send to Oleg on WhatsApp” yourself. Usage statistics include only the connection type, protocol and number of codes — no codes or VIN.</p>
 <h2>Usage statistics</h2>
 <p>The app uses Google Analytics 4 (Google LLC) to understand which sections are used: opening the app and tabs, choosing a language, the vehicle type and make and the kind of fault in the assistant, which tip was shown, decoding a code, visiting the website, tapping contact buttons, completing course lessons, turning vibration or sound on or off. The data sent is pseudonymous: an installation identifier, device model and OS, approximate region. The text of questions, codes, phone numbers and other personal data are not sent; IP addresses are anonymized. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a>.</p>
 <h2>Reference data updates</h2>
 <p>The app downloads updates to the vehicle catalog, error codes and tips from the app’s website, as well as settings: the latest version number and the address of the “Mechanics nearby” server. None of your data is sent in the process.</p>
+<h2>Requests</h2>
+<p>If the assistant didn’t understand your question or doesn’t know an error code, the question text or code is sent to the app’s server (Cloudflare) together with the conversation step, vehicle make and language — without your name or a phone identifier; phone numbers and email addresses in the text are replaced. This lets Oleg and Claude (Anthropic’s AI, which helps build the app) see what to teach the assistant.</p>
+<p>A message with the topic “Wrong answer” is sent for review together with your last question, the assistant’s answer, your rating and vehicle make, plus a random app-installation number so that the reply reaches you. Claude prepares the reply using the app’s knowledge base, and it arrives as a message in the Assistant. Other messages from “Feedback and suggestions” go to Oleg on WhatsApp as before.</p>
+<p>Requests are kept for no longer than a year and are not shared with third parties other than the services the app runs on (Cloudflare, GitHub, Anthropic).</p>
+
 <h2>Contacting the mechanic</h2>
 <p>The “Message on WhatsApp” and “Call” buttons open WhatsApp or the dialer on your phone. You decide what to send; those messages are handled by WhatsApp under its own terms.</p>
 <h2>Mechanics nearby</h2>
