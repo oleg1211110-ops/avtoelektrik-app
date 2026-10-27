@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.50",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.50.apk",
+    "version": "1.0.51",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.51.apk",
     "size": 7911897,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Сканер сравнивает живые данные с нашими нормами датчиков и подсказывает, что делать дальше; отчёт Олегу — только по вашему желанию. Коробка-автомат: расшифровка кодов ошибок. Новый сценарий «Заменили блок ЭБУ» — сверка шильдиков старого и нового блока и привязка к иммобилайзеру.",
-      "kk": "Сканер ағымдағы деректерді біздің датчик нормаларымен салыстырып, әрі қарай не істеу керегін айтады; Олегке есеп — тек өзіңіз қаласаңыз. Автомат қорап: қате кодтарының түсіндірмесі. Жаңа сценарий «ЭБУ блогы ауыстырылды» — ескі және жаңа блок жапсырмаларын салыстыру және иммобилайзерге байлау.",
-      "en": "The scanner compares live data with our sensor norms and suggests what to do next; a report to Oleg is sent only if you choose to. Automatic gearbox: fault code meanings. New “ECU replaced” scenario — compare the old and new unit labels and pair the unit with the immobilizer."
+      "ru": "Пункт «Разработка приложений и сайтов для вашего бизнеса»: направление бизнеса можно написать самому в WhatsApp. Сценарий «Заменили блок ЭБУ» со сверкой шильдиков, коды коробки-автомата, нормы датчиков в сканере.",
+      "kk": "«Бизнесіңізге арналған қосымшалар мен сайттар әзірлеу» бөлімі: бизнес бағытын WhatsApp-қа өзіңіз жаза аласыз. Жапсырмаларды салыстыратын «ЭБУ блогы ауыстырылды» сценарийі, автомат қорап кодтары, сканердегі датчик нормалары.",
+      "en": "“App and website development for your business”: describe your business yourself in WhatsApp. “ECU replaced” scenario with a label check, automatic gearbox codes, sensor norms in the scanner."
     }
   },
   "play": "",
