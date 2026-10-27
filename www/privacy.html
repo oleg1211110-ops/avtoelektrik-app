@@ -47,7 +47,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <h2>Коротко</h2>
 <ul>
 <li>Регистрация не нужна. Мы не спрашиваем имя, телефон, email и не собираем их — кроме данных, которые мастер сам публикует в карточке, и отзывов, которые вы сами оставляете в разделе «Мастера рядом».</li>
-<li>Ваши вопросы, коды ошибок и параметры датчиков обрабатываются прямо на телефоне. На сервер уходит только то, что помощник не понял или не знает, — без имени и номеров телефонов, чтобы научить помощника (подробнее — «Обращения»).</li>
+<li>Ваши вопросы, коды ошибок и параметры датчиков обрабатываются прямо на телефоне. На сервер уходит только то, что помощник не понял или не знает, — без имени и номеров телефонов, чтобы научить помощника (подробнее — «Обращения»), и фото или отчёты, которые вы сами прикрепили для разбора.</li>
 <li>Для статистики используется Google Analytics: обезличенно, без текста вопросов и личных данных.</li>
 </ul>
 
@@ -66,6 +66,9 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 
 <h2>Обновления справочника</h2>
 <p>Приложение загружает с сайта приложения обновления каталога техники, кодов ошибок и советов, а также настройки: номер последней версии и адрес сервера раздела «Мастера рядом». При этом никакие ваши данные не отправляются.</p>
+
+<h2>Разбор фото и отчётов</h2>
+<p>Если вы прикрепляете фото экрана сканера, приборной панели или отчёт диагностики и включён разбор ИИ, фото и текст отчёта уходят через сервер приложения в Claude (Anthropic) — только для этого разбора, вместе с маркой машины и случайным номером установки приложения (чтобы считать дневной лимит). Наш сервер фото и отчёты не сохраняет; Anthropic обрабатывает их по своим правилам: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">политика конфиденциальности Anthropic</a>. Не фотографируйте документы и номера машин — для разбора они не нужны. Если разбор ИИ выключен, текстовый отчёт (PDF, TXT) разбирается прямо на телефоне.</p>
 
 <h2>Обращения</h2>
 <p>Если помощник не понял ваш вопрос или не знает кода ошибки, текст вопроса или код уходит на сервер приложения (Cloudflare) вместе с шагом разговора, маркой машины и языком — без имени и идентификатора телефона; номера телефонов и адреса почты в тексте заменяются. Так Олег и Claude (ИИ Anthropic, который помогает делать приложение) видят, чему научить помощника.</p>
@@ -107,7 +110,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <h2>Қысқаша</h2>
 <ul>
 <li>Тіркелу қажет емес. Біз атыңызды, телефоныңызды, email-ді сұрамаймыз және жинамаймыз — шебер карточкада өзі жариялайтын деректер мен «Жақын шеберлер» бөлімінде өзіңіз қалдыратын пікірлерді қоспағанда.</li>
-<li>Сұрақтарыңыз, қате кодтары мен датчик параметрлері телефонның өзінде өңделеді. Серверге көмекші түсінбеген немесе білмейтін нәрсе ғана жіберіледі — атыңызсыз және телефон нөмірлерінсіз, көмекшіні үйрету үшін (толығырақ — «Өтініштер»).</li>
+<li>Сұрақтарыңыз, қате кодтары мен датчик параметрлері телефонның өзінде өңделеді. Серверге көмекші түсінбеген немесе білмейтін нәрсе ғана жіберіледі — атыңызсыз және телефон нөмірлерінсіз, көмекшіні үйрету үшін (толығырақ — «Өтініштер»), сондай-ақ талдауға өзіңіз тіркеген фото немесе есептер.</li>
 <li>Статистика үшін Google Analytics қолданылады: жеке тұлғаны анықтамайтын түрде, сұрақ мәтінінсіз және жеке деректерсіз.</li>
 </ul>
 <h2>Құрылғыңызда не сақталады</h2>
@@ -123,6 +126,9 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <p>Қосымша қай бөлімдер қолданылатынын түсіну үшін Google Analytics 4 (Google LLC) пайдаланады: қосымша мен қойындыларды ашу, көмекшіде тілді, көлік түрі мен маркасын және ақаулық түрін таңдау, қай кеңес көрсетілгені, кодты ашу, сайтқа өту, байланыс батырмаларын басу, курс сабақтарын өту, діріл мен дыбысты қосу және өшіру. Жеке тұлғаны анықтамайтын деректер беріледі: орнату идентификаторы, құрылғы моделі мен жүйесі, шамамен аймақ. Сұрақ мәтіні, кодтар, телефон нөмірлері және басқа жеке деректер берілмейді, IP-мекенжай жасырылады. Толығырақ — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google құпиялылық саясатында</a>.</p>
 <h2>Анықтамалықты жаңарту</h2>
 <p>Қосымша сайттан техника каталогының, қате кодтарының және кеңестердің жаңартуларын, сондай-ақ баптауларды жүктейді: соңғы нұсқаның нөмірі және «Жақын шеберлер» бөлімі серверінің мекенжайы. Бұл кезде сіздің деректеріңіз жіберілмейді.</p>
+<h2>Фото мен есептерді талдау</h2>
+<p>Сканер экранының, аспаптар панелінің фотосын немесе диагностика есебін тіркесеңіз және ЖИ талдауы қосулы болса, фото мен есеп мәтіні қосымша сервері арқылы Claude-қа (Anthropic) жіберіледі — тек осы талдау үшін, көлік маркасымен және қосымша орнатылымының кездейсоқ нөмірімен бірге (күндік шекті санау үшін). Біздің сервер фото мен есептерді сақтамайды; Anthropic оларды өз ережелері бойынша өңдейді: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic құпиялылық саясаты</a>. Құжаттар мен көлік нөмірлерін суретке түсірмеңіз — талдауға олар керек емес. ЖИ талдауы өшірулі болса, мәтіндік есеп (PDF, TXT) телефонның өзінде талданады.</p>
+
 <h2>Өтініштер</h2>
 <p>Көмекші сұрағыңызды түсінбесе немесе қате кодын білмесе, сұрақ мәтіні немесе код қосымшаның серверіне (Cloudflare) әңгіме қадамымен, көлік маркасымен және тілмен бірге жіберіледі — атыңызсыз және телефон идентификаторынсыз; мәтіндегі телефон нөмірлері мен пошта мекенжайлары ауыстырылады. Осылайша Олег пен Claude (қосымшаны жасауға көмектесетін Anthropic ЖИ-і) көмекшіні неге үйрету керегін көреді.</p>
 <p>«Қате жауап» тақырыбындағы хабарлама соңғы сұрағыңызбен, көмекшінің жауабымен, бағаңызбен және көлік маркасымен, сондай-ақ қосымша орнатылымының кездейсоқ нөмірімен бірге талдауға жіберіледі — жауап дәл сізге келуі үшін. Жауапты Claude қосымша базасы бойынша дайындайды, ол көмекшіге хабарлама болып келеді. «Пікір және ұсыныстар» бөліміндегі басқа хабарламалар бұрынғыдай Олегке WhatsApp-қа жіберіледі.</p>
@@ -160,7 +166,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <h2>In short</h2>
 <ul>
 <li>No registration. We don’t ask for or collect your name, phone number or email — except the details a mechanic chooses to publish in a listing and the reviews you choose to leave in “Mechanics nearby”.</li>
-<li>Your questions, error codes and sensor readings are processed on your phone. Only what the assistant didn’t understand or doesn’t know is sent to our server — without your name or phone numbers — so we can teach the assistant (see “Requests”).</li>
+<li>Your questions, error codes and sensor readings are processed on your phone. Only what the assistant didn’t understand or doesn’t know is sent to our server — without your name or phone numbers — so we can teach the assistant (see “Requests”), plus any photos or reports you attach for analysis yourself.</li>
 <li>We use Google Analytics for usage statistics — anonymously, without the text of your questions or personal data.</li>
 </ul>
 <h2>What is stored on your device</h2>
@@ -176,6 +182,9 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <p>The app uses Google Analytics 4 (Google LLC) to understand which sections are used: opening the app and tabs, choosing a language, the vehicle type and make and the kind of fault in the assistant, which tip was shown, decoding a code, visiting the website, tapping contact buttons, completing course lessons, turning vibration or sound on or off. The data sent is pseudonymous: an installation identifier, device model and OS, approximate region. The text of questions, codes, phone numbers and other personal data are not sent; IP addresses are anonymized. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a>.</p>
 <h2>Reference data updates</h2>
 <p>The app downloads updates to the vehicle catalog, error codes and tips from the app’s website, as well as settings: the latest version number and the address of the “Mechanics nearby” server. None of your data is sent in the process.</p>
+<h2>Photo and report analysis</h2>
+<p>If you attach a photo of a scan tool screen, the instrument cluster or a diagnostic report and AI analysis is on, the photo and report text are sent through the app’s server to Claude (Anthropic) for that analysis only, together with the vehicle make and a random app-installation number (to count the daily limit). Our server doesn’t store photos or reports; Anthropic processes them under its own rules: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy</a>. Don’t photograph documents or licence plates — they aren’t needed. If AI analysis is off, a text report (PDF, TXT) is read on your phone.</p>
+
 <h2>Requests</h2>
 <p>If the assistant didn’t understand your question or doesn’t know an error code, the question text or code is sent to the app’s server (Cloudflare) together with the conversation step, vehicle make and language — without your name or a phone identifier; phone numbers and email addresses in the text are replaced. This lets Oleg and Claude (Anthropic’s AI, which helps build the app) see what to teach the assistant.</p>
 <p>A message with the topic “Wrong answer” is sent for review together with your last question, the assistant’s answer, your rating and vehicle make, plus a random app-installation number so that the reply reaches you. Claude prepares the reply using the app’s knowledge base, and it arrives as a message in the Assistant. Other messages from “Feedback and suggestions” go to Oleg on WhatsApp as before.</p>
