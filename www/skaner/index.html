@@ -1,0 +1,190 @@
+<!doctype html>
+<!-- © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Сканер ELM327 на русском и казахском — бесплатное приложение АвтоЭлектрик PRO</title>
+<meta name="description" content="Бесплатный сканер для адаптера ELM327 на Android: ошибки двигателя, ABS, подушек и АКПП с расшифровкой на русском и казахском, живые данные с нормами, проверка перед покупкой, отчёт PDF.">
+<meta name="author" content="Дмитриев Олег Сергеевич">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFA500">
+<link rel="canonical" href="https://help.avtoelektrik-pro.kz/skaner/">
+<link rel="alternate" hreflang="ru" href="https://help.avtoelektrik-pro.kz/skaner/"><link rel="alternate" hreflang="kk" href="https://help.avtoelektrik-pro.kz/skaner/kk.html"><link rel="alternate" hreflang="en" href="https://help.avtoelektrik-pro.kz/skaner/en.html"><link rel="alternate" hreflang="x-default" href="https://help.avtoelektrik-pro.kz/skaner/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="АвтоЭлектрик PRO">
+<meta property="og:locale" content="ru_RU"><meta property="og:locale:alternate" content="kk_KZ"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Сканер ELM327 на русском и казахском — бесплатное приложение АвтоЭлектрик PRO">
+<meta property="og:description" content="Бесплатный сканер для адаптера ELM327 на Android: ошибки двигателя, ABS, подушек и АКПП с расшифровкой на русском и казахском, живые данные с нормами, проверка перед покупкой, отчёт PDF.">
+<meta property="og:url" content="https://help.avtoelektrik-pro.kz/skaner/">
+<meta property="og:image" content="https://help.avtoelektrik-pro.kz/skaner/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../icons/favicon-64.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<style>
+:root{--orange:#FFA500;--bg:#EFEFEF;--surface:#FFFFFF;--ink:#111;--ink-2:#222;--muted:#555;--line:#E3E3E3;--hero:#FFA500;--hero-ink:#000;--hero-2:#2E2200;--eyebrow:#000;--eyebrow-ink:#FFA500;
+--btn:#000;--btn-ink:#fff;--price:#111;--price-ink:#fff;--price-muted:#B5B5B5;--price-li:#E6E6E6;--ok:#1B5E20;--ok-soft:#E3F2E4;--paid-soft:#FFE2AE;--paid-ink:#000;--cream:#FFFAF0;--link:#000;--fig:#F4F6F8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1419;--surface:#172029;--ink:#E5EBF0;--ink-2:#CBD5DD;--muted:#9AA8B4;--line:#2A3846;--hero:#16212B;--hero-ink:#F1F5F8;--hero-2:#B9C5CF;--eyebrow:#FFA500;--eyebrow-ink:#111;
+--btn:#FFA500;--btn-ink:#111;--price:#0A0F13;--price-ink:#EEF2F5;--price-muted:#8796A3;--price-li:#CBD5DD;--ok:#7CCB80;--ok-soft:#17301A;--paid-soft:#3A2C0A;--paid-ink:#F5C452;--cream:#1F2A35;--link:#F5C452;--fig:#1F2A35;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Arial,'Helvetica Neue',Helvetica,sans-serif;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{background:var(--orange);color:#000}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1;text-transform:uppercase;font-weight:700}
+.logo small{font-size:11.5px;letter-spacing:.04em}.logo b{font-size:21px}
+.langs{display:flex;gap:6px}
+.langs a{color:#000;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;border:2px solid #000}
+.langs a[aria-current]{background:#000;color:#fff}
+.stripe{display:flex;height:5px}.stripe i{flex:1}
+.hero{background:var(--hero);color:var(--hero-ink);padding-block:22px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.crumbs{margin:0 0 14px;font-size:14px;color:var(--hero-2)}
+.crumbs a{color:inherit;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;background:var(--eyebrow);color:var(--eyebrow-ink);padding:5px 10px;border-radius:6px}
+.hero h1{font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--hero-2);margin:0 0 24px;max-width:60ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;text-align:center}
+.btn.pri{background:var(--btn);color:var(--btn-ink)}
+.btn.sec{color:var(--hero-ink);border-color:currentColor;background:transparent}
+.btn.wa{background:#1FA855;color:#fff}.btn.tg{background:#229ED9;color:#fff}
+.btn.cp{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,.langs a:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hero .btn:focus-visible{outline-color:var(--hero-ink)}
+.fig{margin:0;background:var(--surface);border-radius:16px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.fig svg{display:block;width:100%;height:auto;border-radius:10px}
+.fig figcaption{margin:8px 4px 2px;font-size:14px;color:var(--muted);line-height:1.4}
+.fig figcaption b{display:block;color:var(--ink);font-size:13px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.fact{background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35)}
+.fact b{display:block;font-size:28px;line-height:1.15}
+.fact span{font-size:14px;color:var(--muted)}
+main section{padding-top:52px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;text-wrap:balance}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.learn li{background:var(--surface);border-radius:12px;padding:14px 16px 14px 48px;position:relative}
+.learn li:before{content:"";position:absolute;left:18px;top:19px;width:14px;height:8px;border-left:3px solid var(--ok);border-bottom:3px solid var(--ok);transform:rotate(-45deg)}
+.note{margin:-6px 0 18px;color:var(--muted);max-width:70ch}
+ol.ls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ls li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;background:var(--surface);border-radius:12px;padding:14px 16px}
+.ls .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-weight:700;font-size:15px}
+.ls li.paid .n{background:var(--orange);color:#000}
+.ls h3{font-size:16.5px;line-height:1.3;margin:0}
+.ls p{margin:4px 0 6px;font-size:15px;color:var(--muted);line-height:1.45}
+.ls small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.ls em{font-style:normal;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.ls li.paid em,.ls li.app em{background:var(--paid-soft);color:var(--paid-ink)}
+details.more{margin-top:8px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--surface)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+details.more[open]>summary{display:none}
+details.more ol{margin-top:0}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.figs .fig{box-shadow:none}
+.price{background:var(--price);color:var(--price-ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;border:1px solid var(--line)}
+.price h2{color:var(--price-ink);margin-bottom:12px}
+.price.one{grid-template-columns:minmax(0,1fr)}
+.price .tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;background:var(--orange);color:#000;margin:0 0 12px}
+.amt{font-size:clamp(36px,6vw,54px);font-weight:700;color:var(--orange);line-height:1;margin:0}
+.amt s{color:var(--price-muted);font-size:.5em;font-weight:600;margin-right:6px}
+.once{color:var(--price-muted);margin:8px 0 14px}
+.promo{margin:-6px 0 12px;color:var(--orange);font-weight:700}
+.ptxt{margin:12px 0 18px;color:var(--price-li);max-width:60ch}
+.price .cta .btn.sec{color:var(--price-ink)}
+.price .btn.pri{background:var(--orange);color:#000}
+.price ul,.price ol{margin:0 0 14px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--price-li)}
+.price h3{margin:0 0 10px;font-size:19px}
+.pay{margin:0 0 14px;color:var(--price-muted);font-size:15px}
+details.inc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:0 18px}
+details.inc[open]{padding-bottom:16px}
+details.qa{background:var(--surface);border-radius:12px;padding:0 18px}
+details.qa+details.qa{margin-top:8px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+details.qa>summary:after,details.inc>summary:after{content:"+";font-size:24px;line-height:1;font-weight:400;flex:none}
+details.qa[open]>summary:after,details.inc[open]>summary:after{content:"\2212"}
+details.qa p{margin:0 0 16px;color:var(--muted);max-width:75ch}
+details.qa h3,details.inc h3.s{font-size:inherit;margin:0;font-weight:700}
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--cream);border-radius:16px;padding:22px}
+.who svg{width:60px;height:60px}
+.who p{margin:0 0 10px;max-width:75ch}
+.who .links{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rel a.card{display:flex;flex-direction:column;gap:6px;background:var(--surface);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.rel a.card:hover{border-color:var(--orange)}
+.rel .card b{font-size:19px;line-height:1.25}
+.rel .card span{font-size:14px;color:var(--muted)}
+.rel .card i{font-style:normal;font-weight:700;font-size:12.5px;align-self:flex-start;padding:3px 9px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.rel .card i.p{background:var(--paid-soft);color:var(--paid-ink)}
+.rel .card u{margin-top:auto;padding-top:6px;font-weight:700;color:var(--link);text-decoration:none}
+.all{margin:16px 0 0;font-weight:700}
+footer{margin-top:56px;padding-block:26px 34px;background:#111;color:#B5B5B5;font-size:14px}
+footer a{color:#fff}
+footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap}
+@media (max-width:860px){.hero .wrap,.price{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rel{grid-template-columns:minmax(0,1fr)}.price{padding:22px}}
+@media (max-width:640px){.learn,.figs{grid-template-columns:minmax(0,1fr)}.who{grid-template-columns:minmax(0,1fr)}.who svg{width:48px;height:48px}.hero{padding-block:18px 56px}.lead{font-size:17px}}
+@media (max-width:420px){.logo b{font-size:18px}.langs a{padding:5px 9px}.fact b{font-size:24px}.btn{width:100%}.share .btn{width:auto;flex:1 1 40%}}
+
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.feat{background:var(--surface);border-radius:16px;padding:14px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}
+.feat img{width:150px;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.feat h3{margin:4px 0 6px;font-size:19px;line-height:1.25}
+.feat p{margin:0;color:var(--muted);font-size:15.5px}
+.shot{margin:0;max-width:300px}
+.shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid rgba(0,0,0,.12);box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.steps li{background:var(--surface);border-radius:14px;padding:16px;position:relative;counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cc{background:var(--surface);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.cc h3{margin:0;font-size:21px;line-height:1.25}
+.cc .tg{align-self:flex-start;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.cc p{margin:0;color:var(--muted);font-size:15.5px}
+.cc ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cc small{color:var(--muted);font-size:13.5px}
+.cc .cta{margin-top:auto;padding-top:6px}
+.cc .btn{min-height:44px;padding:10px 18px}
+.cc .btn.sec{color:var(--ink)}
+.cc .fig{box-shadow:none;background:var(--fig);padding:8px}
+.cc details.qa{background:var(--bg);padding:0 14px}
+@media (max-width:860px){.feats,.cards{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.feat{grid-template-columns:minmax(0,1fr)}.feat img{width:min(260px,100%)}.steps{grid-template-columns:minmax(0,1fr)}.shot{max-width:240px;margin:0 auto}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "АвтоЭлектрик PRO", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "url": "https://help.avtoelektrik-pro.kz/skaner/", "description": "Бесплатный сканер для адаптера ELM327 на Android: ошибки двигателя, ABS, подушек и АКПП с расшифровкой на русском и казахском, живые данные с нормами, проверка перед покупкой, отчёт PDF.", "inLanguage": ["ru", "kk", "en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KZT"}, "author": {"@type": "Person", "name": "Олег Дмитриев"}, "screenshot": ["https://help.avtoelektrik-pro.kz/skaner/img/ru-codes.jpg", "https://help.avtoelektrik-pro.kz/skaner/img/ru-live.jpg", "https://help.avtoelektrik-pro.kz/skaner/img/ru-blocks.jpg", "https://help.avtoelektrik-pro.kz/skaner/img/ru-m06.jpg"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сканер бесплатный?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Приложение и все функции сканера бесплатные. Нужен только адаптер ELM327."}}, {"@type": "Question", "name": "Работает ли на iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Подключение к адаптеру — только в приложении для Android. На iPhone и в браузере можно попробовать сканер на виртуальной машине."}}, {"@type": "Question", "name": "Какие машины поддерживаются?", "acceptedAnswer": {"@type": "Answer", "text": "Бензиновые и дизельные с разъёмом OBD-II (примерно с 2001–2008 года). ABS, SRS и АКПП — Toyota/Lexus, Hyundai/Kia, VW/Skoda/Audi на шине CAN. Грузовики J1939 — в пробном режиме."}}, {"@type": "Question", "name": "Не испортит ли сканер блок?", "acceptedAnswer": {"@type": "Answer", "text": "Нет: приложение только читает данные и стирает ошибки по стандартным командам. Прошивок, настроек и записи в блоки нет."}}, {"@type": "Question", "name": "Можно попробовать без адаптера?", "acceptedAnswer": {"@type": "Answer", "text": "Да: в разделе «Сканер» есть виртуальная машина — исправная и с неисправностями: бедная смесь, пропуски зажигания, перегрев, ошибка ABS, электромобиль и другие."}}]}]}</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="https://help.avtoelektrik-pro.kz/" aria-label="АвтоЭлектрик PRO"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><span><small>АвтоЭлектрик</small><b>PRO</b></span></a>
+  <nav class="langs" aria-label="Язык · Тіл · Language"><a href="./" hreflang="ru" lang="ru" aria-current="page">RU</a><a href="kk.html" hreflang="kk" lang="kk">ҚАЗ</a><a href="en.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Сканер OBD-II · бесплатно</p>
+    <h1>Сканер ELM327 на русском и казахском языке</h1>
+    <p class="lead">Приложение АвтоЭлектрик PRO для Android: вставьте адаптер ELM327 в разъём OBD-II — и смотрите ошибки двигателя, ABS, подушек и АКПП с расшифровкой и первым шагом ремонта от автоэлектрика. Бесплатно.</p>
+    <div class="cta"><a class="btn pri" href="https://help.avtoelektrik-pro.kz/#skachat">Скачать для Android</a><a class="btn sec" href="https://help.avtoelektrik-pro.kz/#skaner">Попробовать без адаптера</a></div>
+  </div>
+  <figure class="shot"><img src="img/ru-main.jpg" alt="Сканер ELM327 на русском и казахском языке" width="600" height="1200" fetchpriority="high" decoding="async"></figure>
+</div></section>
+<main class="wrap">
+  <div class="facts"><div class="fact"><b>3 языка</b><span>русский, казахский, английский</span></div><div class="fact"><b>0 ₸</b><span>приложение бесплатное</span></div><div class="fact"><b>ELM327</b><span>Bluetooth, BLE, Wi-Fi</span></div><div class="fact"><b>10 примеров</b><span>виртуальная машина без адаптера</span></div></div>
+  <section aria-labelledby="ft"><h2 id="ft">Что умеет сканер</h2><p class="note">Снимки экранов приложения на виртуальной машине «Попробовать без адаптера».</p><div class="feats"><article class="feat"><img src="img/ru-codes.jpg" alt="Ошибки с расшифровкой" width="150" height="300" loading="lazy" decoding="async"><div><h3>Ошибки с расшифровкой</h3><p>Сохранённые, ожидающие и постоянные ошибки двигателя — с понятным названием, причинами и первым шагом ремонта.</p></div></article><article class="feat"><img src="img/ru-live.jpg" alt="Живые данные с нормами" width="150" height="300" loading="lazy" decoding="async"><div><h3>Живые данные с нормами</h3><p>Обороты, температура, напряжение, коррекции, ДМРВ — рядом норма прогретого мотора. Графики, крупные цифры, запись в таблицу.</p></div></article><article class="feat"><img src="img/ru-blocks.jpg" alt="ABS, SRS, АКПП" width="150" height="300" loading="lazy" decoding="async"><div><h3>ABS, SRS, АКПП</h3><p>Ошибки ABS, подушек безопасности, коробки, руля и приборки — Toyota/Lexus, Hyundai/Kia, VW/Skoda/Audi. Только чтение и стирание.</p></div></article><article class="feat"><img src="img/ru-m06.jpg" alt="Пропуски по цилиндрам" width="150" height="300" loading="lazy" decoding="async"><div><h3>Пропуски по цилиндрам</h3><p>Тесты блока (режим 06): какой цилиндр «троит» — видно ещё до того, как загорится Check Engine.</p></div></article><article class="feat"><img src="img/ru-cleared.jpg" alt="«Ошибки стирали?»" width="150" height="300" loading="lazy" decoding="async"><div><h3>«Ошибки стирали?»</h3><p>Перед покупкой машины: сколько проехали и сколько раз прогрели мотор после стирания ошибок, готовность систем, постоянные ошибки.</p></div></article><article class="feat"><img src="img/ru-pdf.jpg" alt="Отчёт PDF" width="150" height="212" loading="lazy" decoding="async"><div><h3>Отчёт PDF</h3><p>Готовый документ: ошибки, готовность систем, тест аккумулятора, пробег по данным блока. Отправьте покупателю или клиенту.</p></div></article><article class="feat"><img src="img/ru-trip.jpg" alt="Бортовой компьютер" width="150" height="300" loading="lazy" decoding="async"><div><h3>Бортовой компьютер</h3><p>Расход сейчас и средний, путь, время, скорость. Голосом предупредит о перегреве, плохой зарядке и высоких оборотах.</p></div></article><article class="feat"><img src="img/ru-hv.jpg" alt="Батарея гибрида и электромобиля" width="150" height="300" loading="lazy" decoding="async"><div><h3>Батарея гибрида и электромобиля</h3><p>Заряд, здоровье (SOH), напряжения ячеек или блоков: Hyundai/Kia EV, Toyota Prius, Nissan Leaf. Только чтение.</p></div></article></div></section>
+  <section aria-labelledby="wy"><h2 id="wy">Чем удобен наш сканер</h2><ul class="learn"><li>Ошибки сразу с расшифровкой на русском, казахском или английском — и с первым шагом ремонта от автоэлектрика.</li><li>Живые данные сравниваются с нормами: видно, что в порядке, а что нет.</li><li>Проверка машины перед покупкой: «Ошибки стирали?», тест аккумулятора и генератора, отчёт PDF для покупателя.</li><li>ABS, подушки, АКПП, тесты блока, бортовой компьютер, батарея гибридов и электромобилей — в одном приложении, бесплатно.</li><li>Не разобрались — отправьте отчёт Олегу в WhatsApp или найдите мастера рядом.</li><li>Работает с недорогим ELM327 и со Сканматиком через компьютер. Только чтение и стирание ошибок — в блоки ничего не пишем.</li></ul></section>
+  <section aria-labelledby="ad"><h2 id="ad">Какой адаптер подойдёт</h2><ul class="learn"><li>ELM327 по Bluetooth — самый распространённый и недорогой.</li><li>ELM327 Bluetooth LE (Vgate iCar Pro BLE, OBDLink CX и подобные).</li><li>ELM327 Wi-Fi — подключите телефон к сети адаптера.</li><li>Сканматик 2 PRO — через компьютер на Windows (программа АвтоЭлектрик PRO для Сканматика).</li></ul><p class="note" style="margin-top:14px">Дешёвые копии ELM327 v2.1 часто теряют ответы и не читают ABS/SRS. В приложении есть «Проверка адаптера» — она покажет, на что способен ваш.</p></section>
+  <section aria-labelledby="hw"><h2 id="hw">Как подключить</h2><ol class="steps"><li>Скачайте приложение АвтоЭлектрик PRO для Android.</li><li>Вставьте адаптер в разъём OBD-II под рулём и включите зажигание.</li><li>Откройте «Сканер», выберите вид адаптера и нажмите «Подключить».</li><li>Смотрите ошибки, живые данные и сохраните отчёт PDF.</li></ol>
+    <div class="cta" style="margin-top:18px"><a class="btn pri" href="https://help.avtoelektrik-pro.kz/#skachat">Скачать для Android</a><a class="btn cp" href="https://help.avtoelektrik-pro.kz/kursy/diagnostika-skanerom/" style="color:var(--ink)">Курс «Диагностика сканером»</a></div></section>
+  <section aria-labelledby="fq"><h2 id="fq">Вопросы</h2><details class="qa"><summary><h3>Сканер бесплатный?</h3></summary><p>Да. Приложение и все функции сканера бесплатные. Нужен только адаптер ELM327.</p></details><details class="qa"><summary><h3>Работает ли на iPhone?</h3></summary><p>Подключение к адаптеру — только в приложении для Android. На iPhone и в браузере можно попробовать сканер на виртуальной машине.</p></details><details class="qa"><summary><h3>Какие машины поддерживаются?</h3></summary><p>Бензиновые и дизельные с разъёмом OBD-II (примерно с 2001–2008 года). ABS, SRS и АКПП — Toyota/Lexus, Hyundai/Kia, VW/Skoda/Audi на шине CAN. Грузовики J1939 — в пробном режиме.</p></details><details class="qa"><summary><h3>Не испортит ли сканер блок?</h3></summary><p>Нет: приложение только читает данные и стирает ошибки по стандартным командам. Прошивок, настроек и записи в блоки нет.</p></details><details class="qa"><summary><h3>Можно попробовать без адаптера?</h3></summary><p>Да: в разделе «Сканер» есть виртуальная машина — исправная и с неисправностями: бедная смесь, пропуски зажигания, перегрев, ошибка ABS, электромобиль и другие.</p></details></section>
+  <section aria-labelledby="wh"><h2 id="wh">Кто сделал</h2><div class="who"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><div><p>Приложение сделал автоэлектрик Олег Дмитриев из Алматы (стаж 26 лет). Подсказки в сканере — из его практики.</p><div class="links"><a href="https://avtoelektrik-pro.kz" target="_blank" rel="noopener">Сайт автоэлектрика Олега</a><a href="https://wa.me/77011211110" target="_blank" rel="noopener">WhatsApp +7 701 121 11 10</a></div></div></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 АвтоЭлектрик PRO · Дмитриев Олег Сергеевич</span><a href="https://help.avtoelektrik-pro.kz/">Помощник автоэлектрика</a><a href="../besplatnye-kursy/">Бесплатные курсы автоэлектрика</a><a href="https://help.avtoelektrik-pro.kz/kursy/diagnostika-skanerom/">Курс «Диагностика сканером»</a><a href="../privacy.html">Политика конфиденциальности</a></div></footer>
+</body>
+</html>
