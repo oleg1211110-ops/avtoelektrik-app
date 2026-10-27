@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.58",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.58.apk",
-    "size": 7989721,
-    "date": "2026-10-27",
+    "version": "1.0.59",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.59.apk",
+    "size": 7993817,
+    "date": "2026-10-28",
     "notes": {
-      "ru": "Сканер: ошибки ABS, подушек, АКПП и других блоков (Toyota, Hyundai/Kia, VW/Skoda/Audi), тесты блока с пропусками по цилиндрам, бортовой компьютер, голосовые предупреждения, отчёт PDF, журнал машины, проверка адаптера, батарея гибридов и электромобилей. Цены курсов — и в рублях, сумах, сомах, долларах. «Назад» точнее возвращает в «Кодах ошибок» и «Блоках ЭБУ».",
-      "kk": "Сканер: ABS, жастықтар, АКПП және басқа блоктардың қателері (Toyota, Hyundai/Kia, VW/Skoda/Audi), цилиндрлер бойынша іркілістері бар блок тестері, борттық компьютер, дауыстық ескертулер, PDF есеп, көлік журналы, адаптерді тексеру, гибрид пен электромобиль батареясы. Курс бағалары — рубль, сум, сом, долларда да. «Артқа» «Қате кодтары» мен «ЭБУ блоктарында» дәлірек қайтарады.",
-      "en": "Scanner: ABS, airbag, transmission and other module codes (Toyota, Hyundai/Kia, VW/Skoda/Audi), module tests with misfires by cylinder, trip computer, voice warnings, PDF report, vehicle log, adapter check, hybrid and EV battery. Course prices also in rubles, sums, soms and dollars. “Back” now returns more precisely in “Trouble codes” and “ECUs”."
+      "ru": "Бесплатный курс «Для водителей»: в приложении открыты все уроки, а на странице «Курсы» — ваш промокод, чтобы проходить его и на сайте. Звук при открытии стал тише.",
+      "kk": "«Жүргізушілерге арналған» тегін курсы: қосымшада барлық сабақ ашық, ал «Курстар» бетінде — сайтта да өту үшін промокодыңыз. Ашылғандағы дыбыс бәсеңдеді.",
+      "en": "Free course “For drivers”: all lessons are open in the app, and the Courses page shows your promo code to take it on the website too. The startup sound is quieter."
     }
   },
   "play": "",
@@ -65,13 +65,13 @@
     "kaspi": ""
   },
   "appGate": {
-    "_": "Бесплатные курсы на сайте в браузере: открыты первые share (0.8 = 80 %) уроков, дальше — в приложении; прогресс переносится кодом. levels — какие курсы; on: false — выключить.",
+    "_": "Бесплатные курсы на сайте в браузере: открыта первая половина уроков (share 0.5), остальные — по бесплатному промокоду code, который человек видит в приложении на странице «Курсы» (в приложении всё открыто). levels — какие курсы («ИП для СТО» открыт полностью — Олег, 28.10.2026); on: false — выключить. Новый code не закрывает уроки тем, кто ввёл старый.",
     "on": true,
     "levels": [
-      "driver",
-      "ip"
+      "driver"
     ],
-    "share": 0.8
+    "share": 0.5,
+    "code": "AEPRO"
   },
   "kaspiPay": {
     "_": "Оплата курса счётом в Kaspi (ApiPay.kz): работает, когда на сервере есть ключ APIPAY_KEY. on: false — не показывать в приложении.",
