@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.56",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.56.apk",
-    "size": 7928281,
+    "version": "1.0.57",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.57.apk",
+    "size": 7940569,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Меню стало удобнее: «Что я умею» — наверху, разделы и настройки — по смыслу; пункт «Сайты и приложения на заказ». Камера в поле ввода: сфотографируйте и отправьте фото Олегу. Звук приветствия тише.",
-      "kk": "Мәзір ыңғайлырақ: «Мен не істей аламын» — жоғарыда, бөлімдер мен баптаулар — мағынасы бойынша; «Тапсырыс бойынша сайттар мен қосымшалар» бөлімі. Енгізу өрісіндегі камера: суретке түсіріп, фотоны Олегке жіберіңіз. Сәлемдесу дыбысы бәсеңдеді.",
-      "en": "A tidier menu: “What I can do” is at the top, sections and settings are grouped sensibly; new short item “Custom websites and apps”. Camera in the input box: take a photo and send it to Oleg. Quieter welcome sound."
+      "ru": "Сканер: графики, крупные цифры и запись живых данных в таблицу; «Ошибки стирали?» — проверка перед покупкой; тест аккумулятора и генератора по шагам; номера блока двигателя.",
+      "kk": "Сканер: графиктер, ірі сандар және ағымдағы деректерді кестеге жазу; «Қателер өшірілді ме?» — сатып алар алдындағы тексеру; аккумулятор мен генераторды қадамдап тексеру; қозғалтқыш блогының нөмірлері.",
+      "en": "Scanner: graphs, large digits and live data recording to a table; “Were codes cleared?” pre-purchase check; step-by-step battery and alternator test; engine ECU numbers."
     }
   },
   "play": "",
