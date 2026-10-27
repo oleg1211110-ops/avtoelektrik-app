@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.49",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.49.apk",
-    "size": 7899609,
+    "version": "1.0.50",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.50.apk",
+    "size": 7911897,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Отчёт сканера можно вставить текстом — помощник найдёт коды производителя (например, DTC 3802) и объяснит их простыми словами. Прикрепить файл отчёта (PDF, TXT) или фото прямо в помощнике. «Ошибка в ответе» уходит на разбор — ответ придёт в приложение. Пункт «Реклама в приложении».",
-      "kk": "Сканер есебін мәтінмен қоюға болады — көмекші өндіруші кодтарын (мысалы, DTC 3802) тауып, қарапайым тілмен түсіндіреді. Есеп файлын (PDF, TXT) немесе фотоны тікелей көмекшіге тіркеуге болады. «Қате жауап» талдауға жіберіледі — жауап қосымшаға келеді. «Қосымшадағы жарнама» бөлімі.",
-      "en": "Paste a scan report as text — the assistant finds manufacturer codes (for example, DTC 3802) and explains them in plain words. Attach a report file (PDF, TXT) or a photo right in the Assistant. “Wrong answer” messages go for review — the reply comes back in the app. New “Advertise in the app” item."
+      "ru": "Сканер сравнивает живые данные с нашими нормами датчиков и подсказывает, что делать дальше; отчёт Олегу — только по вашему желанию. Коробка-автомат: расшифровка кодов ошибок. Новый сценарий «Заменили блок ЭБУ» — сверка шильдиков старого и нового блока и привязка к иммобилайзеру.",
+      "kk": "Сканер ағымдағы деректерді біздің датчик нормаларымен салыстырып, әрі қарай не істеу керегін айтады; Олегке есеп — тек өзіңіз қаласаңыз. Автомат қорап: қате кодтарының түсіндірмесі. Жаңа сценарий «ЭБУ блогы ауыстырылды» — ескі және жаңа блок жапсырмаларын салыстыру және иммобилайзерге байлау.",
+      "en": "The scanner compares live data with our sensor norms and suggests what to do next; a report to Oleg is sent only if you choose to. Automatic gearbox: fault code meanings. New “ECU replaced” scenario — compare the old and new unit labels and pair the unit with the immobilizer."
     }
   },
   "play": "",
