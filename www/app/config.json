@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.51",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.51.apk",
-    "size": 7911897,
+    "version": "1.0.52",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.52.apk",
+    "size": 7920089,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Пункт «Разработка приложений и сайтов для вашего бизнеса»: направление бизнеса можно написать самому в WhatsApp. Сценарий «Заменили блок ЭБУ» со сверкой шильдиков, коды коробки-автомата, нормы датчиков в сканере.",
-      "kk": "«Бизнесіңізге арналған қосымшалар мен сайттар әзірлеу» бөлімі: бизнес бағытын WhatsApp-қа өзіңіз жаза аласыз. Жапсырмаларды салыстыратын «ЭБУ блогы ауыстырылды» сценарийі, автомат қорап кодтары, сканердегі датчик нормалары.",
-      "en": "“App and website development for your business”: describe your business yourself in WhatsApp. “ECU replaced” scenario with a label check, automatic gearbox codes, sensor norms in the scanner."
+      "ru": "Выбор голоса озвучки: «Настройки → Голос озвучки» — голоса телефона, скорость и прослушивание. Курсы «ИП для СТО» и «Бухгалтер ИП»: на старте всё равно нужна консультация бухгалтера. Пункт «Разработка приложений и сайтов для вашего бизнеса».",
+      "kk": "Дыбыстау дауысын таңдау: «Баптаулар → Дыбыстау дауысы» — телефон дауыстары, жылдамдық және тыңдау. «СТО-ға арналған ЖК» және «ЖК бухгалтері» курстары: басында бәрібір бухгалтердің кеңесі қажет. «Бизнесіңізге арналған қосымшалар мен сайттар әзірлеу» бөлімі.",
+      "en": "Choose the reading voice: “Settings → Reading voice” — phone voices, speed and preview. “IP for a garage” and “IP bookkeeping” courses: you’ll still need an accountant’s advice at the start. New “App and website development for your business” item."
     }
   },
   "play": "",
