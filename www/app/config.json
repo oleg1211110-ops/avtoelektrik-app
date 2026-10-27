@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.52",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.52.apk",
-    "size": 7920089,
+    "version": "1.0.53",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.53.apk",
+    "size": 7928281,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Выбор голоса озвучки: «Настройки → Голос озвучки» — голоса телефона, скорость и прослушивание. Курсы «ИП для СТО» и «Бухгалтер ИП»: на старте всё равно нужна консультация бухгалтера. Пункт «Разработка приложений и сайтов для вашего бизнеса».",
-      "kk": "Дыбыстау дауысын таңдау: «Баптаулар → Дыбыстау дауысы» — телефон дауыстары, жылдамдық және тыңдау. «СТО-ға арналған ЖК» және «ЖК бухгалтері» курстары: басында бәрібір бухгалтердің кеңесі қажет. «Бизнесіңізге арналған қосымшалар мен сайттар әзірлеу» бөлімі.",
-      "en": "Choose the reading voice: “Settings → Reading voice” — phone voices, speed and preview. “IP for a garage” and “IP bookkeeping” courses: you’ll still need an accountant’s advice at the start. New “App and website development for your business” item."
+      "ru": "Новый сценарий «Электромобиль сел»: как прикурить аккумулятор 12 В и что делать, если разряжена большая батарея. Выбор голоса озвучки в настройках.",
+      "kk": "Жаңа сценарий «Электромобиль отырып қалды»: 12 В аккумуляторды қалай оталдыру және үлкен батарея отырып қалса не істеу керек. Баптауларда дыбыстау дауысын таңдау.",
+      "en": "New “EV is dead” scenario: how to jump-start the 12 V battery and what to do if the big battery is empty. Choose the reading voice in Settings."
     }
   },
   "play": "",
