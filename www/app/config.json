@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.57",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.57.apk",
-    "size": 7940569,
+    "version": "1.0.58",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.58.apk",
+    "size": 7989721,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Сканер: графики, крупные цифры и запись живых данных в таблицу; «Ошибки стирали?» — проверка перед покупкой; тест аккумулятора и генератора по шагам; номера блока двигателя.",
-      "kk": "Сканер: графиктер, ірі сандар және ағымдағы деректерді кестеге жазу; «Қателер өшірілді ме?» — сатып алар алдындағы тексеру; аккумулятор мен генераторды қадамдап тексеру; қозғалтқыш блогының нөмірлері.",
-      "en": "Scanner: graphs, large digits and live data recording to a table; “Were codes cleared?” pre-purchase check; step-by-step battery and alternator test; engine ECU numbers."
+      "ru": "Сканер: ошибки ABS, подушек, АКПП и других блоков (Toyota, Hyundai/Kia, VW/Skoda/Audi), тесты блока с пропусками по цилиндрам, бортовой компьютер, голосовые предупреждения, отчёт PDF, журнал машины, проверка адаптера, батарея гибридов и электромобилей. Цены курсов — и в рублях, сумах, сомах, долларах. «Назад» точнее возвращает в «Кодах ошибок» и «Блоках ЭБУ».",
+      "kk": "Сканер: ABS, жастықтар, АКПП және басқа блоктардың қателері (Toyota, Hyundai/Kia, VW/Skoda/Audi), цилиндрлер бойынша іркілістері бар блок тестері, борттық компьютер, дауыстық ескертулер, PDF есеп, көлік журналы, адаптерді тексеру, гибрид пен электромобиль батареясы. Курс бағалары — рубль, сум, сом, долларда да. «Артқа» «Қате кодтары» мен «ЭБУ блоктарында» дәлірек қайтарады.",
+      "en": "Scanner: ABS, airbag, transmission and other module codes (Toyota, Hyundai/Kia, VW/Skoda/Audi), module tests with misfires by cylinder, trip computer, voice warnings, PDF report, vehicle log, adapter check, hybrid and EV battery. Course prices also in rubles, sums, soms and dollars. “Back” now returns more precisely in “Trouble codes” and “ECUs”."
     }
   },
   "play": "",
