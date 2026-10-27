@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.48",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.48.apk",
-    "size": 7883225,
+    "version": "1.0.49",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.49.apk",
+    "size": 7899609,
     "date": "2026-10-27",
     "notes": {
-      "ru": "Сканер OBD-II: подключите адаптер ELM327 по Bluetooth, Bluetooth LE или Wi-Fi — ошибки с расшифровкой, живые данные с нормами, готовность систем, стоп-кадр и отчёт Олегу. Нет адаптера — попробуйте на виртуальной машине. Калькулятор налогового режима 2026 в курсе «ИП для СТО». Новый пункт «Приложение для вашего бизнеса».",
-      "kk": "OBD-II сканері: ELM327 адаптерін Bluetooth, Bluetooth LE немесе Wi-Fi арқылы қосыңыз — түсіндірмесімен қателер, нормалары бар ағымдағы деректер, жүйелердің дайындығы, стоп-кадр және Олегке есеп. Адаптер жоқ болса — виртуалды көлікте байқап көріңіз. «СТО-ға арналған ЖК» курсында 2026 салық режимінің калькуляторы. Жаңа «Бизнесіңізге арналған қосымша» бөлімі.",
-      "en": "OBD-II scanner: connect an ELM327 adapter over Bluetooth, Bluetooth LE or Wi-Fi — codes with explanations, live data with normal ranges, readiness monitors, freeze frame and a report for Oleg. No adapter? Try it on a virtual car. 2026 tax regime calculator in the “Sole proprietor for a garage” course. New “An app for your business” item."
+      "ru": "Отчёт сканера можно вставить текстом — помощник найдёт коды производителя (например, DTC 3802) и объяснит их простыми словами. Прикрепить файл отчёта (PDF, TXT) или фото прямо в помощнике. «Ошибка в ответе» уходит на разбор — ответ придёт в приложение. Пункт «Реклама в приложении».",
+      "kk": "Сканер есебін мәтінмен қоюға болады — көмекші өндіруші кодтарын (мысалы, DTC 3802) тауып, қарапайым тілмен түсіндіреді. Есеп файлын (PDF, TXT) немесе фотоны тікелей көмекшіге тіркеуге болады. «Қате жауап» талдауға жіберіледі — жауап қосымшаға келеді. «Қосымшадағы жарнама» бөлімі.",
+      "en": "Paste a scan report as text — the assistant finds manufacturer codes (for example, DTC 3802) and explains them in plain words. Attach a report file (PDF, TXT) or a photo right in the Assistant. “Wrong answer” messages go for review — the reply comes back in the app. New “Advertise in the app” item."
     }
   },
   "play": "",
