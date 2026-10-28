@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.59",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.59.apk",
-    "size": 7993817,
+    "version": "1.0.61",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.61.apk",
+    "size": 8075737,
     "date": "2026-10-28",
     "notes": {
-      "ru": "Бесплатный курс «Для водителей»: в приложении открыты все уроки, а на странице «Курсы» — ваш промокод, чтобы проходить его и на сайте. Звук при открытии стал тише.",
-      "kk": "«Жүргізушілерге арналған» тегін курсы: қосымшада барлық сабақ ашық, ал «Курстар» бетінде — сайтта да өту үшін промокодыңыз. Ашылғандағы дыбыс бәсеңдеді.",
-      "en": "Free course “For drivers”: all lessons are open in the app, and the Courses page shows your promo code to take it on the website too. The startup sound is quieter."
+      "ru": "Сканер: пробег и моточасы по всем блокам (легковые и грузовые) — видно скрученный пробег; «Сервисные проверки» — сажевый фильтр, прожиг по стандарту OBD-II, проверка механизмов, адаптации после ремонта. Помощник: «машина не видит ключ» — где приложить ключ у вашей марки; 73 случая из практики Олега и 17 новых подсказок. Курсы: больше бесплатных уроков, «Бухгалтер ИП» открыт полностью. Меню — в одну строку.",
+      "kk": "Сканер: барлық блоктар бойынша жүріс пен мотосағаттар (жеңіл және жүк көліктері) — бұралған жүріс көрінеді; «Сервистік тексерулер» — сажа сүзгісі, OBD-II стандарты бойынша жағу, механизмдерді тексеру, жөндеуден кейінгі адаптациялар. Көмекші: «көлік кілтті көрмейді» — маркаңызда кілтті қайда тигізу керек; Олегтің тәжірибесінен 73 жағдай және 17 жаңа кеңес. Курстар: тегін сабақтар көбейді, «ЖК бухгалтері» толығымен ашық. Мәзір — бір жолда.",
+      "en": "Scanner: mileage and engine hours from every module (cars and trucks) — rolled-back mileage shows up; “Service checks” — particulate filter, OBD-II regeneration request, actuator checks, adaptations after repair. Assistant: “the car doesn’t detect the key” — where to hold the key for your make; 73 cases from Oleg’s practice and 17 new tips. Courses: more free lessons, “IP bookkeeping” is fully open. The menu now fits on one line."
     }
   },
   "play": "",
