@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.61",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.61.apk",
+    "version": "1.0.62",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.62.apk",
     "size": 8075737,
     "date": "2026-10-28",
     "notes": {
-      "ru": "Сканер: пробег и моточасы по всем блокам (легковые и грузовые) — видно скрученный пробег; «Сервисные проверки» — сажевый фильтр, прожиг по стандарту OBD-II, проверка механизмов, адаптации после ремонта. Помощник: «машина не видит ключ» — где приложить ключ у вашей марки; 73 случая из практики Олега и 17 новых подсказок. Курсы: больше бесплатных уроков, «Бухгалтер ИП» открыт полностью. Меню — в одну строку.",
-      "kk": "Сканер: барлық блоктар бойынша жүріс пен мотосағаттар (жеңіл және жүк көліктері) — бұралған жүріс көрінеді; «Сервистік тексерулер» — сажа сүзгісі, OBD-II стандарты бойынша жағу, механизмдерді тексеру, жөндеуден кейінгі адаптациялар. Көмекші: «көлік кілтті көрмейді» — маркаңызда кілтті қайда тигізу керек; Олегтің тәжірибесінен 73 жағдай және 17 жаңа кеңес. Курстар: тегін сабақтар көбейді, «ЖК бухгалтері» толығымен ашық. Мәзір — бір жолда.",
-      "en": "Scanner: mileage and engine hours from every module (cars and trucks) — rolled-back mileage shows up; “Service checks” — particulate filter, OBD-II regeneration request, actuator checks, adaptations after repair. Assistant: “the car doesn’t detect the key” — where to hold the key for your make; 73 cases from Oleg’s practice and 17 new tips. Courses: more free lessons, “IP bookkeeping” is fully open. The menu now fits on one line."
+      "ru": "Курсы «Для водителей», «ИП для СТО» и «Бухгалтер ИП»: бесплатный сертификат без промокода — пройдите все уроки и итоговый тест. В платных курсах больше бесплатных уроков.",
+      "kk": "«Жүргізушілерге», «СТО-ға арналған ЖК» және «ЖК бухгалтері» курстары: промокодсыз тегін сертификат — барлық сабақ пен қорытынды тестті өтіңіз. Ақылы курстарда тегін сабақтар көбейді.",
+      "en": "“For drivers”, “IP for a repair shop” and “IP bookkeeping” courses: a free certificate, no promo code — finish all lessons and the final test. Paid courses now have more free lessons."
     }
   },
   "play": "",
