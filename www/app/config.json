@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.62",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.62.apk",
-    "size": 8075737,
+    "version": "1.0.63",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.63.apk",
+    "size": 8116697,
     "date": "2026-10-28",
     "notes": {
-      "ru": "Курсы «Для водителей», «ИП для СТО» и «Бухгалтер ИП»: бесплатный сертификат без промокода — пройдите все уроки и итоговый тест. В платных курсах больше бесплатных уроков.",
-      "kk": "«Жүргізушілерге», «СТО-ға арналған ЖК» және «ЖК бухгалтері» курстары: промокодсыз тегін сертификат — барлық сабақ пен қорытынды тестті өтіңіз. Ақылы курстарда тегін сабақтар көбейді.",
-      "en": "“For drivers”, “IP for a repair shop” and “IP bookkeeping” courses: a free certificate, no promo code — finish all lessons and the final test. Paid courses now have more free lessons."
+      "ru": "Помощник: «Не работает автономка» с кодами ошибок отопителей по марке и модели; русский язык на магнитоле и щитке; как правильно прикурить и почему садится аккумулятор; Renault — сообщения на панели, карта, автомат DP0, частые неисправности.",
+      "kk": "Көмекші: «Автономды жылытқыш жұмыс істемейді» — жылытқыштардың қате кодтарымен, маркасы мен моделі бойынша; магнитола мен аспаптар панеліндегі орыс тілі; басқа көліктен қалай дұрыс оталдыру және аккумулятордың заряды неге таусылады; Renault — панельдегі хабарламалар, карта, DP0 автоматы, жиі ақаулар.",
+      "en": "Assistant: “Parking heater not working” with heater error codes by make and model; Russian on the head unit and cluster; how to jump-start properly and why the battery goes flat; Renault — dashboard messages, keycard, DP0 automatic, common faults."
     }
   },
   "play": "",
