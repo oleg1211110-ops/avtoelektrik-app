@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.65",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.65.apk",
-    "size": 8358361,
-    "date": "2026-11-02",
+    "version": "1.0.66",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.66.apk",
+    "size": 8530393,
+    "date": "2026-11-03",
     "notes": {
-      "ru": "+1 340 кодов ошибок: P0400–P0699, P2000–P2299 (AdBlue, NOx, сажевый фильтр, педаль газа), U-коды связи блоков, C-коды ABS/ESP/руль, коды пневмосистемы грузовиков. Помощник со слов Олега: давление воздуха у грузовиков, ГБО, хлопки, «пропала тяга», «троит», «нет искры и бензина», пробег сбросился, подушки безопасности, советы для мастеров. Сканер показывает «Демо / Адаптер на связи / Нет связи», у курсов видно, какие уроки бесплатные.",
-      "kk": "+1 340 қате коды: P0400–P0699, P2000–P2299 (AdBlue, NOx, сажа сүзгісі, газ педалі), блоктар байланысының U-кодтары, ABS/ESP/руль C-кодтары, жүк көліктерінің пневможүйе кодтары. Олегтің сөзімен көмекші: жүк көліктерінің ауа қысымы, ГБО, атылыс, тарту күші жоғалды, троит етеді, ұшқын мен бензин жоқ, жүрген жол өшіп қалды, қауіпсіздік жастықтары, шеберлерге кеңестер. Сканер «Демо / Адаптер байланыста / Байланыс жоқ» деп көрсетеді, курстарда қай сабақтар тегін екені көрінеді.",
-      "en": "+1,340 fault codes: P0400–P0699, P2000–P2299 (AdBlue, NOx, DPF, accelerator pedal), U network codes, C codes for ABS/ESP/steering, truck air system codes. New assistant answers in Oleg’s words: truck air pressure, LPG, backfiring, loss of power, misfires, no spark and no fuel, odometer reset, airbags, tips for mechanics. The scanner shows “Demo / Adapter connected / No connection”, and courses show which lessons are free."
+      "ru": "+150 кодов Toyota/Lexus, +144 Hyundai/Kia, +73 Chevrolet/GM (в том числе U1346), +36 грузовых SPN Weichai и Cummins. Советы Олега: цвет значка на панели — красный остановиться, жёлтый проверить; код ошибки — ещё не блок (часто фишка и разъём); нет 5 вольт — ищите пятивольтовый датчик; датчик колеса — проверьте зубчатое и магнитное кольцо. Адаптация дросселя и АКПП по маркам, толщиномер при покупке, год машины в описании, тренажёры на весь экран, новые случаи из практики. Коды и значки открываются по ссылке с сайта. Сканер отправляет в машину только чтение и стирание ошибок.",
+      "kk": "+150 Toyota/Lexus коды, +144 Hyundai/Kia, +73 Chevrolet/GM (соның ішінде U1346), +36 Weichai және Cummins жүк көліктерінің SPN кодтары. Олегтің кеңестері: панельдегі белгінің түсі — қызыл болса тоқтаңыз, сары болса тексеріңіз; қате коды — блок ақаулы деген сөз емес (көбіне фишка мен коннектор); 5 вольт жоқ болса — бес вольттық датчикті іздеңіз; доңғалақ датчигі — тісті және магнит сақинаны тексеріңіз. Маркалар бойынша дроссель мен АКПП бейімдеуі, сатып алғанда қалыңдық өлшегіш, сипаттамада көлік жылы, толық экрандағы тренажерлер, тәжірибеден жаңа жағдайлар. Кодтар мен белгілер сайттағы сілтеме арқылы ашылады. Сканер көлікке тек қателерді оқу мен өшіруді жібереді.",
+      "en": "+150 Toyota/Lexus codes, +144 Hyundai/Kia, +73 Chevrolet/GM (including U1346), +36 Weichai and Cummins truck SPNs. Oleg’s tips: the colour of a dashboard light — red means stop, yellow means check; a fault code doesn’t mean the unit is dead (often it’s the plug and connector); no 5 volts — look for the 5-volt sensor; wheel speed sensor — check the tone ring and the magnetic ring. Throttle and transmission adaptation by make, paint thickness gauge for buying a car, car year in the description, full-screen trainers, new cases from practice. Codes and lights open from links on the website. The scanner sends the car only reading and clearing of fault codes."
     }
   },
   "play": "",
