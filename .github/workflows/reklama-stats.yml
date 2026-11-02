@@ -1,0 +1,45 @@
+# Страница для рекламодателей help.avtoelektrik-pro.kz/reklama/ — цифры из Google Analytics раз в месяц
+# (1-го числа в 08:17 по Алматы; можно запустить вручную). Ключ — в секретах репозитория:
+#   GA4_SA_KEY — содержимое JSON-файла ключа служебного аккаунта (доступ «Читатель» в GA4),
+#   GA4_PROPERTY_ID — номер ресурса GA4 (только цифры).
+# Без секретов задача ничего не меняет. После обновления цифр сама перезапускает публикацию сайта.
+name: Статистика для рекламодателей
+
+on:
+  schedule:
+    - cron: '17 3 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: reklama-stats
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Библиотека Google Analytics
+        run: pip install -q "google-analytics-data>=0.18,<1"
+      - name: Цифры за последние 30 дней
+        env:
+          GA4_SA_KEY: ${{ secrets.GA4_SA_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: python3 .github/scripts/ga_stats.py www/reklama/stats.json
+      - name: Сохранить и опубликовать
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions" && git config user.email "github-actions@users.noreply.github.com"
+          git add www/reklama/stats.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Цифры не изменились"; exit 0; fi
+          git commit -m "Статистика для рекламодателей: $(date -u +%Y-%m-%d)"
+          git pull --rebase -q && git push -q
+          gh workflow run pages.yml --ref main
