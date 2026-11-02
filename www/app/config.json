@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.63",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.63.apk",
-    "size": 8116697,
-    "date": "2026-10-28",
+    "version": "1.0.64",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.64.apk",
+    "size": 8145369,
+    "date": "2026-11-02",
     "notes": {
-      "ru": "Помощник: «Не работает автономка» с кодами ошибок отопителей по марке и модели; русский язык на магнитоле и щитке; как правильно прикурить и почему садится аккумулятор; Renault — сообщения на панели, карта, автомат DP0, частые неисправности.",
-      "kk": "Көмекші: «Автономды жылытқыш жұмыс істемейді» — жылытқыштардың қате кодтарымен, маркасы мен моделі бойынша; магнитола мен аспаптар панеліндегі орыс тілі; басқа көліктен қалай дұрыс оталдыру және аккумулятордың заряды неге таусылады; Renault — панельдегі хабарламалар, карта, DP0 автоматы, жиі ақаулар.",
-      "en": "Assistant: “Parking heater not working” with heater error codes by make and model; Russian on the head unit and cluster; how to jump-start properly and why the battery goes flat; Renault — dashboard messages, keycard, DP0 automatic, common faults."
+      "ru": "Помощник: AdBlue — где посмотреть код (меню панели у грузовиков, сканер у легковых) и расшифровка прямо в подсказке; совет Олега, как проверить разъём (фишку); +248 общих кодов ошибок P0001–P0399.",
+      "kk": "Көмекші: AdBlue — кодты қайдан қарау керек (жүк көліктерінде панель мәзірі, жеңіл көліктерде сканер) және кеңестің ішінде бірден түсіндіру; Олегтің кеңесі: коннекторды (фишканы) қалай тексеру керек; +248 жалпы қате коды P0001–P0399.",
+      "en": "Assistant: AdBlue — where to look up the code (dashboard menu on trucks, scanner on cars) and decoding right in the tip; Oleg’s tip on checking a connector; +248 generic fault codes P0001–P0399."
     }
   },
   "play": "",
