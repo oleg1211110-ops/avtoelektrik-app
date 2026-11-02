@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.64",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.64.apk",
-    "size": 8145369,
+    "version": "1.0.65",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.65.apk",
+    "size": 8358361,
     "date": "2026-11-02",
     "notes": {
-      "ru": "Помощник: AdBlue — где посмотреть код (меню панели у грузовиков, сканер у легковых) и расшифровка прямо в подсказке; совет Олега, как проверить разъём (фишку); +248 общих кодов ошибок P0001–P0399.",
-      "kk": "Көмекші: AdBlue — кодты қайдан қарау керек (жүк көліктерінде панель мәзірі, жеңіл көліктерде сканер) және кеңестің ішінде бірден түсіндіру; Олегтің кеңесі: коннекторды (фишканы) қалай тексеру керек; +248 жалпы қате коды P0001–P0399.",
-      "en": "Assistant: AdBlue — where to look up the code (dashboard menu on trucks, scanner on cars) and decoding right in the tip; Oleg’s tip on checking a connector; +248 generic fault codes P0001–P0399."
+      "ru": "+1 340 кодов ошибок: P0400–P0699, P2000–P2299 (AdBlue, NOx, сажевый фильтр, педаль газа), U-коды связи блоков, C-коды ABS/ESP/руль, коды пневмосистемы грузовиков. Помощник со слов Олега: давление воздуха у грузовиков, ГБО, хлопки, «пропала тяга», «троит», «нет искры и бензина», пробег сбросился, подушки безопасности, советы для мастеров. Сканер показывает «Демо / Адаптер на связи / Нет связи», у курсов видно, какие уроки бесплатные.",
+      "kk": "+1 340 қате коды: P0400–P0699, P2000–P2299 (AdBlue, NOx, сажа сүзгісі, газ педалі), блоктар байланысының U-кодтары, ABS/ESP/руль C-кодтары, жүк көліктерінің пневможүйе кодтары. Олегтің сөзімен көмекші: жүк көліктерінің ауа қысымы, ГБО, атылыс, тарту күші жоғалды, троит етеді, ұшқын мен бензин жоқ, жүрген жол өшіп қалды, қауіпсіздік жастықтары, шеберлерге кеңестер. Сканер «Демо / Адаптер байланыста / Байланыс жоқ» деп көрсетеді, курстарда қай сабақтар тегін екені көрінеді.",
+      "en": "+1,340 fault codes: P0400–P0699, P2000–P2299 (AdBlue, NOx, DPF, accelerator pedal), U network codes, C codes for ABS/ESP/steering, truck air system codes. New assistant answers in Oleg’s words: truck air pressure, LPG, backfiring, loss of power, misfires, no spark and no fuel, odometer reset, airbags, tips for mechanics. The scanner shows “Demo / Adapter connected / No connection”, and courses show which lessons are free."
     }
   },
   "play": "",
