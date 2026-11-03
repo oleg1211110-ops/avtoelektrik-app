@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.66",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.66.apk",
-    "size": 8530393,
+    "version": "1.0.67",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.67.apk",
+    "size": 8534489,
     "date": "2026-11-03",
     "notes": {
-      "ru": "+150 кодов Toyota/Lexus, +144 Hyundai/Kia, +73 Chevrolet/GM (в том числе U1346), +36 грузовых SPN Weichai и Cummins. Советы Олега: цвет значка на панели — красный остановиться, жёлтый проверить; код ошибки — ещё не блок (часто фишка и разъём); нет 5 вольт — ищите пятивольтовый датчик; датчик колеса — проверьте зубчатое и магнитное кольцо. Адаптация дросселя и АКПП по маркам, толщиномер при покупке, год машины в описании, тренажёры на весь экран, новые случаи из практики. Коды и значки открываются по ссылке с сайта. Сканер отправляет в машину только чтение и стирание ошибок.",
-      "kk": "+150 Toyota/Lexus коды, +144 Hyundai/Kia, +73 Chevrolet/GM (соның ішінде U1346), +36 Weichai және Cummins жүк көліктерінің SPN кодтары. Олегтің кеңестері: панельдегі белгінің түсі — қызыл болса тоқтаңыз, сары болса тексеріңіз; қате коды — блок ақаулы деген сөз емес (көбіне фишка мен коннектор); 5 вольт жоқ болса — бес вольттық датчикті іздеңіз; доңғалақ датчигі — тісті және магнит сақинаны тексеріңіз. Маркалар бойынша дроссель мен АКПП бейімдеуі, сатып алғанда қалыңдық өлшегіш, сипаттамада көлік жылы, толық экрандағы тренажерлер, тәжірибеден жаңа жағдайлар. Кодтар мен белгілер сайттағы сілтеме арқылы ашылады. Сканер көлікке тек қателерді оқу мен өшіруді жібереді.",
-      "en": "+150 Toyota/Lexus codes, +144 Hyundai/Kia, +73 Chevrolet/GM (including U1346), +36 Weichai and Cummins truck SPNs. Oleg’s tips: the colour of a dashboard light — red means stop, yellow means check; a fault code doesn’t mean the unit is dead (often it’s the plug and connector); no 5 volts — look for the 5-volt sensor; wheel speed sensor — check the tone ring and the magnetic ring. Throttle and transmission adaptation by make, paint thickness gauge for buying a car, car year in the description, full-screen trainers, new cases from practice. Codes and lights open from links on the website. The scanner sends the car only reading and clearing of fault codes."
+      "ru": "Совет Олега: не мойте двигатель кёрхером и паром — для этого есть специальная пена; влага попадает в разъёмы датчиков и ЭБУ, и они гниют. В ТО: при небольшом пробеге меняйте масло по сроку, по годам — оно теряет свойства. В расшифровке кода — кнопка «Позвонить» Олегу. В курсах — блок «Автор курсов».",
+      "kk": "Олегтің кеңесі: қозғалтқышты кёрхермен және бумен жумаңыз — ол үшін арнайы көбік бар; ылғал датчиктер мен ЭБУ коннекторларына кіріп, олар шіриді. ТҚ бөлімінде: жүрісі аз болса, майды мерзімі бойынша, жылдар бойынша ауыстырыңыз — ол қасиетін жоғалтады. Код түсіндірмесінде — Олегке «Қоңырау шалу» батырмасы. Курстарда — «Курстар авторы» блогы.",
+      "en": "Oleg’s tip: don’t wash the engine with a pressure washer or steam — there’s a special foam for that; moisture gets into the sensor and ECU connectors and they rot. In Service: with low mileage, change the oil by time (years) — it loses its properties. Fault code details now have a “Call” button for Oleg. Courses now show an “About the author” block."
     }
   },
   "play": "",
