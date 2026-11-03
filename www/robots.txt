@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://help.avtoelektrik-pro.kz/sitemap.xml
+Disallow: /partner-blocks/
