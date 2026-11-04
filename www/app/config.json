@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.73",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.73.apk",
-    "size": 8583641,
+    "version": "1.0.74",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.74.apk",
+    "size": 8600025,
     "date": "2026-11-04",
     "notes": {
-      "ru": "Музыка в дорогу: 12 баллад (новые — «Леший оборотов», «Книга заклинаний», «Огненные знаки», «Змей Горыныч»). Музыка играет, когда приложение свёрнуто или экран выключен: в шторке — плеер с кнопками ⏮ ⏯ ⏭, работают кнопки руля по Bluetooth. «Слушать все подряд», по порядку или вперемешку. «Скачать в телефон» — песня с отметкой «✓ Скачано» играет без интернета. «Подписаться на новые баллады» — новые песни появляются сами, без обновления приложения. Песни созданы с помощью ИИ.",
-      "kk": "Жолға музыка: 12 баллада (жаңалары — «Айналым албастысы», «Дуалар кітабы», «Отты белгілер», «Үш басты Айдаһар»). Қосымша жиналғанда немесе экран сөнгенде де музыка ойнайды: шторкада ⏮ ⏯ ⏭ батырмалары бар плеер, рульдегі батырмалар Bluetooth арқылы жұмыс істейді. «Барлығын қатарынан тыңдау» — ретімен немесе аралас. «Телефонға жүктеу» — «✓ Жүктелді» белгісі бар ән интернетсіз ойнайды. «Жаңа балладаларға жазылу» — жаңа әндер қосымшаны жаңартпай-ақ өздігінен шығады. Әндер жасанды интеллект көмегімен жасалған.",
-      "en": "Music for the road: 12 ballads (new: “The Wood Goblin of the Revs”, “The Book of Spells”, “The Fiery Signs”, “Zmey Gorynych”). Music keeps playing when the app is minimized or the screen is off: a player with ⏮ ⏯ ⏭ in the notification shade, steering-wheel buttons work over Bluetooth. “Play all” — in order or shuffled. “Save to phone” — songs marked “✓ Saved” play offline. “Subscribe to new ballads” — new songs appear on their own, without updating the app. Songs were made with AI."
+      "ru": "Музыка: 13 баллад, новая — «Волшебное око»; две песни на английском и выбор «Русский / English»; в карточке песни сверху плеер, совет, опыт и «Поделиться» свёрнуты — раскрываются по нажатию. Помощник: новые коды по вопросам клиентов (Hyundai B1281 и C1109, VW 00515, Renault DF654, FAW/JAC P190A, SPN 2436), понимает «поздно набирает обороты», «после мойки двигателя», «пинки при переключении», «горит экология»; на приветствие отвечает и спрашивает машину, «нет» после совета — предложит следующий шаг.",
+      "kk": "Музыка: 13 баллада, жаңасы — «Сиқырлы көз»; ағылшын тіліндегі екі ән және «Орысша / English» таңдауы; ән карточкасында жоғарыда плеер, кеңес, тәжірибе және «Бөлісу» жиналған — басқанда ашылады. Көмекші: клиенттердің сұрақтары бойынша жаңа кодтар (Hyundai B1281 және C1109, VW 00515, Renault DF654, FAW/JAC P190A, SPN 2436), «айналымды кеш алады», «қозғалтқышты жуғаннан кейін», «ауыстырғанда тебеді», «экология жанып тұр» дегенді түсінеді; сәлемдесуге жауап беріп, көлікті сұрайды, кеңестен кейінгі «жоқ» — келесі қадамды ұсынады.",
+      "en": "Music: 13 ballads, new — “The Magic Eye”; two songs in English and a “Русский / English” switch; the song card shows the player on top, while the tip, the lab experiment and “Share” are collapsed and open on tap. Assistant: new codes from customer questions (Hyundai B1281 and C1109, VW 00515, Renault DF654, FAW/JAC P190A, SPN 2436); understands “slow to rev”, “after an engine wash”, “kicks when shifting”, “eco light is on”; answers a greeting and asks about the car; “no” after a tip now offers the next step."
     }
   },
   "play": "",
