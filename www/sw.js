@@ -1,6 +1,6 @@
 /*! © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da */
 /* Офлайн-кэш приложения. Версия подставляется при сборке (tools/build.py). */
-const VERSION = 'ao-a8cbea5db1';
+const VERSION = 'ao-290798730c';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon-64.png'
@@ -26,6 +26,8 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  // баллады (звук по кускам, скачивание MP3/FLAC) — мимо кэша: большие файлы и ответы 206 кэшу не нужны (04.11.2026)
+  if (url.pathname.indexOf('/skazaniya/') === 0 || req.headers.has('range')) return;
   const fresh = req.mode === 'navigate' || url.pathname.endsWith('/data/db.json') || url.pathname.endsWith('/index.html');
   if (fresh) {
     e.respondWith(
