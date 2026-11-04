@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.67",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.67.apk",
-    "size": 8534489,
-    "date": "2026-11-03",
+    "version": "1.0.72",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.72.apk",
+    "size": 8567257,
+    "date": "2026-11-04",
     "notes": {
-      "ru": "Совет Олега: не мойте двигатель кёрхером и паром — для этого есть специальная пена; влага попадает в разъёмы датчиков и ЭБУ, и они гниют. В ТО: при небольшом пробеге меняйте масло по сроку, по годам — оно теряет свойства. В расшифровке кода — кнопка «Позвонить» Олегу. В курсах — блок «Автор курсов».",
-      "kk": "Олегтің кеңесі: қозғалтқышты кёрхермен және бумен жумаңыз — ол үшін арнайы көбік бар; ылғал датчиктер мен ЭБУ коннекторларына кіріп, олар шіриді. ТҚ бөлімінде: жүрісі аз болса, майды мерзімі бойынша, жылдар бойынша ауыстырыңыз — ол қасиетін жоғалтады. Код түсіндірмесінде — Олегке «Қоңырау шалу» батырмасы. Курстарда — «Курстар авторы» блогы.",
-      "en": "Oleg’s tip: don’t wash the engine with a pressure washer or steam — there’s a special foam for that; moisture gets into the sensor and ECU connectors and they rot. In Service: with low mileage, change the oil by time (years) — it loses its properties. Fault code details now have a “Call” button for Oleg. Courses now show an “About the author” block."
+      "ru": "Новое: «Музыка в дорогу» — баллады «Сказания АвтоЭлектрик PRO» (меню → «О приложении»). 8 песен о мастерах и нечисти поломок: качество звука на выбор, эквалайзер (простой на 5 и подробный на 10 полос, готовые и свои настройки), скачать MP3 или FLAC — по одной или все сразу, текст песни, совет «что сделать самому», опыт в лаборатории, «Подробнее» и «Поделиться». У каждой баллады — живой значок: нажмите. Песни созданы с помощью ИИ.",
+      "kk": "Жаңа: «Жолға музыка» — «АвтоЭлектрик PRO аңыздары» балладалары (мәзір → «Қосымша туралы»). Шеберлер мен ақаулардың жын-перілері туралы 8 ән: дыбыс сапасын таңдау, эквалайзер (5 жолақты қарапайым және 10 жолақты толық, дайын және өз баптауларыңыз), MP3 немесе FLAC жүктеп алу — бір-бірден немесе бәрін бірден, әннің сөзі, «өзіңіз не істей аласыз» кеңесі, зертханадағы тәжірибе, «Толығырақ» және «Бөлісу». Әр балладада — тірі белгі: басып көріңіз. Әндер жасанды интеллекттің көмегімен жасалған.",
+      "en": "New: “Music for the road” — the “AvtoElektrik PRO Tales” ballads (menu → “About the app”). 8 songs about masters and the evil spirits of breakdowns: choose the sound quality, an equalizer (simple 5-band and detailed 10-band, presets and your own settings), download MP3 or FLAC — one by one or all at once, lyrics, a “what to do yourself” tip, a lab exercise, “More” and “Share”. Each ballad has a living icon — tap it. The songs were made with AI."
     }
   },
   "play": "",
