@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.74",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.74.apk",
-    "size": 8600025,
-    "date": "2026-11-04",
+    "version": "1.0.75",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.75.apk",
+    "size": 8620505,
+    "date": "2026-11-05",
     "notes": {
-      "ru": "Музыка: 13 баллад, новая — «Волшебное око»; две песни на английском и выбор «Русский / English»; в карточке песни сверху плеер, совет, опыт и «Поделиться» свёрнуты — раскрываются по нажатию. Помощник: новые коды по вопросам клиентов (Hyundai B1281 и C1109, VW 00515, Renault DF654, FAW/JAC P190A, SPN 2436), понимает «поздно набирает обороты», «после мойки двигателя», «пинки при переключении», «горит экология»; на приветствие отвечает и спрашивает машину, «нет» после совета — предложит следующий шаг.",
-      "kk": "Музыка: 13 баллада, жаңасы — «Сиқырлы көз»; ағылшын тіліндегі екі ән және «Орысша / English» таңдауы; ән карточкасында жоғарыда плеер, кеңес, тәжірибе және «Бөлісу» жиналған — басқанда ашылады. Көмекші: клиенттердің сұрақтары бойынша жаңа кодтар (Hyundai B1281 және C1109, VW 00515, Renault DF654, FAW/JAC P190A, SPN 2436), «айналымды кеш алады», «қозғалтқышты жуғаннан кейін», «ауыстырғанда тебеді», «экология жанып тұр» дегенді түсінеді; сәлемдесуге жауап беріп, көлікті сұрайды, кеңестен кейінгі «жоқ» — келесі қадамды ұсынады.",
-      "en": "Music: 13 ballads, new — “The Magic Eye”; two songs in English and a “Русский / English” switch; the song card shows the player on top, while the tip, the lab experiment and “Share” are collapsed and open on tap. Assistant: new codes from customer questions (Hyundai B1281 and C1109, VW 00515, Renault DF654, FAW/JAC P190A, SPN 2436); understands “slow to rev”, “after an engine wash”, “kicks when shifting”, “eco light is on”; answers a greeting and asks about the car; “no” after a tip now offers the next step."
+      "ru": "США и английская версия: мили, °F и psi (переключатель в окне языка; в английской версии с настройками США — сами), ТО в милях, марки и модели рынка США (Ram, Buick, Acura, Freightliner…); в сканере — «пройдёт ли smog check», расшифровка VIN с кнопкой «Это моя машина» и отзывные кампании, примерная цена ремонта в $ по частым кодам. Сканер: совет по адаптеру vLinker MC+ и предупреждение про 24 В. Значок «Давление в шинах»: что значит «мигает минуту, потом горит». Помощник: совет «Иногда работает неровно, после перезапуска — нормально», Mercedes MB100. Музыка: «Поделиться балладами» — сразу всеми; после телефонного звонка песня продолжается сама.",
+      "kk": "АҚШ және ағылшын нұсқасы: мильдер, °F және psi (тіл терезесіндегі ауыстырғыш; АҚШ баптаулары бар ағылшын нұсқасында — өздігінен), күтім мильмен, АҚШ нарығының маркалары мен модельдері (Ram, Buick, Acura, Freightliner…); сканерде — «smog check-тен өте ме», «Бұл менің көлігім» батырмасымен VIN түсіндірмесі және кері шақыру науқандары, жиі кодтар бойынша жөндеудің шамамен бағасы $-пен. Сканер: vLinker MC+ адаптері бойынша кеңес және 24 В туралы ескерту. «Шиналардағы қысым» белгісі: «бір минуттай жыпылықтап, содан соң жанады» нені білдіреді. Көмекші: «Кейде тегіс жұмыс істемейді, қайта оталдырғаннан кейін — қалыпты» кеңесі, Mercedes MB100. Музыка: «Балладалармен бөлісу» — бірден барлығымен; телефон қоңырауынан кейін ән өздігінен жалғасады.",
+      "en": "US and English version: miles, °F and psi (a switch in the language window; set automatically in English with US settings), service intervals in miles, US-market makes and models (Ram, Buick, Acura, Freightliner…); in the scanner — “Will it pass the smog check?”, VIN decoding with a “This is my car” button and recalls, and typical US repair costs for common codes. Scanner: advice on the vLinker MC+ adapter and a 24 V warning. Tire pressure (TPMS) light: what “flashes for a minute, then stays on” means. Assistant: a new tip for “sometimes runs rough, fine after a restart”, Mercedes MB100. Music: “Share the ballads” — all at once; a song now resumes by itself after a phone call."
     }
   },
   "play": "",
