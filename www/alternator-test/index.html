@@ -1,0 +1,290 @@
+<!doctype html>
+<!-- © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How to Test an Alternator: Voltage, Signs It’s Failing &amp; Cost | AvtoElektrik PRO</title>
+<meta name="description" content="Alternator output should be 13.5–14.8 V with the engine running. Enter your multimeter readings, see the signs of a bad alternator, what to check yourself and the US replacement cost.">
+<meta name="author" content="Дмитриев Олег Сергеевич">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFA500">
+<link rel="canonical" href="https://help.avtoelektrik-pro.kz/alternator-test/">
+<link rel="alternate" hreflang="en" href="https://help.avtoelektrik-pro.kz/alternator-test/"><link rel="alternate" hreflang="x-default" href="https://help.avtoelektrik-pro.kz/alternator-test/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="АвтоЭлектрик PRO">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to Test an Alternator: Voltage, Signs It’s Failing &amp; Cost | AvtoElektrik PRO">
+<meta property="og:description" content="Alternator output should be 13.5–14.8 V with the engine running. Enter your multimeter readings, see the signs of a bad alternator, what to check yourself and the US replacement cost.">
+<meta property="og:url" content="https://help.avtoelektrik-pro.kz/alternator-test/">
+<meta property="og:image" content="https://help.avtoelektrik-pro.kz/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../icons/favicon-64.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<style>
+:root{--orange:#FFA500;--bg:#EFEFEF;--surface:#FFFFFF;--ink:#111;--ink-2:#222;--muted:#555;--line:#E3E3E3;--hero:#FFA500;--hero-ink:#000;--hero-2:#2E2200;--eyebrow:#000;--eyebrow-ink:#FFA500;
+--btn:#000;--btn-ink:#fff;--price:#111;--price-ink:#fff;--price-muted:#B5B5B5;--price-li:#E6E6E6;--ok:#1B5E20;--ok-soft:#E3F2E4;--paid-soft:#FFE2AE;--paid-ink:#000;--cream:#FFFAF0;--link:#000;--fig:#F4F6F8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1419;--surface:#172029;--ink:#E5EBF0;--ink-2:#CBD5DD;--muted:#9AA8B4;--line:#2A3846;--hero:#16212B;--hero-ink:#F1F5F8;--hero-2:#B9C5CF;--eyebrow:#FFA500;--eyebrow-ink:#111;
+--btn:#FFA500;--btn-ink:#111;--price:#0A0F13;--price-ink:#EEF2F5;--price-muted:#8796A3;--price-li:#CBD5DD;--ok:#7CCB80;--ok-soft:#17301A;--paid-soft:#3A2C0A;--paid-ink:#F5C452;--cream:#1F2A35;--link:#F5C452;--fig:#1F2A35;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Arial,'Helvetica Neue',Helvetica,sans-serif;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{background:var(--orange);color:#000}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1;text-transform:uppercase;font-weight:700}
+.logo small{font-size:11.5px;letter-spacing:.04em}.logo b{font-size:21px}
+.langs{display:flex;gap:6px}
+.langs a{color:#000;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;border:2px solid #000}
+.langs a[aria-current]{background:#000;color:#fff}
+.stripe{display:flex;height:5px}.stripe i{flex:1}
+.hero{background:var(--hero);color:var(--hero-ink);padding-block:22px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.crumbs{margin:0 0 14px;font-size:14px;color:var(--hero-2)}
+.crumbs a{color:inherit;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;background:var(--eyebrow);color:var(--eyebrow-ink);padding:5px 10px;border-radius:6px}
+.hero h1{font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--hero-2);margin:0 0 24px;max-width:60ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;text-align:center}
+.btn.pri{background:var(--btn);color:var(--btn-ink)}
+.btn.sec{color:var(--hero-ink);border-color:currentColor;background:transparent}
+.btn.wa{background:#1FA855;color:#fff}.btn.tg{background:#229ED9;color:#fff}
+.btn.cp{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,.langs a:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hero .btn:focus-visible{outline-color:var(--hero-ink)}
+.fig{margin:0;background:var(--surface);border-radius:16px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.fig svg{display:block;width:100%;height:auto;border-radius:10px}
+.fig figcaption{margin:8px 4px 2px;font-size:14px;color:var(--muted);line-height:1.4}
+.fig figcaption b{display:block;color:var(--ink);font-size:13px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.fact{background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35)}
+.fact b{display:block;font-size:28px;line-height:1.15}
+.fact span{font-size:14px;color:var(--muted)}
+main section{padding-top:52px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;text-wrap:balance}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.learn li{background:var(--surface);border-radius:12px;padding:14px 16px 14px 48px;position:relative}
+.learn li:before{content:"";position:absolute;left:18px;top:19px;width:14px;height:8px;border-left:3px solid var(--ok);border-bottom:3px solid var(--ok);transform:rotate(-45deg)}
+.note{margin:-6px 0 18px;color:var(--muted);max-width:70ch}
+ol.ls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ls li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;background:var(--surface);border-radius:12px;padding:14px 16px}
+.ls .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-weight:700;font-size:15px}
+.ls li.paid .n{background:var(--orange);color:#000}
+.ls h3{font-size:16.5px;line-height:1.3;margin:0}
+.ls p{margin:4px 0 6px;font-size:15px;color:var(--muted);line-height:1.45}
+.ls small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.ls em{font-style:normal;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.ls li.paid em,.ls li.app em{background:var(--paid-soft);color:var(--paid-ink)}
+details.more{margin-top:8px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--surface)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+details.more[open]>summary{display:none}
+details.more ol{margin-top:0}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.figs .fig{box-shadow:none}
+.price{background:var(--price);color:var(--price-ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;border:1px solid var(--line)}
+.price h2{color:var(--price-ink);margin-bottom:12px}
+.price.one{grid-template-columns:minmax(0,1fr)}
+.price .tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;background:var(--orange);color:#000;margin:0 0 12px}
+.amt{font-size:clamp(36px,6vw,54px);font-weight:700;color:var(--orange);line-height:1;margin:0}
+.amt s{color:var(--price-muted);font-size:.5em;font-weight:600;margin-right:6px}
+.once{color:var(--price-muted);margin:8px 0 14px}
+.promo{margin:-6px 0 12px;color:var(--orange);font-weight:700}
+.ptxt{margin:12px 0 18px;color:var(--price-li);max-width:60ch}
+.price .cta .btn.sec{color:var(--price-ink)}
+.price .btn.pri{background:var(--orange);color:#000}
+.price ul,.price ol{margin:0 0 14px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--price-li)}
+.price h3{margin:0 0 10px;font-size:19px}
+.pay{margin:0 0 14px;color:var(--price-muted);font-size:15px}
+details.inc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:0 18px}
+details.inc[open]{padding-bottom:16px}
+details.qa{background:var(--surface);border-radius:12px;padding:0 18px}
+details.qa+details.qa{margin-top:8px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+details.qa>summary:after,details.inc>summary:after{content:"+";font-size:24px;line-height:1;font-weight:400;flex:none}
+details.qa[open]>summary:after,details.inc[open]>summary:after{content:"\2212"}
+details.qa p{margin:0 0 16px;color:var(--muted);max-width:75ch}
+details.qa h3,details.inc h3.s{font-size:inherit;margin:0;font-weight:700}
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--cream);border-radius:16px;padding:22px}
+.who svg{width:60px;height:60px}
+.who p{margin:0 0 10px;max-width:75ch}
+.who .links{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rel a.card{display:flex;flex-direction:column;gap:6px;background:var(--surface);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.rel a.card:hover{border-color:var(--orange)}
+.rel .card b{font-size:19px;line-height:1.25}
+.rel .card span{font-size:14px;color:var(--muted)}
+.rel .card i{font-style:normal;font-weight:700;font-size:12.5px;align-self:flex-start;padding:3px 9px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.rel .card i.p{background:var(--paid-soft);color:var(--paid-ink)}
+.rel .card u{margin-top:auto;padding-top:6px;font-weight:700;color:var(--link);text-decoration:none}
+.all{margin:16px 0 0;font-weight:700}
+footer{margin-top:56px;padding-block:26px 34px;background:#111;color:#B5B5B5;font-size:14px}
+footer a{color:#fff}
+footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap}
+@media (max-width:860px){.hero .wrap,.price{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rel{grid-template-columns:minmax(0,1fr)}.price{padding:22px}}
+@media (max-width:640px){.learn,.figs{grid-template-columns:minmax(0,1fr)}.who{grid-template-columns:minmax(0,1fr)}.who svg{width:48px;height:48px}.hero{padding-block:18px 56px}.lead{font-size:17px}}
+@media (max-width:420px){.logo b{font-size:18px}.langs a{padding:5px 9px}.fact b{font-size:24px}.btn{width:100%}.share .btn{width:auto;flex:1 1 40%}}
+
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.feat{background:var(--surface);border-radius:16px;padding:14px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}
+.feat img{width:150px;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.feat h3{margin:4px 0 6px;font-size:19px;line-height:1.25}
+.feat p{margin:0;color:var(--muted);font-size:15.5px}
+.shot{margin:0;max-width:300px}
+.shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid rgba(0,0,0,.12);box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.steps li{background:var(--surface);border-radius:14px;padding:16px;position:relative;counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cc{background:var(--surface);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.cc h3{margin:0;font-size:21px;line-height:1.25}
+.cc .tg{align-self:flex-start;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.cc p{margin:0;color:var(--muted);font-size:15.5px}
+.cc ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cc small{color:var(--muted);font-size:13.5px}
+.cc .cta{margin-top:auto;padding-top:6px}
+.cc .btn{min-height:44px;padding:10px 18px}
+.cc .btn.sec{color:var(--ink)}
+.cc .fig{box-shadow:none;background:var(--fig);padding:8px}
+.cc details.qa{background:var(--bg);padding:0 14px}
+@media (max-width:860px){.feats,.cards{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.feat{grid-template-columns:minmax(0,1fr)}.feat img{width:min(260px,100%)}.steps{grid-template-columns:minmax(0,1fr)}.shot{max-width:240px;margin:0 auto}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Is it the alternator? How to test it yourself", "url": "https://help.avtoelektrik-pro.kz/alternator-test/", "inLanguage": "en"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What voltage should an alternator put out?", "acceptedAnswer": {"@type": "Answer", "text": "13.5–14.8 V at the battery terminals with the engine running. On newer cars with “smart” charging or start-stop, 12.5–15 V is normal as long as there are no fault codes and the battery light is off."}}, {"@type": "Question", "name": "What are the signs of a bad alternator?", "acceptedAnswer": {"@type": "Answer", "text": "The battery light is on with the engine running, the battery goes flat while you drive, and the car stalls after a while because it runs on what is left in the battery. A squealing belt is another warning."}}, {"@type": "Question", "name": "Can I keep driving with the battery light on?", "acceptedAnswer": {"@type": "Answer", "text": "Not far. Switch off everything you don’t need and drive to a shop without shutting the engine off — it may not start again. If the belt has snapped, stop: on many cars it also drives the water pump."}}, {"@type": "Question", "name": "Can a bad alternator drain the battery overnight?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes, yes: a faulty alternator can draw current while the car is parked. A parasitic drain test with a multimeter shows it."}}, {"@type": "Question", "name": "Battery or alternator — how do I tell?", "acceptedAnswer": {"@type": "Answer", "text": "Measure at rest and with the engine running. Low at rest but 13.5–14.8 V running points to the battery; below 13.5 V (or above 15 V) running points to the alternator."}}]}]}</script><style>
+.tool{border:1.5px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;background:var(--surface)}
+.tool h3{margin:0 0 10px}
+.seg2{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
+.seg2 button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.seg2 button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.verdict{border-left:5px solid var(--line);padding:10px 12px;border-radius:10px;background:var(--bg);margin-top:8px}
+.verdict.ok{border-left-color:#2E7D32}.verdict.warn{border-left-color:#F2A900}.verdict.bad{border-left-color:#C62828}
+.verdict b{display:block;margin-bottom:4px}
+.codeform{display:flex;gap:8px;flex-wrap:wrap}
+.codeform input{flex:1 1 160px;min-width:0;font:inherit;font-size:18px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);text-transform:uppercase}
+table.cost{width:100%;border-collapse:collapse;font-size:15px}
+table.cost td,table.cost th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+table.cost td:last-child,table.cost th:last-child{text-align:right;white-space:nowrap}
+.src{font-size:13px;color:var(--muted)}
+.warnbox{border-left:5px solid #C62828;background:var(--surface);border-radius:12px;padding:12px 14px;margin:12px 0}
+.warnbox b{display:block;margin-bottom:4px}
+
+.vt-modes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.vt-modes button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer;min-height:42px}
+.vt-modes button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.vt-modes button i{font-style:normal;font-weight:700;margin-left:6px}
+.vt-main{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.vt-meter{flex:0 0 150px;max-width:150px}
+.vt-meter svg{width:100%;height:auto;display:block}
+.vt-ctl{flex:1 1 220px;min-width:0}
+.vt-how{margin:0 0 10px;font-size:15px}
+.vt-row{display:flex;gap:10px;align-items:center}
+.vt-row input[type=range]{flex:1;min-width:0;accent-color:var(--orange);height:32px}
+.vt-row input[type=number]{width:92px;font:inherit;font-size:18px;padding:8px 10px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.vt-scale{position:relative;height:10px;border-radius:6px;margin:8px 0 4px}
+.vt-scale b{position:absolute;top:-5px;width:4px;height:20px;margin-left:-2px;border-radius:2px;background:var(--ink)}
+.vt-ends{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.vt-smart{display:flex;gap:8px;align-items:flex-start;margin:10px 0 0;font-size:15px}
+.vt-smart input{width:20px;height:20px;margin-top:2px;accent-color:var(--orange)}
+.vt-pre{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.vt-pre button{border:1.5px dashed var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 13px;font:inherit;font-weight:600;cursor:pointer;min-height:40px}
+table.vt-sum{width:100%;border-collapse:collapse;font-size:15px;margin-top:10px}
+table.vt-sum td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+table.vt-sum td:nth-child(2){white-space:nowrap;font-weight:700;text-align:right}
+.vdot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:var(--line)}
+.vdot.ok{background:#2E7D32}.vdot.warn{background:#F2A900}.vdot.bad{background:#C62828}
+#vt [hidden]{display:none!important}
+</style>
+<script>(function(){var ID='G-D5E79MWR50',T='us_alternator';window.dataLayer=window.dataLayer||[];function g(){dataLayer.push(arguments)}window.gtag=window.gtag||g;g('js',new Date());g('config',ID,{app_platform:'site',page_type:T});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);function ev(n,p){try{p=p||{};p.page_type=T;gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href],summary,button'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/wa\.me\/7701/.test(h))return ev('contact_whatsapp');if(/wa\.me\/\?|t\.me\/share|max\.ru\/:share|viber:/.test(h)||a.classList.contains('cp'))return ev('share');if(/#skachat|\.apk$/.test(h))return ev('download_click');if(/#skaner/.test(h))return ev('try_scanner_click');if(/#kursy/.test(h))return ev('start_course_click',{course:h.split('#kursy-')[1]||''});if(/#kod=/.test(h)){var c='';try{c=decodeURIComponent(h.split('#kod=')[1]||'').split('&')[0]}catch(x){}return ev('open_code_app',{code:c});}if(/#znachok=/.test(h))return ev('open_lamp_app',{lamp:h.split('#znachok=')[1]||''});if(a.closest('.langs'))return ev('page_lang',{lang:a.getAttribute('hreflang')||''});if(a.tagName==='SUMMARY'){if(a.closest('details.qa'))return ev('faq_open');if(a.closest('details.more'))return ev('lessons_more');return;}if(/\/(kursy|skaner|besplatnye-kursy|kody|znachki)\//.test(h))return ev('page_link',{to:h.replace(/^https?:\/\/[^\/]+/,'')});if(/avtoelektrik-pro\.kz/.test(h)&&!/help\./.test(h))return ev('site_click');},true)})();</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="https://help.avtoelektrik-pro.kz/en.html" aria-label="АвтоЭлектрик PRO"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><span><small>АвтоЭлектрик</small><b>PRO</b></span></a>
+  <nav class="langs" aria-label="Язык · Тіл · Language"></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Charging system · multimeter test</p>
+    <h1>Is it the alternator? How to test it yourself</h1>
+    <p class="lead">If the battery goes flat while you drive, or the battery light is on with the engine running, the alternator isn’t charging. A multimeter tells you in a minute — enter the readings and get a verdict.</p>
+    <div class="cta"><a class="btn pri" href="#vt">Check my readings</a><a class="btn sec" href="../car-battery-test/">Test the battery</a></div>
+  </div>
+</div></section>
+<main class="wrap">
+  <div class="warnbox"><b>Alternator belt snapped?</b>Don’t keep driving: on many cars the same belt drives the water pump, and the engine will overheat quickly.</div>
+  <section aria-labelledby="t1"><h2 id="t1">1. Your readings</h2><div class="tool" id="vt"><h3>Enter what your multimeter shows</h3>
+<div class="vt-modes" role="group" aria-label="What you measure"><button type="button" data-vm="rest" aria-pressed="false">At rest<i data-vv="rest"></i></button><button type="button" data-vm="crank" aria-pressed="false">Cranking<i data-vv="crank"></i></button><button type="button" data-vm="idle" aria-pressed="false">Engine idling<i data-vv="idle"></i></button><button type="button" data-vm="load" aria-pressed="false">Under load<i data-vv="load"></i></button></div>
+<div class="vt-main">
+ <div class="vt-meter" aria-hidden="true"><svg viewBox="0 0 150 196"><rect x="6" y="4" width="138" height="156" rx="18" fill="#F2B705" stroke="#B88A00" stroke-width="2"/>
+  <rect x="20" y="18" width="110" height="52" rx="8" fill="#BFD1A8" stroke="#6E7F57" stroke-width="2"/>
+  <text id="vt-lcd" x="122" y="57" text-anchor="end" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="30" font-weight="700" fill="#1F2A14">--.--</text>
+  <text x="26" y="34" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1F2A14">DC V</text>
+  <circle cx="75" cy="112" r="28" fill="#2B2B2B"/><rect x="72" y="86" width="6" height="22" rx="3" fill="#F2B705"/><text x="75" y="152" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1F2A14">V⎓ 20</text>
+  <circle cx="45" cy="168" r="6" fill="#222"/><circle cx="105" cy="168" r="6" fill="#D32F2F"/>
+  <path d="M45 174 C45 186 30 188 26 194" stroke="#222" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M105 174 C105 186 120 188 124 194" stroke="#D32F2F" stroke-width="4" fill="none" stroke-linecap="round"/></svg></div>
+ <div class="vt-ctl">
+  <p class="vt-how" id="vt-how"></p>
+  <div class="vt-row"><input type="range" id="vt-r" step="0.05" aria-label="Voltage"><input type="number" id="vt-n" step="0.01" inputmode="decimal" aria-label="Voltage, volts"></div>
+  <div class="vt-scale" id="vt-sc"><b id="vt-mk"></b></div><div class="vt-ends"><span id="vt-lo"></span><span id="vt-hi"></span></div>
+  <label class="vt-smart" id="vt-sm"><input type="checkbox" id="vt-smc"><span>My car has start-stop or “smart” charging</span></label>
+ </div>
+</div>
+<div class="verdict" id="vt-v" aria-live="polite"><b>Move the slider or type what your meter shows</b></div>
+<div class="vt-pre" role="group" aria-label="Examples"><button type="button" data-vp="0">Example: healthy alternator</button><button type="button" data-vp="1">Example: not charging</button><button type="button" data-vp="2">Example: overcharging</button><button type="button" data-vp="x">Clear</button></div>
+<div id="vt-s" hidden><table class="vt-sum"><tbody id="vt-sb"></tbody></table><div class="verdict" id="vt-o"></div></div>
+</div>
+    <p class="note">Measure at the battery terminals: red probe on +, black on −, meter on DC volts. With an ELM327 adapter the free <a href="https://help.avtoelektrik-pro.kz/en.html#skaner">AvtoElektrik PRO app</a> runs the same test through the OBD-II port.</p></section>
+  <section aria-labelledby="t2"><h2 id="t2">2. Signs of a failing alternator</h2><ol class="steps">
+    <li>The battery light is on with the engine running.</li>
+    <li>The battery goes flat while you drive; the car stalls after a while — it runs on what’s left in the battery.</li>
+    <li>The belt squeals, or the battery dies overnight even though it is new (a faulty alternator can draw current while parked).</li></ol></section>
+  <section aria-labelledby="t3"><h2 id="t3">3. What you can do yourself</h2><ol class="steps"><li>Switch off everything you don’t need — window and seat heaters, the heater fan, music — and drive to a shop without shutting the engine off: if you stop it, it may not start again.</li><li>Look at the alternator belt: is it intact and tight, and is it squealing?</li><li>Inspect the battery terminals and the thick cable from the alternator: a corroded or loose connection also causes undercharging.</li><li>Measure with the engine running (the tool above): below 13.5 V the alternator isn’t charging; above 15 V it’s overcharging.</li><li>If the battery is more than 4–5 years old, load-test it: an old one may not hold a charge even with a healthy alternator.</li></ol></section>
+  <section aria-labelledby="t4"><h2 id="t4">4. Alternator replacement cost in the US</h2>
+    <p>About <b>$809–$1,088</b>: parts $613–$800, labor $196–$288. <span class="src">RepairPal, updated Sep 3, 2026 — <a href="https://repairpal.com/estimator/alternator-replacement-cost" target="_blank" rel="noopener">source</a>.</span></p>
+    <p>Before you pay for a new one, check the cheap things: the belt, the terminals and ground, the thick cable. Inside the alternator the usual culprits are the brushes, the voltage regulator and the rectifier bridge — an auto electrician can often repair these instead of replacing the whole unit.</p></section>
+  <section aria-labelledby="fq"><h2 id="fq">Questions</h2><details class="qa"><summary><h3>What voltage should an alternator put out?</h3></summary><p>13.5–14.8 V at the battery terminals with the engine running. On newer cars with “smart” charging or start-stop, 12.5–15 V is normal as long as there are no fault codes and the battery light is off.</p></details><details class="qa"><summary><h3>What are the signs of a bad alternator?</h3></summary><p>The battery light is on with the engine running, the battery goes flat while you drive, and the car stalls after a while because it runs on what is left in the battery. A squealing belt is another warning.</p></details><details class="qa"><summary><h3>Can I keep driving with the battery light on?</h3></summary><p>Not far. Switch off everything you don’t need and drive to a shop without shutting the engine off — it may not start again. If the belt has snapped, stop: on many cars it also drives the water pump.</p></details><details class="qa"><summary><h3>Can a bad alternator drain the battery overnight?</h3></summary><p>Sometimes, yes: a faulty alternator can draw current while the car is parked. A parasitic drain test with a multimeter shows it.</p></details><details class="qa"><summary><h3>Battery or alternator — how do I tell?</h3></summary><p>Measure at rest and with the engine running. Low at rest but 13.5–14.8 V running points to the battery; below 13.5 V (or above 15 V) running points to the alternator.</p></details></section>
+  <p class="src">For 12 V cars and light trucks. 24 V trucks: normal with the engine running is 27.2–28.8 V. Made by auto electrician Oleg Dmitriev (AvtoElektrik PRO).</p>
+</main><script>(function(){
+var M={"rest": {"id": "rest", "t": "At rest", "min": 10, "max": 14, "v": 12.6, "how": "Engine off, lights and all loads off. After a drive wait at least 10\u201315 minutes (1\u20132 hours gives the most accurate reading). Red probe on +, black on \u2212."}, "crank": {"id": "crank", "t": "Cranking", "min": 6, "max": 13, "v": 10.2, "how": "Have a helper crank the engine while you watch the meter, and note the lowest reading."}, "idle": {"id": "idle", "t": "Engine idling", "min": 11, "max": 16.5, "v": 14.2, "how": "Engine idling, lights and heaters off. Measure at the battery terminals."}, "load": {"id": "load", "t": "Under load", "min": 11, "max": 16, "v": 13.8, "how": "Engine idling. Turn on the headlights, rear window heater and the heater fan at full, then wait 10 seconds."}},PRE=[{"rest": 12.7, "crank": 10.3, "idle": 14.3, "load": 13.9}, {"rest": 12.3, "crank": 9.8, "idle": 12.6, "load": 12.2}, {"rest": 12.8, "crank": 10.5, "idle": 15.4, "load": 15.1}],ORD=["rest","crank","idle","load"];
+var S={m:"idle",v:{},smart:false};
+function ev(id,v){if(v==null)return['',''];
+if(id==='rest')return v>13?['warn','Above 13 V: the engine is running or the battery has just been charged. Switch off and wait 10–15 minutes.']:v>=12.6?['ok','Fully charged.']:v>=12.4?['ok','Charged normally (about 75 % at 12.4 V).']:v>=12.2?['warn','Half charged — charge the battery.']:['bad','Discharged — charge it and load-test it: there may be a current drain or wear.'];
+if(id==='crank')return v>11.8?['','No voltage dip — did the engine crank? Repeat the measurement.']:v>=10?['ok','The battery holds the cranking load well.']:v>=9.6?['warn','Cranking voltage is borderline — the battery is getting weak and may not start the car in winter.']:['bad','The battery can’t hold the cranking load: check the terminals and ground, load-test the battery or replace it.'];
+var r;if(id==='idle')r=v>15?['bad','Overcharging — the alternator voltage regulator is faulty, or an AGM battery was replaced without a scan-tool reset.']:v>14.8?['warn','Upper limit of normal — keep an eye on the regulator.']:v>=13.5?['ok','The alternator is charging normally.']:v>=13.2?['warn','Weak charging: check the belt, terminals and ground.']:['bad','The alternator isn’t charging: belt, terminals, brushes or regulator.'];
+else r=v>=13.2?['ok','The alternator copes with the load.']:v>=12.8?['warn','Charging sags under load: check the belt tension and terminals.']:['bad','The alternator can’t keep up under load: belt, rectifier bridge or brushes.'];
+if(S.smart&&r[0]!=='ok'&&v>=12.5&&v<=15)r=['ok','Normal for “smart” charging (12.5–15 V), as long as there are no fault codes and the battery light is off.'];return r;}
+var $=function(i){return document.getElementById(i);},rg=$('vt-r'),nb=$('vt-n');
+function f2(v){return v==null?'—':v.toFixed(2)+' V';}
+var COL={ok:'#2E7D32',warn:'#F2A900',bad:'#C62828','':'#9AA4AE'};
+function scale(){var m=M[S.m],st=[],prev=null,n=0;for(var x=m.min;x<=m.max+1e-9;x+=0.05){var c=COL[ev(S.m,Math.round(x*100)/100)[0]];var p=((x-m.min)/(m.max-m.min)*100).toFixed(1);if(c!==prev){if(prev)st.push(prev+' '+p+'%');st.push(c+' '+p+'%');prev=c;}}st.push(prev+' 100%');$('vt-sc').style.background='linear-gradient(90deg,'+st.join(',')+')';$('vt-lo').textContent=m.min+' V';$('vt-hi').textContent=m.max+' V';}
+function say(box,c,b,t){box.className='verdict'+(c?' '+c:'');box.innerHTML='<b></b><span></span>';box.firstChild.textContent=b;box.lastChild.textContent=t||'';}
+function paint(){var m=M[S.m],v=S.v[S.m];document.querySelectorAll('#vt [data-vm]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-vm')===S.m));});
+document.querySelectorAll('#vt [data-vv]').forEach(function(i){var k=i.getAttribute('data-vv');i.textContent=S.v[k]!=null?S.v[k].toFixed(1):'';});
+$('vt-how').textContent=m.how;rg.min=m.min;rg.max=m.max;var shown=v!=null?v:m.v;rg.value=shown;if(document.activeElement!==nb)nb.value=v!=null?v.toFixed(2):'';
+$('vt-lcd').textContent=v!=null?v.toFixed(2):'--.--';$('vt-mk').style.left=Math.max(0,Math.min(100,(shown-m.min)/(m.max-m.min)*100))+'%';$('vt-mk').style.opacity=v!=null?1:.35;
+$('vt-sm').hidden=!(S.m==='idle'||S.m==='load');scale();
+if(v==null)say($('vt-v'),'','Move the slider or type what your meter shows',m.t+': '+f2(null));else{var e=ev(S.m,v);say($('vt-v'),e[0],m.t+': '+f2(v),e[1]);}
+var any=ORD.filter(function(k){return S.v[k]!=null;});$('vt-s').hidden=any.length<2;if(any.length<2)return;
+$('vt-sb').innerHTML='';ORD.forEach(function(k){var tr=document.createElement('tr'),e=ev(k,S.v[k]);tr.innerHTML='<td><i class="vdot"></i><span></span></td><td></td>';tr.querySelector('i').className='vdot '+e[0];tr.querySelector('span').textContent=M[k].t+(e[1]?' — '+e[1]:'');tr.lastChild.textContent=f2(S.v[k]);$('vt-sb').appendChild(tr);});
+var g=function(k){return ev(k,S.v[k])[0];},batt=g('rest')==='bad'||g('crank')==='bad',chg=g('idle')==='bad'||g('load')==='bad'||(S.v.idle>15);
+if(chg)say($('vt-o'),'bad','Look at the charging system first','The alternator isn’t keeping the battery charged (or is overcharging it). Check the belt, the terminals and the thick alternator cable before replacing parts.');
+else if(batt&&(S.v.idle!=null||S.v.load!=null))say($('vt-o'),'bad','The charging is fine — look at the battery','Charge it with a charger and test again. If the voltage drops fast or it cranks slowly again, the battery is worn out.');
+else if(batt)say($('vt-o'),'warn','The battery is weak or discharged','Charge it and test again. Measure with the engine running too, to rule out the alternator.');
+else if(ORD.every(function(k){return g(k)==='ok';}))say($('vt-o'),'ok','Battery and charging look healthy','If the battery still goes flat after a night or a few days parked, check for a parasitic drain (below).');
+else say($('vt-o'),'warn','Some readings are borderline','See the notes next to each reading.');}
+function set(v){v=Math.round(parseFloat(String(v).replace(',','.'))*100)/100;if(isNaN(v))return;S.v[S.m]=v;paint();}
+rg.addEventListener('input',function(){set(rg.value);});nb.addEventListener('input',function(){if(nb.value!=='')set(nb.value);});nb.addEventListener('blur',paint);
+$('vt-smc').addEventListener('change',function(){S.smart=this.checked;paint();});
+document.querySelectorAll('#vt [data-vm]').forEach(function(b){b.addEventListener('click',function(){S.m=b.getAttribute('data-vm');paint();});});
+document.querySelectorAll('#vt [data-vp]').forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-vp');S.v=k==='x'?{}:JSON.parse(JSON.stringify(PRE[+k]));S.smart=false;$('vt-smc').checked=false;paint();});});
+paint();})();</script><footer><div class="wrap"><span>© 2026 АвтоЭлектрик PRO · Дмитриев Олег Сергеевич</span><a href="https://help.avtoelektrik-pro.kz/en.html">Auto electrician assistant</a><a href="../skaner/en.html">OBD-II scanner app</a><a href="../kody/en.html">Fault codes explained</a><a href="../znachki/en.html">Dashboard warning lights</a><a href="../skazaniya/">Music for the road — ballads</a><a href="../check-engine-light/">Check Engine light</a><a href="../smog-check/">Smog check</a><a href="../jump-start/">Jump start</a><a href="../car-battery-test/">Battery test</a><a href="../alternator-test/">Alternator test</a><a href="../privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>
