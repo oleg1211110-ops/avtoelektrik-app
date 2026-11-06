@@ -30,3 +30,6 @@ jobs:
           path: www
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # сайт с песнями ~1,9 ГБ: перенос файлов на GitHub дольше 10 минут (по умолчанию) — даём 30 (06.11.2026)
+          timeout: 1800000
