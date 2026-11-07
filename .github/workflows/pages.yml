@@ -25,6 +25,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # GitHub Pages — не больше 1 ГБ, а с FLAC и MP3 320 сайт ~2 ГБ: обновления перестали выходить (07.11.2026). Высокое качество
+      # временно не выкладываем (Олег: «да, пока сделаем») — файлы остаются в репозитории, на сайт уходят только обычные MP3.
+      # Вернуть — когда звук баллад будет в Cloudflare R2 (tools/skazaniya_r2.py в репозитории приложения).
+      - name: Без FLAC и MP3 320 (временно)
+        run: |
+          find www/skazaniya/audio \( -name '*.flac' -o -name '*-320.mp3' \) -delete
+          du -sh www
       - uses: actions/upload-pages-artifact@v3
         with:
           path: www
