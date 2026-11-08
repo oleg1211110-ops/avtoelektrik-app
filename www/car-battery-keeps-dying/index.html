@@ -1,0 +1,255 @@
+<!doctype html>
+<!-- © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Car Battery Keeps Dying? Parasitic Draw Test With a Multimeter | AvtoElektrik PRO</title>
+<meta name="description" content="Car battery dead after a night or a few days parked? Measure the parasitic draw with a multimeter, find the circuit by pulling fuses, check aftermarket gear and the alternator. Normal draw, a battery-life calculator and a practice drain finder.">
+<meta name="author" content="Oleg Dmitriev">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFA500">
+<link rel="canonical" href="https://help.avtoelektrik-pro.kz/car-battery-keeps-dying/">
+<link rel="alternate" hreflang="en" href="https://help.avtoelektrik-pro.kz/car-battery-keeps-dying/"><link rel="alternate" hreflang="x-default" href="https://help.avtoelektrik-pro.kz/car-battery-keeps-dying/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AvtoElektrik PRO">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Car Battery Keeps Dying? Parasitic Draw Test With a Multimeter | AvtoElektrik PRO">
+<meta property="og:description" content="Car battery dead after a night or a few days parked? Measure the parasitic draw with a multimeter, find the circuit by pulling fuses, check aftermarket gear and the alternator. Normal draw, a battery-life calculator and a practice drain finder.">
+<meta property="og:url" content="https://help.avtoelektrik-pro.kz/car-battery-keeps-dying/">
+<meta property="og:image" content="https://help.avtoelektrik-pro.kz/og-image-en.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../icons/favicon-64.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<style>
+:root{--orange:#FFA500;--bg:#EFEFEF;--surface:#FFFFFF;--ink:#111;--ink-2:#222;--muted:#555;--line:#E3E3E3;--hero:#FFA500;--hero-ink:#000;--hero-2:#2E2200;--eyebrow:#000;--eyebrow-ink:#FFA500;
+--btn:#000;--btn-ink:#fff;--price:#111;--price-ink:#fff;--price-muted:#B5B5B5;--price-li:#E6E6E6;--ok:#1B5E20;--ok-soft:#E3F2E4;--paid-soft:#FFE2AE;--paid-ink:#000;--cream:#FFFAF0;--link:#000;--fig:#F4F6F8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1419;--surface:#172029;--ink:#E5EBF0;--ink-2:#CBD5DD;--muted:#9AA8B4;--line:#2A3846;--hero:#16212B;--hero-ink:#F1F5F8;--hero-2:#B9C5CF;--eyebrow:#FFA500;--eyebrow-ink:#111;
+--btn:#FFA500;--btn-ink:#111;--price:#0A0F13;--price-ink:#EEF2F5;--price-muted:#8796A3;--price-li:#CBD5DD;--ok:#7CCB80;--ok-soft:#17301A;--paid-soft:#3A2C0A;--paid-ink:#F5C452;--cream:#1F2A35;--link:#F5C452;--fig:#1F2A35;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Arial,'Helvetica Neue',Helvetica,sans-serif;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{background:var(--orange);color:#000}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1;text-transform:uppercase;font-weight:700}
+.logo small{font-size:11.5px;letter-spacing:.04em}.logo b{font-size:21px}
+.langs{display:flex;gap:6px}
+.langs a{color:#000;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;border:2px solid #000}
+.langs a[aria-current]{background:#000;color:#fff}
+.stripe{display:flex;height:5px}.stripe i{flex:1}
+.hero{background:var(--hero);color:var(--hero-ink);padding-block:22px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.crumbs{margin:0 0 14px;font-size:14px;color:var(--hero-2)}
+.crumbs a{color:inherit;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;background:var(--eyebrow);color:var(--eyebrow-ink);padding:5px 10px;border-radius:6px}
+.hero h1{font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--hero-2);margin:0 0 24px;max-width:60ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;text-align:center}
+.btn.pri{background:var(--btn);color:var(--btn-ink)}
+.btn.sec{color:var(--hero-ink);border-color:currentColor;background:transparent}
+.btn.wa{background:#1FA855;color:#fff}.btn.tg{background:#229ED9;color:#fff}
+.btn.cp{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,.langs a:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hero .btn:focus-visible{outline-color:var(--hero-ink)}
+.fig{margin:0;background:var(--surface);border-radius:16px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.fig svg{display:block;width:100%;height:auto;border-radius:10px}
+.fig figcaption{margin:8px 4px 2px;font-size:14px;color:var(--muted);line-height:1.4}
+.fig figcaption b{display:block;color:var(--ink);font-size:13px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.fact{background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35)}
+.fact b{display:block;font-size:28px;line-height:1.15}
+.fact span{font-size:14px;color:var(--muted)}
+main section{padding-top:52px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;text-wrap:balance}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.learn li{background:var(--surface);border-radius:12px;padding:14px 16px 14px 48px;position:relative}
+.learn li:before{content:"";position:absolute;left:18px;top:19px;width:14px;height:8px;border-left:3px solid var(--ok);border-bottom:3px solid var(--ok);transform:rotate(-45deg)}
+.note{margin:-6px 0 18px;color:var(--muted);max-width:70ch}
+ol.ls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ls li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;background:var(--surface);border-radius:12px;padding:14px 16px}
+.ls .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-weight:700;font-size:15px}
+.ls li.paid .n{background:var(--orange);color:#000}
+.ls h3{font-size:16.5px;line-height:1.3;margin:0}
+.ls p{margin:4px 0 6px;font-size:15px;color:var(--muted);line-height:1.45}
+.ls small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.ls em{font-style:normal;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.ls li.paid em,.ls li.app em{background:var(--paid-soft);color:var(--paid-ink)}
+details.more{margin-top:8px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--surface)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+details.more[open]>summary{display:none}
+details.more ol{margin-top:0}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.figs .fig{box-shadow:none}
+.price{background:var(--price);color:var(--price-ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;border:1px solid var(--line)}
+.price h2{color:var(--price-ink);margin-bottom:12px}
+.price.one{grid-template-columns:minmax(0,1fr)}
+.price .tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;background:var(--orange);color:#000;margin:0 0 12px}
+.amt{font-size:clamp(36px,6vw,54px);font-weight:700;color:var(--orange);line-height:1;margin:0}
+.amt s{color:var(--price-muted);font-size:.5em;font-weight:600;margin-right:6px}
+.once{color:var(--price-muted);margin:8px 0 14px}
+.promo{margin:-6px 0 12px;color:var(--orange);font-weight:700}
+.ptxt{margin:12px 0 18px;color:var(--price-li);max-width:60ch}
+.price .cta .btn.sec{color:var(--price-ink)}
+.price .btn.pri{background:var(--orange);color:#000}
+.price ul,.price ol{margin:0 0 14px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--price-li)}
+.price h3{margin:0 0 10px;font-size:19px}
+.pay{margin:0 0 14px;color:var(--price-muted);font-size:15px}
+details.inc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:0 18px}
+details.inc[open]{padding-bottom:16px}
+details.qa{background:var(--surface);border-radius:12px;padding:0 18px}
+details.qa+details.qa{margin-top:8px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+details.qa>summary:after,details.inc>summary:after{content:"+";font-size:24px;line-height:1;font-weight:400;flex:none}
+details.qa[open]>summary:after,details.inc[open]>summary:after{content:"\2212"}
+details.qa p{margin:0 0 16px;color:var(--muted);max-width:75ch}
+details.qa h3,details.inc h3.s{font-size:inherit;margin:0;font-weight:700}
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--cream);border-radius:16px;padding:22px}
+.who svg{width:60px;height:60px}
+.who p{margin:0 0 10px;max-width:75ch}
+.who .links{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rel a.card{display:flex;flex-direction:column;gap:6px;background:var(--surface);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.rel a.card:hover{border-color:var(--orange)}
+.rel .card b{font-size:19px;line-height:1.25}
+.rel .card span{font-size:14px;color:var(--muted)}
+.rel .card i{font-style:normal;font-weight:700;font-size:12.5px;align-self:flex-start;padding:3px 9px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.rel .card i.p{background:var(--paid-soft);color:var(--paid-ink)}
+.rel .card u{margin-top:auto;padding-top:6px;font-weight:700;color:var(--link);text-decoration:none}
+.all{margin:16px 0 0;font-weight:700}
+footer{margin-top:56px;padding-block:26px 34px;background:#111;color:#B5B5B5;font-size:14px}
+footer a{color:#fff}
+footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap}
+@media (max-width:860px){.hero .wrap,.price{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rel{grid-template-columns:minmax(0,1fr)}.price{padding:22px}}
+@media (max-width:640px){.learn,.figs{grid-template-columns:minmax(0,1fr)}.who{grid-template-columns:minmax(0,1fr)}.who svg{width:48px;height:48px}.hero{padding-block:18px 56px}.lead{font-size:17px}}
+@media (max-width:420px){.logo b{font-size:18px}.langs a{padding:5px 9px}.fact b{font-size:24px}.btn{width:100%}.share .btn{width:auto;flex:1 1 40%}}
+
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.feat{background:var(--surface);border-radius:16px;padding:14px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}
+.feat img{width:150px;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.feat h3{margin:4px 0 6px;font-size:19px;line-height:1.25}
+.feat p{margin:0;color:var(--muted);font-size:15.5px}
+.shot{margin:0;max-width:300px}
+.shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid rgba(0,0,0,.12);box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.steps li{background:var(--surface);border-radius:14px;padding:16px;position:relative;counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cc{background:var(--surface);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.cc h3{margin:0;font-size:21px;line-height:1.25}
+.cc .tg{align-self:flex-start;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.cc p{margin:0;color:var(--muted);font-size:15.5px}
+.cc ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cc small{color:var(--muted);font-size:13.5px}
+.cc .cta{margin-top:auto;padding-top:6px}
+.cc .btn{min-height:44px;padding:10px 18px}
+.cc .btn.sec{color:var(--ink)}
+.cc .fig{box-shadow:none;background:var(--fig);padding:8px}
+.cc details.qa{background:var(--bg);padding:0 14px}
+@media (max-width:860px){.feats,.cards{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.feat{grid-template-columns:minmax(0,1fr)}.feat img{width:min(260px,100%)}.steps{grid-template-columns:minmax(0,1fr)}.shot{max-width:240px;margin:0 auto}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Car battery keeps dying? Find the parasitic drain", "url": "https://help.avtoelektrik-pro.kz/car-battery-keeps-dying/", "inLanguage": "en"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a normal parasitic draw?", "acceptedAnswer": {"@type": "Answer", "text": "After the modules go to sleep, most cars draw up to about 0.05 A (50 mA). Auto electrician Oleg treats 0.06 A and less as fine. 0.1–0.2 A or more means something isn’t going to sleep."}}, {"@type": "Question", "name": "How long does it take for the modules to go to sleep?", "acceptedAnswer": {"@type": "Answer", "text": "From a few minutes to about an hour, depending on the car. Keep the doors closed and the key fob away from the car while you wait — opening a door wakes everything up again."}}, {"@type": "Question", "name": "Why does my car battery die after sitting for a week?", "acceptedAnswer": {"@type": "Answer", "text": "With a normal draw a healthy battery should sit two weeks or more. If it’s dead after a week, either the draw is too high or the battery is worn out — an older battery holds far less charge. Measure the draw, then test the battery."}}, {"@type": "Question", "name": "Can a bad alternator drain the battery when the car is off?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A failed diode inside the alternator can draw current while the car is parked. If no fuse makes the draw drop, disconnect the battery, unplug the thick wire at the alternator and measure again."}}, {"@type": "Question", "name": "Will a new battery fix a battery that keeps dying?", "acceptedAnswer": {"@type": "Answer", "text": "Not if something is draining it — the new battery will die too. Measure the draw and check the charging voltage before you buy a battery."}}, {"@type": "Question", "name": "How do I find a drain without a multimeter?", "acceptedAnswer": {"@type": "Answer", "text": "Unplug everything from the 12 V sockets and USB overnight, check that the glovebox and trunk lights go out, and switch off an aftermarket stereo or alarm if you know how to put it back. To be sure, you still need a multimeter or a DC clamp meter."}}]}]}</script><style>
+.tool{border:1.5px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;background:var(--surface)}
+.tool h3{margin:0 0 10px}
+.seg2{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
+.seg2 button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.seg2 button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.verdict{border-left:5px solid var(--line);padding:10px 12px;border-radius:10px;background:var(--bg);margin-top:8px}
+.verdict.ok{border-left-color:#2E7D32}.verdict.warn{border-left-color:#F2A900}.verdict.bad{border-left-color:#C62828}
+.verdict b{display:block;margin-bottom:4px}
+.codeform{display:flex;gap:8px;flex-wrap:wrap}
+.codeform input{flex:1 1 160px;min-width:0;font:inherit;font-size:18px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);text-transform:uppercase}
+table.cost{width:100%;border-collapse:collapse;font-size:15px}
+table.cost td,table.cost th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+table.cost td:last-child,table.cost th:last-child{text-align:right;white-space:nowrap}
+.src{font-size:13px;color:var(--muted)}
+.warnbox{border-left:5px solid #C62828;background:var(--surface);border-radius:12px;padding:12px 14px;margin:12px 0}
+.warnbox b{display:block;margin-bottom:4px}
+
+.rq{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rq li{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--surface);min-width:0}
+.rq li span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+
+.jrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.jrow button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer;min-height:42px}
+.jrow button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.ac-log{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.ac-log li{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg)}
+.ac-log li b{margin-right:6px}.ac-log li.bad{border-color:#C62828}.ac-log li.ok{border-color:#2E7D32}
+#ac [hidden]{display:none!important}
+
+.dc-l{display:block;margin:14px 0 4px}
+#dc-a{width:100%;max-width:520px;accent-color:var(--orange)}
+.dd-m{margin:12px 0 0;font-size:18px}.dd-m b{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:22px}
+
+.ballads details{border:2px dashed var(--orange);border-radius:16px;background:var(--surface);margin:12px 0}
+.ballads summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:14px 16px}
+.ballads summary::-webkit-details-marker{display:none}
+.ballads summary:after{content:"\203A";margin-left:auto;font-size:26px;color:var(--orange);transition:transform .2s}
+.ballads details[open] summary:after{transform:rotate(90deg)}
+.ballads .bi{font-size:28px;line-height:1}.ballads summary b{display:block;font-size:18px}.ballads summary small{display:block;color:var(--muted);font-size:14px}
+.ballads ul{list-style:none;margin:0;padding:0 16px 4px;display:grid;gap:12px}
+.ballads li{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg);min-width:0}
+.ballads li span{display:block;color:var(--muted);font-size:14px;margin:2px 0 8px}
+.ballads audio{width:100%;max-width:520px;display:block;margin-bottom:6px}
+.ballads .all{padding:0 16px}.ballads .src{padding:0 16px 14px;margin:0}
+</style>
+<script src="/widget.js" defer></script>
+<script>(function(){var ID='G-D5E79MWR50',T='us_battery_drain';window.dataLayer=window.dataLayer||[];function g(){dataLayer.push(arguments)}window.gtag=window.gtag||g;g('js',new Date());g('config',ID,{app_platform:'site',page_type:T});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);function ev(n,p){try{p=p||{};p.page_type=T;gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href],summary,button'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/wa\.me\/7701/.test(h))return ev('contact_whatsapp');if(/wa\.me\/\?|t\.me\/share|max\.ru\/:share|viber:/.test(h)||a.classList.contains('cp'))return ev('share');if(/#skachat|\.apk$/.test(h))return ev('download_click');if(/#skaner/.test(h))return ev('try_scanner_click');if(/#kursy/.test(h))return ev('start_course_click',{course:h.split('#kursy-')[1]||''});if(/#kod=/.test(h)){var c='';try{c=decodeURIComponent(h.split('#kod=')[1]||'').split('&')[0]}catch(x){}return ev('open_code_app',{code:c});}if(/#znachok=/.test(h))return ev('open_lamp_app',{lamp:h.split('#znachok=')[1]||''});if(a.closest('.langs'))return ev('page_lang',{lang:a.getAttribute('hreflang')||''});if(a.tagName==='SUMMARY'){if(a.closest('details.qa'))return ev('faq_open');if(a.closest('details.more'))return ev('lessons_more');return;}if(/\/(kursy|skaner|besplatnye-kursy|kody|znachki)\//.test(h))return ev('page_link',{to:h.replace(/^https?:\/\/[^\/]+/,'')});if(/avtoelektrik-pro\.kz/.test(h)&&!/help\./.test(h))return ev('site_click');},true)})();</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="https://help.avtoelektrik-pro.kz/en.html" aria-label="AvtoElektrik PRO"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><span><small>AvtoElektrik</small><b>PRO</b></span></a>
+  <nav class="langs" aria-label="Язык · Тіл · Language"></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<section class="hero"><div class="wrap"><div><p class="eyebrow">Battery · parasitic draw</p><h1>Car battery keeps dying? Find the parasitic drain</h1><p class="lead">Dead after a night or a few days parked usually means something doesn’t go to sleep when you lock the car — an aftermarket stereo, a light that stays on, a stuck switch or the alternator. A multimeter and the fuse boxes will show you which circuit it is.</p><div class="cta"><a class="btn pri" href="#dd">Practice finding a drain</a><a class="btn sec" href="../car-battery-test/">Test the battery first</a></div></div></div></section><main class="wrap"><section aria-labelledby="t1"><h2 id="t1">1. How big a drain kills a battery?</h2><p>A single 5 W bulb draws about 0.4 A — around 10 Ah a day. Move the slider to see how long your battery lasts.</p><div class="tool" id="dc"><h3>How long until the battery is dead?</h3><div class="jrow" role="group" aria-label="Examples"><button type="button" data-p="0.03" aria-pressed="true">Example: a normal draw, 0.03 A</button><button type="button" data-p="0.42" aria-pressed="false">Example: a glovebox bulb left on, 0.42 A</button></div><label class="dc-l" for="dc-a">Draw with the car asleep: <b id="dc-av">0.03 A</b></label><input type="range" id="dc-a" min="0.01" max="1" step="0.01" value="0.03"><div class="jrow" role="group" aria-label="Battery size"><button type="button" data-ah="45" aria-pressed="false">45 Ah</button><button type="button" data-ah="60" aria-pressed="true">60 Ah</button><button type="button" data-ah="75" aria-pressed="false">75 Ah</button><button type="button" data-ah="90" aria-pressed="false">90 Ah</button><button type="button" id="dc-cold" aria-pressed="false">Cold weather</button></div><div class="verdict" id="dc-v" aria-live="polite"><b></b><span></span></div></div></section><section aria-labelledby="t2"><h2 id="t2">2. What to check yourself</h2><ol class="steps"><li>Rule out the battery and the charging first: about 12.6 V with the car off and fully charged, 13.5–14.8 V with the engine running — <a href="../car-battery-test/">battery test</a>, <a href="../alternator-test/">alternator test</a>. A battery older than 4–5 years — have it load-tested.</li><li>Aftermarket gear first, factory parts later. Unplug everything in the 12 V sockets and USB overnight — dash cam, chargers, a tracker. Fine in the morning — the culprit is one of them. An aftermarket stereo should go dark when you lock the car; if its buttons stay lit, it’s on constant power.</li><li>Lights that should go out by themselves: glovebox, trunk, vanity mirrors, dome. You can’t see inside a closed glovebox — put your phone in it recording video, close the lid for a minute and watch the recording.</li><li>Measure the draw. Ignition and everything off, doors closed (close the latch with a screwdriver if you need the door open), key fob away from the car. Remove the negative cable, set the multimeter to DC amps with the red lead in the 10 A jack, and connect it between the battery negative post and the cable.</li><li>Wait for the modules to sleep — a few minutes to an hour, without opening the doors. Up to about 0.05 A is normal; Oleg treats 0.06 A and less as fine. 0.1–0.2 A or more — something isn’t going to sleep.</li><li>Pull the fuses one at a time, in both fuse boxes, and watch the meter. The fuse that makes it drop is on the circuit with the drain — check everything that circuit feeds. If the reading jumps after you pull a fuse, wait for the modules to sleep again.</li><li>No fuse helps — check the alternator. With the battery disconnected, unplug the thick wire at the alternator, connect the meter again and measure. The draw drops — a failed diode in the alternator is draining the battery.</li></ol><div class="warnbox"><b>While the meter is connected in series</b>don’t turn on the ignition or the headlights and don’t start the engine — you’ll blow the meter’s fuse or the meter itself.</div></section><section aria-labelledby="t3"><h2 id="t3">3. Practice</h2><div class="tool" id="dd"><h3>Practice: find the drain</h3><p class="src" style="margin:0 0 8px">Pick a car, run the checks, then name the cause. The meter is connected between the battery negative post and the cable.</p><div class="jrow" role="group" aria-label="Which car"><button type="button" data-car="ok" aria-pressed="false">Example: a healthy car</button><button type="button" data-car="bad" aria-pressed="true">A car that goes flat</button></div><p class="dd-m" aria-live="polite">Meter: <b id="dd-r">—</b></p><div class="jrow" role="group" aria-label="Checks"><button type="button" data-ck="meter">Read the meter right away</button><button type="button" data-ck="sleep">Wait 40 minutes, doors closed</button><button type="button" data-ck="plug">Unplug the aftermarket stereo and dash cam</button><button type="button" data-ck="glove">Phone video in the glovebox and trunk</button><button type="button" data-ck="fuses">Pull the fuses one at a time</button><button type="button" data-ck="alt">Unplug the thick wire at the alternator</button></div><ul class="ac-log" id="dd-log" aria-live="polite"></ul><p style="margin:14px 0 0"><b>What is draining it?</b></p><div class="jrow" role="group" aria-label="Your answer"><button type="button" data-an="radio">The aftermarket stereo</button><button type="button" data-an="glove">The glovebox light</button><button type="button" data-an="door">A door or hood switch keeps the car awake</button><button type="button" data-an="alt">The alternator</button><button type="button" data-an="ok">Nothing — the draw is normal</button></div><div class="verdict" id="dd-v" hidden aria-live="polite"></div><div class="jrow"><button type="button" id="dd-n">Another car</button></div></div></section><section aria-labelledby="t4"><h2 id="t4">4. From Oleg’s shop</h2><ul class="rq"><li><b>Jeep, 2022</b><span>A week parked, the battery dropped to 3.5 V. Charging after a jump start was fine (14.7 V); the battery was four years old. Advice: replace it and measure the draw once the modules are asleep.</span></li><li><b>Lexus LX 570</b><span>The battery dropped to 3 V. After a new battery the draw was 10 mA — normal — and charging was fine. The old battery was the only problem.</span></li><li><b>Hyundai Santa Fe, 2020</b><span>The battery went flat quickly even after a full charge: the car drew far too much current while parked. The modules were switched off one by one — not them. It was a faulty alternator; after replacing it, the draw went back to normal.</span></li></ul></section><section aria-labelledby="fq"><h2 id="fq">Questions</h2><details class="qa"><summary><h3>What is a normal parasitic draw?</h3></summary><p>After the modules go to sleep, most cars draw up to about 0.05 A (50 mA). Auto electrician Oleg treats 0.06 A and less as fine. 0.1–0.2 A or more means something isn’t going to sleep.</p></details><details class="qa"><summary><h3>How long does it take for the modules to go to sleep?</h3></summary><p>From a few minutes to about an hour, depending on the car. Keep the doors closed and the key fob away from the car while you wait — opening a door wakes everything up again.</p></details><details class="qa"><summary><h3>Why does my car battery die after sitting for a week?</h3></summary><p>With a normal draw a healthy battery should sit two weeks or more. If it’s dead after a week, either the draw is too high or the battery is worn out — an older battery holds far less charge. Measure the draw, then test the battery.</p></details><details class="qa"><summary><h3>Can a bad alternator drain the battery when the car is off?</h3></summary><p>Yes. A failed diode inside the alternator can draw current while the car is parked. If no fuse makes the draw drop, disconnect the battery, unplug the thick wire at the alternator and measure again.</p></details><details class="qa"><summary><h3>Will a new battery fix a battery that keeps dying?</h3></summary><p>Not if something is draining it — the new battery will die too. Measure the draw and check the charging voltage before you buy a battery.</p></details><details class="qa"><summary><h3>How do I find a drain without a multimeter?</h3></summary><p>Unplug everything from the 12 V sockets and USB overnight, check that the glovebox and trunk lights go out, and switch off an aftermarket stereo or alarm if you know how to put it back. To be sure, you still need a multimeter or a DC clamp meter.</p></details></section><p class="src">The checks come from auto electrician Oleg Dmitriev (AvtoElektrik PRO), Almaty.</p><section aria-labelledby="rq"><h2 id="rq">Related questions</h2><ul class="rq"><li><a href="../car-battery-test/"><b>How to test a car battery with a multimeter</b></a><span>Voltage chart and checker: is it the battery, the terminals or something draining it overnight.</span></li><li><a href="../alternator-test/"><b>How to test an alternator</b></a><span>Voltage at idle and with loads on, signs it is failing, and what a repair usually costs.</span></li><li><a href="../how-to-change-a-car-battery/"><b>How to change a car battery</b></a><span>Step by step: which terminal comes off first, AGM or regular, and what to reset after the swap.</span></li><li><a href="../car-fuses/"><b>Car fuses: how to check a fuse</b></a><span>Color chart, finding the right fuse, and why a fuse keeps blowing.</span></li></ul></section><section class="ballads" aria-labelledby="ballads"><details><summary><span class="bi" aria-hidden="true">🎵</span><span><b id="ballads">Ballads about this problem</b><small>2 songs about the master and the gremlins of car trouble — tap to listen</small></span></summary><ul><li><b>“The Night Vampire”</b><span>The vampire drinks the battery overnight — parasitic draw</span><audio controls preload="none" src="https://help.avtoelektrik-pro.kz/skazaniya/audio/en-the-night-vampire.mp3" data-n="2"></audio><a href="https://help.avtoelektrik-pro.kz/skazaniya/#b2-en">Lyrics and the story behind the song →</a></li><li><b>“Wrangler and Dryoma”</b><span>Dryoma lulled the Jeep to sleep — the battery died after a week parked</span><audio controls preload="none" src="https://help.avtoelektrik-pro.kz/skazaniya/audio/en-wrangler-and-dryoma.mp3" data-n="26"></audio><a href="https://help.avtoelektrik-pro.kz/skazaniya/#b26-en">Lyrics and the story behind the song →</a></li></ul><p class="all"><a href="https://help.avtoelektrik-pro.kz/skazaniya/#en">All AvtoElektrik PRO ballads →</a></p><p class="src">Songs made with AI. Stories, car tips and lyrics — AvtoElektrik PRO.</p></details></section><script>(function(){var A=[].slice.call(document.querySelectorAll('.ballads audio'));var d=document.querySelector('.ballads details');d&&d.addEventListener('toggle',function(){if(d.open&&window.gtag)gtag('event','ballad_us_open',{page:location.pathname})});A.forEach(function(a){a.addEventListener('play',function(){[].forEach.call(document.querySelectorAll('audio'),function(o){if(o!==a&&!o.paused)o.pause()});if(!a._g){a._g=1;if(window.gtag)gtag('event','ballad_us_play',{ballad:a.getAttribute('data-n'),page:location.pathname})}})})})();</script></main><script>(function(){
+var $=function(i){return document.getElementById(i);};
+function say(v,c,h,t){v.hidden=false;v.className='verdict '+c;v.innerHTML='<b></b><span></span>';v.firstChild.textContent=h;v.lastChild.textContent=t;}
+var C={a:0.03,ah:60,cold:false};
+function calc(){var use=C.ah*(C.cold?0.3:0.5),day=C.a*24,d=use/day,s=d>=1.5?Math.round(d)+' days':d>=1?'about a day':'about '+Math.max(1,Math.round(d*24))+' hours';
+$('dc-av').textContent=C.a.toFixed(2)+' A';$('dc-a').value=C.a;
+var c=C.a<=0.06?'ok':C.a<0.1?'warn':'bad',h=(C.a<=0.06?'Normal draw':C.a<0.1?'A little high':'Something isn’t going to sleep')+' — the car will still start for '+s;
+var t=(Math.round(day*10)/10)+' Ah a day out of a '+C.ah+' Ah battery. '+(C.a<=0.06?'That’s fine. If the battery still goes flat, test the battery itself — it may be worn out.':C.a<0.1?'Check aftermarket gear first, then measure again after the modules sleep.':'Find it: aftermarket gear first, then lights that should go out, then the fuses one at a time.')+(C.cold?' In the cold a battery cranks on far less of its charge.':'');
+say($('dc-v'),c,h,t);}
+$('dc-a').addEventListener('input',function(){C.a=+this.value;document.querySelectorAll('#dc [data-p]').forEach(function(x){x.setAttribute('aria-pressed','false');});calc();});
+document.querySelectorAll('#dc [data-p]').forEach(function(b){b.addEventListener('click',function(){C.a=+b.getAttribute('data-p');document.querySelectorAll('#dc [data-p]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});calc();});});
+document.querySelectorAll('#dc [data-ah]').forEach(function(b){b.addEventListener('click',function(){C.ah=+b.getAttribute('data-ah');document.querySelectorAll('#dc [data-ah]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});calc();});});
+$('dc-cold').addEventListener('click',function(){C.cold=!C.cold;this.setAttribute('aria-pressed',String(C.cold));calc();});
+window.__dcSet=function(a,ah,cold){C.a=a;C.ah=ah||60;C.cold=!!cold;calc();};calc();
+var K=['radio','glove','door','alt'],R={ok:0.03,radio:0.34,glove:0.45,door:0.62,alt:0.27},F={sc:'radio',slept:false,log:[]};
+function amps(x){return x.toFixed(2)+' A';}
+function show(a){$('dd-r').textContent=a;}
+function step(c){var s=F.sc,r=R[s];
+if(c==='meter'){if(F.slept){show(amps(r));return [s==='ok'?'ok':'bad','Meter now',amps(r)];}show(amps(0.85));return ['warn','Right away',amps(0.85)+' — the modules are still awake. This number means nothing yet: wait for them to sleep.'];}
+if(c==='sleep'){F.slept=true;show(amps(r));return s==='ok'?['ok','After 40 minutes',amps(r)+' — a normal draw.']:s==='door'?['bad','After 40 minutes',amps(r)+' — still high, and the dome light timer keeps coming back on.']:['bad','After 40 minutes',amps(r)+' — too high: something isn’t going to sleep.'];}
+if(!F.slept)return ['warn','Not yet','Wait for the modules to sleep first — until then the reading jumps around and tells you nothing.'];
+if(c==='plug')return s==='radio'?(show(amps(0.03)),['bad','Aftermarket stereo unplugged','The draw drops from '+amps(r)+' to 0.03 A. The stereo was wired to constant power and never switches off.']):['ok','Aftermarket stereo unplugged','No change.'];
+if(c==='glove')return s==='glove'?['bad','Phone video','The glovebox light stays on with the lid closed.']:['ok','Phone video','Dark with the lids closed.'];
+if(c==='fuses')return s==='ok'?['ok','Fuses','No fuse changes anything — the draw is already normal.']:s==='alt'?['bad','Fuses','No fuse makes the draw drop.']:s==='radio'?(show(amps(0.03)),['bad','Fuses','The RADIO fuse drops it to 0.03 A.']):s==='glove'?(show(amps(0.03)),['bad','Fuses','The INTERIOR LIGHTS fuse drops it to 0.03 A.']):(show(amps(0.03)),['bad','Fuses','The fuse for the body control module drops it to 0.03 A. The dash shows the hood as open — its switch is stuck.']);
+if(c==='alt')return s==='alt'?(show(amps(0.03)),['bad','Alternator wire unplugged (battery off first)','The draw drops from '+amps(r)+' to 0.03 A.']):['ok','Alternator wire unplugged (battery off first)','No change.'];}
+var A={radio:'The aftermarket stereo was wired to constant power, so it never switches off. Have it rewired to the ignition-switched wire — or unplug it overnight until then.',
+glove:'The glovebox light stays on with the lid closed: the switch or the lid stopper is broken. Pull the bulb until it’s fixed — a 5 W bulb drains about 10 Ah a day.',
+door:'A stuck hood switch tells the car it’s open, so the modules never go to sleep (and the alarm may act up). Clean or replace the switch; check the door switches the same way.',
+alt:'The alternator: a failed diode draws current while the car is parked. No fuse helped, but unplugging its thick wire did. Replace or rebuild the alternator.',
+ok:'The draw is normal: 0.03 A after the modules sleep. If the battery still goes flat, test the battery itself — it may simply be worn out.'};
+function draw(){var l=$('dd-log');l.innerHTML='';F.log.forEach(function(x){var li=document.createElement('li');li.className=x[0];var b=document.createElement('b');b.textContent=x[1]+':';li.appendChild(b);li.appendChild(document.createTextNode(' '+x[2]));l.appendChild(li);});}
+function car(k){F.sc=k==='ok'?'ok':K[Math.floor(Math.random()*K.length)];F.slept=false;F.log=[];draw();show('—');$('dd-v').hidden=true;
+document.querySelectorAll('#dd [data-car]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-car')===k));});}
+document.querySelectorAll('#dd [data-ck]').forEach(function(b){b.addEventListener('click',function(){var c=b.getAttribute('data-ck'),r=step(c);F.log=F.log.filter(function(x){return x[3]!==c;});F.log.push([r[0],r[1],r[2],c]);draw();});});
+document.querySelectorAll('#dd [data-an]').forEach(function(b){b.addEventListener('click',function(){var a=b.getAttribute('data-an'),v=$('dd-v'),ok=a===F.sc;
+if(ok)say(v,'ok',a==='ok'?'Right — nothing to find':'Right',A[a]);else say(v,'bad','Not this one'+(F.slept?'':' — let the car sleep and run the checks first'),'Look again: what made the meter drop to 0.03 A?');});});
+$('dd-n').addEventListener('click',function(){car('bad');});document.querySelectorAll('#dd [data-car]').forEach(function(b){b.addEventListener('click',function(){car(b.getAttribute('data-car'));});});
+window.__ddSet=function(k){F.sc=k;F.slept=false;F.log=[];draw();show('—');$('dd-v').hidden=true;};car('bad');})();</script><footer><div class="wrap"><span>© 2026 AvtoElektrik PRO · Oleg Dmitriev</span><a href="https://help.avtoelektrik-pro.kz/en.html">Auto electrician assistant</a><a href="../skaner/en.html">OBD-II scanner app</a><a href="../kody/en.html">Fault codes explained</a><a href="../znachki/en.html">Dashboard warning lights</a><a href="../skazaniya/">Music for the road — ballads</a><a href="../check-engine-light/">Check Engine light</a><a href="../smog-check/">Smog check</a><a href="../jump-start/">Jump start</a><a href="../car-battery-test/">Battery test</a><a href="../alternator-test/">Alternator test</a><a href="../car-wont-start/">Car won’t start</a><a href="../car-fuses/">Car fuses</a><a href="../service-stabilitrak/">Service StabiliTrak</a><a href="../vin-decoder/">VIN decoder</a><a href="../car-ac-not-cold/">Car A/C not cold</a><a href="../battery-terminal-corrosion/">Battery terminal corrosion</a><a href="../how-to-change-a-car-battery/">Change a car battery</a><a href="../battery-light-on-while-driving/">Battery light on</a><a href="../bad-starter-or-battery/">Starter or battery?</a><a href="../reduced-engine-power/">Reduced engine power</a><a href="../brake-lights-not-working/">Brake lights not working</a><a href="../car-battery-keeps-dying/">Battery keeps dying</a><a href="../privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>
