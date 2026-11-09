@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.80",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.80.apk",
-    "size": 8702425,
-    "date": "2026-11-06",
+    "version": "1.0.82",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.82.apk",
+    "size": 8739289,
+    "date": "2026-11-09",
     "notes": {
-      "ru": "«Поддержать проект»: на кофе, дать прикурить проекту, на новую балладу, на вискарик или своя сумма — счёт приходит в Kaspi; строка «Поддержать проект» — внизу разделов, тем, кто поддержал, — «спасибо». Помощник: частые щелчки при запуске — аккумулятор или клеммы; когда виноват стартер, который берёт ток на себя; на некоторых машинах при глубокой просадке аккумулятора блок не даёт команду стартеру; урок «Почему машина не заводится» обновлён. Рейтинг баллад — теперь и по скачиваниям; звук баллад — из нового хранилища.",
-      "kk": "«Жобаны қолдау»: кофеге, жобаға от беруге, жаңа балладаға, вискиге немесе өз сомаңыз — шот Kaspi-ге келеді; «Жобаны қолдау» жолы — бөлімдердің төменінде, қолдағандарға — «рақмет». Көмекші: от алдырғанда жиі шырт етсе — аккумулятор немесе клеммалар; стартер токты өзіне алатын жағдай; кейбір көліктерде аккумулятор қатты отырғанда блок стартерге команда бермейді; «Көлік неге оталмайды» сабағы жаңартылды. Баллада рейтингі — енді жүктеп алу бойынша да; балладалардың дыбысы — жаңа қоймадан.",
-      "en": "“Support the project”: for a coffee, a jump start for the project, a new ballad, a whisky or an amount you choose — the invoice arrives in Kaspi; a “Support the project” line at the bottom of each section, and a “thank you” for those who have supported. Assistant: rapid clicking when starting — battery or terminals; when the starter itself draws all the current; on some cars the engine computer won’t send the start command when the battery is deeply discharged; the lesson “Why the car won’t start” is updated. The ballad rating now also counts downloads; ballad audio comes from new storage."
+      "ru": "Сказания: новые баллады на русском, казахском и английском (10 песен «Қазақша»), по умолчанию — лучшее качество FLAC; звук баллад грузится быстрее из нового хранилища. Кнопка App Store для iPhone и загрузка программы-сканера для Windows. Перелинковка гайдов с кодами ошибок и разборами.",
+      "kk": "Ертегілер: орыс, қазақ және ағылшын тілдерінде жаңа балладалар («Қазақша» 10 ән), әдепкіде — ең жақсы FLAC сапасы; балладалардың дыбысы жаңа қоймадан жылдамырақ жүктеледі. iPhone үшін App Store түймесі және Windows үшін сканер бағдарламасын жүктеу. Нұсқаулар қате кодтарымен және талдаулармен байланыстырылды.",
+      "en": "Tales: new ballads in Russian, Kazakh and English (10 songs in Kazakh), best-quality FLAC by default; ballad audio now loads faster from new storage. An App Store button for iPhone and a download of the scanner software for Windows. Guides are now cross-linked with error codes and case studies."
     }
   },
   "play": "",
