@@ -1,0 +1,220 @@
+<!doctype html>
+<!-- © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Speedometer Not Working: Wheel Speed Sensors, ABS, the Cluster — How to Check with a Scan Tool | AvtoElektrik PRO</title>
+<meta name="description" content="Speedometer stopped working or reads wrong: start from what happened first (brake or suspension work, a car wash, the battery), the speed signal from the wheel sensors via ABS, codes — clear, drive, scan again — and each wheel’s speed while driving. An auto electrician’s method.">
+<meta name="author" content="Oleg Dmitriev">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFA500">
+<link rel="canonical" href="https://help.avtoelektrik-pro.kz/speedometer-not-working/">
+<link rel="alternate" hreflang="en" href="https://help.avtoelektrik-pro.kz/speedometer-not-working/"><link rel="alternate" hreflang="ru" href="https://help.avtoelektrik-pro.kz/ne-rabotaet-spidometr/"><link rel="alternate" hreflang="x-default" href="https://help.avtoelektrik-pro.kz/speedometer-not-working/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AvtoElektrik PRO">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Speedometer Not Working: Wheel Speed Sensors, ABS, the Cluster — How to Check with a Scan Tool | AvtoElektrik PRO">
+<meta property="og:description" content="Speedometer stopped working or reads wrong: start from what happened first (brake or suspension work, a car wash, the battery), the speed signal from the wheel sensors via ABS, codes — clear, drive, scan again — and each wheel’s speed while driving. An auto electrician’s method.">
+<meta property="og:url" content="https://help.avtoelektrik-pro.kz/speedometer-not-working/">
+<meta property="og:image" content="https://help.avtoelektrik-pro.kz/og-image-en.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../icons/favicon-64.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<style>
+:root{--orange:#FFA500;--bg:#EFEFEF;--surface:#FFFFFF;--ink:#111;--ink-2:#222;--muted:#555;--line:#E3E3E3;--hero:#FFA500;--hero-ink:#000;--hero-2:#2E2200;--eyebrow:#000;--eyebrow-ink:#FFA500;
+--btn:#000;--btn-ink:#fff;--price:#111;--price-ink:#fff;--price-muted:#B5B5B5;--price-li:#E6E6E6;--ok:#1B5E20;--ok-soft:#E3F2E4;--paid-soft:#FFE2AE;--paid-ink:#000;--cream:#FFFAF0;--link:#000;--fig:#F4F6F8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1419;--surface:#172029;--ink:#E5EBF0;--ink-2:#CBD5DD;--muted:#9AA8B4;--line:#2A3846;--hero:#16212B;--hero-ink:#F1F5F8;--hero-2:#B9C5CF;--eyebrow:#FFA500;--eyebrow-ink:#111;
+--btn:#FFA500;--btn-ink:#111;--price:#0A0F13;--price-ink:#EEF2F5;--price-muted:#8796A3;--price-li:#CBD5DD;--ok:#7CCB80;--ok-soft:#17301A;--paid-soft:#3A2C0A;--paid-ink:#F5C452;--cream:#1F2A35;--link:#F5C452;--fig:#1F2A35;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Arial,'Helvetica Neue',Helvetica,sans-serif;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{background:var(--orange);color:#000}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1;text-transform:uppercase;font-weight:700}
+.logo small{font-size:11.5px;letter-spacing:.04em}.logo b{font-size:21px}
+.langs{display:flex;gap:6px}
+.langs a{color:#000;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;border:2px solid #000}
+.langs a[aria-current]{background:#000;color:#fff}
+.stripe{display:flex;height:5px}.stripe i{flex:1}
+.hero{background:var(--hero);color:var(--hero-ink);padding-block:22px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.crumbs{margin:0 0 14px;font-size:14px;color:var(--hero-2)}
+.crumbs a{color:inherit;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;background:var(--eyebrow);color:var(--eyebrow-ink);padding:5px 10px;border-radius:6px}
+.hero h1{font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--hero-2);margin:0 0 24px;max-width:60ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;text-align:center}
+.btn.pri{background:var(--btn);color:var(--btn-ink)}
+.btn.sec{color:var(--hero-ink);border-color:currentColor;background:transparent}
+.btn.wa{background:#1FA855;color:#fff}.btn.tg{background:#229ED9;color:#fff}
+.btn.cp{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,.langs a:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hero .btn:focus-visible{outline-color:var(--hero-ink)}
+.fig{margin:0;background:var(--surface);border-radius:16px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.fig svg{display:block;width:100%;height:auto;border-radius:10px}
+.fig figcaption{margin:8px 4px 2px;font-size:14px;color:var(--muted);line-height:1.4}
+.fig figcaption b{display:block;color:var(--ink);font-size:13px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.fact{background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35)}
+.fact b{display:block;font-size:28px;line-height:1.15}
+.fact span{font-size:14px;color:var(--muted)}
+main section{padding-top:52px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;text-wrap:balance}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.learn li{background:var(--surface);border-radius:12px;padding:14px 16px 14px 48px;position:relative}
+.learn li:before{content:"";position:absolute;left:18px;top:19px;width:14px;height:8px;border-left:3px solid var(--ok);border-bottom:3px solid var(--ok);transform:rotate(-45deg)}
+.note{margin:-6px 0 18px;color:var(--muted);max-width:70ch}
+ol.ls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ls li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;background:var(--surface);border-radius:12px;padding:14px 16px}
+.ls .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-weight:700;font-size:15px}
+.ls li.paid .n{background:var(--orange);color:#000}
+.ls h3{font-size:16.5px;line-height:1.3;margin:0}
+.ls p{margin:4px 0 6px;font-size:15px;color:var(--muted);line-height:1.45}
+.ls small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.ls em{font-style:normal;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.ls li.paid em,.ls li.app em{background:var(--paid-soft);color:var(--paid-ink)}
+details.more{margin-top:8px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--surface)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+details.more[open]>summary{display:none}
+details.more ol{margin-top:0}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.figs .fig{box-shadow:none}
+.price{background:var(--price);color:var(--price-ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;border:1px solid var(--line)}
+.price h2{color:var(--price-ink);margin-bottom:12px}
+.price.one{grid-template-columns:minmax(0,1fr)}
+.price .tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;background:var(--orange);color:#000;margin:0 0 12px}
+.amt{font-size:clamp(36px,6vw,54px);font-weight:700;color:var(--orange);line-height:1;margin:0}
+.amt s{color:var(--price-muted);font-size:.5em;font-weight:600;margin-right:6px}
+.once{color:var(--price-muted);margin:8px 0 14px}
+.promo{margin:-6px 0 12px;color:var(--orange);font-weight:700}
+.ptxt{margin:12px 0 18px;color:var(--price-li);max-width:60ch}
+.price .cta .btn.sec{color:var(--price-ink)}
+.price .btn.pri{background:var(--orange);color:#000}
+.price ul,.price ol{margin:0 0 14px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--price-li)}
+.price h3{margin:0 0 10px;font-size:19px}
+.pay{margin:0 0 14px;color:var(--price-muted);font-size:15px}
+details.inc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:0 18px}
+details.inc[open]{padding-bottom:16px}
+details.qa{background:var(--surface);border-radius:12px;padding:0 18px}
+details.qa+details.qa{margin-top:8px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+details.qa>summary:after,details.inc>summary:after{content:"+";font-size:24px;line-height:1;font-weight:400;flex:none}
+details.qa[open]>summary:after,details.inc[open]>summary:after{content:"\2212"}
+details.qa p{margin:0 0 16px;color:var(--muted);max-width:75ch}
+details.qa h3,details.inc h3.s{font-size:inherit;margin:0;font-weight:700}
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--cream);border-radius:16px;padding:22px}
+.who svg{width:60px;height:60px}
+.who p{margin:0 0 10px;max-width:75ch}
+.who .links{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rel a.card{display:flex;flex-direction:column;gap:6px;background:var(--surface);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.rel a.card:hover{border-color:var(--orange)}
+.rel .card b{font-size:19px;line-height:1.25}
+.rel .card span{font-size:14px;color:var(--muted)}
+.rel .card i{font-style:normal;font-weight:700;font-size:12.5px;align-self:flex-start;padding:3px 9px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.rel .card i.p{background:var(--paid-soft);color:var(--paid-ink)}
+.rel .card u{margin-top:auto;padding-top:6px;font-weight:700;color:var(--link);text-decoration:none}
+.all{margin:16px 0 0;font-weight:700}
+footer{margin-top:56px;padding-block:26px 34px;background:#111;color:#B5B5B5;font-size:14px}
+footer a{color:#fff}
+footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap}
+@media (max-width:860px){.hero .wrap,.price{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rel{grid-template-columns:minmax(0,1fr)}.price{padding:22px}}
+@media (max-width:640px){.learn,.figs{grid-template-columns:minmax(0,1fr)}.who{grid-template-columns:minmax(0,1fr)}.who svg{width:48px;height:48px}.hero{padding-block:18px 56px}.lead{font-size:17px}}
+@media (max-width:420px){.logo b{font-size:18px}.langs a{padding:5px 9px}.fact b{font-size:24px}.btn{width:100%}.share .btn{width:auto;flex:1 1 40%}}
+
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.feat{background:var(--surface);border-radius:16px;padding:14px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}
+.feat img{width:150px;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.feat h3{margin:4px 0 6px;font-size:19px;line-height:1.25}
+.feat p{margin:0;color:var(--muted);font-size:15.5px}
+.shot{margin:0;max-width:300px}
+.shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid rgba(0,0,0,.12);box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.steps li{background:var(--surface);border-radius:14px;padding:16px;position:relative;counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cc{background:var(--surface);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.cc h3{margin:0;font-size:21px;line-height:1.25}
+.cc .tg{align-self:flex-start;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.cc p{margin:0;color:var(--muted);font-size:15.5px}
+.cc ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cc small{color:var(--muted);font-size:13.5px}
+.cc .cta{margin-top:auto;padding-top:6px}
+.cc .btn{min-height:44px;padding:10px 18px}
+.cc .btn.sec{color:var(--ink)}
+.cc .fig{box-shadow:none;background:var(--fig);padding:8px}
+.cc details.qa{background:var(--bg);padding:0 14px}
+@media (max-width:860px){.feats,.cards{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.feat{grid-template-columns:minmax(0,1fr)}.feat img{width:min(260px,100%)}.steps{grid-template-columns:minmax(0,1fr)}.shot{max-width:240px;margin:0 auto}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Speedometer not working: where to start", "url": "https://help.avtoelektrik-pro.kz/speedometer-not-working/", "inLanguage": "en"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why did my speedometer stop working?", "acceptedAnswer": {"@type": "Answer", "text": "On many modern cars the speedometer gets its speed from the ABS module, which reads the wheel speed sensors. That’s why the ABS and traction/ESP lights often come on together with a dead speedometer. You can’t do much here without a scan tool: read the codes, clear them, take a drive and scan again — the codes that come back show where the fault is."}}, {"@type": "Question", "name": "Speedometer not working and the ABS light is on", "acceptedAnswer": {"@type": "Answer", "text": "The most accurate check is live data while driving: a helper drives, you watch the speed from each wheel speed sensor. Where a reading lags or drops out — that sensor, its connector or its magnetic tone ring."}}, {"@type": "Question", "name": "Speedometer stopped working after brake or suspension work", "acceptedAnswer": {"@type": "Answer", "text": "After brake or suspension work, check the speed sensor at the wheel that was taken apart: the connector, the wire, the gap, the magnetic tone ring. Often it isn’t the sensor itself but debris on it: the sensor is magnetic and collects metal dust and dirt. Remove it and clean it. The same goes for any inductive sensor — the crankshaft and camshaft sensors too."}}, {"@type": "Question", "name": "The whole instrument cluster went dark", "acceptedAnswer": {"@type": "Answer", "text": "The cluster has gone completely dead or works intermittently. Most often it’s a fuse, a corroded connector or ground, or no power. Less often it’s the cluster itself (circuit board, gauge motors) or the CAN bus. Check the battery: about 12.6 V with the engine off. If the glitches began after the battery went flat or after a jump start, charge it, switch off the ignition and disconnect the negative terminal for a few minutes: the modules will reset."}}, {"@type": "Question", "name": "Where does an auto electrician start?", "acceptedAnswer": {"@type": "Answer", "text": "I always start by asking how it all began: the backstory helps a lot. Without a scan tool there’s nothing to do here: I read the codes, clear them, take a drive and on the second scan see which codes came back. The most accurate is live data while driving: the speed sensor at each wheel."}}]}]}</script><style>
+.tool{border:1.5px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;background:var(--surface)}
+.tool h3{margin:0 0 10px}
+.seg2{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
+.seg2 button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.seg2 button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.verdict{border-left:5px solid var(--line);padding:10px 12px;border-radius:10px;background:var(--bg);margin-top:8px}
+.verdict.ok{border-left-color:#2E7D32}.verdict.warn{border-left-color:#F2A900}.verdict.bad{border-left-color:#C62828}
+.verdict b{display:block;margin-bottom:4px}
+.codeform{display:flex;gap:8px;flex-wrap:wrap}
+.codeform input{flex:1 1 160px;min-width:0;font:inherit;font-size:18px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);text-transform:uppercase}
+table.cost{width:100%;border-collapse:collapse;font-size:15px}
+table.cost td,table.cost th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+table.cost td:last-child,table.cost th:last-child{text-align:right;white-space:nowrap}
+.src{font-size:13px;color:var(--muted)}
+.warnbox{border-left:5px solid #C62828;background:var(--surface);border-radius:12px;padding:12px 14px;margin:12px 0}
+.warnbox b{display:block;margin-bottom:4px}
+
+.rq{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rq li{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--surface);min-width:0}
+.rq li span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.rq-app{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--surface)}.rq-app p{margin:0 0 10px}.rq-app .cta{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 0}
+.jrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.jrow button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer;min-height:42px}
+.jrow button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.ac-log{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.ac-log li{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg)}
+.ac-log li b{margin-right:6px}.ac-log li.bad{border-color:#C62828}.ac-log li.ok{border-color:#2E7D32}
+#ac [hidden]{display:none!important}
+.ck-h{margin:12px 0 0;font-weight:700}.ns-tip{border-left:5px solid var(--orange);background:var(--cream);border-radius:12px;padding:10px 12px;margin:10px 0}.ns-tip b{display:block;margin-bottom:4px}.ws-car{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:380px;margin:10px 0}.ws-w{border:1.5px solid var(--line);border-radius:12px;padding:8px 10px;background:var(--bg)}.ws-w span{display:block;font-size:12px;color:var(--muted)}.ws-w b{font-size:24px;font-variant-numeric:tabular-nums}.ws-w.bad{border-color:#C62828}.vm-scr{display:inline-block;margin:10px 0 0;padding:6px 14px;border-radius:10px;border:2px solid var(--line);background:var(--bg);font:700 18px ui-monospace,monospace}.vm-scr b{font-size:28px}.vm-scr.ok{border-color:#2E7D32}.vm-scr.bad{border-color:#C62828}
+.ballads details{border:2px dashed var(--orange);border-radius:16px;background:var(--surface);margin:12px 0}
+.ballads summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:14px 16px}
+.ballads summary::-webkit-details-marker{display:none}
+.ballads summary:after{content:"\203A";margin-left:auto;font-size:26px;color:var(--orange);transition:transform .2s}
+.ballads details[open] summary:after{transform:rotate(90deg)}
+.ballads .bi{font-size:28px;line-height:1}.ballads summary b{display:block;font-size:18px}.ballads summary small{display:block;color:var(--muted);font-size:14px}
+.ballads ul{list-style:none;margin:0;padding:0 16px 4px;display:grid;gap:12px}
+.ballads li{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg);min-width:0}
+.ballads li span{display:block;color:var(--muted);font-size:14px;margin:2px 0 8px}
+.ballads audio{width:100%;max-width:520px;display:block;margin-bottom:6px}
+.ballads .all{padding:0 16px}.ballads .src{padding:0 16px 14px;margin:0}
+</style>
+<script src="/widget.js" defer></script>
+<script>(function(){var ID='G-D5E79MWR50',T='us_speedometer_not_working';window.dataLayer=window.dataLayer||[];function g(){dataLayer.push(arguments)}window.gtag=window.gtag||g;g('js',new Date());g('config',ID,{app_platform:'site',page_type:T});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);function ev(n,p){try{p=p||{};p.page_type=T;gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href],summary,button'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/wa\.me\/7701/.test(h))return ev('contact_whatsapp');if(/wa\.me\/\?|t\.me\/share|max\.ru\/:share|viber:/.test(h)||a.classList.contains('cp'))return ev('share');if(/\.exe$/.test(h))return ev('download_click',{platform:'windows'});if(/#skachat|\.apk$/.test(h))return ev('download_click');if(/#skaner/.test(h))return ev('try_scanner_click');if(/#kursy/.test(h))return ev('start_course_click',{course:h.split('#kursy-')[1]||''});if(/#kod=/.test(h)){var c='';try{c=decodeURIComponent(h.split('#kod=')[1]||'').split('&')[0]}catch(x){}return ev('open_code_app',{code:c});}if(/#znachok=/.test(h))return ev('open_lamp_app',{lamp:h.split('#znachok=')[1]||''});if(a.closest('.langs'))return ev('page_lang',{lang:a.getAttribute('hreflang')||''});if(a.tagName==='SUMMARY'){if(a.closest('details.qa'))return ev('faq_open');if(a.closest('details.more'))return ev('lessons_more');return;}if(/\/(kursy|skaner|besplatnye-kursy|kody|znachki)\//.test(h))return ev('page_link',{to:h.replace(/^https?:\/\/[^\/]+/,'')});if(/avtoelektrik-pro\.kz/.test(h)&&!/help\./.test(h))return ev('site_click');},true)})();</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="https://help.avtoelektrik-pro.kz/en.html" aria-label="AvtoElektrik PRO"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><span><small>AvtoElektrik</small><b>PRO</b></span></a>
+  <nav class="langs" aria-label="Язык · Тіл · Language"></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<section class="hero"><div class="wrap"><div><p class="eyebrow">Instrument cluster · speedometer</p><h1>Speedometer not working: where to start</h1><p class="lead">The speedometer reads zero, reads wrong, or the needle jumps. Start from what was done to the car, then a scan tool: the codes, a second scan, and each wheel’s speed while driving.</p><div class="cta"><a class="btn pri" href="#t1">What else is wrong along with the speedometer?</a><a class="btn sec" href="#t3">Step by step</a></div></div></div></section><main class="wrap"><div class="warnbox"><b>Careful</b>Without the cluster you can’t see your speed, engine temperature, or the oil pressure and charging warning lights. Don’t drive far until it’s fixed.</div><section aria-labelledby="t1"><h2 id="t1">1. What else is wrong along with the speedometer?</h2><div class="tool" id="sp"><h3>What else is wrong along with the speedometer?</h3><div class="jrow" role="group" aria-label="What else is wrong along with the speedometer?"><button type="button" data-d="0" aria-pressed="false">ABS and ESP/traction lights on</button><button type="button" data-d="1" aria-pressed="false">Reads wrong or the needle jumps</button><button type="button" data-d="2" aria-pressed="false">Stopped after brake or suspension work</button><button type="button" data-d="3" aria-pressed="false">The whole cluster went dark</button><button type="button" data-d="4" aria-pressed="false">No warning lights, it just doesn’t work</button></div><div class="verdict" id="sp-v" hidden aria-live="polite"></div></div></section><section aria-labelledby="t2"><h2 id="t2">2. Scan tool while driving: wheel speeds</h2><div class="tool" id="ws"><h3>Scan tool while driving: the speed of each wheel</h3><p class="src" style="margin:0">The car is driving steadily at 25 mph. What does the scan tool show?</p><div class="jrow" role="group" aria-label="What the scan tool shows"><button type="button" data-w="ok" aria-pressed="true">All the same</button><button type="button" data-w="zero" aria-pressed="false">One wheel reads 0</button><button type="button" data-w="jump" aria-pressed="false">One wheel jumps</button><button type="button" data-w="none" aria-pressed="false">The module doesn’t respond</button></div><div class="ws-car" aria-live="off"><div class="ws-w" id="ws-lf"><span>Left front</span><b>25</b> mph</div><div class="ws-w" id="ws-rf"><span>Right front</span><b>25</b> mph</div><div class="ws-w" id="ws-lr"><span>Left rear</span><b>25</b> mph</div><div class="ws-w" id="ws-rr"><span>Right rear</span><b>25</b> mph</div></div><div class="verdict" id="ws-v" aria-live="polite"></div></div></section><section aria-labelledby="t3"><h2 id="t3">3. What to check yourself, step by step</h2><ol class="steps"><li>Think back to how it started: what was done to the car before the speedometer quit — brake or suspension work, new wheels or a hub, a car wash, the battery, a collision. The backstory often points straight to the cause.</li><li>On many modern cars the speedometer gets its speed from the ABS module, which reads the wheel speed sensors. That’s why the ABS and traction/ESP lights often come on together with a dead speedometer.</li><li>You can’t do much here without a scan tool: read the codes, clear them, take a drive and scan again — the codes that come back show where the fault is.</li><li>The most accurate check is live data while driving: a helper drives, you watch the speed from each wheel speed sensor. Where a reading lags or drops out — that sensor, its connector or its magnetic tone ring.</li><li>Often it isn’t the sensor itself but debris on it: the sensor is magnetic and collects metal dust and dirt. Remove it and clean it. The same goes for any inductive sensor — the crankshaft and camshaft sensors too.</li><li>If the whole cluster went dark or all the gauges dropped, it’s no longer the speed sensor: check the cluster fuses — labeled METER, GAUGE, CLUSTER or DOME on the fuse box lid. A cluster usually has two power feeds: constant and ignition. If the fuse blows again, there’s a short — don’t put in a bigger fuse.</li></ol><div class="ns-tip"><b>Oleg’s tip</b>I always start by asking how it all began: the backstory helps a lot. Without a scan tool there’s nothing to do here: I read the codes, clear them, take a drive and on the second scan see which codes came back. The most accurate is live data while driving: the speed sensor at each wheel.</div></section><section aria-labelledby="t4"><h2 id="t4">4. On this topic</h2><ul><li><a href="../abs-light-on/">ABS light on: what to check yourself →</a></li><li><a href="../car-fuses/">Car fuses: how to check a fuse →</a></li><li><a href="../jump-start/">How to jump start a car safely →</a></li></ul></section><section aria-labelledby="fq"><h2 id="fq">Questions</h2><details class="qa"><summary><h3>Why did my speedometer stop working?</h3></summary><p>On many modern cars the speedometer gets its speed from the ABS module, which reads the wheel speed sensors. That’s why the ABS and traction/ESP lights often come on together with a dead speedometer. You can’t do much here without a scan tool: read the codes, clear them, take a drive and scan again — the codes that come back show where the fault is.</p></details><details class="qa"><summary><h3>Speedometer not working and the ABS light is on</h3></summary><p>The most accurate check is live data while driving: a helper drives, you watch the speed from each wheel speed sensor. Where a reading lags or drops out — that sensor, its connector or its magnetic tone ring.</p></details><details class="qa"><summary><h3>Speedometer stopped working after brake or suspension work</h3></summary><p>After brake or suspension work, check the speed sensor at the wheel that was taken apart: the connector, the wire, the gap, the magnetic tone ring. Often it isn’t the sensor itself but debris on it: the sensor is magnetic and collects metal dust and dirt. Remove it and clean it. The same goes for any inductive sensor — the crankshaft and camshaft sensors too.</p></details><details class="qa"><summary><h3>The whole instrument cluster went dark</h3></summary><p>The cluster has gone completely dead or works intermittently. Most often it’s a fuse, a corroded connector or ground, or no power. Less often it’s the cluster itself (circuit board, gauge motors) or the CAN bus. Check the battery: about 12.6 V with the engine off. If the glitches began after the battery went flat or after a jump start, charge it, switch off the ignition and disconnect the negative terminal for a few minutes: the modules will reset.</p></details><details class="qa"><summary><h3>Where does an auto electrician start?</h3></summary><p>I always start by asking how it all began: the backstory helps a lot. Without a scan tool there’s nothing to do here: I read the codes, clear them, take a drive and on the second scan see which codes came back. The most accurate is live data while driving: the speed sensor at each wheel.</p></details></section><p class="src">The checks come from auto electrician Oleg Dmitriev (AvtoElektrik PRO), Almaty. If you can’t find the cause yourself, the free assistant app walks you through it step by step — and Oleg can help.</p><section aria-labelledby="kc"><h2 id="kc">Fault codes on this topic</h2><ul class="rq"><li><a href="../kody/p0500/en.html"><b>P0500</b></a><span>Vehicle Speed Sensor &quot;A&quot;</span></li><li><a href="../kody/p0501/en.html"><b>P0501</b></a><span>Vehicle Speed Sensor &quot;A&quot; Range/Performance</span></li><li><a href="../kody/p0502/en.html"><b>P0502</b></a><span>Vehicle Speed Sensor &quot;A&quot; Circuit Low Input</span></li><li><a href="../kody/p0503/en.html"><b>P0503</b></a><span>Vehicle Speed Sensor &quot;A&quot; Intermittent/Erratic/High</span></li><li><a href="../kody/c0035/en.html"><b>C0035</b></a><span>GM: left front wheel speed sensor — circuit fault</span></li></ul></section><section aria-labelledby="ap"><h2 id="ap">Check it step by step in the app</h2><div class="rq-app"><p>The free AvtoElektrik PRO assistant asks a couple of questions and tells you what to check on your car; it explains any fault code, and with an ELM327 adapter it reads the codes itself.</p><p class="cta"><a class="btn pri" href="https://help.avtoelektrik-pro.kz/en.html">Open the assistant</a><a class="btn sec" href="../kody/en.html">All fault codes</a></p></div></section><section aria-labelledby="rq"><h2 id="rq">Related questions</h2><ul class="rq"><li><a href="../abs-light-on/"><b>ABS light on: what to check yourself</b></a><span>Start from what was done to the car: that wheel’s speed sensor, the steering angle sensor, fuses, a car wash — and a live-data check of each wheel.</span></li><li><a href="../jump-start/"><b>How to jump start a car safely</b></a><span>Jumper cable order step by step, and what to check if it still won’t start.</span></li><li><a href="../car-fuses/"><b>Car fuses: how to check a fuse</b></a><span>Color chart, finding the right fuse, and why a fuse keeps blowing.</span></li><li><a href="../service-stabilitrak/"><b>Service StabiliTrak: what it means</b></a><span>Chevy and GMC: the wheel speed sensor, steering angle sensor and what to check yourself.</span></li><li><a href="../car-battery-test/"><b>How to test a car battery with a multimeter</b></a><span>Voltage chart and checker: is it the battery, the terminals or something draining it overnight.</span></li></ul></section><section class="ballads" aria-labelledby="ballads"><details><summary><span class="bi" aria-hidden="true">🎵</span><span><b id="ballads">Ballads about this problem</b><small>2 songs about the master and the gremlins of car trouble — tap to listen</small></span></summary><ul><li><b>“The Magic Eye”</b><span>The scan tool’s magic eye sees through the engine — a sensor lying “minus forty”</span><audio controls preload="none" src="https://mastera.avtoelektrikpro-apps.workers.dev/audio/en-the-magic-eye.mp3" data-n="8"></audio><a href="https://help.avtoelektrik-pro.kz/skazaniya/#b8-en">Lyrics and the story behind the song →</a></li><li><b>“Shishiga and the ABS Light”</b><span>Shishiga stuck metal shavings to the sensor — the ABS light after brake work</span><audio controls preload="none" src="https://mastera.avtoelektrikpro-apps.workers.dev/audio/en-shishiga-and-the-abs-light.mp3" data-n="32"></audio><a href="https://help.avtoelektrik-pro.kz/skazaniya/#b32-en">Lyrics and the story behind the song →</a></li></ul><p class="all"><a href="https://help.avtoelektrik-pro.kz/skazaniya/#en">All AvtoElektrik PRO ballads →</a></p><p class="src">Songs made with AI. Stories, car tips and lyrics — AvtoElektrik PRO.</p></details></section><script>(function(){var A=[].slice.call(document.querySelectorAll('.ballads audio'));var d=document.querySelector('.ballads details');d&&d.addEventListener('toggle',function(){if(d.open&&window.gtag)gtag('event','ballad_us_open',{page:location.pathname})});A.forEach(function(a){a.addEventListener('play',function(){[].forEach.call(document.querySelectorAll('audio'),function(o){if(o!==a&&!o.paused)o.pause()});if(!a._g){a._g=1;if(window.gtag)gtag('event','ballad_us_play',{ballad:a.getAttribute('data-n'),page:location.pathname})}})})})();</script></main><script>(function(){var D=[["warn", "A wheel speed sensor or the ABS module", "On many modern cars the speedometer gets its speed from the ABS module, which reads the wheel speed sensors. That’s why the ABS and traction/ESP lights often come on together with a dead speedometer. The most accurate check is live data while driving: a helper drives, you watch the speed from each wheel speed sensor. Where a reading lags or drops out — that sensor, its connector or its magnetic tone ring."], ["warn", "A dirty sensor or the tone ring", "Often it isn’t the sensor itself but debris on it: the sensor is magnetic and collects metal dust and dirt. Remove it and clean it. The same goes for any inductive sensor — the crankshaft and camshaft sensors too."], ["warn", "That wheel’s sensor", "After brake or suspension work, check the speed sensor at the wheel that was taken apart: the connector, the wire, the gap, the magnetic tone ring."], ["bad", "Cluster power or its connector", "The cluster has gone completely dead or works intermittently. Most often it’s a fuse, a corroded connector or ground, or no power. Less often it’s the cluster itself (circuit board, gauge motors) or the CAN bus. Check the cluster fuses — labeled METER, GAUGE, CLUSTER or DOME on the fuse box lid. The cluster usually has two feeds: constant and ignition-switched. If a fuse blows again there’s a short — don’t fit a higher rating."], ["warn", "Start with a scan tool", "You can’t do much here without a scan tool: read the codes, clear them, take a drive and scan again — the codes that come back show where the fault is."]];var v=document.getElementById('sp-v');document.querySelectorAll('#sp [data-d]').forEach(function(b){b.addEventListener('click',function(){var r=D[+b.getAttribute('data-d')];document.querySelectorAll('#sp [data-d]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});v.hidden=false;v.className='verdict '+r[0];v.innerHTML='<b></b><span></span>';v.firstChild.textContent=r[1];v.lastChild.textContent=r[2];});});})();</script><script>(function(){var W={"ok": ["ok", "Example: the sensors are fine", "All four wheel speeds match — the wheel speed sensors are fine. Follow the trouble codes to find the cause."], "zero": ["bad", "Left rear: no signal", "The wheel turns but reads 0 — no signal: the connector, the wire at the hub or the sensor itself. Pull the sensor and clean it: it’s magnetic and collects metal dust."], "jump": ["warn", "Right front: the reading jumps", "One wheel jumps while the others are steady — dirt on the sensor, too big a gap, or a damaged tone ring (on the CV joint or in the hub bearing, depending on the car)."], "none": ["bad", "No communication with the ABS module", "The scan tool can’t see the ABS module, and other modules store U0121 — lost communication with ABS. Check the ABS fuses, the module’s power and ground, and its connector."]};var mode='ok',K=['lf','rf','lr','rr'],$=function(i){return document.getElementById(i);};
+function val(k){if(mode==='none')return '—';if(mode==='zero'&&k==='lr')return '0';if(mode==='jump'&&k==='rf')return String(Math.round(5+Math.random()*21));return (25+(Math.random()-.5)).toFixed(0);}
+function draw(){K.forEach(function(k){var c=$('ws-'+k);c.querySelector('b').textContent=val(k);c.className='ws-w'+((mode==='zero'&&k==='lr')||(mode==='jump'&&k==='rf')||mode==='none'?' bad':'');});}
+function pick(m){mode=m;document.querySelectorAll('#ws [data-w]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-w')===m));});
+var r=W[m],v=$('ws-v');v.className='verdict '+r[0];v.innerHTML='<b></b><span></span>';v.firstChild.textContent=r[1];v.lastChild.textContent=r[2];draw();}
+document.querySelectorAll('#ws [data-w]').forEach(function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-w'));});});
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;if(!still)setInterval(draw,700);pick('ok');})();</script><footer><div class="wrap"><span>© 2026 AvtoElektrik PRO · Oleg Dmitriev</span><a href="https://help.avtoelektrik-pro.kz/en.html">Auto electrician assistant</a><a href="../skaner/en.html">OBD-II scanner app</a><a href="../skachat/en.html">Download the scanner</a><a href="../kody/en.html">Fault codes explained</a><a href="../znachki/en.html">Dashboard warning lights</a><a href="../skazaniya/">Music for the road — ballads</a><a href="../check-engine-light/">Check Engine light</a><a href="../smog-check/">Smog check</a><a href="../jump-start/">Jump start</a><a href="../car-battery-test/">Battery test</a><a href="../alternator-test/">Alternator test</a><a href="../car-wont-start/">Car won’t start</a><a href="../car-fuses/">Car fuses</a><a href="../service-stabilitrak/">Service StabiliTrak</a><a href="../vin-decoder/">VIN decoder</a><a href="../car-ac-not-cold/">Car A/C not cold</a><a href="../battery-terminal-corrosion/">Battery terminal corrosion</a><a href="../how-to-change-a-car-battery/">Change a car battery</a><a href="../battery-light-on-while-driving/">Battery light on</a><a href="../bad-starter-or-battery/">Starter or battery?</a><a href="../reduced-engine-power/">Reduced engine power</a><a href="../brake-lights-not-working/">Brake lights not working</a><a href="../car-battery-keeps-dying/">Battery keeps dying</a><a href="../blower-motor-only-works-on-high/">Blower only works on high</a><a href="../power-window-not-working/">Power window not working</a><a href="../key-fob-battery-replacement/">Key fob battery</a><a href="../tpms-light/">TPMS light</a><a href="../privacy.html">Privacy policy</a></div></footer>
+</body>
+</html>
