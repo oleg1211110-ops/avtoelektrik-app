@@ -12,6 +12,7 @@
     }
   },
   "play": "",
+  "appstore": "",
   "masters": {
     "api": "https://mastera.avtoelektrikpro-apps.workers.dev"
   },
