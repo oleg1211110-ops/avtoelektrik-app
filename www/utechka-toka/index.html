@@ -1,0 +1,258 @@
+<!doctype html>
+<!-- © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Садится аккумулятор: как найти утечку тока мультиметром — норма и поиск по предохранителям | АвтоЭлектрик PRO</title>
+<meta name="description" content="Сел аккумулятор за ночь или за пару дней? Как проверить утечку тока мультиметром, какая утечка — норма, как найти цепь по предохранителям, проверить навесное оборудование и генератор. Калькулятор и тренажёр.">
+<meta name="author" content="Дмитриев Олег Сергеевич">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFA500">
+<link rel="canonical" href="https://help.avtoelektrik-pro.kz/utechka-toka/">
+<link rel="alternate" hreflang="ru" href="https://help.avtoelektrik-pro.kz/utechka-toka/"><link rel="alternate" hreflang="x-default" href="https://help.avtoelektrik-pro.kz/utechka-toka/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="АвтоЭлектрик PRO">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Садится аккумулятор: как найти утечку тока мультиметром — норма и поиск по предохранителям | АвтоЭлектрик PRO">
+<meta property="og:description" content="Сел аккумулятор за ночь или за пару дней? Как проверить утечку тока мультиметром, какая утечка — норма, как найти цепь по предохранителям, проверить навесное оборудование и генератор. Калькулятор и тренажёр.">
+<meta property="og:url" content="https://help.avtoelektrik-pro.kz/utechka-toka/">
+<meta property="og:image" content="https://help.avtoelektrik-pro.kz/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../icons/favicon-64.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<style>
+:root{--orange:#FFA500;--bg:#EFEFEF;--surface:#FFFFFF;--ink:#111;--ink-2:#222;--muted:#555;--line:#E3E3E3;--hero:#FFA500;--hero-ink:#000;--hero-2:#2E2200;--eyebrow:#000;--eyebrow-ink:#FFA500;
+--btn:#000;--btn-ink:#fff;--price:#111;--price-ink:#fff;--price-muted:#B5B5B5;--price-li:#E6E6E6;--ok:#1B5E20;--ok-soft:#E3F2E4;--paid-soft:#FFE2AE;--paid-ink:#000;--cream:#FFFAF0;--link:#000;--fig:#F4F6F8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1419;--surface:#172029;--ink:#E5EBF0;--ink-2:#CBD5DD;--muted:#9AA8B4;--line:#2A3846;--hero:#16212B;--hero-ink:#F1F5F8;--hero-2:#B9C5CF;--eyebrow:#FFA500;--eyebrow-ink:#111;
+--btn:#FFA500;--btn-ink:#111;--price:#0A0F13;--price-ink:#EEF2F5;--price-muted:#8796A3;--price-li:#CBD5DD;--ok:#7CCB80;--ok-soft:#17301A;--paid-soft:#3A2C0A;--paid-ink:#F5C452;--cream:#1F2A35;--link:#F5C452;--fig:#1F2A35;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Arial,'Helvetica Neue',Helvetica,sans-serif;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{background:var(--orange);color:#000}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1;text-transform:uppercase;font-weight:700}
+.logo small{font-size:11.5px;letter-spacing:.04em}.logo b{font-size:21px}
+.langs{display:flex;gap:6px}
+.langs a{color:#000;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;border:2px solid #000}
+.langs a[aria-current]{background:#000;color:#fff}
+.stripe{display:flex;height:5px}.stripe i{flex:1}
+.hero{background:var(--hero);color:var(--hero-ink);padding-block:22px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.crumbs{margin:0 0 14px;font-size:14px;color:var(--hero-2)}
+.crumbs a{color:inherit;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;background:var(--eyebrow);color:var(--eyebrow-ink);padding:5px 10px;border-radius:6px}
+.hero h1{font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--hero-2);margin:0 0 24px;max-width:60ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;text-align:center}
+.btn.pri{background:var(--btn);color:var(--btn-ink)}
+.btn.sec{color:var(--hero-ink);border-color:currentColor;background:transparent}
+.btn.wa{background:#1FA855;color:#fff}.btn.tg{background:#229ED9;color:#fff}
+.btn.cp{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,.langs a:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hero .btn:focus-visible{outline-color:var(--hero-ink)}
+.fig{margin:0;background:var(--surface);border-radius:16px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.fig svg{display:block;width:100%;height:auto;border-radius:10px}
+.fig figcaption{margin:8px 4px 2px;font-size:14px;color:var(--muted);line-height:1.4}
+.fig figcaption b{display:block;color:var(--ink);font-size:13px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.fact{background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35)}
+.fact b{display:block;font-size:28px;line-height:1.15}
+.fact span{font-size:14px;color:var(--muted)}
+main section{padding-top:52px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;text-wrap:balance}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.learn li{background:var(--surface);border-radius:12px;padding:14px 16px 14px 48px;position:relative}
+.learn li:before{content:"";position:absolute;left:18px;top:19px;width:14px;height:8px;border-left:3px solid var(--ok);border-bottom:3px solid var(--ok);transform:rotate(-45deg)}
+.note{margin:-6px 0 18px;color:var(--muted);max-width:70ch}
+ol.ls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ls li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;background:var(--surface);border-radius:12px;padding:14px 16px}
+.ls .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-weight:700;font-size:15px}
+.ls li.paid .n{background:var(--orange);color:#000}
+.ls h3{font-size:16.5px;line-height:1.3;margin:0}
+.ls p{margin:4px 0 6px;font-size:15px;color:var(--muted);line-height:1.45}
+.ls small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.ls em{font-style:normal;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.ls li.paid em,.ls li.app em{background:var(--paid-soft);color:var(--paid-ink)}
+details.more{margin-top:8px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--surface)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+details.more[open]>summary{display:none}
+details.more ol{margin-top:0}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.figs .fig{box-shadow:none}
+.price{background:var(--price);color:var(--price-ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;border:1px solid var(--line)}
+.price h2{color:var(--price-ink);margin-bottom:12px}
+.price.one{grid-template-columns:minmax(0,1fr)}
+.price .tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;background:var(--orange);color:#000;margin:0 0 12px}
+.amt{font-size:clamp(36px,6vw,54px);font-weight:700;color:var(--orange);line-height:1;margin:0}
+.amt s{color:var(--price-muted);font-size:.5em;font-weight:600;margin-right:6px}
+.once{color:var(--price-muted);margin:8px 0 14px}
+.promo{margin:-6px 0 12px;color:var(--orange);font-weight:700}
+.ptxt{margin:12px 0 18px;color:var(--price-li);max-width:60ch}
+.price .cta .btn.sec{color:var(--price-ink)}
+.price .btn.pri{background:var(--orange);color:#000}
+.price ul,.price ol{margin:0 0 14px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--price-li)}
+.price h3{margin:0 0 10px;font-size:19px}
+.pay{margin:0 0 14px;color:var(--price-muted);font-size:15px}
+details.inc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:0 18px}
+details.inc[open]{padding-bottom:16px}
+details.qa{background:var(--surface);border-radius:12px;padding:0 18px}
+details.qa+details.qa{margin-top:8px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+details.qa>summary:after,details.inc>summary:after{content:"+";font-size:24px;line-height:1;font-weight:400;flex:none}
+details.qa[open]>summary:after,details.inc[open]>summary:after{content:"\2212"}
+details.qa p{margin:0 0 16px;color:var(--muted);max-width:75ch}
+details.qa h3,details.inc h3.s{font-size:inherit;margin:0;font-weight:700}
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--cream);border-radius:16px;padding:22px}
+.who svg{width:60px;height:60px}
+.who p{margin:0 0 10px;max-width:75ch}
+.who .links{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rel a.card{display:flex;flex-direction:column;gap:6px;background:var(--surface);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.rel a.card:hover{border-color:var(--orange)}
+.rel .card b{font-size:19px;line-height:1.25}
+.rel .card span{font-size:14px;color:var(--muted)}
+.rel .card i{font-style:normal;font-weight:700;font-size:12.5px;align-self:flex-start;padding:3px 9px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.rel .card i.p{background:var(--paid-soft);color:var(--paid-ink)}
+.rel .card u{margin-top:auto;padding-top:6px;font-weight:700;color:var(--link);text-decoration:none}
+.all{margin:16px 0 0;font-weight:700}
+footer{margin-top:56px;padding-block:26px 34px;background:#111;color:#B5B5B5;font-size:14px}
+footer a{color:#fff}
+footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap}
+@media (max-width:860px){.hero .wrap,.price{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rel{grid-template-columns:minmax(0,1fr)}.price{padding:22px}}
+@media (max-width:640px){.learn,.figs{grid-template-columns:minmax(0,1fr)}.who{grid-template-columns:minmax(0,1fr)}.who svg{width:48px;height:48px}.hero{padding-block:18px 56px}.lead{font-size:17px}}
+@media (max-width:420px){.logo b{font-size:18px}.langs a{padding:5px 9px}.fact b{font-size:24px}.btn{width:100%}.share .btn{width:auto;flex:1 1 40%}}
+
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.feat{background:var(--surface);border-radius:16px;padding:14px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}
+.feat img{width:150px;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.feat h3{margin:4px 0 6px;font-size:19px;line-height:1.25}
+.feat p{margin:0;color:var(--muted);font-size:15.5px}
+.shot{margin:0;max-width:300px}
+.shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid rgba(0,0,0,.12);box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.steps li{background:var(--surface);border-radius:14px;padding:16px;position:relative;counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cc{background:var(--surface);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.cc h3{margin:0;font-size:21px;line-height:1.25}
+.cc .tg{align-self:flex-start;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.cc p{margin:0;color:var(--muted);font-size:15.5px}
+.cc ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cc small{color:var(--muted);font-size:13.5px}
+.cc .cta{margin-top:auto;padding-top:6px}
+.cc .btn{min-height:44px;padding:10px 18px}
+.cc .btn.sec{color:var(--ink)}
+.cc .fig{box-shadow:none;background:var(--fig);padding:8px}
+.cc details.qa{background:var(--bg);padding:0 14px}
+@media (max-width:860px){.feats,.cards{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.feat{grid-template-columns:minmax(0,1fr)}.feat img{width:min(260px,100%)}.steps{grid-template-columns:minmax(0,1fr)}.shot{max-width:240px;margin:0 auto}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Садится аккумулятор? Как найти утечку тока мультиметром", "url": "https://help.avtoelektrik-pro.kz/utechka-toka/", "inLanguage": "ru"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какая утечка тока считается нормой?", "acceptedAnswer": {"@type": "Answer", "text": "Когда блоки машины уснули, в норме ток до 0,05 А (50 мА). Олег считает нормой 0,06 А и меньше. 0,1–0,2 А и больше — какой-то блок не засыпает или что-то не выключается."}}, {"@type": "Question", "name": "Почему садится аккумулятор за ночь?", "acceptedAnswer": {"@type": "Answer", "text": "Что-то не выключается, когда машину закрыли: навесная магнитола или сигнализация, лампа в бардачке или багажнике, залипшее реле, блок, который не засыпает, или генератор с пробитым диодом. Найти помогает замер тока утечки."}}, {"@type": "Question", "name": "Сколько ждать, пока блоки уснут?", "acceptedAnswer": {"@type": "Answer", "text": "От нескольких минут до часа — зависит от машины. Двери держите закрытыми, а ключ — подальше от машины: открыли дверь — всё проснулось, ждите заново."}}, {"@type": "Question", "name": "Может ли генератор разряжать аккумулятор на стоянке?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Пробитый диод в генераторе пропускает ток, когда машина стоит. Если ни один предохранитель не уменьшает утечку — отключите аккумулятор, снимите толстый провод с генератора и замерьте снова."}}, {"@type": "Question", "name": "Поможет ли новый аккумулятор?", "acceptedAnswer": {"@type": "Answer", "text": "Если есть утечка — нет, новый тоже сядет. Сначала замерьте утечку и проверьте зарядку, потом покупайте аккумулятор."}}, {"@type": "Question", "name": "Как найти утечку без мультиметра?", "acceptedAnswer": {"@type": "Answer", "text": "На ночь выньте всё из прикуривателя и USB, проверьте, гаснет ли свет в бардачке и багажнике, отключите навесную магнитолу или сигнализацию, если знаете как вернуть. Но точно покажет только мультиметр или токовые клещи постоянного тока."}}]}]}</script><style>
+.tool{border:1.5px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;background:var(--surface)}
+.tool h3{margin:0 0 10px}
+.seg2{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
+.seg2 button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.seg2 button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.verdict{border-left:5px solid var(--line);padding:10px 12px;border-radius:10px;background:var(--bg);margin-top:8px}
+.verdict.ok{border-left-color:#2E7D32}.verdict.warn{border-left-color:#F2A900}.verdict.bad{border-left-color:#C62828}
+.verdict b{display:block;margin-bottom:4px}
+.codeform{display:flex;gap:8px;flex-wrap:wrap}
+.codeform input{flex:1 1 160px;min-width:0;font:inherit;font-size:18px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);text-transform:uppercase}
+table.cost{width:100%;border-collapse:collapse;font-size:15px}
+table.cost td,table.cost th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+table.cost td:last-child,table.cost th:last-child{text-align:right;white-space:nowrap}
+.src{font-size:13px;color:var(--muted)}
+.warnbox{border-left:5px solid #C62828;background:var(--surface);border-radius:12px;padding:12px 14px;margin:12px 0}
+.warnbox b{display:block;margin-bottom:4px}
+
+.rq{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rq li{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--surface);min-width:0}
+.rq li span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+
+.jrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.jrow button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer;min-height:42px}
+.jrow button[aria-pressed="true"]{border-color:var(--orange);background:var(--cream)}
+.ac-log{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.ac-log li{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg)}
+.ac-log li b{margin-right:6px}.ac-log li.bad{border-color:#C62828}.ac-log li.ok{border-color:#2E7D32}
+#ac [hidden]{display:none!important}
+
+.dc-l{display:block;margin:14px 0 4px}
+#dc-a{width:100%;max-width:520px;accent-color:var(--orange)}
+.dd-m{margin:12px 0 0;font-size:18px}.dd-m b{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:22px}
+
+.ballads details{border:2px dashed var(--orange);border-radius:16px;background:var(--surface);margin:12px 0}
+.ballads summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:14px 16px}
+.ballads summary::-webkit-details-marker{display:none}
+.ballads summary:after{content:"\203A";margin-left:auto;font-size:26px;color:var(--orange);transition:transform .2s}
+.ballads details[open] summary:after{transform:rotate(90deg)}
+.ballads .bi{font-size:28px;line-height:1}.ballads summary b{display:block;font-size:18px}.ballads summary small{display:block;color:var(--muted);font-size:14px}
+.ballads ul{list-style:none;margin:0;padding:0 16px 4px;display:grid;gap:12px}
+.ballads li{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg);min-width:0}
+.ballads li span{display:block;color:var(--muted);font-size:14px;margin:2px 0 8px}
+.ballads audio{width:100%;max-width:520px;display:block;margin-bottom:6px}
+.ballads .all{padding:0 16px}.ballads .src{padding:0 16px 14px;margin:0}
+</style>
+<script src="/widget.js" defer></script>
+<script>(function(){var ID='G-D5E79MWR50',T='ru_utechka';window.dataLayer=window.dataLayer||[];function g(){dataLayer.push(arguments)}window.gtag=window.gtag||g;g('js',new Date());g('config',ID,{app_platform:'site',page_type:T});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);function ev(n,p){try{p=p||{};p.page_type=T;gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href],summary,button'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/wa\.me\/7701/.test(h))return ev('contact_whatsapp');if(/wa\.me\/\?|t\.me\/share|max\.ru\/:share|viber:/.test(h)||a.classList.contains('cp'))return ev('share');if(/\.exe$/.test(h))return ev('download_click',{platform:'windows'});if(/#skachat|\.apk$/.test(h))return ev('download_click');if(/#skaner/.test(h))return ev('try_scanner_click');if(/#kursy/.test(h))return ev('start_course_click',{course:h.split('#kursy-')[1]||''});if(/#kod=/.test(h)){var c='';try{c=decodeURIComponent(h.split('#kod=')[1]||'').split('&')[0]}catch(x){}return ev('open_code_app',{code:c});}if(/#znachok=/.test(h))return ev('open_lamp_app',{lamp:h.split('#znachok=')[1]||''});if(a.closest('.langs'))return ev('page_lang',{lang:a.getAttribute('hreflang')||''});if(a.tagName==='SUMMARY'){if(a.closest('details.qa'))return ev('faq_open');if(a.closest('details.more'))return ev('lessons_more');return;}if(/\/(kursy|skaner|besplatnye-kursy|kody|znachki)\//.test(h))return ev('page_link',{to:h.replace(/^https?:\/\/[^\/]+/,'')});if(/avtoelektrik-pro\.kz/.test(h)&&!/help\./.test(h))return ev('site_click');},true)})();</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="https://help.avtoelektrik-pro.kz/" aria-label="АвтоЭлектрик PRO"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><span><small>АвтоЭлектрик</small><b>PRO</b></span></a>
+  <nav class="langs" aria-label="Язык · Тіл · Language"></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<section class="hero"><div class="wrap"><div><p class="eyebrow">Аккумулятор · утечка тока</p><h1>Садится аккумулятор? Как найти утечку тока мультиметром</h1><p class="lead">Сел за ночь или за пару дней стоянки — обычно что-то не выключается, когда машину закрыли: навесная магнитола, лампа, залипший концевик или генератор. Мультиметр и блоки предохранителей покажут, на какой цепи утечка.</p><div class="cta"><a class="btn pri" href="#dd">Тренажёр: найти утечку</a><a class="btn sec" href="https://help.avtoelektrik-pro.kz/">Помощник в приложении</a></div></div></div></section><main class="wrap"><section aria-labelledby="t1"><h2 id="t1">1. Какая утечка сажает аккумулятор?</h2><p>Одна лампочка на 5 Вт тянет около 0,4 А — это примерно 10 А·ч за сутки. Подвигайте ползунок и посмотрите, сколько продержится ваш аккумулятор.</p><div class="tool" id="dc"><h3>Через сколько аккумулятор не заведёт машину?</h3><div class="jrow" role="group" aria-label="Примеры"><button type="button" data-p="0.03" aria-pressed="true">Пример: норма, 0,03 А</button><button type="button" data-p="0.42" aria-pressed="false">Пример: не гаснет лампа в бардачке, 0,42 А</button></div><label class="dc-l" for="dc-a">Утечка, когда машина уснула: <b id="dc-av">0,03 А</b></label><input type="range" id="dc-a" min="0.01" max="1" step="0.01" value="0.03"><div class="jrow" role="group" aria-label="Ёмкость аккумулятора"><button type="button" data-ah="45" aria-pressed="false">45 А·ч</button><button type="button" data-ah="60" aria-pressed="true">60 А·ч</button><button type="button" data-ah="75" aria-pressed="false">75 А·ч</button><button type="button" data-ah="90" aria-pressed="false">90 А·ч</button><button type="button" id="dc-cold" aria-pressed="false">Мороз</button></div><div class="verdict" id="dc-v" aria-live="polite"><b></b><span></span></div></div></section><section aria-labelledby="t2"><h2 id="t2">2. Что проверить самому</h2><ol class="steps"><li>Сначала исключите аккумулятор и зарядку: на заглушённой машине заряженный аккумулятор — около 12,6 В, на заведённой — 13,5–14,8 В. Аккумулятору больше 4–5 лет — проверьте его нагрузочной вилкой.</li><li>Сначала навесное, потом родное. На ночь выньте всё из прикуривателя и USB: видеорегистратор, зарядки, трекер. Утром завелась — виновато что-то из этого. Навесная магнитола должна гаснуть, когда закрыли машину; если кнопки светятся — она на постоянном плюсе.</li><li>Свет, который должен гаснуть сам: бардачок, багажник, зеркала в козырьках, плафон. В закрытый бардачок не заглянешь — положите туда телефон с включённой видеозаписью, закройте крышку на минуту и посмотрите запись.</li><li>Замер утечки. Зажигание и всё остальное выключено, двери закрыты (если дверь нужна открытой — защёлкните замок отвёрткой), ключ — подальше от машины. Снимите минусовую клемму, мультиметр — на постоянный ток, красный щуп — в гнездо 10 А, и включите его в разрыв между минусом аккумулятора и клеммой.</li><li>Подождите, пока блоки уснут: от нескольких минут до часа, двери не открывать. До 0,05 А — норма; Олег считает нормой 0,06 А и меньше. 0,1–0,2 А и больше — что-то не засыпает.</li><li>Вынимайте предохранители по одному в обоих блоках и смотрите на мультиметр. Тот, после которого ток упал, — на цепи с утечкой: проверьте всё, что эта цепь питает. Если после снятия предохранителя замер скачет — подождите, пока блоки уснут снова.</li><li>Ни один предохранитель не помог — проверьте генератор. Отключите аккумулятор, снимите толстый провод с генератора, подключите мультиметр снова и замерьте. Утечка пропала — пробит диод в генераторе.</li></ol><div class="warnbox"><b>Пока мультиметр включён в разрыв</b>не включайте зажигание и фары и не заводите мотор — сгорит предохранитель мультиметра или сам мультиметр.</div></section><section aria-labelledby="t3"><h2 id="t3">3. Тренажёр</h2><div class="tool" id="dd"><h3>Тренажёр: найдите утечку</h3><p class="src" style="margin:0 0 8px">Выберите машину, сделайте проверки, затем назовите причину. Мультиметр включён в разрыв между минусом аккумулятора и клеммой.</p><div class="jrow" role="group" aria-label="Какая машина"><button type="button" data-car="ok" aria-pressed="false">Пример: исправная машина</button><button type="button" data-car="bad" aria-pressed="true">Машина, которая садится</button></div><p class="dd-m" aria-live="polite">Мультиметр: <b id="dd-r">—</b></p><div class="jrow" role="group" aria-label="Проверки"><button type="button" data-ck="meter">Посмотреть замер сразу</button><button type="button" data-ck="sleep">Подождать 40 минут, двери закрыты</button><button type="button" data-ck="plug">Отключить навесную магнитолу и видеорегистратор</button><button type="button" data-ck="glove">Видео телефоном в бардачке и багажнике</button><button type="button" data-ck="fuses">Вынимать предохранители по одному</button><button type="button" data-ck="alt">Снять толстый провод с генератора</button></div><ul class="ac-log" id="dd-log" aria-live="polite"></ul><p style="margin:14px 0 0"><b>Что разряжает аккумулятор?</b></p><div class="jrow" role="group" aria-label="Ваш ответ"><button type="button" data-an="radio">Навесная магнитола</button><button type="button" data-an="glove">Лампа в бардачке</button><button type="button" data-an="door">Концевик двери или капота не даёт уснуть</button><button type="button" data-an="alt">Генератор</button><button type="button" data-an="ok">Ничего — утечка в норме</button></div><div class="verdict" id="dd-v" hidden aria-live="polite"></div><div class="jrow"><button type="button" id="dd-n">Другая машина</button></div></div></section><section aria-labelledby="t4"><h2 id="t4">4. Из практики Олега</h2><ul class="rq"><li><b>Jeep, 2022</b><span>Неделю простоял — аккумулятор упал до 3,5 В. Зарядка после прикуривания в норме (14,7 В), аккумулятору четыре года. Совет: заменить и замерить утечку, когда блоки уснут.</span></li><li><b>Lexus LX 570</b><span>Аккумулятор упал до 3 В. С новым аккумулятором утечка 10 мА — норма, зарядка в порядке. Дело было только в старом аккумуляторе.</span></li><li><b>Hyundai Santa Fe, 2020</b><span>Аккумулятор быстро садился даже после полной зарядки: на стоянке машина тянула слишком большой ток. Блоки отключали по одному — не они. Оказался неисправный генератор; после замены утечка в норме.</span></li></ul></section><section aria-labelledby="fq"><h2 id="fq">Вопросы</h2><details class="qa"><summary><h3>Какая утечка тока считается нормой?</h3></summary><p>Когда блоки машины уснули, в норме ток до 0,05 А (50 мА). Олег считает нормой 0,06 А и меньше. 0,1–0,2 А и больше — какой-то блок не засыпает или что-то не выключается.</p></details><details class="qa"><summary><h3>Почему садится аккумулятор за ночь?</h3></summary><p>Что-то не выключается, когда машину закрыли: навесная магнитола или сигнализация, лампа в бардачке или багажнике, залипшее реле, блок, который не засыпает, или генератор с пробитым диодом. Найти помогает замер тока утечки.</p></details><details class="qa"><summary><h3>Сколько ждать, пока блоки уснут?</h3></summary><p>От нескольких минут до часа — зависит от машины. Двери держите закрытыми, а ключ — подальше от машины: открыли дверь — всё проснулось, ждите заново.</p></details><details class="qa"><summary><h3>Может ли генератор разряжать аккумулятор на стоянке?</h3></summary><p>Да. Пробитый диод в генераторе пропускает ток, когда машина стоит. Если ни один предохранитель не уменьшает утечку — отключите аккумулятор, снимите толстый провод с генератора и замерьте снова.</p></details><details class="qa"><summary><h3>Поможет ли новый аккумулятор?</h3></summary><p>Если есть утечка — нет, новый тоже сядет. Сначала замерьте утечку и проверьте зарядку, потом покупайте аккумулятор.</p></details><details class="qa"><summary><h3>Как найти утечку без мультиметра?</h3></summary><p>На ночь выньте всё из прикуривателя и USB, проверьте, гаснет ли свет в бардачке и багажнике, отключите навесную магнитолу или сигнализацию, если знаете как вернуть. Но точно покажет только мультиметр или токовые клещи постоянного тока.</p></details></section><p class="src">Проверки — от автоэлектрика Олега Дмитриева (АвтоЭлектрик PRO), Алматы. Если не получилось найти самому — помощник в приложении разберёт по шагам, а Олег подскажет.</p><section aria-labelledby="rq"><h2 id="rq">Похожие вопросы</h2><ul class="rq"><li><a href="../ne-krutit-starter/"><b>Не крутит стартер: стартер или аккумулятор?</b></a><span>Частые щелчки, один щелчок, медленно крутит или тишина — что значит каждый звук и что проверить самому.</span></li><li><a href="../ne-rabotaet-pechka/"><b>Не работает печка</b></a><span>Дует только на последней скорости, не дует совсем или дует холодным: резистор, моторчик, предохранитель, термостат.</span></li><li><a href="../perechen-neispravnostey/"><b>Неисправности, с которыми запрещено ехать</b></a><span>Пункты перечня ПДД по электрике: стоп-сигналы, фары, дворники, сигнал, ABS — и с чем нельзя ехать даже до ремонта.</span></li><li><a href="../kody/"><b>Коды ошибок: расшифровка</b></a><span>Что значит код со сканера и что проверить самому.</span></li><li><a href="../znachki/"><b>Значки на панели приборов</b></a><span>Что горит на приборке и можно ли ехать.</span></li></ul></section><section class="ballads" aria-labelledby="ballads"><details><summary><span class="bi" aria-hidden="true">🎵</span><span><b id="ballads">Баллады об этой поломке</b><small>2 песни про мастера и автомобильную нечисть — нажмите, чтобы послушать</small></span></summary><ul><li><b>«Упырь ночной»</b><span>Упырь пьёт аккумулятор за ночь — утечка тока</span><audio controls preload="none" src="https://help.avtoelektrik-pro.kz/skazaniya/audio/upyr-nochnoy.mp3" data-n="2"></audio><a href="https://help.avtoelektrik-pro.kz/skazaniya/#b2">Слова и история песни →</a></li><li><b>«Вранглер и Дрёма»</b><span>Дрёма убаюкала Джип — аккумулятор сел за неделю простоя</span><audio controls preload="none" src="https://help.avtoelektrik-pro.kz/skazaniya/audio/vrangler-i-dryoma.mp3" data-n="26"></audio><a href="https://help.avtoelektrik-pro.kz/skazaniya/#b26">Слова и история песни →</a></li></ul><p class="all"><a href="https://help.avtoelektrik-pro.kz/skazaniya/">Все баллады АвтоЭлектрик PRO →</a></p><p class="src">Песни сделаны с ИИ. Истории, советы и слова — АвтоЭлектрик PRO.</p></details></section><script>(function(){var A=[].slice.call(document.querySelectorAll('.ballads audio'));A.forEach(function(a){a.addEventListener('play',function(){[].forEach.call(document.querySelectorAll('audio'),function(o){if(o!==a&&!o.paused)o.pause()});if(!a._g){a._g=1;if(window.gtag)gtag('event','ballad_ru_play',{ballad:a.getAttribute('data-n'),page:location.pathname})}})})})();</script></main><script>(function(){
+var $=function(i){return document.getElementById(i);};
+function say(v,c,h,t){v.hidden=false;v.className='verdict '+c;v.innerHTML='<b></b><span></span>';v.firstChild.textContent=h;v.lastChild.textContent=t;}
+function nf(x,d){return x.toFixed(d).replace('.',',');}
+function days(n){var m=n%10,h=n%100;return n+' '+(m===1&&h!==11?'день':m>=2&&m<=4&&(h<12||h>14)?'дня':'дней');}
+function hours(n){var m=n%10,h=n%100;return n+' '+(m===1&&h!==11?'час':m>=2&&m<=4&&(h<12||h>14)?'часа':'часов');}
+var C={a:0.03,ah:60,cold:false};
+function calc(){var use=C.ah*(C.cold?0.3:0.5),day=C.a*24,d=use/day,s=d>=1.5?'примерно '+days(Math.round(d)):d>=1?'около суток':'примерно '+hours(Math.max(1,Math.round(d*24)));
+$('dc-av').textContent=nf(C.a,2)+' А';$('dc-a').value=C.a;
+var c=C.a<=0.06?'ok':C.a<0.1?'warn':'bad',h=(C.a<=0.06?'Норма':C.a<0.1?'Чуть больше нормы':'Какой-то блок не засыпает')+' — машина заведётся ещё '+s;
+var t=nf(Math.round(day*10)/10,1)+' А·ч в сутки из аккумулятора '+C.ah+' А·ч. '+(C.a<=0.06?'Это нормально. Если аккумулятор всё равно садится — проверьте сам аккумулятор: возможно, он изношен.':C.a<0.1?'Сначала проверьте навесное оборудование, потом замерьте снова, когда блоки уснут.':'Ищите: сначала навесное, потом свет, который должен гаснуть, потом предохранители по одному.')+(C.cold?' В мороз аккумулятор крутит стартер на гораздо меньшей части заряда.':'');
+say($('dc-v'),c,h,t);}
+$('dc-a').addEventListener('input',function(){C.a=+this.value;document.querySelectorAll('#dc [data-p]').forEach(function(x){x.setAttribute('aria-pressed','false');});calc();});
+document.querySelectorAll('#dc [data-p]').forEach(function(b){b.addEventListener('click',function(){C.a=+b.getAttribute('data-p');document.querySelectorAll('#dc [data-p]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});calc();});});
+document.querySelectorAll('#dc [data-ah]').forEach(function(b){b.addEventListener('click',function(){C.ah=+b.getAttribute('data-ah');document.querySelectorAll('#dc [data-ah]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});calc();});});
+$('dc-cold').addEventListener('click',function(){C.cold=!C.cold;this.setAttribute('aria-pressed',String(C.cold));calc();});
+window.__dcSet=function(a,ah,cold){C.a=a;C.ah=ah||60;C.cold=!!cold;calc();};calc();
+var K=['radio','glove','door','alt'],R={ok:0.03,radio:0.34,glove:0.45,door:0.62,alt:0.27},F={sc:'radio',slept:false,log:[]};
+function amps(x){return nf(x,2)+' А';}
+function show(a){$('dd-r').textContent=a;}
+function step(c){var s=F.sc,r=R[s];
+if(c==='meter'){if(F.slept){show(amps(r));return [s==='ok'?'ok':'bad','Замер сейчас',amps(r)];}show(amps(0.85));return ['warn','Сразу',amps(0.85)+' — блоки ещё не уснули. Это число пока ничего не значит: подождите, пока уснут.'];}
+if(c==='sleep'){F.slept=true;show(amps(r));return s==='ok'?['ok','Через 40 минут',amps(r)+' — норма.']:s==='door'?['bad','Через 40 минут',amps(r)+' — всё ещё много, и плафон то и дело загорается снова.']:['bad','Через 40 минут',amps(r)+' — много: что-то не засыпает.'];}
+if(!F.slept)return ['warn','Рано','Сначала дайте блокам уснуть — до этого замер скачет и ничего не показывает.'];
+if(c==='plug')return s==='radio'?(show(amps(0.03)),['bad','Навесная магнитола отключена','Утечка упала с '+amps(r)+' до 0,03 А. Магнитола подключена к постоянному плюсу и никогда не выключается.']):['ok','Навесная магнитола отключена','Ничего не изменилось.'];
+if(c==='glove')return s==='glove'?['bad','Видео телефоном','В закрытом бардачке горит лампа.']:['ok','Видео телефоном','С закрытой крышкой темно.'];
+if(c==='fuses')return s==='ok'?['ok','Предохранители','Ни один не меняет ток — утечка и так в норме.']:s==='alt'?['bad','Предохранители','Ни один предохранитель не уменьшает утечку.']:s==='radio'?(show(amps(0.03)),['bad','Предохранители','Предохранитель магнитолы — ток упал до 0,03 А.']):s==='glove'?(show(amps(0.03)),['bad','Предохранители','Предохранитель освещения салона — ток упал до 0,03 А.']):(show(amps(0.03)),['bad','Предохранители','Предохранитель блока комфорта — ток упал до 0,03 А. На приборке «открыт капот» — его концевик залип.']);
+if(c==='alt')return s==='alt'?(show(amps(0.03)),['bad','Провод генератора снят (сначала отключить аккумулятор)','Утечка упала с '+amps(r)+' до 0,03 А.']):['ok','Провод генератора снят (сначала отключить аккумулятор)','Ничего не изменилось.'];}
+var A={radio:'Навесная магнитола подключена к постоянному плюсу и никогда не выключается. Переподключите её на плюс от замка зажигания — а пока отключайте на ночь.',
+glove:'В закрытом бардачке горит лампа: сломан концевик или упор крышки. Пока не починили — выньте лампу: лампа на 5 Вт съедает около 10 А·ч за сутки.',
+door:'Залип концевик капота: машина думает, что капот открыт, и блоки не засыпают (и сигнализация может чудить). Почистите или замените концевик; так же проверьте концевики дверей.',
+alt:'Генератор: пробитый диод пропускает ток на стоянке. Предохранители не помогли, а снятый толстый провод генератора — помог. Генератор ремонтировать или менять.',
+ok:'Утечка в норме: 0,03 А, когда блоки уснули. Если аккумулятор всё равно садится — проверьте сам аккумулятор: возможно, он просто изношен.'};
+function draw(){var l=$('dd-log');l.innerHTML='';F.log.forEach(function(x){var li=document.createElement('li');li.className=x[0];var b=document.createElement('b');b.textContent=x[1]+':';li.appendChild(b);li.appendChild(document.createTextNode(' '+x[2]));l.appendChild(li);});}
+function car(k){F.sc=k==='ok'?'ok':K[Math.floor(Math.random()*K.length)];F.slept=false;F.log=[];draw();show('—');$('dd-v').hidden=true;
+document.querySelectorAll('#dd [data-car]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-car')===k));});}
+document.querySelectorAll('#dd [data-ck]').forEach(function(b){b.addEventListener('click',function(){var c=b.getAttribute('data-ck'),r=step(c);F.log=F.log.filter(function(x){return x[3]!==c;});F.log.push([r[0],r[1],r[2],c]);draw();});});
+document.querySelectorAll('#dd [data-an]').forEach(function(b){b.addEventListener('click',function(){var a=b.getAttribute('data-an'),v=$('dd-v'),ok=a===F.sc;
+if(ok)say(v,'ok',a==='ok'?'Верно — искать нечего':'Верно',A[a]);else say(v,'bad','Не то'+(F.slept?'':' — дайте машине уснуть и сделайте проверки'),'Посмотрите ещё раз: после чего мультиметр показал 0,03 А?');});});
+$('dd-n').addEventListener('click',function(){car('bad');});document.querySelectorAll('#dd [data-car]').forEach(function(b){b.addEventListener('click',function(){car(b.getAttribute('data-car'));});});
+window.__ddSet=function(k){F.sc=k;F.slept=false;F.log=[];draw();show('—');$('dd-v').hidden=true;};car('bad');})();</script><footer><div class="wrap"><span>© 2026 АвтоЭлектрик PRO · Дмитриев Олег Сергеевич</span><a href="https://help.avtoelektrik-pro.kz/">Помощник автоэлектрика</a><a href="../skaner/">Сканер ELM327</a><a href="../utechka-toka/">Садится аккумулятор</a><a href="../perechen-neispravnostey/">Неисправности, с которыми запрещено ехать</a><a href="../ne-krutit-starter/">Не крутит стартер: стартер или аккумулятор</a><a href="../datchik-davleniya-v-shinah/">Горит датчик давления в шинах</a><a href="../ne-rabotaet-pechka/">Не работает печка</a><a href="../skachat/">Скачать сканер</a><a href="../kody/">Коды ошибок: расшифровка</a><a href="../znachki/">Значки приборной панели</a><a href="../skazaniya/">Музыка в дорогу — баллады</a><a href="../privacy.html">Политика конфиденциальности</a></div></footer>
+</body>
+</html>
