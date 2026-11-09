@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.82",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.82.apk",
-    "size": 8739289,
+    "version": "1.0.83",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.83.apk",
+    "size": 8747481,
     "date": "2026-11-09",
     "notes": {
-      "ru": "Сказания: новые баллады на русском, казахском и английском (10 песен «Қазақша»), по умолчанию — лучшее качество FLAC; звук баллад грузится быстрее из нового хранилища. Кнопка App Store для iPhone и загрузка программы-сканера для Windows. Перелинковка гайдов с кодами ошибок и разборами.",
-      "kk": "Ертегілер: орыс, қазақ және ағылшын тілдерінде жаңа балладалар («Қазақша» 10 ән), әдепкіде — ең жақсы FLAC сапасы; балладалардың дыбысы жаңа қоймадан жылдамырақ жүктеледі. iPhone үшін App Store түймесі және Windows үшін сканер бағдарламасын жүктеу. Нұсқаулар қате кодтарымен және талдаулармен байланыстырылды.",
-      "en": "Tales: new ballads in Russian, Kazakh and English (10 songs in Kazakh), best-quality FLAC by default; ballad audio now loads faster from new storage. An App Store button for iPhone and a download of the scanner software for Windows. Guides are now cross-linked with error codes and case studies."
+      "ru": "Сказания: песни встают по рейтингу — выше те, что слушают чаще, новые первую неделю наверху; случайное касание при прокрутке больше не переключает песню; исправлены казахские песни и названия; у первой баллады новый значок — контролька. Помощник: новые советы по коробке передач и большому расходу топлива.",
+      "kk": "Ертегілер: әндер рейтинг бойынша тұрады — жиі тыңдалатындары жоғарыда, жаңалары бірінші аптада жоғарыда; айналдыру кезінде кездейсоқ тию енді әнді ауыстырмайды; қазақша әндер мен атаулар түзетілді; бірінші балладаның белгішесі жаңартылды. Көмекші: беріліс қорабы мен жанармайдың көп шығыны бойынша жаңа кеңестер.",
+      "en": "Tales: songs are now sorted by rating — the most played on top, new ones on top for their first week; an accidental touch while scrolling no longer switches the song; Kazakh songs and titles fixed; new icon for the first ballad. Helper: new tips on the gearbox and high fuel consumption."
     }
   },
   "play": "",
