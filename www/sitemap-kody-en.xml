@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/b0001/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/b0002/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/b0012/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -609,7 +609,7 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/c2402/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/c2412/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/c2413/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/dvigatel/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/dvigatel/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/gibrid/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/gruzoviki/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/korobka/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -1873,36 +1873,47 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2033/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2034/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2035/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2036/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2037/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2038/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2039/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p203f/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2040/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2041/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2042/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2036/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2037/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2038/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2039/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p203a/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p203b/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p203c/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p203d/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p203f/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2040/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2041/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2042/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2043/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2044/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2045/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2046/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2047/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2048/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2049/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p204f/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2050/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2051/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2052/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2046/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2047/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2048/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2049/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p204b/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p204c/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p204d/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p204f/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2050/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2051/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2052/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2053/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2054/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2055/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2056/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2057/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2058/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2059/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2060/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2061/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2062/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2063/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2056/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2057/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2058/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2059/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p205a/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p205b/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p205c/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p205d/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2060/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2061/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2062/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2063/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2064/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2065/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2066/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -1923,27 +1934,43 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2083/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2084/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2085/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2086/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2087/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2088/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2089/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p208b/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2090/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2091/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2092/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2093/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2086/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2087/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2088/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2089/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p208a/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p208b/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p208c/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p208d/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2090/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2091/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2092/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2093/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2094/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2095/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2096/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2097/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2098/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2099/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20b5/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20b9/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20bd/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20e8/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20ee/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20xx/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2096/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2097/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2098/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2099/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20a0/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20a1/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20a2/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20a3/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20b5/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20b9/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20ba/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20bb/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20bc/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20bd/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20bf/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20c0/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20c1/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20c3/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20c4/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20e8/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20e9/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20ee/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p20xx/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2100/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2101/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2102/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -2141,20 +2168,28 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2293/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2294/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2295/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2296/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2297/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2298/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2299/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p22xx/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2401/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2402/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2419/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p242f/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2452/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2453/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2463/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p24xx-p31xx/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p26a3/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2296/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2297/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2298/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2299/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p229e/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p229f/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p22xx/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2401/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2402/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2419/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p242a/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p242b/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p242c/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p242d/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p242f/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2452/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2453/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2463/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2470/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2471/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p24xx-p31xx/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p26a3/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2700/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2701/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2702/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -2178,9 +2213,9 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2720/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2721/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p2723/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2ba7/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2ba8/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2ba9/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2ba7/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2ba8/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/p2ba9/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p3000/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p3004/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/p3006/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -2311,7 +2346,7 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/spn-94/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/spn-97/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/spn-98/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/svyaz/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/svyaz/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0001/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0002/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0003/en.html</loc><lastmod>2026-11-09</lastmod></url>
@@ -2508,15 +2543,17 @@
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0230/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0231/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0232/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0233/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0234/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0235/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0293/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u02xx-u30xx/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0300/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0301/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0302/en.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0303/en.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0233/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0234/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0235/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0293/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u029d/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u029e/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u02xx-u30xx/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0300/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0301/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0302/en.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://help.avtoelektrik-pro.kz/kody/u0303/en.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0304/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0305/en.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://help.avtoelektrik-pro.kz/kody/u0306/en.html</loc><lastmod>2026-11-09</lastmod></url>
