@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.83",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.83.apk",
-    "size": 8747481,
-    "date": "2026-11-09",
+    "version": "1.0.84",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.84.apk",
+    "size": 8759769,
+    "date": "2026-11-10",
     "notes": {
-      "ru": "Сказания: песни встают по рейтингу — выше те, что слушают чаще, новые первую неделю наверху; случайное касание при прокрутке больше не переключает песню; исправлены казахские песни и названия; у первой баллады новый значок — контролька. Помощник: новые советы по коробке передач и большому расходу топлива.",
-      "kk": "Ертегілер: әндер рейтинг бойынша тұрады — жиі тыңдалатындары жоғарыда, жаңалары бірінші аптада жоғарыда; айналдыру кезінде кездейсоқ тию енді әнді ауыстырмайды; қазақша әндер мен атаулар түзетілді; бірінші балладаның белгішесі жаңартылды. Көмекші: беріліс қорабы мен жанармайдың көп шығыны бойынша жаңа кеңестер.",
-      "en": "Tales: songs are now sorted by rating — the most played on top, new ones on top for their first week; an accidental touch while scrolling no longer switches the song; Kazakh songs and titles fixed; new icon for the first ballad. Helper: new tips on the gearbox and high fuel consumption."
+      "ru": "Советы Олега из практики: центральный замок (вся машина или одна дверь, концевики, провода в гофре, привод), как проверить катушку зажигания, не работает спидометр, заблокировался руль и не поворачивается ключ; машина не видит ключ — помехи у магазинов и место для ключа. Помощник понимает «обновить» и переспрашивает, куда не приходит питание. Казахский — первым в выборе языка песен.",
+      "kk": "Олегтің тәжірибесінен кеңестер: орталық құлып (бүкіл көлік пе, әлде бір есік пе, концевиктер, гофрадағы сымдар, жетек), от алдыру катушкасын қалай тексеру, спидометр істемейді, руль бұғатталып, кілт бұрылмайды; көлік кілтті көрмейді — дүкендер жанындағы кедергілер және кілтке арналған орын. Көмекші «жаңарту» сөзін түсінеді және қуат қайда келмейтінін қайта сұрайды. Ән тілін таңдауда қазақ тілі — бірінші.",
+      "en": "Oleg’s field-tested tips: power door locks (all doors or one, door switches, wires in the door boot, actuator), how to test an ignition coil, speedometer not working, steering wheel locked and key won’t turn; key not detected — interference near stores and where to hold the key. The assistant understands “update” and asks where the power isn’t reaching. Kazakh is now first in the song language choice."
     }
   },
   "play": "",
