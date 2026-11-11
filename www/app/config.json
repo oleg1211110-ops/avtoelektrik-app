@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.85",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.85.apk",
-    "size": 8833497,
+    "version": "1.0.86",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.86.apk",
+    "size": 8841689,
     "date": "2026-11-11",
     "notes": {
-      "ru": "Сказания: новая баллада № 34 «Чёртов спор» — перегрев и вентилятор радиатора, на русском, казахском и английском; песни на китайском (中文) — три баллады; «По номерам» — первой кнопкой. Помощник: коды Cummins (FC → SPN/FMI) с советами, Shift Lock — рычаг не выходит из P, пинки исправной коробки, повторители в зеркалах. Сертификат мастерства — с оценкой и пересдачей. Новый график Олега: пн–пт 9–18, сб 9–15.",
-      "kk": "Ертегілер: жаңа № 34 баллада «Шайтанмен бәс» — қызып кету және радиатор желдеткіші, орысша, қазақша және ағылшынша; қытай тіліндегі әндер (中文) — үш баллада; «Нөмір бойынша» — бірінші түйме. Көмекші: Cummins кодтары (FC → SPN/FMI) кеңестерімен, Shift Lock — рычаг P-дан шықпайды, жөнді қораптың соққылары, айнадағы бұрылыс шамдары. Шеберлік сертификаты — бағамен және қайта тапсырумен. Олегтің жаңа кестесі: дс–жм 9–18, сб 9–15.",
-      "en": "Tales: new ballad No. 34 «The Devil's Bet» — overheating and the radiator fan, in Russian, Kazakh and English; songs in Chinese (中文) — three ballads; «By number» is now the first button. Helper: Cummins codes (FC → SPN/FMI) with tips, Shift Lock — lever stuck in P, kicks from a healthy gearbox, mirror turn signals. Certificate of mastery — with a grade and retakes. Oleg's new hours: Mon–Fri 9–18, Sat 9–15."
+      "ru": "Музыка в дорогу: после звонка песня продолжается сама с того же места, в том числе с эквалайзером. Если телефон (например, Xiaomi) останавливает свёрнутое приложение, появится подсказка с кнопкой в настройки «Нет ограничений», а в уведомлении — «нажмите, чтобы продолжить». «Поделиться» — на языке песен: с казахского ссылка откроется на казахском, с английского — на английском, с китайского — на китайском.",
+      "kk": "Жолға музыка: қоңыраудан кейін ән сол жерден өзі жалғасады, эквалайзермен де. Телефон (мысалы, Xiaomi) жиналған қолданбаны тоқтатса, «Шектеусіз» баптауына апаратын түймесі бар кеңес шығады, ал хабарландыруда — «жалғастыру үшін басыңыз». «Бөлісу» — әндер тілінде: қазақшадан жіберсеңіз, сілтеме қазақша ашылады, ағылшыншадан — ағылшынша, қытайшадан — қытайша.",
+      "en": "Music for the road: after a phone call the song now resumes by itself from the same spot, equalizer included. If your phone (e.g. Xiaomi) stops the app in the background, you'll see a tip with a button to the «No restrictions» setting, and the notification will say «tap to continue». «Share» now uses the song language: a link shared from Kazakh opens in Kazakh, from English — in English, from Chinese — in Chinese."
     }
   },
   "play": "",
