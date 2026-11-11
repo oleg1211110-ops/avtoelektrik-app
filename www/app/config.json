@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.84",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.84.apk",
-    "size": 8759769,
-    "date": "2026-11-10",
+    "version": "1.0.85",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.85.apk",
+    "size": 8833497,
+    "date": "2026-11-11",
     "notes": {
-      "ru": "Советы Олега из практики: центральный замок (вся машина или одна дверь, концевики, провода в гофре, привод), как проверить катушку зажигания, не работает спидометр, заблокировался руль и не поворачивается ключ; машина не видит ключ — помехи у магазинов и место для ключа. Помощник понимает «обновить» и переспрашивает, куда не приходит питание. Казахский — первым в выборе языка песен.",
-      "kk": "Олегтің тәжірибесінен кеңестер: орталық құлып (бүкіл көлік пе, әлде бір есік пе, концевиктер, гофрадағы сымдар, жетек), от алдыру катушкасын қалай тексеру, спидометр істемейді, руль бұғатталып, кілт бұрылмайды; көлік кілтті көрмейді — дүкендер жанындағы кедергілер және кілтке арналған орын. Көмекші «жаңарту» сөзін түсінеді және қуат қайда келмейтінін қайта сұрайды. Ән тілін таңдауда қазақ тілі — бірінші.",
-      "en": "Oleg’s field-tested tips: power door locks (all doors or one, door switches, wires in the door boot, actuator), how to test an ignition coil, speedometer not working, steering wheel locked and key won’t turn; key not detected — interference near stores and where to hold the key. The assistant understands “update” and asks where the power isn’t reaching. Kazakh is now first in the song language choice."
+      "ru": "Сказания: новая баллада № 34 «Чёртов спор» — перегрев и вентилятор радиатора, на русском, казахском и английском; песни на китайском (中文) — три баллады; «По номерам» — первой кнопкой. Помощник: коды Cummins (FC → SPN/FMI) с советами, Shift Lock — рычаг не выходит из P, пинки исправной коробки, повторители в зеркалах. Сертификат мастерства — с оценкой и пересдачей. Новый график Олега: пн–пт 9–18, сб 9–15.",
+      "kk": "Ертегілер: жаңа № 34 баллада «Шайтанмен бәс» — қызып кету және радиатор желдеткіші, орысша, қазақша және ағылшынша; қытай тіліндегі әндер (中文) — үш баллада; «Нөмір бойынша» — бірінші түйме. Көмекші: Cummins кодтары (FC → SPN/FMI) кеңестерімен, Shift Lock — рычаг P-дан шықпайды, жөнді қораптың соққылары, айнадағы бұрылыс шамдары. Шеберлік сертификаты — бағамен және қайта тапсырумен. Олегтің жаңа кестесі: дс–жм 9–18, сб 9–15.",
+      "en": "Tales: new ballad No. 34 «The Devil's Bet» — overheating and the radiator fan, in Russian, Kazakh and English; songs in Chinese (中文) — three ballads; «By number» is now the first button. Helper: Cummins codes (FC → SPN/FMI) with tips, Shift Lock — lever stuck in P, kicks from a healthy gearbox, mirror turn signals. Certificate of mastery — with a grade and retakes. Oleg's new hours: Mon–Fri 9–18, Sat 9–15."
     }
   },
   "play": "",
