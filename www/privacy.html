@@ -96,6 +96,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 </ul>
 <p>Когда код открывается на телефоне, на нашем сервере вместе с кодом сохраняется случайный номер устройства — чтобы один код работал не больше чем на трёх телефонах. Отметка о том, что уроки открыты, хранится в вашем телефоне. Код переноса прогресса (с сайта в приложение или на другой телефон) содержит пройденные уроки и коды доступа; он никуда не отправляется — вы сами копируете его. Чтобы удалить эти данные, напишите Олегу.</p>
 
+<h2 id="zakaz">Баллада на заказ</h2>
+<p>Для песни на заказ вы указываете: имя (и вставлять ли его в песню), язык, номер баллады-основы, свои слова и пожелания, по желанию — Telegram (ник или номер) и номер Kaspi для счёта. Зачем: сделать песню и доставить её вам. Что с данными:</p>
+<ul>
+<li>Пожелания до выставления счёта автоматически проверяются на запрещённые темы — через сервер приложения они уходят в Claude (Anthropic); Anthropic обрабатывает их по своим правилам (<a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">политика конфиденциальности Anthropic</a>).</li>
+<li>Текст песни по вашим словам пишет Claude (ИИ Anthropic), музыку делает сервис создания песен с ИИ — туда передаются только стихи и стиль, без вашего Telegram и номера.</li>
+<li>Заказ (имя, слова, Telegram, текст песни, состояние) и готовая песня хранятся на нашем сервере (Cloudflare); номер Kaspi — как при любой оплате, скрытым (см. «Платные функции»). Если вы открыли наш Telegram-бот, запоминается номер чата — чтобы прислать туда песню.</li>
+<li>В реестр песен (для защиты авторских прав) пишется только номер заказа, номер основы, язык и дата — без имени и пожеланий.</li>
+<li>Ваша песня открывается по личной ссылке, поисковики её не показывают. Удалить заказ и песню — напишите Олегу.</li>
+</ul>
+
 <h2>Дети</h2>
 <p>Приложение предназначено для водителей и не рассчитано на детей младше 13 лет.</p>
 
@@ -153,6 +163,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <li><b>WhatsApp арқылы</b> — Олег Kaspi-де төлеуге ЖК OneService шотын немесе деректемелерін жібереді, төлемнен кейін кіру кодын береді.</li>
 </ul>
 <p>Код телефонда ашылғанда біздің серверде кодпен бірге құрылғының кездейсоқ нөмірі сақталады — бір код үш телефоннан артық жұмыс істемеуі үшін. Сабақтардың ашылғаны туралы белгі телефоныңызда сақталады. Прогресті көшіру коды (сайттан қосымшаға немесе басқа телефонға) өтілген сабақтар мен кіру кодтарын қамтиды; ол ешқайда жіберілмейді — оны өзіңіз көшіресіз. Бұл деректерді жою үшін Олегке жазыңыз.</p>
+<h2 id="zakaz-kk">Тапсырыспен баллада</h2>
+<p>Тапсырыспен ән үшін сіз мыналарды көрсетесіз: атыңыз (және оны әнге қосу керек пе), тіл, негіз балладаның нөмірі, өз сөздеріңіз бен тілектеріңіз, қаласаңыз — Telegram (ник немесе нөмір) және шот үшін Kaspi нөмірі. Не үшін: әнді жасап, сізге жеткізу. Деректермен не болады:</p>
+<ul>
+<li>Шот шыққанға дейін тілектер тыйым салынған тақырыптарға автоматты түрде тексеріледі — қосымша сервері арқылы Claude-қа (Anthropic) жіберіледі; Anthropic оларды өз ережелері бойынша өңдейді (<a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic құпиялылық саясаты</a>).</li>
+<li>Ән мәтінін сіздің сөздеріңіз бойынша Claude (Anthropic ЖИ) жазады, музыканы ЖИ көмегімен ән жасайтын сервис жасайды — оған тек өлең мен стиль беріледі, Telegram мен нөміріңіз берілмейді.</li>
+<li>Тапсырыс (аты, сөздер, Telegram, ән мәтіні, күйі) және дайын ән біздің серверде (Cloudflare) сақталады; Kaspi нөмірі — кез келген төлемдегідей, жасырын түрде («Ақылы мүмкіндіктер» бөлімін қараңыз). Telegram-ботымызды ашсаңыз, әнді жіберу үшін чат нөмірі есте сақталады.</li>
+<li>Әндер тізіліміне (авторлық құқықты қорғау үшін) тек тапсырыс нөмірі, негіз нөмірі, тіл және күні жазылады — атыңыз бен тілектеріңізсіз.</li>
+<li>Әніңіз жеке сілтеме бойынша ашылады, іздеу жүйелері оны көрсетпейді. Тапсырыс пен әнді жою үшін Олегке жазыңыз.</li>
+</ul>
+
 <h2>Балалар</h2>
 <p>Қосымша жүргізушілерге арналған және 13 жасқа толмаған балаларға арналмаған.</p>
 <h2>Өзгерістер және байланыс</h2>
@@ -209,6 +229,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:32px}
 <li><b>Via WhatsApp</b> — Oleg sends a Kaspi bill or the payment details of IP OneService; after payment, he issues an access code.</li>
 </ul>
 <p>When a code is unlocked on a phone, a random device number is stored with it on our server, so that one code works on no more than three phones. The note that the lessons are unlocked is kept on your phone. The progress transfer code (from the website to the app, or to another phone) contains your completed lessons and access codes; it isn’t sent anywhere — you copy it yourself. To delete this data, message Oleg.</p>
+<h2 id="zakaz-en">Custom ballad</h2>
+<p>For a custom song you give: your name (and whether to put it in the song), the language, the number of the base ballad, your words and wishes, optionally your Telegram (username or number) and your Kaspi number for the bill. Why: to make the song and deliver it to you. What happens to the data:</p>
+<ul>
+<li>Before the bill is issued, the wishes are automatically checked for prohibited topics — they go through the app’s server to Claude (Anthropic); Anthropic processes them under its own rules (<a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic privacy policy</a>).</li>
+<li>The lyrics based on your words are written by Claude (Anthropic’s AI); the music is made by an AI song service, which receives only the lyrics and the style — not your Telegram or number.</li>
+<li>The order (name, words, Telegram, lyrics, status) and the finished song are stored on our server (Cloudflare); the Kaspi number is stored masked, as with any payment (see “Paid features”). If you open our Telegram bot, the chat ID is kept to send you the song.</li>
+<li>The song registry (for copyright protection) records only the order number, base ballad number, language and date — no name or wishes.</li>
+<li>Your song opens at a personal link and is not shown by search engines. To delete the order and the song, write to Oleg.</li>
+</ul>
+
 <h2>Children</h2>
 <p>The app is intended for drivers and is not directed at children under 13.</p>
 <h2>Changes and contact</h2>
