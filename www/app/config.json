@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.86",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.86.apk",
-    "size": 8841689,
-    "date": "2026-11-11",
+    "version": "1.0.87",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.87.apk",
+    "size": 8849881,
+    "date": "2026-11-12",
     "notes": {
-      "ru": "Музыка в дорогу: после звонка песня продолжается сама с того же места, в том числе с эквалайзером. Если телефон (например, Xiaomi) останавливает свёрнутое приложение, появится подсказка с кнопкой в настройки «Нет ограничений», а в уведомлении — «нажмите, чтобы продолжить». «Поделиться» — на языке песен: с казахского ссылка откроется на казахском, с английского — на английском, с китайского — на китайском.",
-      "kk": "Жолға музыка: қоңыраудан кейін ән сол жерден өзі жалғасады, эквалайзермен де. Телефон (мысалы, Xiaomi) жиналған қолданбаны тоқтатса, «Шектеусіз» баптауына апаратын түймесі бар кеңес шығады, ал хабарландыруда — «жалғастыру үшін басыңыз». «Бөлісу» — әндер тілінде: қазақшадан жіберсеңіз, сілтеме қазақша ашылады, ағылшыншадан — ағылшынша, қытайшадан — қытайша.",
-      "en": "Music for the road: after a phone call the song now resumes by itself from the same spot, equalizer included. If your phone (e.g. Xiaomi) stops the app in the background, you'll see a tip with a button to the «No restrictions» setting, and the notification will say «tap to continue». «Share» now uses the song language: a link shared from Kazakh opens in Kazakh, from English — in English, from Chinese — in Chinese."
+      "ru": "Новое: «Баллада на заказ» в «Музыке в дорогу» — своя песня на мелодию любимой баллады, с вашим именем и вашими словами, на русском, казахском, английском, китайском или другом языке. Оплата через Kaspi, готовность — от 1 дня, не дольше 3 дней, одна бесплатная правка. Готовая песня — в «Мои баллады»: слушать, скачать, переслать.",
+      "kk": "Жаңа: «Жолға музыка» бөлімінде «Тапсырыспен баллада» — сүйікті баллада әуенімен өз әніңіз, сіздің атыңыз бен сөздеріңізбен, орыс, қазақ, ағылшын, қытай немесе басқа тілде. Kaspi арқылы төлеу, дайын болу мерзімі — 1 күннен, 3 күннен аспайды, бір тегін түзету. Дайын ән — «Менің балладаларым» ішінде: тыңдау, жүктеу, бөлісу.",
+      "en": "New: «Custom ballad» in «Music for the road» — your own song to the tune of a favourite ballad, with your name and your words, in Russian, Kazakh, English, Chinese or another language. Pay with Kaspi; ready in 1 day at the earliest, no later than 3 days; one free revision. The finished song is in «My ballads»: listen, download, share."
     }
   },
   "play": "",
