@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.88",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.88.apk",
-    "size": 8849881,
+    "version": "1.0.89",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.89.apk",
+    "size": 8858073,
     "date": "2026-11-12",
     "notes": {
-      "ru": "Музыка в дорогу: баллада № 34 «Чёртов спор» перезаписана — поёт один сказитель, без театральных голосов. Новые записи на русском, казахском («Шайтанмен бәс» снова в списке) и английском («The Devil's Bet»).",
-      "kk": "Жолға музыка: № 34 баллада «Шайтанмен бәс» қайта жазылды — бір жыршы айтады, театрлық дауыстарсыз. Жаңа жазбалар орыс, қазақ және ағылшын тілдерінде; қазақша нұсқасы қайтадан тізімде.",
-      "en": "Music for the road: ballad No. 34 \"The Devil's Bet\" has been re-recorded — one storyteller sings the whole story, no theatrical voices. New recordings in Russian, Kazakh (back in the list) and English."
+      "ru": "Музыка в дорогу: после звонка в WhatsApp или Telegram песня теперь играет дальше, как после обычного звонка. Баллада на заказ: сразу видно меню «Как звучит» — темп, настроение, бас, голос, инструменты, хор, длина и кто поёт; условия заказа и возврата — по ссылке в форме.",
+      "kk": "Жолға музыка: WhatsApp немесе Telegram-дағы қоңыраудан кейін ән кәдімгі қоңыраудан кейінгідей әрі қарай ойналады. Тапсырыспен баллада: «Қалай естіледі» мәзірі бірден көрінеді — қарқын, көңіл күй, бас, дауыс, аспаптар, хор, ұзындығы және кім айтады; тапсырыс және ақшаны қайтару шарттары — формадағы сілтеме бойынша.",
+      "en": "Music for the road: after a WhatsApp or Telegram call the song now keeps playing, just like after a regular call. Custom ballad: the “How it sounds” menu is shown right away — tempo, mood, bass, vocals, instruments, choir, length and who sings; order and refund terms are linked in the form."
     }
   },
   "play": "",
