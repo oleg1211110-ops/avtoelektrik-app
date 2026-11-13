@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.89",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.89.apk",
-    "size": 8858073,
-    "date": "2026-11-12",
+    "version": "1.0.90",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.90.apk",
+    "size": 8870361,
+    "date": "2026-11-13",
     "notes": {
-      "ru": "Музыка в дорогу: после звонка в WhatsApp или Telegram песня теперь играет дальше, как после обычного звонка. Баллада на заказ: сразу видно меню «Как звучит» — темп, настроение, бас, голос, инструменты, хор, длина и кто поёт; условия заказа и возврата — по ссылке в форме.",
-      "kk": "Жолға музыка: WhatsApp немесе Telegram-дағы қоңыраудан кейін ән кәдімгі қоңыраудан кейінгідей әрі қарай ойналады. Тапсырыспен баллада: «Қалай естіледі» мәзірі бірден көрінеді — қарқын, көңіл күй, бас, дауыс, аспаптар, хор, ұзындығы және кім айтады; тапсырыс және ақшаны қайтару шарттары — формадағы сілтеме бойынша.",
-      "en": "Music for the road: after a WhatsApp or Telegram call the song now keeps playing, just like after a regular call. Custom ballad: the “How it sounds” menu is shown right away — tempo, mood, bass, vocals, instruments, choir, length and who sings; order and refund terms are linked in the form."
+      "ru": "Музыка: три новые баллады на казахском — «Қақаған аяз», «Бумер — темір тұлпар» и «Рендж Ровер — ағылшын лорды»; кнопка «Баллада на заказ» видна сразу. Помощник: правильный ответ, когда в электромобиле дует холодная печка; исправлены переводы на казахский и английский.",
+      "kk": "Музыка: қазақ тіліндегі үш жаңа баллада — «Қақаған аяз», «Бумер — темір тұлпар» және «Рендж Ровер — ағылшын лорды»; «Тапсырыспен баллада» батырмасы бірден көрінеді. Көмекші: электромобильдің жылытқышы суық ауа үрлесе — дұрыс жауап; қазақ және ағылшын тілдеріндегі аудармалар түзетілді.",
+      "en": "Music: three new Kazakh ballads — “Қақаған аяз”, “Бумер — темір тұлпар” and “Рендж Ровер — ағылшын лорды”; the “Custom ballad” button now shows right away. Helper: the right answer when an electric car’s heater blows cold air; Kazakh and English translations fixed."
     }
   },
   "play": "",
