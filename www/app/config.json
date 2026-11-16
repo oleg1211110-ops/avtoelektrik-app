@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.90",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.90.apk",
+    "version": "1.0.91",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.91.apk",
     "size": 8870361,
-    "date": "2026-11-13",
+    "date": "2026-11-16",
     "notes": {
-      "ru": "Музыка: три новые баллады на казахском — «Қақаған аяз», «Бумер — темір тұлпар» и «Рендж Ровер — ағылшын лорды»; кнопка «Баллада на заказ» видна сразу. Помощник: правильный ответ, когда в электромобиле дует холодная печка; исправлены переводы на казахский и английский.",
-      "kk": "Музыка: қазақ тіліндегі үш жаңа баллада — «Қақаған аяз», «Бумер — темір тұлпар» және «Рендж Ровер — ағылшын лорды»; «Тапсырыспен баллада» батырмасы бірден көрінеді. Көмекші: электромобильдің жылытқышы суық ауа үрлесе — дұрыс жауап; қазақ және ағылшын тілдеріндегі аудармалар түзетілді.",
-      "en": "Music: three new Kazakh ballads — “Қақаған аяз”, “Бумер — темір тұлпар” and “Рендж Ровер — ағылшын лорды”; the “Custom ballad” button now shows right away. Helper: the right answer when an electric car’s heater blows cold air; Kazakh and English translations fixed."
+      "ru": "Музыка: при отключении Bluetooth-колонки, наушников или магнитолы песня ставится на паузу, а не играет дальше на динамике телефона. Помощник: новый совет «заглохла на ходу — проверьте ГРМ» (что можно проверить самому), понимает больше слов — «плавают обороты», «работает неровно», «лямбда», «значок ключа» и другие; ответ «всё горит как обычно» про щиток больше не тупик.",
+      "kk": "Музыка: Bluetooth-колонка, құлаққап немесе магнитола ажыратылғанда ән телефонның динамигінде ойнай бермей, үзіліске қойылады. Көмекші: жаңа кеңес «жүріп келе жатып сөнді — ГРМ-ді тексеріңіз» (өзіңіз не тексере аласыз), көбірек сөзді түсінеді — «айналым құбылады», «бірқалыпты істемейді», «лямбда», «кілт белгісі» және басқалар; аспаптар қалқаны туралы «бәрі әдеттегідей жанып тұр» деген жауап енді тұйыққа әкелмейді.",
+      "en": "Music: when a Bluetooth speaker, headphones or the car stereo disconnects, the song now pauses instead of playing on the phone speaker. Helper: new advice “stalled while driving — check the timing belt/chain” (what you can check yourself), understands more phrases — “idle hunting”, “runs rough”, “lambda”, “key light” and more; answering “everything lights up as usual” about the dashboard no longer leads to a dead end."
     }
   },
   "play": "",
