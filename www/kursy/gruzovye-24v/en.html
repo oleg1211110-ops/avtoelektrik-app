@@ -1,0 +1,182 @@
+<!doctype html>
+<!-- © 2026 Дмитриев Олег Сергеевич · АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ · Все права защищены · AO-FP-15bae8fbeee15c6337a79231769485da -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Truck auto electrician — free course: 24 V, SPN/FMI codes, fault finding</title>
+<meta name="description" content="4 lessons on truck electrics — 24 volts and the battery master switch, diesel starting, SPN/FMI codes over the J1939 bus, the AdBlue system, fault finding on three tractors. Free.">
+<meta name="author" content="Oleg Dmitriev">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFA500">
+<link rel="canonical" href="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html">
+<link rel="alternate" hreflang="ru" href="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/"><link rel="alternate" hreflang="kk" href="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/kk.html"><link rel="alternate" hreflang="en" href="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html"><link rel="alternate" hreflang="x-default" href="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AvtoElektrik PRO">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="kk_KZ">
+<meta property="og:title" content="Truck auto electrician — free course: 24 V, SPN/FMI codes, fault finding">
+<meta property="og:description" content="4 lessons on truck electrics — 24 volts and the battery master switch, diesel starting, SPN/FMI codes over the J1939 bus, the AdBlue system, fault finding on three tractors. Free.">
+<meta property="og:url" content="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html">
+<meta property="og:image" content="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trucks (24 V) — AvtoElektrik PRO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../icons/favicon-64.png">
+<link rel="apple-touch-icon" href="../../icons/apple-touch-icon.png">
+<style>
+:root{--orange:#FFA500;--bg:#EFEFEF;--surface:#FFFFFF;--ink:#111;--ink-2:#222;--muted:#555;--line:#E3E3E3;--hero:#FFA500;--hero-ink:#000;--hero-2:#2E2200;--eyebrow:#000;--eyebrow-ink:#FFA500;
+--btn:#000;--btn-ink:#fff;--price:#111;--price-ink:#fff;--price-muted:#B5B5B5;--price-li:#E6E6E6;--ok:#1B5E20;--ok-soft:#E3F2E4;--paid-soft:#FFE2AE;--paid-ink:#000;--cream:#FFFAF0;--link:#000;--fig:#F4F6F8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1419;--surface:#172029;--ink:#E5EBF0;--ink-2:#CBD5DD;--muted:#9AA8B4;--line:#2A3846;--hero:#16212B;--hero-ink:#F1F5F8;--hero-2:#B9C5CF;--eyebrow:#FFA500;--eyebrow-ink:#111;
+--btn:#FFA500;--btn-ink:#111;--price:#0A0F13;--price-ink:#EEF2F5;--price-muted:#8796A3;--price-li:#CBD5DD;--ok:#7CCB80;--ok-soft:#17301A;--paid-soft:#3A2C0A;--paid-ink:#F5C452;--cream:#1F2A35;--link:#F5C452;--fig:#1F2A35;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Arial,'Helvetica Neue',Helvetica,sans-serif;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{background:var(--orange);color:#000}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1;text-transform:uppercase;font-weight:700}
+.logo small{font-size:11.5px;letter-spacing:.04em}.logo b{font-size:21px}
+.langs{display:flex;gap:6px}
+.langs a{color:#000;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;border:2px solid #000}
+.langs a[aria-current]{background:#000;color:#fff}
+.stripe{display:flex;height:5px}.stripe i{flex:1}
+.hero{background:var(--hero);color:var(--hero-ink);padding-block:22px 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.crumbs{margin:0 0 14px;font-size:14px;color:var(--hero-2)}
+.crumbs a{color:inherit;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;background:var(--eyebrow);color:var(--eyebrow-ink);padding:5px 10px;border-radius:6px}
+.hero h1{font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:18px;color:var(--hero-2);margin:0 0 24px;max-width:60ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;text-align:center}
+.btn.pri{background:var(--btn);color:var(--btn-ink)}
+.btn.sec{color:var(--hero-ink);border-color:currentColor;background:transparent}
+.btn.wa{background:#1FA855;color:#fff}.btn.tg{background:#229ED9;color:#fff}
+.btn.cp{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,.langs a:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hero .btn:focus-visible{outline-color:var(--hero-ink)}
+.fig{margin:0;background:var(--surface);border-radius:16px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.fig svg{display:block;width:100%;height:auto;border-radius:10px}
+.fig figcaption{margin:8px 4px 2px;font-size:14px;color:var(--muted);line-height:1.4}
+.fig figcaption b{display:block;color:var(--ink);font-size:13px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.fact{background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35)}
+.fact b{display:block;font-size:28px;line-height:1.15}
+.fact span{font-size:14px;color:var(--muted)}
+main section{padding-top:52px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:0 0 20px;text-wrap:balance}
+.learn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.learn li{background:var(--surface);border-radius:12px;padding:14px 16px 14px 48px;position:relative}
+.learn li:before{content:"";position:absolute;left:18px;top:19px;width:14px;height:8px;border-left:3px solid var(--ok);border-bottom:3px solid var(--ok);transform:rotate(-45deg)}
+.note{margin:-6px 0 18px;color:var(--muted);max-width:70ch}
+ol.ls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ls li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;background:var(--surface);border-radius:12px;padding:14px 16px}
+.ls .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-weight:700;font-size:15px}
+.ls li.paid .n{background:var(--orange);color:#000}
+.ls h3{font-size:16.5px;line-height:1.3;margin:0}
+.ls p{margin:4px 0 6px;font-size:15px;color:var(--muted);line-height:1.45}
+.ls small{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.ls em{font-style:normal;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.ls li.paid em,.ls li.app em{background:var(--paid-soft);color:var(--paid-ink)}
+details.more{margin-top:8px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--surface)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+details.more[open]>summary{display:none}
+details.more ol{margin-top:0}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.figs .fig{box-shadow:none}
+.price{background:var(--price);color:var(--price-ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;border:1px solid var(--line)}
+.price h2{color:var(--price-ink);margin-bottom:12px}
+.price.one{grid-template-columns:minmax(0,1fr)}
+.price .tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;background:var(--orange);color:#000;margin:0 0 12px}
+.amt{font-size:clamp(36px,6vw,54px);font-weight:700;color:var(--orange);line-height:1;margin:0}
+.amt s{color:var(--price-muted);font-size:.5em;font-weight:600;margin-right:6px}
+.once{color:var(--price-muted);margin:8px 0 14px}
+.promo{margin:-6px 0 12px;color:var(--orange);font-weight:700}
+.ptxt{margin:12px 0 18px;color:var(--price-li);max-width:60ch}
+.price .cta .btn.sec{color:var(--price-ink)}
+.price .btn.pri{background:var(--orange);color:#000}
+.price ul,.price ol{margin:0 0 14px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--price-li)}
+.price h3{margin:0 0 10px;font-size:19px}
+.pay{margin:0 0 14px;color:var(--price-muted);font-size:15px}
+details.inc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:0 18px}
+details.inc[open]{padding-bottom:16px}
+details.qa{background:var(--surface);border-radius:12px;padding:0 18px}
+details.qa+details.qa{margin-top:8px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+details.qa>summary:after,details.inc>summary:after{content:"+";font-size:24px;line-height:1;font-weight:400;flex:none}
+details.qa[open]>summary:after,details.inc[open]>summary:after{content:"\2212"}
+details.qa p{margin:0 0 16px;color:var(--muted);max-width:75ch}
+details.qa h3,details.inc h3.s{font-size:inherit;margin:0;font-weight:700}
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--cream);border-radius:16px;padding:22px}
+.who svg{width:60px;height:60px}
+.who p{margin:0 0 10px;max-width:75ch}
+.who .links{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rel a.card{display:flex;flex-direction:column;gap:6px;background:var(--surface);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.rel a.card:hover{border-color:var(--orange)}
+.rel .card b{font-size:19px;line-height:1.25}
+.rel .card span{font-size:14px;color:var(--muted)}
+.rel .card i{font-style:normal;font-weight:700;font-size:12.5px;align-self:flex-start;padding:3px 9px;border-radius:6px;background:var(--ok-soft);color:var(--ok)}
+.rel .card i.p{background:var(--paid-soft);color:var(--paid-ink)}
+.rel .card u{margin-top:auto;padding-top:6px;font-weight:700;color:var(--link);text-decoration:none}
+.all{margin:16px 0 0;font-weight:700}
+footer{margin-top:56px;padding-block:26px 34px;background:#111;color:#B5B5B5;font-size:14px}
+footer a{color:#fff}
+footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap}
+@media (max-width:860px){.hero .wrap,.price{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rel{grid-template-columns:minmax(0,1fr)}.price{padding:22px}}
+@media (max-width:640px){.learn,.figs{grid-template-columns:minmax(0,1fr)}.who{grid-template-columns:minmax(0,1fr)}.who svg{width:48px;height:48px}.hero{padding-block:18px 56px}.lead{font-size:17px}}
+@media (max-width:420px){.logo b{font-size:18px}.langs a{padding:5px 9px}.fact b{font-size:24px}.btn{width:100%}.share .btn{width:auto;flex:1 1 40%}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Course", "@id": "https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html#course", "name": "Trucks (24 V)", "description": "A specialization for those who have already taken the car course and scanner diagnostics. A truck means 24 volts, a battery disconnect switch, its own control units and SPN/FMI codes. Here is what the other courses don’t have: what breaks most often on trucks and how to track it down. Each lesson has two simulators.", "url": "https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html", "image": "https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/og.jpg", "inLanguage": "en", "availableLanguage": ["ru", "kk", "en"], "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "АвтоЭлектрик PRO · AVTOELEKTRIK-PRO.KZ", "url": "https://avtoelektrik-pro.kz", "sameAs": ["https://help.avtoelektrik-pro.kz/"]}, "offers": [{"@type": "Offer", "category": "Free", "price": 0, "priceCurrency": "KZT", "url": "https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html"}], "hasCourseInstance": [{"@type": "CourseInstance", "courseMode": "Online", "courseWorkload": "PT0H28M", "instructor": [{"@type": "Person", "name": "Oleg Dmitriev", "jobTitle": "Auto electrician"}]}], "syllabusSections": [{"@type": "Syllabus", "name": "How trucks differ: 24 V and the battery disconnect switch", "description": "The main differences between truck and car electrics: 24 volts from two batteries and the battery disconnect switch, where every search begins. Two simulators on the 24-volt circuit.", "timeRequired": "PT7M"}, {"@type": "Syllabus", "name": "24 V diesel starting: two batteries, starter, ground", "description": "Why a truck won’t start or cranks slowly: two batteries and the link between them, the main positive and the engine ground. Two simulators on the starting circuit.", "timeRequired": "PT7M"}, {"@type": "Syllabus", "name": "Truck fault codes: SPN/FMI and the J1939 bus", "description": "How to read a two-number SPN/FMI code, why 4294967295 is not a fault, and how to check the J1939 bus with a tester. Two simulators: a silent NOx sensor; a broken CAN line.", "timeRequired": "PT8M"}, {"@type": "Syllabus", "name": "Garage: three tractor units — find the fault", "description": "The truck course wrap-up: three tractor units — Shacman, KamAZ, Volvo FH. Each has its own case. Pick a truck and find where the positive went missing.", "timeRequired": "PT6M"}], "educationalCredentialAwarded": "Certificate of completion"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does the course cost?", "acceptedAnswer": {"@type": "Answer", "text": "The course is free: all lessons are open on the website and in the app."}}, {"@type": "Question", "name": "Do I need experience?", "acceptedAnswer": {"@type": "Answer", "text": "The method is the same as on a car: follow the circuit with a voltmeter and find where the plus is lost — but at 24 V and with its own codes. Starting from scratch? Take the “For future auto electricians” course first."}}, {"@type": "Question", "name": "Do I get a certificate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, free and without a promo code. Finish all the lessons and the final test unlocks: 20 questions covering all lessons, and you need at least 16 correct answers for the certificate. It is graded on a 12-point scale: the Certificate of Mastery shows your grade and can be verified by its number, and you can retake the test at any time (the certificate keeps your best grade). It is not a state-recognised diploma: this is a self-study course."}}, {"@type": "Question", "name": "Does it work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: in the Android app, lessons open without the internet."}}, {"@type": "Question", "name": "Do I need to sign up?", "acceptedAnswer": {"@type": "Answer", "text": "No. Lessons open straight away, and your progress is stored on your phone."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Auto electrician assistant", "item": "https://help.avtoelektrik-pro.kz/"}, {"@type": "ListItem", "position": 2, "name": "Auto electrician courses", "item": "https://help.avtoelektrik-pro.kz/kursy/en.html"}, {"@type": "ListItem", "position": 3, "name": "Trucks (24 V)", "item": "https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html"}]}]}</script>
+<script src="/widget.js" defer></script>
+<script>(function(){var ID='G-D5E79MWR50',T='course_truck';window.dataLayer=window.dataLayer||[];function g(){dataLayer.push(arguments)}window.gtag=window.gtag||g;g('js',new Date());g('config',ID,{app_platform:'site',page_type:T});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);function ev(n,p){try{p=p||{};p.page_type=T;gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href],summary,button'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/wa\.me\/7701/.test(h))return ev('contact_whatsapp');if(/wa\.me\/\?|t\.me\/share|max\.ru\/:share|viber:/.test(h)||a.classList.contains('cp'))return ev('share');if(/\.exe$/.test(h))return ev('download_click',{platform:'windows'});if(/#skachat|\.apk$/.test(h))return ev('download_click');if(/#skaner/.test(h))return ev('try_scanner_click');if(/#kursy/.test(h))return ev('start_course_click',{course:h.split('#kursy-')[1]||''});if(/#kod=/.test(h)){var c='';try{c=decodeURIComponent(h.split('#kod=')[1]||'').split('&')[0]}catch(x){}return ev('open_code_app',{code:c});}if(/#znachok=/.test(h))return ev('open_lamp_app',{lamp:h.split('#znachok=')[1]||''});if(a.closest('.langs'))return ev('page_lang',{lang:a.getAttribute('hreflang')||''});if(a.tagName==='SUMMARY'){if(a.closest('details.qa'))return ev('faq_open');if(a.closest('details.more'))return ev('lessons_more');return;}if(/\/(kursy|skaner|besplatnye-kursy|kody|znachki)\//.test(h))return ev('page_link',{to:h.replace(/^https?:\/\/[^\/]+/,'')});if(/avtoelektrik-pro\.kz/.test(h)&&!/help\./.test(h))return ev('site_click');},true)})();</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="https://help.avtoelektrik-pro.kz/" aria-label="AvtoElektrik PRO"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><span><small>AvtoElektrik</small><b>PRO</b></span></a>
+  <nav class="langs" aria-label="Язык · Тіл · Language"><a href="./" hreflang="ru" lang="ru">RU</a><a href="kk.html" hreflang="kk" lang="kk">ҚАЗ</a><a href="en.html" hreflang="en" lang="en" aria-current="page">EN</a></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"><i style="background:#8B5A2B"></i><i style="background:#D32F2F"></i><i style="background:#1E5BD8"></i><i style="background:#F2C200"></i><i style="background:#E4E8EC"></i><i style="background:#2E9E4F"></i><i style="background:#F07F12"></i></div>
+<section class="hero"><div class="wrap">
+  <div>
+    <nav class="crumbs" aria-label="Auto electrician courses"><a href="../en.html">Auto electrician courses</a> › <span>Trucks (24 V)</span></nav>
+    <p class="eyebrow">Online course · Free</p>
+    <h1>Truck auto electrician: 24 V, SPN/FMI codes and fault finding</h1>
+    <p class="lead">A specialization for those who have already taken the car course and scanner diagnostics. A truck means 24 volts, a battery disconnect switch, its own control units and SPN/FMI codes. Here is what the other courses don’t have: what breaks most often on trucks and how to track it down. Each lesson has two simulators.</p>
+    <div class="cta"><a class="btn pri" href="https://help.avtoelektrik-pro.kz/en.html#kursy-truck">Start for free</a><a class="btn sec" href="https://help.avtoelektrik-pro.kz/en.html#skachat">Download the app</a></div>
+  </div>
+  
+</div></section>
+<main class="wrap">
+  <div class="facts"><div class="fact"><b>4</b><span>lessons</span></div><div class="fact"><b>28 min</b><span>in total</span></div><div class="fact"><b>0</b><span>self-check questions</span></div><div class="fact"><b>3</b><span>languages — Russian, Kazakh, English</span></div></div>
+  <section aria-labelledby="ln"><h2 id="ln">What you’ll learn</h2>
+    <ul class="learn"><li>Understand how 24 V truck electrics differ from a car, and where the search starts — the battery master switch</li><li>Understand the 24 V supply from two batteries and start a diesel in the cold</li><li>Read truck SPN/FMI codes over the J1939 bus, and Cummins (FC) codes</li><li>Find a fault along the circuit on three tractors — Chinese, KAMAZ and European</li><li>Understand the AdBlue (SCR) system and NOx sensors, and read them in live data</li><li>Run a scan-tool diagnosis and put together a clear report for the customer</li></ul>
+  </section>
+  <section aria-labelledby="pg"><h2 id="pg">Syllabus</h2>
+    <p class="note">4 lessons · about 28 minutes · The pictures in the lessons are animated, and every lesson has a hands-on trainer or lab, so you can try what it describes yourself.</p>
+    <ol class="ls"><li class=""><span class="n" aria-hidden="true">1</span><div><h3>How trucks differ: 24 V and the battery disconnect switch</h3><p>The main differences between truck and car electrics: 24 volts from two batteries and the battery disconnect switch, where every search begins. Two simulators on the 24-volt circuit.</p><small><span>7 min · 0 questions</span><em>free</em></small></div></li><li class=""><span class="n" aria-hidden="true">2</span><div><h3>24 V diesel starting: two batteries, starter, ground</h3><p>Why a truck won’t start or cranks slowly: two batteries and the link between them, the main positive and the engine ground. Two simulators on the starting circuit.</p><small><span>7 min · 0 questions</span><em>free</em></small></div></li><li class=""><span class="n" aria-hidden="true">3</span><div><h3>Truck fault codes: SPN/FMI and the J1939 bus</h3><p>How to read a two-number SPN/FMI code, why 4294967295 is not a fault, and how to check the J1939 bus with a tester. Two simulators: a silent NOx sensor; a broken CAN line.</p><small><span>8 min · 0 questions</span><em>free</em></small></div></li><li class=""><span class="n" aria-hidden="true">4</span><div><h3>Garage: three tractor units — find the fault</h3><p>The truck course wrap-up: three tractor units — Shacman, KamAZ, Volvo FH. Each has its own case. Pick a truck and find where the positive went missing.</p><small><span>6 min · 0 questions</span><em>free</em></small></div></li></ol>
+  </section>
+  
+  <section aria-labelledby="pr"><div class="price one"><div><h2 id="pr">Price</h2><p class="amt">Free</p><p class="ptxt">All lessons are open for free — on the website and in the app, no sign-up.</p><div class="cta"><a class="btn pri" href="https://help.avtoelektrik-pro.kz/en.html#kursy-truck">Start for free</a><a class="btn sec" href="https://help.avtoelektrik-pro.kz/en.html#skachat">Download the app</a></div></div></div></section>
+  <section aria-labelledby="fq"><h2 id="fq">Questions</h2>
+    <details class="qa"><summary><h3>How much does the course cost?</h3></summary><p>The course is free: all lessons are open on the website and in the app.</p></details><details class="qa"><summary><h3>Do I need experience?</h3></summary><p>The method is the same as on a car: follow the circuit with a voltmeter and find where the plus is lost — but at 24 V and with its own codes. Starting from scratch? Take the “For future auto electricians” course first.</p></details><details class="qa"><summary><h3>Do I get a certificate?</h3></summary><p>Yes, free and without a promo code. Finish all the lessons and the final test unlocks: 20 questions covering all lessons, and you need at least 16 correct answers for the certificate. It is graded on a 12-point scale: the Certificate of Mastery shows your grade and can be verified by its number, and you can retake the test at any time (the certificate keeps your best grade). It is not a state-recognised diploma: this is a self-study course.</p></details><details class="qa"><summary><h3>Does it work offline?</h3></summary><p>Yes: in the Android app, lessons open without the internet.</p></details><details class="qa"><summary><h3>Do I need to sign up?</h3></summary><p>No. Lessons open straight away, and your progress is stored on your phone.</p></details>
+  </section>
+  <section aria-labelledby="sh"><h2 id="sh">Share the course</h2><div class="share"><a class="btn wa" href="https://wa.me/?text=%E2%80%9CTrucks%20%2824%20V%29%E2%80%9D%20course%20by%20auto%20electrician%20Oleg%20%E2%80%94%20free%20lessons%20in%20the%20AvtoElektrik%20PRO%20app.%0Ahttps%3A//help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html" target="_blank" rel="noopener">WhatsApp</a><a class="btn tg" href="https://t.me/share/url?url=https%3A//help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html&amp;text=%E2%80%9CTrucks%20%2824%20V%29%E2%80%9D%20course%20by%20auto%20electrician%20Oleg%20%E2%80%94%20free%20lessons%20in%20the%20AvtoElektrik%20PRO%20app." target="_blank" rel="noopener">Telegram</a><a class="btn tg" href="https://max.ru/:share?text=%E2%80%9CTrucks%20%2824%20V%29%E2%80%9D%20course%20by%20auto%20electrician%20Oleg%20%E2%80%94%20free%20lessons%20in%20the%20AvtoElektrik%20PRO%20app.%0Ahttps%3A//help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html" target="_blank" rel="noopener">MAX</a><button type="button" class="btn cp" data-u="https://help.avtoelektrik-pro.kz/kursy/gruzovye-24v/en.html" data-ok="Link copied">Copy link</button></div></section>
+  <section aria-labelledby="wh"><h2 id="wh">Who teaches the course</h2>
+    <div class="who"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#000"/><path d="M22.5 6 11 22.5h7.5L16.5 34 29 16.5h-7.6z" fill="#FFA500"/></svg><div><p>Oleg is a working auto electrician in Almaty with 26 years in the trade, running the AVTOELEKTRIK-PRO.KZ service: auto electrics, computer diagnostics, immobilizers and keys, ECU repair. The lessons cover what he uses at work every day.</p><div class="links"><a href="https://avtoelektrik-pro.kz" target="_blank" rel="noopener">Website avtoelektrik-pro.kz</a><a href="https://wa.me/77011211110" target="_blank" rel="noopener">WhatsApp +7 701 121 11 10</a></div></div></div>
+  </section>
+  <section aria-labelledby="rl"><h2 id="rl">Related courses</h2><div class="rel"><a class="card" href="../diagnostika-skanerom/en.html"><i class="p">Lessons 1–5 free</i><b>Scan tool diagnostics</b><span>19 lessons · about 176 minutes</span><u>About the course →</u></a><a class="card" href="../avtoelektrik/en.html"><i class="p">Lessons 1–9 free</i><b>For future auto electricians</b><span>32 lessons · about 277 minutes</span><u>About the course →</u></a><a class="card" href="../remont-ebu/en.html"><i class="p">Lessons 1–5 free</i><b>ECU repair</b><span>18 lessons · about 163 minutes</span><u>About the course →</u></a></div>
+    <p class="all"><a href="../en.html">All courses →</a></p>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 AvtoElektrik PRO · Oleg Dmitriev</span><span>Seller: IE OneService</span><a href="https://help.avtoelektrik-pro.kz/">Auto electrician assistant</a><a href="../en.html">Auto electrician courses</a><a href="../../besplatnye-kursy/en.html">Free auto electrician courses</a><a href="../../skaner/en.html">ELM327 scanner in Russian, Kazakh and English</a><a href="../../skachat/en.html">Download the scanner</a><a href="../../kody/en.html">Fault codes explained</a><a href="../../znachki/en.html">Dashboard warning lights</a><a href="../../skazaniya/">Music for the road — ballads</a><a href="../../privacy.html">Privacy policy</a></div></footer>
+<script>document.addEventListener('click',function(e){var b=e.target.closest('.cp');if(!b)return;var u=b.getAttribute('data-u'),ok=b.getAttribute('data-ok'),t=b.textContent;function done(){b.textContent=ok;setTimeout(function(){b.textContent=t},2000)}if(navigator.clipboard)navigator.clipboard.writeText(u).then(done,function(){prompt('',u)});else prompt('',u)});if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('.fig svg').forEach(function(s){try{s.pauseAnimations();s.setCurrentTime(1.8)}catch(e){}});</script>
+</body>
+</html>
