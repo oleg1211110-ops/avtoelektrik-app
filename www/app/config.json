@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.92",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.92.apk",
-    "size": 8911321,
+    "version": "1.0.93",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.93.apk",
+    "size": 8915417,
     "date": "2026-11-17",
     "notes": {
-      "ru": "Курсы: новый курс «Грузовые 24 В» — пуск дизеля 24 В, коды SPN/FMI и шина J1939, гараж из трёх тягачей, в каждом уроке тренажёры; в уроке «Стартер» второй тренажёр. Помощник: новые разборы по опыту мастера — белый и синий дым, стук двигателя, датчик абсолютного давления (MAP); ссылка на полный разбор кода на сайте; понимает больше слов. Музыка: новые баллады «Субару и Момус» (на русском, казахском и английском) и «Алдар Көсе мен Крузак» (на казахском); у каждой баллады свой живой значок — нажмите, и мастер победит поломку; у всех — опыт, «По-простому» и «Подробнее».",
-      "kk": "Курстар: жаңа «Жүк көліктері 24 В» курсы — дизельді 24 В-пен оталдыру, SPN/FMI кодтары және J1939 шинасы, үш тягачтан тұратын гараж, әр сабақта тренажёрлар; «Стартер» сабағында екінші тренажёр. Көмекші: шебер тәжірибесінен жаңа талдаулар — ақ және көк түтін, қозғалтқыштың тықылы, абсолюттік қысым датчигі (MAP); сайттағы кодтың толық талдауына сілтеме; көбірек сөзді түсінеді. Музыка: жаңа балладалар — «Субару мен Қожанасыр» (қазақша, орысша және ағылшынша) және «Алдар Көсе мен Крузак»; әр балладаның өз тірі белгісі бар — басыңыз, шебер ақауды жеңеді; барлығында — тәжірибе, «По-простому» және «Толығырақ».",
-      "en": "Courses: a new “Trucks (24 V)” course — starting a 24 V diesel, SPN/FMI codes and the J1939 bus, a garage of three semi-trucks, with hands-on trainers in every lesson; a second trainer in the “Starter” lesson. Helper: new breakdowns from a working mechanic — white and blue smoke, engine knock, the MAP sensor; a link to the full code breakdown on the website; understands more phrases. Music: new ballads “The Subaru and the Mocking God” (in English, Russian and Kazakh) and “Алдар Көсе мен Крузак” (in Kazakh); every ballad now has its own live icon — tap it and the mechanic beats the fault; all ballads have an experiment, plain-words notes and links to learn more."
+      "ru": "Обновление снова ставится напрямую, без Google Play. Помощник: новые разборы по опыту мастера — клапан EGR (рециркуляция отработавших газов: чистим, а не глушим; коды P0401/P0402) и турбина/наддув (сначала подсос и воздушный фильтр, потом геометрия; коды P0299/P0234). Понимает слова «турбина», «наддув», «EGR», «ЕГР», «рециркуляция».",
+      "kk": "Жаңарту қайтадан тікелей орнатылады, Google Play арқылы емес. Көмекші: шебер тәжірибесінен жаңа талдаулар — EGR клапаны (пайдаланылған газды рециркуляциялау: тазалаймыз, бітемейміз; P0401/P0402 кодтары) және турбина/қысым (алдымен ауа соруы мен сүзгі, содан кейін геометрия; P0299/P0234 кодтары). «Турбина», «қысым», «EGR», «рециркуляция» сөздерін түсінеді.",
+      "en": "App updates install directly again, without Google Play. Helper: new breakdowns from a working mechanic — the EGR valve (exhaust gas recirculation: clean it, don't blank it off; codes P0401/P0402) and the turbo/boost (check for an air leak and the air filter first, then the variable geometry; codes P0299/P0234). Understands the words \"turbo\", \"boost\", \"EGR\" and \"recirculation\"."
     }
   },
   "play": "",
