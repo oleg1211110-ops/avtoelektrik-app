@@ -11,7 +11,7 @@
       "en": "Music: when a Bluetooth speaker, headphones or the car stereo disconnects, the song now pauses instead of playing on the phone speaker. Helper: new advice “stalled while driving — check the timing belt/chain” (what you can check yourself), understands more phrases — “idle hunting”, “runs rough”, “lambda”, “key light” and more; answering “everything lights up as usual” about the dashboard no longer leads to a dead end."
     }
   },
-  "play": "",
+  "play": "https://play.google.com/store/apps/details?id=kz.avtoelektrikpro.app",
   "appstore": "",
   "masters": {
     "api": "https://mastera.avtoelektrikpro-apps.workers.dev"
@@ -89,5 +89,14 @@
     "_": "Продавец курсов (подвал страниц курсов, анкета ApiPay) — Олег, 05.11.2026",
     "name": "ИП OneService",
     "iin": "870211400876"
+  },
+  "playLatest": {
+    "version": "1.0.90",
+    "date": "2026-11-17",
+    "notes": {
+      "ru": "Первый выпуск в Google Play. Не заводится машина? Помощник сначала подскажет, что проверить самому; коды ошибок, сканер ELM327, предохранители, ТО и курсы.",
+      "kk": "Google Play-дегі алғашқы нұсқа. Көлік оталмай ма? Көмекші алдымен өзіңіз не тексере алатыныңызды айтады; қате кодтары, ELM327 сканері, сақтандырғыштар, курстар.",
+      "en": "First release on Google Play. Car won't start? The helper first tells you what to check yourself; fault codes, ELM327 scanner, fuses, maintenance and courses."
+    }
   }
 }
