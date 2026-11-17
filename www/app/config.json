@@ -11,7 +11,7 @@
       "en": "Courses: a new “Trucks (24 V)” course — starting a 24 V diesel, SPN/FMI codes and the J1939 bus, a garage of three semi-trucks, with hands-on trainers in every lesson; a second trainer in the “Starter” lesson. Helper: new breakdowns from a working mechanic — white and blue smoke, engine knock, the MAP sensor; a link to the full code breakdown on the website; understands more phrases. Music: new ballads “The Subaru and the Mocking God” (in English, Russian and Kazakh) and “Алдар Көсе мен Крузак” (in Kazakh); every ballad now has its own live icon — tap it and the mechanic beats the fault; all ballads have an experiment, plain-words notes and links to learn more."
     }
   },
-  "play": "https://play.google.com/store/apps/details?id=kz.avtoelektrikpro.app",
+  "play": "",
   "appstore": "",
   "masters": {
     "api": "https://mastera.avtoelektrikpro-apps.workers.dev"
