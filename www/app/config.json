@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.91",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.91.apk",
-    "size": 8870361,
-    "date": "2026-11-16",
+    "version": "1.0.92",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.92.apk",
+    "size": 8911321,
+    "date": "2026-11-17",
     "notes": {
-      "ru": "Музыка: при отключении Bluetooth-колонки, наушников или магнитолы песня ставится на паузу, а не играет дальше на динамике телефона. Помощник: новый совет «заглохла на ходу — проверьте ГРМ» (что можно проверить самому), понимает больше слов — «плавают обороты», «работает неровно», «лямбда», «значок ключа» и другие; ответ «всё горит как обычно» про щиток больше не тупик.",
-      "kk": "Музыка: Bluetooth-колонка, құлаққап немесе магнитола ажыратылғанда ән телефонның динамигінде ойнай бермей, үзіліске қойылады. Көмекші: жаңа кеңес «жүріп келе жатып сөнді — ГРМ-ді тексеріңіз» (өзіңіз не тексере аласыз), көбірек сөзді түсінеді — «айналым құбылады», «бірқалыпты істемейді», «лямбда», «кілт белгісі» және басқалар; аспаптар қалқаны туралы «бәрі әдеттегідей жанып тұр» деген жауап енді тұйыққа әкелмейді.",
-      "en": "Music: when a Bluetooth speaker, headphones or the car stereo disconnects, the song now pauses instead of playing on the phone speaker. Helper: new advice “stalled while driving — check the timing belt/chain” (what you can check yourself), understands more phrases — “idle hunting”, “runs rough”, “lambda”, “key light” and more; answering “everything lights up as usual” about the dashboard no longer leads to a dead end."
+      "ru": "Курсы: новый курс «Грузовые 24 В» — пуск дизеля 24 В, коды SPN/FMI и шина J1939, гараж из трёх тягачей, в каждом уроке тренажёры; в уроке «Стартер» второй тренажёр. Помощник: новые разборы по опыту мастера — белый и синий дым, стук двигателя, датчик абсолютного давления (MAP); ссылка на полный разбор кода на сайте; понимает больше слов. Музыка: новые баллады «Субару и Момус» (на русском, казахском и английском) и «Алдар Көсе мен Крузак» (на казахском); у каждой баллады свой живой значок — нажмите, и мастер победит поломку; у всех — опыт, «По-простому» и «Подробнее».",
+      "kk": "Курстар: жаңа «Жүк көліктері 24 В» курсы — дизельді 24 В-пен оталдыру, SPN/FMI кодтары және J1939 шинасы, үш тягачтан тұратын гараж, әр сабақта тренажёрлар; «Стартер» сабағында екінші тренажёр. Көмекші: шебер тәжірибесінен жаңа талдаулар — ақ және көк түтін, қозғалтқыштың тықылы, абсолюттік қысым датчигі (MAP); сайттағы кодтың толық талдауына сілтеме; көбірек сөзді түсінеді. Музыка: жаңа балладалар — «Субару мен Қожанасыр» (қазақша, орысша және ағылшынша) және «Алдар Көсе мен Крузак»; әр балладаның өз тірі белгісі бар — басыңыз, шебер ақауды жеңеді; барлығында — тәжірибе, «По-простому» және «Толығырақ».",
+      "en": "Courses: a new “Trucks (24 V)” course — starting a 24 V diesel, SPN/FMI codes and the J1939 bus, a garage of three semi-trucks, with hands-on trainers in every lesson; a second trainer in the “Starter” lesson. Helper: new breakdowns from a working mechanic — white and blue smoke, engine knock, the MAP sensor; a link to the full code breakdown on the website; understands more phrases. Music: new ballads “The Subaru and the Mocking God” (in English, Russian and Kazakh) and “Алдар Көсе мен Крузак” (in Kazakh); every ballad now has its own live icon — tap it and the mechanic beats the fault; all ballads have an experiment, plain-words notes and links to learn more."
     }
   },
   "play": "https://play.google.com/store/apps/details?id=kz.avtoelektrikpro.app",
