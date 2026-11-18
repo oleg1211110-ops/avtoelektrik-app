@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.96",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.96.apk",
-    "size": 8935897,
+    "version": "1.0.98",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.98.apk",
+    "size": 8948185,
     "date": "2026-11-18",
     "notes": {
-      "ru": "Музыка: кнопки ▶ и «следующий трек» на экране блокировки и в шторке теперь работают сразу, даже если телефон «заморозил» свёрнутое приложение на паузе — песня включается с того же места, а когда откроете приложение, она играет дальше без перерыва; на Xiaomi приложение подскажет, как разрешить работу в фоне. Курсы: новый курс «Бензиновый впрыск»; в курсе диагностики — урок «Топливная система: типы впрыска» с тренажёром и усиленный урок «Текущие параметры»; запись на индивидуальную практику с Олегом. Помощник: ключ без кнопки (keyless) — антенна-приёмник и проверка.",
-      "kk": "Музыка: құлып экранындағы және хабарландырудағы ▶ мен «келесі трек» түймелері енді бірден істейді — телефон кідірістегі жиналған қосымшаны «қатырып» тастаса да, ән сол жерінен қосылады, ал қосымшаны ашқанда үзіліссіз жалғасады; Xiaomi-де қосымша фондық жұмысқа қалай рұқсат беруді көрсетеді. Курстар: жаңа «Бензин бүрку» курсы; диагностика курсында — тренажёрі бар «Отын жүйесі: бүрку түрлері» сабағы және күшейтілген «Ағымдағы параметрлер» сабағы; Олегпен жеке практикаға жазылу. Көмекші: түймесіз кілт (keyless) — қабылдағыш антенна және тексеру.",
-      "en": "Music: the ▶ and next-track buttons on the lock screen and in the notification now work right away, even when the phone has frozen the minimized app while paused — the song resumes from the same spot and keeps playing without a break when you open the app; on Xiaomi phones the app shows how to allow background activity. Courses: a new “Gasoline Fuel Injection” course; in the scan-tool course — a lesson on fuel system injection types with a hands-on trainer and a stronger “Live data” lesson; sign-up for one-on-one practice with Oleg. Helper: keyless entry — the key antenna/receiver and how to test it."
+      "ru": "Помощник точнее разбирает бедную и богатую смесь, катализатор и пропуски зажигания. Тренажёры теперь в игровой форме — очки и серия.",
+      "kk": "Көмекші кедей/бай қоспаны, катализаторды және от алудың өтпеуін дәлірек талдайды. Тренажёрлар енді ойын түрінде — ұпай мен серия.",
+      "en": "The assistant diagnoses lean/rich mixture, the catalyst and misfires more precisely. Trainers are now gamified — points and streaks."
     }
   },
   "play": "",
