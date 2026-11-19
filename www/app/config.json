@@ -1,14 +1,14 @@
 {
   "_": "Удалённые настройки приложения АвтоЭлектрик PRO. Публикуется на https://help.avtoelektrik-pro.kz/app/config.json; приложение читает при каждом запуске.",
   "latest": {
-    "version": "1.0.98",
-    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.98.apk",
-    "size": 8948185,
-    "date": "2026-11-18",
+    "version": "1.0.99",
+    "apk": "https://help.avtoelektrik-pro.kz/app/avtoelektrik-pro-1.0.99.apk",
+    "size": 9079257,
+    "date": "2026-11-19",
     "notes": {
-      "ru": "Помощник точнее разбирает бедную и богатую смесь, катализатор и пропуски зажигания. Тренажёры теперь в игровой форме — очки и серия.",
-      "kk": "Көмекші кедей/бай қоспаны, катализаторды және от алудың өтпеуін дәлірек талдайды. Тренажёрлар енді ойын түрінде — ұпай мен серия.",
-      "en": "The assistant diagnoses lean/rich mixture, the catalyst and misfires more precisely. Trainers are now gamified — points and streaks."
+      "ru": "• Меню наверху: все разделы и поиск; обучение собрано в «Курсы обучения».\n• Нижнюю панель теперь собираете сами — оставьте то, чем пользуетесь чаще.\n• Кнопка «Назад» в шапке — удобно, если нет свайпа.\n• «Моя машина» прямо в меню.\n• Значки приборной панели: цвет выбирается удобнее.\n• Калькулятор налога (форма 910) в курсе бухгалтера.\n• Мелочи: плеер стал чище, меню держится чуть дольше.",
+      "kk": "• Жоғарғы мәзір: барлық бөлімдер және іздеу; оқу «Оқу курстары» ішіне жиналды.\n• Төменгі панельді енді өзіңіз жинайсыз — жиі қолданатыныңызды қалдырыңыз.\n• Жоғарыда «Артқа» түймесі — свайп болмаса ыңғайлы.\n• «Менің көлігім» мәзірде.\n• Аспаптар тақтасының белгілері: түсі ыңғайлырақ таңдалады.\n• Салық калькуляторы (910-нысан) бухгалтер курсында.\n• Ұсақ-түйек: плеер тазарақ, мәзір сәл ұзағырақ тұрады.",
+      "en": "• Top menu: all sections and search; learning is grouped under “Courses”.\n• You now build the bottom bar yourself — keep what you use most.\n• A “Back” button in the header — handy if you don’t use swipe.\n• “My car” right in the menu.\n• Dashboard icons: color is easier to pick.\n• Tax calculator (form 910) in the accountant course.\n• Small things: cleaner player, the menu stays a bit longer."
     }
   },
   "play": "",
