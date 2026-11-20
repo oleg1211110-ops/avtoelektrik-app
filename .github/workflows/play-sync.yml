@@ -1,0 +1,40 @@
+# Версия из Google Play → playLatest в www/app/config.json (раз в день в 09:41 по Алматы; можно запустить вручную).
+# Сборки в Google Play отправляет tools/publish_apk.py закрытого репозитория (20.11.2026); здесь только узнаём, какая уже вышла,
+# чтобы версия из Google Play предлагала обновление, когда оно там действительно есть. После изменения перезапускает публикацию.
+name: Google Play — вышедшая версия
+
+on:
+  schedule:
+    - cron: '41 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: play-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            www/app/config.json
+          sparse-checkout-cone-mode: false
+      - name: Какая версия в Google Play
+        run: python3 .github/scripts/play_sync.py www/app/config.json
+      - name: Сохранить и опубликовать
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions" && git config user.email "github-actions@users.noreply.github.com"
+          git add www/app/config.json
+          if git diff --cached --quiet; then echo "Версия не изменилась"; exit 0; fi
+          git commit -m "Google Play: playLatest — $(python3 -c "import json;print(json.load(open('www/app/config.json'))['playLatest']['version'])")"
+          git pull --rebase -q && git push -q
+          gh workflow run pages.yml --ref main
