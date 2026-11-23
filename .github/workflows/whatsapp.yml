@@ -1,0 +1,97 @@
+# Сообщение в WhatsApp (Олег, 11.11.2026: «нам с тобой нужно завести чат в WhatsApp: всю техничку — что выполнено, что сделано —
+# закидываешь в нашу переписку»). Отправитель — номер, подключённый в Green-API; получатель по умолчанию — Олег (+7 701 121 11 10).
+# Запуск: gh api -X POST repos/oleg1211110-ops/avtoelektrik-src/actions/workflows/whatsapp.yml/dispatches -f ref=main -f "inputs[text]=…"
+#   (gh workflow run … -f text="…" тоже работает, если у токена есть доступ к GraphQL).
+# Другому человеку (12.11.2026, памятка Сергею) — только когда Олег сам попросил и дал номер: -f "inputs[to]=77051891198".
+#   Файл из репозитория — -f "inputs[file]=docs/….pdf" (текст уходит подписью, до 1000 знаков). android-signing/ и legal/ не отправляются.
+#   Если номер отправителя не Олега — в конце дописывается «— Олег, АвтоЭлектрик PRO», чтобы человек понял, от кого.
+# Секреты GREEN_API_URL, GREEN_ID_INSTANCE, GREEN_API_TOKEN вносит Олег (Settings → Secrets and variables → Actions); их нет — запуск красный
+# (12.11.2026: раньше был «успешно», и никто не заметил, что отчёты не уходят).
+name: Сообщение в WhatsApp
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: Текст сообщения
+        required: true
+      to:
+        description: Номер получателя (только цифры, 77051234567); пусто — Олегу
+        required: false
+        default: ''
+      file:
+        description: Файл из репозитория (docs/….pdf); пусто — только текст
+        required: false
+        default: ''
+  workflow_call:
+    inputs:
+      text:
+        required: true
+        type: string
+      to:
+        required: false
+        type: string
+        default: ''
+      file:
+        required: false
+        type: string
+        default: ''
+    secrets:
+      GREEN_API_URL:
+        required: false
+      GREEN_ID_INSTANCE:
+        required: false
+      GREEN_API_TOKEN:
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Взять файл из репозитория
+        if: inputs.file != ''
+        uses: actions/checkout@v4
+      - name: Отправить
+        env:
+          GU: ${{ secrets.GREEN_API_URL }}
+          GI: ${{ secrets.GREEN_ID_INSTANCE }}
+          GT: ${{ secrets.GREEN_API_TOKEN }}
+          TEXT: ${{ inputs.text }}
+          TO: ${{ inputs.to }}
+          FILE: ${{ inputs.file }}
+        run: |
+          GU=$(printf '%s' "$GU" | tr -d '[:space:]"'"'"''); GI=$(printf '%s' "$GI" | tr -dc '0-9'); GT=$(printf '%s' "$GT" | tr -d '[:space:]"'"'"'')
+          if [ -z "$GU" ] || [ -z "$GI" ] || [ -z "$GT" ]; then echo "::error title=WhatsApp::Ключей Green-API нет — сообщение НЕ отправлено. Олегу: внести GREEN_API_URL, GREEN_ID_INSTANCE, GREEN_API_TOKEN (Settings → Secrets and variables → Actions)."; exit 1; fi
+          echo "::add-mask::$GT"
+          OLEG=77011211110
+          TO=$(printf '%s' "$TO" | tr -dc '0-9'); [ -z "$TO" ] && TO=$OLEG
+          case "$TO" in 8*) [ ${#TO} -eq 11 ] && TO="7${TO#8}";; esac
+          if [ ${#TO} -lt 11 ] || [ ${#TO} -gt 15 ]; then echo "::error title=WhatsApp::Неверный номер получателя: $TO"; exit 1; fi
+          if [ "$TO" != "$OLEG" ]; then
+            # кому-то кроме Олега: если отправитель не номер Олега — подпись, чтобы было понятно, от кого
+            me=$(curl -sS -m 20 "${GU%/}/waInstance$GI/getWaSettings/$GT" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{process.stdout.write(String(JSON.parse(s).phone||"").replace(/\D/g,""))}catch(e){}})' || true)
+            if [ "$me" != "$OLEG" ]; then TEXT="$TEXT
+
+          — Олег, АвтоЭлектрик PRO"; fi
+            echo "Отправитель: ${me:-неизвестно}, получатель: $TO"
+          fi
+          export TEXT TO
+          if [ -n "$FILE" ]; then
+            case "$FILE" in /*|*..*|android-signing/*|legal/*|.git/*) echo "::error title=WhatsApp::Этот файл отправлять нельзя: $FILE"; exit 1;; esac
+            [ -f "$FILE" ] || { echo "::error title=WhatsApp::Нет файла в репозитории: $FILE"; exit 1; }
+            CAP=$(node -e 'process.stdout.write(String(process.env.TEXT).slice(0, 1000))')
+            MU=$(printf '%s' "${GU%/}" | sed -E 's#//([^/]*)\.api\.#//\1.media.#; s#//api\.#//media.#')
+            code=000
+            for base in "$MU" "${GU%/}"; do
+              code=$(curl -sS -m 120 -o r.json -w '%{http_code}' -X POST "$base/waInstance$GI/sendFileByUpload/$GT" \
+                -F "chatId=$TO@c.us" -F "file=@$FILE" -F "fileName=$(basename "$FILE")" --form-string "caption=$CAP" || echo 000)
+              [ "$code" = "200" ] && break
+            done
+          else
+            node -e 'process.stdout.write(JSON.stringify({chatId: process.env.TO + "@c.us", message: String(process.env.TEXT).slice(0, 3500)}))' > m.json
+            code=$(curl -sS -m 30 -o r.json -w '%{http_code}' -X POST "${GU%/}/waInstance$GI/sendMessage/$GT" -H 'content-type: application/json' --data @m.json || echo 000)
+          fi
+          if [ "$code" = "200" ]; then echo "::notice title=WhatsApp::Отправлено на $TO${FILE:+ (файл $FILE)}."; else echo "::error title=WhatsApp::Не отправилось (код $code): $(head -c 300 r.json)"; exit 1; fi

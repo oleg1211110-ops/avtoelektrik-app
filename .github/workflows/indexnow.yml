@@ -1,0 +1,94 @@
+# IndexNow — массовая отправка URL в Яндекс/Bing/Seznam (Олег, 17.11.2026: «чем быстрее пройдёт индексация, тем быстрее рост»).
+# Обходит лимит Google (~10 стр/день в Search Console): IndexNow принимает тысячи URL за раз, без лимита, и раздаёт их всем
+# участникам (Bing, Яндекс, Seznam, Naver, Yep). Для Google индексация идёт деревом (sitemap + перелинковка + дневная задача по хабам).
+#
+# Как работает: берёт карты сайта (sitemap.xml → под-карты), собирает все <loc>, POST-ит батчами по 10000 на api.indexnow.org.
+# Ключ — публичный файл https://help.avtoelektrik-pro.kz/<KEY>.txt (лежит в www/, выкладывается как robots.txt). Секреты не нужны.
+#
+# Запуск: gh workflow run indexnow.yml -R oleg1211110-ops/avtoelektrik-src -f scope=all
+#   scope=all  — все URL (разовая массовая отправка и после больших добавлений)
+#   scope=main — только дерево (главная + разделы + курсы), для частых прогонов
+# Вызывается и из дневной задачи индексации (workflow_call).
+name: IndexNow — отправка URL в Яндекс/Bing
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'all = все URL | main = только дерево (главная, разделы, курсы)'
+        required: false
+        default: 'all'
+  workflow_call:
+    inputs:
+      scope:
+        required: false
+        type: string
+        default: 'all'
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    env:
+      HOST: help.avtoelektrik-pro.kz
+      KEY: 5f4ab8a4229336895b328890b7794a08
+    steps:
+      - name: Проверить, что файл ключа опубликован
+        run: |
+          set -e
+          KEYURL="https://$HOST/$KEY.txt"
+          got=$(curl -sL --max-time 30 "$KEYURL" | tr -d ' \r\n')
+          if [ "$got" != "$KEY" ]; then
+            echo "::error::файл ключа $KEYURL не отдаёт ключ (получено: '$got'). Сначала выложите www/$KEY.txt на сайт."
+            exit 1
+          fi
+          echo "ключ подтверждён: $KEYURL"
+
+      - name: Собрать URL из карт сайта
+        run: |
+          set -e
+          SCOPE="${{ inputs.scope }}"; [ -z "$SCOPE" ] && SCOPE=all
+          echo "scope=$SCOPE"
+          : > maps.txt
+          if [ "$SCOPE" = "main" ]; then
+            echo "https://$HOST/sitemap-main.xml" >> maps.txt
+          else
+            curl -sL --max-time 60 "https://$HOST/sitemap.xml" -o idx.xml
+            grep -o '<loc>[^<]*</loc>' idx.xml | sed 's/<[^>]*>//g' >> maps.txt
+          fi
+          echo "карт: $(wc -l < maps.txt)"
+          : > urls.txt
+          while read -r sm; do
+            [ -z "$sm" ] && continue
+            curl -sL --max-time 90 "$sm" | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' >> urls.txt
+          done < maps.txt
+          grep -E '^https?://' urls.txt | sort -u > urls.sorted && mv urls.sorted urls.txt
+          echo "URL к отправке: $(wc -l < urls.txt)"
+          head -3 urls.txt
+
+      - name: Отправить в IndexNow (батчами по 10000)
+        run: |
+          set -e
+          split -l 10000 urls.txt batch_
+          fail=0
+          for b in batch_*; do
+            n=$(wc -l < "$b")
+            python3 - "$b" > payload.json <<'PY'
+          import json, os, sys
+          host = os.environ["HOST"]; key = os.environ["KEY"]
+          urls = [l.strip() for l in open(sys.argv[1]) if l.strip()]
+          print(json.dumps({"host": host, "key": key,
+                            "keyLocation": f"https://{host}/{key}.txt",
+                            "urlList": urls}))
+          PY
+            code=$(curl -s -o resp.txt -w '%{http_code}' --max-time 120 \
+              -X POST 'https://api.indexnow.org/indexnow' \
+              -H 'Content-Type: application/json; charset=utf-8' \
+              --data @payload.json)
+            echo "батч $b: $n URL → HTTP $code"
+            head -c 300 resp.txt; echo
+            case "$code" in 200|202) ;; *) fail=1 ;; esac
+          done
+          [ "$fail" = "0" ] && echo "IndexNow: отправлено успешно" || { echo "::error::часть батчей не принята"; exit 1; }
