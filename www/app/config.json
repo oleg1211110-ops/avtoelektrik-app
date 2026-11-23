@@ -11,8 +11,8 @@
       "en": "Vibration is now customizable: separate strength for taps and scrolling, plus pulse type. Cleaner menu, and the top menu stays open longer. Minor improvements."
     }
   },
-  "play": "",
-  "appstore": "",
+  "play": "https://play.google.com/store/apps/details?id=kz.avtoelektrikpro.app",
+  "appstore": "https://apps.apple.com/app/id6835833796",
   "masters": {
     "api": "https://mastera.avtoelektrikpro-apps.workers.dev"
   },
