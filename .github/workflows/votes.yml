@@ -1,0 +1,24 @@
+# Итоги прослушиваний баллад «Сказания АвтоЭлектрик PRO» — /api/votes сервера мастеров (включали / дослушали / скачали).
+# Эти итоги открытые: их же читает страница баллад (блок «Рейтинг баллад»), ключей не нужно. Здесь — только забрать JSON
+# в журнал запуска (между VOTES_JSON_BEGIN и VOTES_JSON_END); считает уже Claude у себя: tools/skazaniya_reyting.py --json.
+# Перенесено из приватного репо 23.11.2026 (там кончились бесплатные минуты Actions — docs/sboy-github-actions.md).
+# Запуск: gh api --method POST repos/oleg1211110-ops/avtoelektrik-app/actions/workflows/votes.yml/dispatches -f ref=main
+name: Итоги прослушиваний баллад
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  votes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Итоги /api/votes
+        run: |
+          echo VOTES_JSON_BEGIN
+          curl -fsS --retry 3 -A avtoelektrik-reyting https://mastera.avtoelektrikpro-apps.workers.dev/api/votes
+          echo
+          echo VOTES_JSON_END
