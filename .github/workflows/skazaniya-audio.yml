@@ -1,0 +1,68 @@
+# Звук баллад — в хранилище Cloudflare R2. ПЕРЕНЕСЕНО из приватного avtoelektrik-src 24.11.2026: там кончились бесплатные
+# минуты Actions (docs/sboy-github-actions.md), а в открытом репозитории они бесплатны. Скрипт — .github/scripts/skazaniya_r2.py
+# (копия tools/skazaniya_r2.py; секретов в нём нет), файлы — www/skazaniya/audio этого же репозитория.
+# Нужны секреты ЭТОГО репозитория (Settings → Secrets and variables → Actions; вносит Олег, значения — те же, что в avtoelektrik-src):
+# CLOUDFLARE_API_TOKEN (право «Workers R2 Storage: Edit») и CLOUDFLARE_ACCOUNT_ID.
+# Запуск: gh api --method POST repos/oleg1211110-ops/avtoelektrik-app/actions/workflows/skazaniya-audio.yml/dispatches -f ref=main
+name: Сказания — звук в R2
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Только файлы, в имени которых есть (пусто — все)'
+        required: false
+        default: ''
+      check:
+        description: 'Только сверить, ничего не заливать'
+        type: boolean
+        default: false
+
+concurrency:
+  group: skazaniya-audio
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    env:
+      RAW_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      RAW_CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      # только скрипт и папка с песнями этого репозитория (сайт целиком не нужен)
+      - uses: actions/checkout@v4
+        with:
+          path: site
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/scripts
+            www/skazaniya/audio
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Ключ Cloudflare
+        run: |
+          [ -n "$RAW_CF_TOKEN" ] || { echo "::error::Не задан секрет CLOUDFLARE_API_TOKEN"; exit 1; }
+          ACC=$(printf '%s' "$RAW_CF_ACCOUNT" | grep -oiE '[0-9a-f]{32}' | head -1 | tr 'A-F' 'a-f' || true)
+          [ -n "$ACC" ] || ACC="abc92cc98e0c437386774a9da9bdd21d"
+          TOK=$(printf '%s' "$RAW_CF_TOKEN" | tr -d '[:space:]"'"'"'')
+          if printf '%s' "$TOK" | grep -qiE '^[0-9a-f]{32}$'; then
+            ALT=$(printf '%s' "$RAW_CF_ACCOUNT" | tr -d '[:space:]"'"'"'')
+            printf '%s' "$ALT" | grep -qE '^cf[ua]t_[A-Za-z0-9_-]{40,}$|^[A-Za-z0-9_-]{40}$' && TOK="$ALT"
+          fi
+          echo "::add-mask::$TOK"
+          { echo "CLOUDFLARE_ACCOUNT_ID=$ACC"; echo "CLOUDFLARE_API_TOKEN=$TOK"; } >> "$GITHUB_ENV"
+          npm install -g wrangler@4 --no-audit --no-fund
+          wrangler --version
+
+      - name: Залить песни в R2
+        env:
+          ONLY: ${{ inputs.only }}
+          CHECK: ${{ inputs.check }}
+        run: |
+          ls site/www/skazaniya/audio | wc -l
+          if [ "$CHECK" = "true" ]; then python3 site/.github/scripts/skazaniya_r2.py site/www/skazaniya/audio --only "$ONLY" --check
+          else python3 site/.github/scripts/skazaniya_r2.py site/www/skazaniya/audio --only "$ONLY"; fi
